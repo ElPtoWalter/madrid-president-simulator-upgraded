@@ -1,31 +1,31 @@
-# Madrid President Simulator
+# Madrid President Simulator — Live Market Upgrade
 
-Web estática minimalista para simular la gestión deportiva del Real Madrid.
+Web estática para simular la presidencia/deportiva del Real Madrid.
 
-## Cómo usarla
+## Novedades de esta versión
 
-1. Descomprime el ZIP.
-2. Abre `index.html` con Chrome, Edge, Firefox o Safari.
-3. No necesitas instalar nada.
+- Jugadores con imagen/avatar en cartas y campo.
+- Los jugadores colocados en el once desaparecen de la lista de Disponibles.
+- Panel de datos con enlaces directos a Transfermarkt: plantilla y rumores.
+- Panel de rumores/posibles fichajes, marcados como rumor, objetivo o rumor débil.
+- Importación JSON para actualizar plantilla, valores, fotos o rumores sin tocar el código.
+- ZIP preparado con `index.html` en la raíz para GitHub Pages.
 
-## Funciones incluidas
+## Importar datos
 
-- Campo interactivo con formaciones 4-3-3, 4-2-3-1, 4-4-2, 3-5-2 y 3-4-3.
-- Drag & drop de cartas de jugadores al campo.
-- Selectores alternativos para elegir jugadores.
-- Cartas estilo simulador con valor, salario, edad, media y potencial.
-- Ventas de jugadores con ingreso automático al balance.
-- Fichajes manuales con coste y salario.
-- Objetivos de mercado sugeridos por necesidad, posición y tipo de fichaje.
-- Lista de deseos de fichajes.
-- Balance económico con ventas, gastos, presupuesto inicial y masa salarial.
-- Análisis táctico del once, fuera de posición, equilibrio y objetivo presidencial.
-- Banquillo, fichados, vendidos y necesidades de plantilla.
-- Varias simulaciones guardadas en el navegador.
-- Modo temporadas: envejecimiento, evolución orientativa de medias y valores.
-- Exportación del proyecto en JSON.
-- Exportación del once como imagen PNG.
+Botón `Importar JSON`. Ejemplo:
 
-## Nota sobre datos
+```json
+{
+  "players": [
+    {"name": "Kylian Mbappé", "value": 200, "photo": "https://..."}
+  ],
+  "rumours": [
+    {"name":"Jugador X", "club":"Club", "pos":["DFC"], "age":24, "value":40, "wage":7, "rating":82, "potential":87, "reliability":"Rumor", "source":"Prensa", "note":"Descripción"}
+  ]
+}
+```
 
-Los valores de mercado son orientativos y editables, inspirados en Transfermarkt. La web no hace scraping ni actualización automática en tiempo real.
+## Limitación importante
+
+Transfermarkt no ofrece una API pública simple para usar sus datos automáticamente. En una web estática, hacer scraping directo suele fallar por CORS y puede incumplir condiciones de uso. La solución profesional sería añadir un backend o un job programado que genere un `data.json` propio.

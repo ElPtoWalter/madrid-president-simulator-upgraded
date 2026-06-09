@@ -59,7 +59,30 @@ const suggestedTargets = [
 const $ = id => document.getElementById(id);
 const money = n => `${Number(n || 0).toLocaleString("es-ES")} M€`;
 const clone = x => JSON.parse(JSON.stringify(x));
-const storageKey = "madrid-president-simulator-v2";
+function photoFor(p){
+  if (p.photo) return p.photo;
+  const initials = String(p.name || "RM").split(" ").filter(Boolean).slice(0,2).map(x=>x[0]).join("").toUpperCase();
+  return `data:image/svg+xml;utf8,${encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ffffff"/><stop offset=".55" stop-color="#eee9dc"/><stop offset="1" stop-color="#b99a52"/></linearGradient></defs><rect width="160" height="160" rx="34" fill="url(#g)"/><circle cx="80" cy="58" r="34" fill="#101c38" opacity=".92"/><path d="M28 145c9-39 29-58 52-58s43 19 52 58" fill="#101c38" opacity=".92"/><text x="80" y="148" text-anchor="middle" font-family="Arial" font-size="28" font-weight="800" fill="#b99a52">${initials}</text></svg>`)}`;
+}
+const storageKey = "madrid-president-simulator-v3";
+const dataVersion = "09/06/2026";
+const sources = {
+  transfermarktSquad: "https://www.transfermarkt.com/real-madrid/kader/verein/418",
+  transfermarktRumours: "https://www.transfermarkt.com/real-madrid/geruechte/verein/418",
+  officialSquad: "https://www.realmadrid.com/en-US/football/first-team/players"
+};
+
+const rumourTargets = [
+  {name:"Riccardo Calafiori",club:"Arsenal",pos:["DFC","LI"],age:24,value:45,wage:9,rating:84,potential:88,tier:"rumor",reliability:"Rumor",source:"Managing Madrid",note:"Central zurdo/lateral. Perfil de defensor moderno para reforzar el lado izquierdo de la zaga."},
+  {name:"Nico Schlotterbeck",club:"Borussia Dortmund",pos:["DFC"],age:26,value:40,wage:8,rating:84,potential:86,tier:"rumor",reliability:"Rumor",source:"Managing Madrid",note:"Central zurdo con salida de balón. Encaja si quieres reforzar la defensa."},
+  {name:"Joško Gvardiol",club:"Manchester City",pos:["DFC","LI"],age:24,value:75,wage:14,rating:86,potential:89,tier:"rumor",reliability:"Rumor difícil",source:"Managing Madrid",note:"Operación muy cara y complicada, pero encaja como defensa top polivalente."},
+  {name:"Iván Fresneda",club:"Sporting CP",pos:["LD","CAD"],age:21,value:15,wage:3,rating:77,potential:84,tier:"rumor",reliability:"Rumor",source:"Transfermarkt rumores",note:"Lateral derecho joven. Opción de rotación/proyecto."},
+  {name:"Víctor Muñoz",club:"CA Osasuna",pos:["EI","ED"],age:22,value:30,wage:4,rating:79,potential:85,tier:"rumor",reliability:"Rumor",source:"Transfermarkt rumores",note:"Extremo español. Posible refuerzo de rotación ofensiva."},
+  {name:"João Neves",club:"PSG",pos:["MC","MCD"],age:21,value:80,wage:9,rating:84,potential:91,tier:"rumor",reliability:"Rumor/objetivo",source:"Transfermarkt rumores",note:"Mediocentro joven de mucho potencial. Muy caro y complicado."},
+  {name:"Ibrahima Konaté",club:"Liverpool",pos:["DFC"],age:27,value:55,wage:11,rating:85,potential:87,tier:"rumor",reliability:"Posible objetivo",source:"SI / prensa",note:"Central potente para elevar la competencia defensiva."},
+  {name:"Rodri",club:"Manchester City",pos:["MCD","MC"],age:30,value:100,wage:22,rating:91,potential:91,tier:"rumor",reliability:"Muy difícil",source:"Reuters / prensa",note:"Pivote élite. Sería una inversión enorme y políticamente complicada."},
+  {name:"Erling Haaland",club:"Manchester City",pos:["DC"],age:25,value:180,wage:28,rating:92,potential:93,tier:"rumor",reliability:"Desmentido/rumor débil",source:"Reuters",note:"Nombre galáctico, pero informaciones recientes han sido desmentidas por el entorno del City."}
+];
 
 let state = {
   saves: {},
@@ -98,6 +121,10 @@ function bindEvents() {
   $("exportBtn").addEventListener("click", exportProject);
   $("exportImageBtn").addEventListener("click", exportLineupImage);
   $("nextSeasonBtn").addEventListener("click", nextSeason);
+  $("openSquadSourceBtn")?.addEventListener("click", () => window.open(sources.transfermarktSquad, "_blank"));
+  $("openRumoursSourceBtn")?.addEventListener("click", () => window.open(sources.transfermarktRumours, "_blank"));
+  $("importDataBtn")?.addEventListener("click", importDataPrompt);
+  $("refreshRumoursBtn")?.addEventListener("click", () => { renderRumours(); toast("Rumores recargados desde la lista curada de esta versión."); });
   $("saveSnapshotBtn").addEventListener("click", saveSnapshot);
   $("newSaveBtn").addEventListener("click", newSimulation);
   $("saveSelect").addEventListener("change", e => loadSave(e.target.value));
@@ -116,7 +143,8 @@ function renderAll() {
   $("objectiveSelect").value = state.objective;
   $("saveNameInput").value = state.saveName;
   $("seasonLabel").textContent = `${state.season}/${String(state.season + 1).slice(-2)}`;
-  renderPitch(); renderSquad(); renderBudget(); renderAnalysis(); renderDepth(); renderSuggestions();
+  $("dataVersion") && ($("dataVersion").textContent = dataVersion);
+  renderPitch(); renderSquad(); renderBudget(); renderAnalysis(); renderDepth(); renderSuggestions(); renderRumours();
   commitActiveSave(); save();
 }
 
@@ -140,7 +168,7 @@ function renderPitch() {
     card.className = `slot-card ${selected ? "" : "empty"}`;
     card.draggable = !!selected;
     card.dataset.playerId = selected?.id || "";
-    card.innerHTML = selected ? `<div class="slot-name">${selected.name}</div><div class="slot-meta">${selected.pos.join("/")} · ${selected.rating} · ${money(selected.value)}</div>` : `<div class="slot-name">Soltar jugador</div><div class="slot-meta">${label}</div>`;
+    card.innerHTML = selected ? `<img class="slot-photo" src="${photoFor(selected)}" alt=""><div class="slot-name">${selected.name}</div><div class="slot-meta">${selected.pos.join("/")} · ${selected.rating} · ${money(selected.value)}</div>` : `<div class="slot-name">Soltar jugador</div><div class="slot-meta">${label}</div>`;
     if (selected) card.addEventListener("dragstart", onDragStart);
     slot.appendChild(card);
     const select = document.createElement("select");
@@ -188,6 +216,7 @@ function renderSquad() {
   const list = $("squadList"); list.innerHTML = "";
   state.players
     .filter(p => filterStatus(p))
+    .filter(p => !(state.activeFilter === "available" && state.lineup.includes(p.id)))
     .filter(p => !q || p.name.toLowerCase().includes(q) || p.pos.join(" ").toLowerCase().includes(q) || String(p.role).toLowerCase().includes(q))
     .sort((a,b) => statusRank(a.status) - statusRank(b.status) || b.rating - a.rating || b.value - a.value)
     .forEach(p => list.appendChild(playerCard(p)));
@@ -211,7 +240,8 @@ function playerCard(p) {
   card.addEventListener("dragend", () => card.classList.remove("dragging"));
   card.innerHTML = `
     <div class="player-head">
-      <div>
+      <img class="player-photo" src="${photoFor(p)}" alt="Foto de ${p.name}">
+      <div class="player-info">
         <strong>${p.name}</strong>
         <div class="player-meta">
           <span class="badge ${p.status}">${p.pos.join("/")}</span><span>${p.age ?? "—"} años</span><span>${p.role}</span><span>${statusLabel(p.status)}</span>
@@ -440,6 +470,52 @@ function addWishlist(t) {
   if (state.players.some(p => p.name === t.name)) return toast("Ese jugador ya está en la simulación.");
   state.players.push({id: Date.now()+Math.floor(Math.random()*999), ...clone(t), role:"Objetivo de mercado", status:"wishlist", signed:true});
   renderAll(); toast(`${t.name} añadido a objetivos.`);
+}
+
+function renderRumours() {
+  const root = $("rumoursList"); if (!root) return;
+  const existing = new Set(state.players.map(p => p.name));
+  root.innerHTML = rumourTargets.map((t, i) => `
+    <div class="rumour-card">
+      <img class="rumour-photo" src="${photoFor(t)}" alt="">
+      <div>
+        <div class="rumour-title"><strong>${t.name}</strong><span class="badge wishlist">${t.reliability}</span></div>
+        <p>${t.club} · ${t.pos.join("/")} · ${money(t.value)} · Fuente: ${t.source}</p>
+        <small>${t.note}</small>
+        <div class="rumour-actions">
+          <button class="small" data-rumour-sign="${i}" ${existing.has(t.name)?"disabled":""}>Fichar</button>
+          <button class="small ghost" data-rumour-wish="${i}" ${existing.has(t.name)?"disabled":""}>Añadir a objetivos</button>
+        </div>
+      </div>
+    </div>`).join("");
+  root.querySelectorAll("button[data-rumour-sign]").forEach(btn => btn.addEventListener("click", () => {
+    const t = rumourTargets[Number(btn.dataset.rumourSign)];
+    addSigned({...clone(t), role:`Rumor fichado desde ${t.club}`}); renderAll();
+  }));
+  root.querySelectorAll("button[data-rumour-wish]").forEach(btn => btn.addEventListener("click", () => {
+    addWishlist(rumourTargets[Number(btn.dataset.rumourWish)]);
+  }));
+}
+
+function importDataPrompt() {
+  const raw = prompt("Pega un JSON con arrays opcionales: { players: [...], rumours: [...] }. Sirve para actualizar valores/fotos desde un fichero propio.");
+  if (!raw) return;
+  try {
+    const data = JSON.parse(raw);
+    if (Array.isArray(data.players)) {
+      data.players.forEach(np => {
+        const p = state.players.find(x => x.name.toLowerCase() === String(np.name||"").toLowerCase());
+        if (p) Object.assign(p, np);
+        else state.players.push({id: Date.now()+Math.floor(Math.random()*9999), status:"available", role:"Importado", ...np});
+      });
+    }
+    if (Array.isArray(data.rumours)) {
+      data.rumours.forEach(r => rumourTargets.push(r));
+    }
+    renderAll(); toast("Datos importados correctamente.");
+  } catch(e) {
+    alert("JSON no válido. Revisa el formato.");
+  }
 }
 
 function nextSeason() {

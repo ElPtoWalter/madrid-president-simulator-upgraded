@@ -49,6 +49,23 @@
       </div>
     </section>
 
+    <section class="panel data-panel">
+      <div class="panel-header">
+        <div>
+          <p class="eyebrow">Datos vivos</p>
+          <h2>Transfermarkt + rumores</h2>
+        </div>
+        <span class="data-date">Rev. <b id="dataVersion">—</b></span>
+      </div>
+      <p class="data-note">La app sigue siendo estática, pero ahora tiene enlaces de actualización, importación de datos y un panel de rumores etiquetados como rumores/posibles objetivos.</p>
+      <div class="data-actions">
+        <button id="openSquadSourceBtn" class="ghost">Abrir plantilla Transfermarkt</button>
+        <button id="openRumoursSourceBtn" class="ghost">Abrir rumores Transfermarkt</button>
+        <button id="importDataBtn">Importar JSON</button>
+        <button id="refreshRumoursBtn" class="ghost">Recargar rumores</button>
+      </div>
+    </section>
+
     <aside class="panel budget-panel">
       <p class="eyebrow">Economía</p>
       <h2>Balance económico</h2>
@@ -71,7 +88,7 @@
         </div>
         <select id="formationSelect" aria-label="Seleccionar formación"></select>
       </div>
-      <div class="hint">Arrastra cartas al campo o usa los selectores. Doble clic en una posición para vaciarla.</div>
+      <div class="hint">Arrastra cartas al campo o usa los selectores. Cuando un jugador entra al once desaparece de Disponibles. Doble clic en una posición para vaciarla.</div>
       <div id="pitch" class="pitch"></div>
       <div class="lineup-actions">
         <button id="autoLineupBtn" class="ghost">Once sugerido</button>
@@ -127,6 +144,17 @@
       <div id="suggestions" class="suggestions"></div>
     </section>
 
+    <section class="panel rumours-panel">
+      <div class="panel-header">
+        <div>
+          <p class="eyebrow">Mercado real</p>
+          <h2>Rumores y posibles fichajes</h2>
+        </div>
+      </div>
+      <p class="data-note">Estos nombres no son fichajes confirmados: son rumores, posibles objetivos o nombres vinculados por prensa/fuentes de mercado. Puedes ficharlos o guardarlos como objetivos.</p>
+      <div id="rumoursList" class="rumours-list"></div>
+    </section>
+
     <section class="panel analysis-panel">
       <p class="eyebrow">Informe deportivo</p>
       <h2>Análisis del proyecto</h2>
@@ -141,7 +169,7 @@
   </main>
 
   <footer class="footer">
-    <span>Valores orientativos y editables inspirados en Transfermarkt. Esta demo no hace scraping ni actualización automática.</span>
+    <span>Valores orientativos y editables inspirados en Transfermarkt. Las fotos son avatares editables por defecto; puedes importar URLs propias de fotos mediante JSON. La versión estática no hace scraping automático.</span>
   </footer>
 
   <script src="app.js"></script>
