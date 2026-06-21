@@ -1,31 +1,31 @@
-# Madrid President Simulator — Live Market Upgrade
+# Madrid President Simulator
 
-Web estática para simular la presidencia/deportiva del Real Madrid.
+Web fan no oficial para construir un proyecto de plantilla estilo presidente/director deportivo.
 
-## Novedades de esta versión
+## Incluye
 
-- Jugadores con imagen/avatar en cartas y campo.
-- Los jugadores colocados en el once desaparecen de la lista de Disponibles.
-- Panel de datos con enlaces directos a Transfermarkt: plantilla y rumores.
-- Panel de rumores/posibles fichajes, marcados como rumor, objetivo o rumor débil.
-- Importación JSON para actualizar plantilla, valores, fotos o rumores sin tocar el código.
-- ZIP preparado con `index.html` en la raíz para GitHub Pages.
+- Campo interactivo con drag & drop.
+- Jugadores con foto/avatar y edición manual de foto.
+- Plantilla, ventas, fichajes, balance y masa salarial.
+- Rumores/posibles fichajes marcados como no confirmados.
+- Enlaces a Transfermarkt para revisar plantilla y rumores.
+- Importación JSON para actualizar plantilla, valores, fotos o rumores.
+- Exportación de once en PNG y proyecto en JSON.
+- Botón de compartir.
+- Zona preparada para apoyo, donaciones o patrocinio manual.
+- Disclaimer de proyecto fan no oficial.
 
-## Importar datos
+## Importante
 
-Botón `Importar JSON`. Ejemplo:
+Proyecto fan no oficial. No afiliado al Real Madrid, Transfermarkt ni ninguna entidad oficial. Los valores, rumores y fotos son orientativos/editables.
 
-```json
-{
-  "players": [
-    {"name": "Kylian Mbappé", "value": 200, "photo": "https://..."}
-  ],
-  "rumours": [
-    {"name":"Jugador X", "club":"Club", "pos":["DFC"], "age":24, "value":40, "wage":7, "rating":82, "potential":87, "reliability":"Rumor", "source":"Prensa", "note":"Descripción"}
-  ]
-}
-```
+## Publicación en GitHub Pages
 
-## Limitación importante
+Sube estos archivos a la raíz del repositorio:
 
-Transfermarkt no ofrece una API pública simple para usar sus datos automáticamente. En una web estática, hacer scraping directo suele fallar por CORS y puede incumplir condiciones de uso. La solución profesional sería añadir un backend o un job programado que genere un `data.json` propio.
+- `index.html`
+- `styles.css`
+- `app.js`
+- `README.md`
+
+Luego activa GitHub Pages desde `Settings -> Pages -> Deploy from a branch -> main -> /root`.

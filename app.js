@@ -35,6 +35,9 @@ const basePlayers = [
   {id:26,name:"Franco Mastantuono",pos:["MCO","ED"],role:"Promesa",value:45,wage:3,age:18,rating:76,potential:91,status:"available"}
 ];
 
+const playerPhotoMap = {"Thibaut Courtois": "https://img.a.transfermarkt.technology/portrait/medium/108390-1717280733.jpg?lm=1", "Andriy Lunin": "https://img.a.transfermarkt.technology/portrait/medium/404839-1701294131.jpg?lm=1", "Fran González": "https://img.a.transfermarkt.technology/portrait/medium/1055220-1704358404.jpg?lm=1", "Trent Alexander-Arnold": "https://img.a.transfermarkt.technology/portrait/medium/314353-1701680958.jpg?lm=1", "Dani Carvajal": "https://img.a.transfermarkt.technology/portrait/medium/138927-1721026790.jpg?lm=1", "Éder Militão": "https://img.a.transfermarkt.technology/portrait/medium/401530-1719653438.jpg?lm=1", "Antonio Rüdiger": "https://img.a.transfermarkt.technology/portrait/medium/86202-1684484602.jpg?lm=1", "David Alaba": "https://img.a.transfermarkt.technology/portrait/medium/59016-1684921582.jpeg?lm=1", "Raúl Asencio": "https://img.a.transfermarkt.technology/portrait/medium/935245-1731168094.jpg?lm=1", "Dean Huijsen": "https://img.a.transfermarkt.technology/portrait/medium/890290-1750251451.jpg?lm=1", "Ferland Mendy": "https://img.a.transfermarkt.technology/portrait/medium/291417-1701294025.jpg?lm=1", "Fran García": "https://img.a.transfermarkt.technology/portrait/medium/341264-1688119965.jpg?lm=1", "Eduardo Camavinga": "https://img.a.transfermarkt.technology/portrait/medium/640428-1668500874.jpg?lm=1", "Aurélien Tchouaméni": "https://img.a.transfermarkt.technology/portrait/medium/413112-1668500754.jpg?lm=1", "Federico Valverde": "https://img.a.transfermarkt.technology/portrait/medium/369081-1731018042.jpg?lm=1", "Jude Bellingham": "https://img.a.transfermarkt.technology/portrait/medium/581678-1748102891.jpg?lm=1", "Dani Ceballos": "https://img.a.transfermarkt.technology/portrait/medium/319745-1723666162.jpg?lm=1", "Arda Güler": "https://img.a.transfermarkt.technology/portrait/medium/861410-1699472585.jpg?lm=1", "Brahim Díaz": "https://img.a.transfermarkt.technology/portrait/medium/314678-1744193327.jpg?lm=1", "Vinícius Jr.": "https://img.a.transfermarkt.technology/portrait/medium/371998-1761575144.jpg?lm=1", "Kylian Mbappé": "https://img.a.transfermarkt.technology/portrait/medium/342229-1682683695.jpg?lm=1", "Rodrygo": "https://img.a.transfermarkt.technology/portrait/medium/412363-1763041611.jpg?lm=1", "Gonzalo García": "https://img.a.transfermarkt.technology/portrait/medium/935230-1780664637.jpg?lm=1", "Franco Mastantuono": "https://img.a.transfermarkt.technology/portrait/medium/1057316-1755702696.jpg?lm=1"};
+basePlayers.forEach(p => { if (playerPhotoMap[p.name]) p.photo = playerPhotoMap[p.name]; });
+
 const suggestedTargets = [
   {name:"Erling Haaland",club:"Manchester City",pos:["DC"],age:25,value:180,wage:28,rating:92,potential:93,tier:"galactico",note:"Delantero total. Eleva el techo goleador, pero obliga a encajar a Mbappé/Vinícius."},
   {name:"Florian Wirtz",club:"Bayern / Leverkusen",pos:["MCO","MC"],age:23,value:140,wage:18,rating:89,potential:93,tier:"galactico",note:"Creador diferencial entre líneas. Encaja si quieres más fútbol interior."},
@@ -60,12 +63,15 @@ const $ = id => document.getElementById(id);
 const money = n => `${Number(n || 0).toLocaleString("es-ES")} M€`;
 const clone = x => JSON.parse(JSON.stringify(x));
 function photoFor(p){
-  if (p.photo) return p.photo;
-  const initials = String(p.name || "RM").split(" ").filter(Boolean).slice(0,2).map(x=>x[0]).join("").toUpperCase();
+  return p.photo || fallbackPhotoFor(p);
+}
+
+function fallbackPhotoFor(p){
+  const initials = String(p?.name || "RM").split(" ").filter(Boolean).slice(0,2).map(x=>x[0]).join("").toUpperCase();
   return `data:image/svg+xml;utf8,${encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ffffff"/><stop offset=".55" stop-color="#eee9dc"/><stop offset="1" stop-color="#b99a52"/></linearGradient></defs><rect width="160" height="160" rx="34" fill="url(#g)"/><circle cx="80" cy="58" r="34" fill="#101c38" opacity=".92"/><path d="M28 145c9-39 29-58 52-58s43 19 52 58" fill="#101c38" opacity=".92"/><text x="80" y="148" text-anchor="middle" font-family="Arial" font-size="28" font-weight="800" fill="#b99a52">${initials}</text></svg>`)}`;
 }
-const storageKey = "madrid-president-simulator-v3";
-const dataVersion = "09/06/2026";
+const storageKey = "madrid-president-simulator-v4-monetization";
+const dataVersion = "21/06/2026";
 const sources = {
   transfermarktSquad: "https://www.transfermarkt.com/real-madrid/kader/verein/418",
   transfermarktRumours: "https://www.transfermarkt.com/real-madrid/geruechte/verein/418",
@@ -120,6 +126,10 @@ function bindEvents() {
   $("resetBtn").addEventListener("click", resetApp);
   $("exportBtn").addEventListener("click", exportProject);
   $("exportImageBtn").addEventListener("click", exportLineupImage);
+  $("shareBtn")?.addEventListener("click", shareWeb);
+  $("supportBtn")?.addEventListener("click", supportProject);
+  $("copySupportTextBtn")?.addEventListener("click", copySupportText);
+  $("copyDisclaimerBtn")?.addEventListener("click", copyDisclaimer);
   $("nextSeasonBtn").addEventListener("click", nextSeason);
   $("openSquadSourceBtn")?.addEventListener("click", () => window.open(sources.transfermarktSquad, "_blank"));
   $("openRumoursSourceBtn")?.addEventListener("click", () => window.open(sources.transfermarktRumours, "_blank"));
@@ -168,7 +178,7 @@ function renderPitch() {
     card.className = `slot-card ${selected ? "" : "empty"}`;
     card.draggable = !!selected;
     card.dataset.playerId = selected?.id || "";
-    card.innerHTML = selected ? `<img class="slot-photo" src="${photoFor(selected)}" alt=""><div class="slot-name">${selected.name}</div><div class="slot-meta">${selected.pos.join("/")} · ${selected.rating} · ${money(selected.value)}</div>` : `<div class="slot-name">Soltar jugador</div><div class="slot-meta">${label}</div>`;
+    card.innerHTML = selected ? `<img class="slot-photo" src="${photoFor(selected)}" onerror="this.onerror=null;this.src=fallbackPhotoFor(selected)" alt=""><div class="slot-name">${selected.name}</div><div class="slot-meta">${selected.pos.join("/")} · ${selected.rating} · ${money(selected.value)}</div>` : `<div class="slot-name">Soltar jugador</div><div class="slot-meta">${label}</div>`;
     if (selected) card.addEventListener("dragstart", onDragStart);
     slot.appendChild(card);
     const select = document.createElement("select");
@@ -240,7 +250,7 @@ function playerCard(p) {
   card.addEventListener("dragend", () => card.classList.remove("dragging"));
   card.innerHTML = `
     <div class="player-head">
-      <img class="player-photo" src="${photoFor(p)}" alt="Foto de ${p.name}">
+      <img class="player-photo" src="${photoFor(p)}" onerror="this.onerror=null;this.src=fallbackPhotoFor(p)" alt="Foto de ${p.name}">
       <div class="player-info">
         <strong>${p.name}</strong>
         <div class="player-meta">
@@ -278,7 +288,7 @@ function shortRole(role) {
 function actionButtons(p) {
   if (p.status === "sold") return `<button class="small" data-action="restore">Recuperar</button>`;
   if (p.status === "wishlist") return `<button class="small" data-action="signWish">Fichar</button><button class="small ghost" data-action="removeWish">Quitar</button>`;
-  return `<button class="small" data-action="sell">Vender</button><button class="small ghost" data-action="bench">Banquillo</button>`;
+  return `<button class="small" data-action="sell">Vender</button><button class="small ghost" data-action="bench">Banquillo</button><button class="small ghost" data-action="setPhoto">Foto</button>`;
 }
 
 function handlePlayerAction(id, action) {
@@ -289,6 +299,10 @@ function handlePlayerAction(id, action) {
   if (action === "bench") { state.lineup = state.lineup.map(x => x === id ? null : x); toast(`${p.name} enviado al banquillo.`); }
   if (action === "signWish") { p.status = "signed"; p.signed = true; toast(`${p.name} fichado por ${money(p.value)}.`); }
   if (action === "removeWish") { state.players = state.players.filter(x => x.id !== id); }
+  if (action === "setPhoto") {
+    const url = prompt("Pega la URL de la foto de " + p.name + ". Déjalo vacío para quitar la foto personalizada.", p.photo || "");
+    if (url !== null) { p.photo = url.trim(); toast(url.trim() ? "Foto actualizada." : "Foto eliminada; se usará avatar."); }
+  }
   renderAll();
 }
 
@@ -477,7 +491,7 @@ function renderRumours() {
   const existing = new Set(state.players.map(p => p.name));
   root.innerHTML = rumourTargets.map((t, i) => `
     <div class="rumour-card">
-      <img class="rumour-photo" src="${photoFor(t)}" alt="">
+      <img class="rumour-photo" src="${photoFor(t)}" onerror="this.onerror=null;this.src=fallbackPhotoFor(t)" alt="">
       <div>
         <div class="rumour-title"><strong>${t.name}</strong><span class="badge wishlist">${t.reliability}</span></div>
         <p>${t.club} · ${t.pos.join("/")} · ${money(t.value)} · Fuente: ${t.source}</p>
@@ -534,6 +548,31 @@ function renderSaveSelect() {
   const sel = $("saveSelect"); if (!sel) return;
   sel.innerHTML = Object.entries(state.saves).map(([id, s]) => `<option value="${id}" ${id===state.activeSaveId?'selected':''}>${s.saveName || "Simulación"}</option>`).join("");
 }
+function shareWeb() {
+  const url = location.href.split("?")[0];
+  const text = "He creado un simulador fan para montar tu proyecto como presidente del Madrid: once, fichajes, ventas, balance y rumores.";
+  if (navigator.share) {
+    navigator.share({ title: "Madrid President Simulator", text, url }).catch(() => {});
+  } else {
+    navigator.clipboard?.writeText(url);
+    toast("Enlace copiado para compartir.");
+  }
+}
+function supportProject() {
+  const msg = "Aquí puedes poner tu enlace real de Ko-fi, Buy Me a Coffee o PayPal cuando lo tengas. Por ahora el botón está preparado para monetización.";
+  toast(msg);
+}
+function copySupportText() {
+  const txt = "¿Te gusta Madrid President Simulator? Apoya el proyecto para que pueda añadir datos actualizados, más rumores, modo temporadas y análisis avanzado.";
+  navigator.clipboard?.writeText(txt);
+  toast("Texto de apoyo copiado.");
+}
+function copyDisclaimer() {
+  const txt = "Proyecto fan no oficial. No afiliado al Real Madrid, Transfermarkt ni ninguna entidad oficial. Valores, rumores e imágenes son orientativos/editables.";
+  navigator.clipboard?.writeText(txt);
+  toast("Disclaimer copiado.");
+}
+
 function commitActiveSave(updateSelect = false) {
   state.saves[state.activeSaveId] = {
     saveName: state.saveName, players: clone(state.players), lineup: clone(state.lineup), initialBudget: state.initialBudget,

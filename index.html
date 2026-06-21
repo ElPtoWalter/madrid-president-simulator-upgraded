@@ -3,7 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Madrid President Simulator</title>
+  <title>Madrid President Simulator | Fan Squad Builder</title>
+  <meta name="description" content="Simulador fan no oficial para construir el once del Real Madrid, vender jugadores, fichar objetivos, seguir rumores y exportar tu proyecto." />
+  <meta property="og:title" content="Madrid President Simulator" />
+  <meta property="og:description" content="Crea tu proyecto como presidente: once, ventas, fichajes, balance y rumores." />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#101c38" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -17,6 +22,8 @@
       <button id="newSaveBtn" class="ghost">Nueva simulación</button>
       <button id="saveSnapshotBtn" class="ghost">Guardar copia</button>
       <button id="exportImageBtn">Exportar once PNG</button>
+      <button id="shareBtn" class="ghost">Compartir web</button>
+      <button id="supportBtn" class="support">Apoyar proyecto</button>
       <button id="exportBtn" class="ghost">Exportar JSON</button>
       <button id="resetBtn" class="danger">Reiniciar</button>
     </div>
@@ -46,6 +53,26 @@
       <div class="season-row">
         <div><span>Temporada</span><strong id="seasonLabel">2026/27</strong></div>
         <button id="nextSeasonBtn" class="ghost">Avanzar temporada</button>
+      </div>
+    </section>
+
+
+    <section class="panel monetization-panel">
+      <div class="panel-header">
+        <div>
+          <p class="eyebrow">Monetización</p>
+          <h2>Apoyo y patrocinio</h2>
+        </div>
+        <span class="badge">Fan project</span>
+      </div>
+      <p class="data-note">Si el simulador te gusta, puedes añadir aquí un enlace de Ko-fi, Buy Me a Coffee o PayPal. También queda preparada una zona discreta para patrocinio o anuncio manual.</p>
+      <div class="monetization-actions">
+        <button id="copySupportTextBtn" class="ghost">Copiar texto de apoyo</button>
+        <button id="copyDisclaimerBtn" class="ghost">Copiar disclaimer</button>
+      </div>
+      <div class="ad-placeholder">
+        <strong>Espacio de patrocinio</strong>
+        <span>Reservado para anuncio, afiliado o colaboración. No activo por defecto.</span>
       </div>
     </section>
 
@@ -169,7 +196,8 @@
   </main>
 
   <footer class="footer">
-    <span>Valores orientativos y editables inspirados en Transfermarkt. Las fotos son avatares editables por defecto; puedes importar URLs propias de fotos mediante JSON. La versión estática no hace scraping automático.</span>
+    <strong>Proyecto fan no oficial.</strong>
+    <span>No afiliado al Real Madrid, Transfermarkt ni ninguna entidad oficial. Valores, rumores y fotos son orientativos/editables. La versión estática no hace scraping automático.</span>
   </footer>
 
   <script src="app.js"></script>
