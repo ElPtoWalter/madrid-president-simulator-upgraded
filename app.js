@@ -8,34 +8,73 @@ const formations = {
 
 const basePlayers = [
   {id:1,name:"Thibaut Courtois",pos:["POR"],role:"Titular",value:15,wage:15,age:34,rating:87,potential:87,status:"available"},
-  {id:2,name:"Andriy Lunin",pos:["POR"],role:"Rotación",value:15,wage:4,age:27,rating:80,potential:83,status:"available"},
-  {id:3,name:"Fran González",pos:["POR"],role:"Canterano",value:1,wage:1,age:20,rating:66,potential:78,status:"available"},
+  {id:2,name:"Andriy Lunin",pos:["POR"],role:"Rotación",value:12,wage:4,age:27,rating:80,potential:83,status:"available"},
+  {id:3,name:"Fran González",pos:["POR"],role:"Canterano",value:3,wage:1,age:20,rating:66,potential:78,status:"available"},
+
   {id:4,name:"Trent Alexander-Arnold",pos:["LD","CAD","MC"],role:"Titular",value:60,wage:15,age:27,rating:86,potential:87,status:"available"},
-  {id:5,name:"Dani Carvajal",pos:["LD","CAD"],role:"Veterano",value:10,wage:9,age:34,rating:84,potential:84,status:"available"},
-  {id:6,name:"Éder Militão",pos:["DFC","LD"],role:"Titular",value:45,wage:10,age:28,rating:85,potential:86,status:"available"},
-  {id:7,name:"Antonio Rüdiger",pos:["DFC"],role:"Titular",value:18,wage:11,age:33,rating:86,potential:86,status:"available"},
-  {id:8,name:"David Alaba",pos:["DFC","LI","MCD"],role:"Rotación",value:10,wage:12,age:33,rating:81,potential:81,status:"available"},
-  {id:9,name:"Raúl Asencio",pos:["DFC"],role:"Promesa",value:30,wage:2,age:23,rating:78,potential:86,status:"available"},
-  {id:10,name:"Dean Huijsen",pos:["DFC"],role:"Titular futuro",value:60,wage:6,age:21,rating:80,potential:90,status:"available"},
-  {id:11,name:"Ferland Mendy",pos:["LI","CAI"],role:"Rotación",value:18,wage:8,age:31,rating:80,potential:80,status:"available"},
-  {id:12,name:"Fran García",pos:["LI","CAI"],role:"Rotación",value:18,wage:3,age:26,rating:78,potential:80,status:"available"},
-  {id:13,name:"Eduardo Camavinga",pos:["MCD","MC","LI"],role:"Titular/rotación",value:100,wage:8,age:23,rating:85,potential:91,status:"available"},
-  {id:14,name:"Aurélien Tchouaméni",pos:["MCD","MC","DFC"],role:"Titular",value:90,wage:9,age:26,rating:86,potential:89,status:"available"},
-  {id:15,name:"Luka Modrić",pos:["MC","MCO"],role:"Leyenda",value:4,wage:10,age:40,rating:82,potential:82,status:"available"},
-  {id:16,name:"Federico Valverde",pos:["MC","MD","LD"],role:"Titular",value:120,wage:10,age:27,rating:88,potential:89,status:"available"},
-  {id:17,name:"Jude Bellingham",pos:["MCO","MC"],role:"Estrella",value:140,wage:15,age:22,rating:90,potential:94,status:"available"},
-  {id:18,name:"Dani Ceballos",pos:["MC"],role:"Rotación",value:8,wage:5,age:29,rating:78,potential:78,status:"available"},
-  {id:19,name:"Arda Güler",pos:["MCO","MC","ED"],role:"Talento",value:90,wage:4,age:21,rating:82,potential:92,status:"available"},
-  {id:20,name:"Brahim Díaz",pos:["MCO","ED","EI"],role:"Rotación ofensiva",value:40,wage:6,age:26,rating:82,potential:84,status:"available"},
-  {id:21,name:"Vinícius Jr.",pos:["EI","DC"],role:"Estrella",value:150,wage:20,age:25,rating:91,potential:93,status:"available"},
-  {id:22,name:"Kylian Mbappé",pos:["DC","EI"],role:"Estrella",value:200,wage:30,age:27,rating:92,potential:93,status:"available"},
-  {id:23,name:"Rodrygo",pos:["ED","EI","DC"],role:"Titular/rotación",value:100,wage:12,age:25,rating:86,potential:89,status:"available"},
-  {id:24,name:"Endrick",pos:["DC"],role:"Promesa",value:35,wage:4,age:19,rating:77,potential:91,status:"available"},
-  {id:25,name:"Gonzalo García",pos:["DC"],role:"Canterano",value:8,wage:1,age:22,rating:73,potential:82,status:"available"},
-  {id:26,name:"Franco Mastantuono",pos:["MCO","ED"],role:"Promesa",value:45,wage:3,age:18,rating:76,potential:91,status:"available"}
+  {id:5,name:"Dani Carvajal",pos:["LD","CAD"],role:"Veterano",value:4,wage:9,age:34,rating:82,potential:82,status:"available"},
+  {id:6,name:"Marc Cucurella",pos:["LI","CAI","MI"],role:"Fichaje / titular",value:50,wage:10,age:27,rating:84,potential:85,status:"available"},
+  {id:7,name:"Álvaro Carreras",pos:["LI","CAI"],role:"Fichaje / competencia",value:50,wage:5,age:23,rating:80,potential:87,status:"available"},
+  {id:8,name:"Fran García",pos:["LI","CAI"],role:"Rotación",value:10,wage:3,age:26,rating:77,potential:80,status:"available"},
+  {id:9,name:"Ferland Mendy",pos:["LI","CAI"],role:"Rotación / posible salida",value:4,wage:8,age:31,rating:78,potential:78,status:"available"},
+
+  {id:10,name:"Dean Huijsen",pos:["DFC"],role:"Titular futuro",value:60,wage:6,age:21,rating:81,potential:90,status:"available"},
+  {id:11,name:"Ibrahima Konaté",pos:["DFC"],role:"Fichaje / titular",value:45,wage:11,age:27,rating:85,potential:87,status:"available"},
+  {id:12,name:"Éder Militão",pos:["DFC","LD"],role:"Titular/rotación",value:20,wage:10,age:28,rating:82,potential:84,status:"available"},
+  {id:13,name:"Raúl Asencio",pos:["DFC"],role:"Promesa",value:20,wage:2,age:23,rating:78,potential:86,status:"available"},
+  {id:14,name:"Antonio Rüdiger",pos:["DFC"],role:"Veterano",value:6,wage:11,age:33,rating:84,potential:84,status:"available"},
+  {id:15,name:"David Alaba",pos:["DFC","LI","MCD"],role:"Veterano / rotación",value:3,wage:12,age:33,rating:79,potential:79,status:"available"},
+
+  {id:16,name:"Aurélien Tchouaméni",pos:["MCD","MC","DFC"],role:"Titular",value:70,wage:9,age:26,rating:86,potential:89,status:"available"},
+  {id:17,name:"Federico Valverde",pos:["MC","MD","LD"],role:"Titular",value:90,wage:10,age:27,rating:88,potential:89,status:"available"},
+  {id:18,name:"Eduardo Camavinga",pos:["MC","MCD","LI"],role:"Titular/rotación",value:50,wage:8,age:23,rating:84,potential:90,status:"available"},
+  {id:19,name:"Bernardo Silva",pos:["MCO","MC","ED"],role:"Fichaje / veterano creativo",value:22,wage:16,age:31,rating:86,potential:86,status:"available"},
+  {id:20,name:"Jude Bellingham",pos:["MCO","MC"],role:"Estrella",value:130,wage:15,age:22,rating:90,potential:94,status:"available"},
+  {id:21,name:"Arda Güler",pos:["MCO","MC","ED"],role:"Talento",value:90,wage:4,age:21,rating:83,potential:92,status:"available"},
+  {id:22,name:"Dani Ceballos",pos:["MC"],role:"Rotación",value:7,wage:5,age:29,rating:77,potential:77,status:"available"},
+  {id:23,name:"Thiago Pitarch",pos:["MC","MCO"],role:"Canterano",value:20,wage:1,age:18,rating:70,potential:85,status:"available"},
+  {id:24,name:"Jorge Cestero",pos:["MC","MCD"],role:"Canterano",value:7.5,wage:1,age:20,rating:68,potential:80,status:"available"},
+  {id:25,name:"Manuel Ángel",pos:["MC","MCO"],role:"Canterano",value:5,wage:1,age:22,rating:68,potential:79,status:"available"},
+  {id:26,name:"César Palacios",pos:["MCO","MC"],role:"Canterano",value:7.5,wage:1,age:21,rating:69,potential:82,status:"available"},
+  {id:27,name:"Brahim Díaz",pos:["MCO","ED","EI"],role:"Rotación ofensiva",value:35,wage:6,age:26,rating:82,potential:84,status:"available"},
+
+  {id:28,name:"Vinícius Jr.",pos:["EI","DC"],role:"Estrella",value:140,wage:20,age:25,rating:91,potential:93,status:"available"},
+  {id:29,name:"Kylian Mbappé",pos:["DC","EI"],role:"Estrella",value:180,wage:30,age:27,rating:92,potential:93,status:"available"},
+  {id:30,name:"Rodrygo",pos:["ED","EI","DC"],role:"Titular/rotación",value:45,wage:12,age:25,rating:84,potential:87,status:"available"},
+  {id:31,name:"Franco Mastantuono",pos:["ED","MCO"],role:"Promesa",value:45,wage:3,age:18,rating:77,potential:91,status:"available"},
+  {id:32,name:"Gonzalo García",pos:["DC"],role:"Canterano / rotación",value:30,wage:1,age:22,rating:76,potential:84,status:"available"},
+  {id:33,name:"Endrick",pos:["DC"],role:"Promesa",value:35,wage:4,age:19,rating:77,potential:91,status:"available"}
 ];
 
-const playerPhotoMap = {"Thibaut Courtois": "https://img.a.transfermarkt.technology/portrait/medium/108390-1717280733.jpg?lm=1", "Andriy Lunin": "https://img.a.transfermarkt.technology/portrait/medium/404839-1701294131.jpg?lm=1", "Fran González": "https://img.a.transfermarkt.technology/portrait/medium/1055220-1704358404.jpg?lm=1", "Trent Alexander-Arnold": "https://img.a.transfermarkt.technology/portrait/medium/314353-1701680958.jpg?lm=1", "Dani Carvajal": "https://img.a.transfermarkt.technology/portrait/medium/138927-1721026790.jpg?lm=1", "Éder Militão": "https://img.a.transfermarkt.technology/portrait/medium/401530-1719653438.jpg?lm=1", "Antonio Rüdiger": "https://img.a.transfermarkt.technology/portrait/medium/86202-1684484602.jpg?lm=1", "David Alaba": "https://img.a.transfermarkt.technology/portrait/medium/59016-1684921582.jpeg?lm=1", "Raúl Asencio": "https://img.a.transfermarkt.technology/portrait/medium/935245-1731168094.jpg?lm=1", "Dean Huijsen": "https://img.a.transfermarkt.technology/portrait/medium/890290-1750251451.jpg?lm=1", "Ferland Mendy": "https://img.a.transfermarkt.technology/portrait/medium/291417-1701294025.jpg?lm=1", "Fran García": "https://img.a.transfermarkt.technology/portrait/medium/341264-1688119965.jpg?lm=1", "Eduardo Camavinga": "https://img.a.transfermarkt.technology/portrait/medium/640428-1668500874.jpg?lm=1", "Aurélien Tchouaméni": "https://img.a.transfermarkt.technology/portrait/medium/413112-1668500754.jpg?lm=1", "Federico Valverde": "https://img.a.transfermarkt.technology/portrait/medium/369081-1731018042.jpg?lm=1", "Jude Bellingham": "https://img.a.transfermarkt.technology/portrait/medium/581678-1748102891.jpg?lm=1", "Dani Ceballos": "https://img.a.transfermarkt.technology/portrait/medium/319745-1723666162.jpg?lm=1", "Arda Güler": "https://img.a.transfermarkt.technology/portrait/medium/861410-1699472585.jpg?lm=1", "Brahim Díaz": "https://img.a.transfermarkt.technology/portrait/medium/314678-1744193327.jpg?lm=1", "Vinícius Jr.": "https://img.a.transfermarkt.technology/portrait/medium/371998-1761575144.jpg?lm=1", "Kylian Mbappé": "https://img.a.transfermarkt.technology/portrait/medium/342229-1682683695.jpg?lm=1", "Rodrygo": "https://img.a.transfermarkt.technology/portrait/medium/412363-1763041611.jpg?lm=1", "Gonzalo García": "https://img.a.transfermarkt.technology/portrait/medium/935230-1780664637.jpg?lm=1", "Franco Mastantuono": "https://img.a.transfermarkt.technology/portrait/medium/1057316-1755702696.jpg?lm=1"};
+const playerPhotoMap = {
+  "Thibaut Courtois": "https://img.a.transfermarkt.technology/portrait/medium/108390-1717280733.jpg?lm=1",
+  "Andriy Lunin": "https://img.a.transfermarkt.technology/portrait/medium/404839-1701294131.jpg?lm=1",
+  "Fran González": "https://img.a.transfermarkt.technology/portrait/medium/1055220-1704358404.jpg?lm=1",
+  "Trent Alexander-Arnold": "https://img.a.transfermarkt.technology/portrait/medium/314353-1701680958.jpg?lm=1",
+  "Dani Carvajal": "https://img.a.transfermarkt.technology/portrait/medium/138927-1721026790.jpg?lm=1",
+  "Marc Cucurella": "https://img.a.transfermarkt.technology/portrait/big/284857-1765185117.jpg?lm=1",
+  "Éder Militão": "https://img.a.transfermarkt.technology/portrait/medium/401530-1719653438.jpg?lm=1",
+  "Antonio Rüdiger": "https://img.a.transfermarkt.technology/portrait/medium/86202-1684484602.jpg?lm=1",
+  "David Alaba": "https://img.a.transfermarkt.technology/portrait/medium/59016-1684921582.jpeg?lm=1",
+  "Raúl Asencio": "https://img.a.transfermarkt.technology/portrait/medium/935245-1731168094.jpg?lm=1",
+  "Dean Huijsen": "https://img.a.transfermarkt.technology/portrait/medium/890290-1750251451.jpg?lm=1",
+  "Ibrahima Konaté": "https://img.a.transfermarkt.technology/portrait/big/357119-1669190550.jpg?lm=1",
+  "Ferland Mendy": "https://img.a.transfermarkt.technology/portrait/medium/291417-1701294025.jpg?lm=1",
+  "Fran García": "https://img.a.transfermarkt.technology/portrait/medium/341264-1688119965.jpg?lm=1",
+  "Eduardo Camavinga": "https://img.a.transfermarkt.technology/portrait/medium/640428-1668500874.jpg?lm=1",
+  "Aurélien Tchouaméni": "https://img.a.transfermarkt.technology/portrait/medium/413112-1668500754.jpg?lm=1",
+  "Federico Valverde": "https://img.a.transfermarkt.technology/portrait/medium/369081-1731018042.jpg?lm=1",
+  "Bernardo Silva": "https://img.a.transfermarkt.technology/portrait/big/241641-1684311533.jpg?lm=1",
+  "Jude Bellingham": "https://img.a.transfermarkt.technology/portrait/medium/581678-1748102891.jpg?lm=1",
+  "Dani Ceballos": "https://img.a.transfermarkt.technology/portrait/medium/319745-1723666162.jpg?lm=1",
+  "Arda Güler": "https://img.a.transfermarkt.technology/portrait/medium/861410-1699472585.jpg?lm=1",
+  "Brahim Díaz": "https://img.a.transfermarkt.technology/portrait/medium/314678-1744193327.jpg?lm=1",
+  "Vinícius Jr.": "https://img.a.transfermarkt.technology/portrait/medium/371998-1761575144.jpg?lm=1",
+  "Kylian Mbappé": "https://img.a.transfermarkt.technology/portrait/medium/342229-1682683695.jpg?lm=1",
+  "Rodrygo": "https://img.a.transfermarkt.technology/portrait/medium/412363-1763041611.jpg?lm=1",
+  "Gonzalo García": "https://img.a.transfermarkt.technology/portrait/medium/935230-1780664637.jpg?lm=1",
+  "Franco Mastantuono": "https://img.a.transfermarkt.technology/portrait/medium/1057316-1755702696.jpg?lm=1"
+};
 basePlayers.forEach(p => { if (playerPhotoMap[p.name]) p.photo = playerPhotoMap[p.name]; });
 
 const suggestedTargets = [
@@ -70,8 +109,8 @@ function fallbackPhotoFor(p){
   const initials = String(p?.name || "RM").split(" ").filter(Boolean).slice(0,2).map(x=>x[0]).join("").toUpperCase();
   return `data:image/svg+xml;utf8,${encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ffffff"/><stop offset=".55" stop-color="#eee9dc"/><stop offset="1" stop-color="#b99a52"/></linearGradient></defs><rect width="160" height="160" rx="34" fill="url(#g)"/><circle cx="80" cy="58" r="34" fill="#101c38" opacity=".92"/><path d="M28 145c9-39 29-58 52-58s43 19 52 58" fill="#101c38" opacity=".92"/><text x="80" y="148" text-anchor="middle" font-family="Arial" font-size="28" font-weight="800" fill="#b99a52">${initials}</text></svg>`)}`;
 }
-const storageKey = "madrid-president-simulator-v4-monetization";
-const dataVersion = "21/06/2026";
+const storageKey = "madrid-president-simulator-v5-current-squad";
+const dataVersion = "21/06/2026 · plantilla revisada con Real Madrid oficial + Transfermarkt";
 const sources = {
   transfermarktSquad: "https://www.transfermarkt.com/real-madrid/kader/verein/418",
   transfermarktRumours: "https://www.transfermarkt.com/real-madrid/geruechte/verein/418",
@@ -79,15 +118,13 @@ const sources = {
 };
 
 const rumourTargets = [
-  {name:"Riccardo Calafiori",club:"Arsenal",pos:["DFC","LI"],age:24,value:45,wage:9,rating:84,potential:88,tier:"rumor",reliability:"Rumor",source:"Managing Madrid",note:"Central zurdo/lateral. Perfil de defensor moderno para reforzar el lado izquierdo de la zaga."},
-  {name:"Nico Schlotterbeck",club:"Borussia Dortmund",pos:["DFC"],age:26,value:40,wage:8,rating:84,potential:86,tier:"rumor",reliability:"Rumor",source:"Managing Madrid",note:"Central zurdo con salida de balón. Encaja si quieres reforzar la defensa."},
-  {name:"Joško Gvardiol",club:"Manchester City",pos:["DFC","LI"],age:24,value:75,wage:14,rating:86,potential:89,tier:"rumor",reliability:"Rumor difícil",source:"Managing Madrid",note:"Operación muy cara y complicada, pero encaja como defensa top polivalente."},
-  {name:"Iván Fresneda",club:"Sporting CP",pos:["LD","CAD"],age:21,value:15,wage:3,rating:77,potential:84,tier:"rumor",reliability:"Rumor",source:"Transfermarkt rumores",note:"Lateral derecho joven. Opción de rotación/proyecto."},
-  {name:"Víctor Muñoz",club:"CA Osasuna",pos:["EI","ED"],age:22,value:30,wage:4,rating:79,potential:85,tier:"rumor",reliability:"Rumor",source:"Transfermarkt rumores",note:"Extremo español. Posible refuerzo de rotación ofensiva."},
+  {name:"Denzel Dumfries",club:"Inter de Milán",pos:["LD","CAD"],age:30,value:25,wage:8,rating:83,potential:83,tier:"rumor",reliability:"Rumor/posible objetivo",source:"Prensa / mercado",note:"Lateral derecho físico. Encaja si se busca competencia para Trent y Carvajal."},
+  {name:"Rodri",club:"Manchester City",pos:["MCD","MC"],age:30,value:100,wage:22,rating:91,potential:91,tier:"rumor",reliability:"Muy difícil",source:"Prensa",note:"Pivote élite. Sería una inversión enorme y muy complicada."},
+  {name:"Erling Haaland",club:"Manchester City",pos:["DC"],age:25,value:180,wage:28,rating:92,potential:93,tier:"rumor",reliability:"Rumor débil/galáctico",source:"Rumores recurrentes",note:"Nombre galáctico. Solo recomendable en modo inversión brutal."},
   {name:"João Neves",club:"PSG",pos:["MC","MCD"],age:21,value:80,wage:9,rating:84,potential:91,tier:"rumor",reliability:"Rumor/objetivo",source:"Transfermarkt rumores",note:"Mediocentro joven de mucho potencial. Muy caro y complicado."},
-  {name:"Ibrahima Konaté",club:"Liverpool",pos:["DFC"],age:27,value:55,wage:11,rating:85,potential:87,tier:"rumor",reliability:"Posible objetivo",source:"SI / prensa",note:"Central potente para elevar la competencia defensiva."},
-  {name:"Rodri",club:"Manchester City",pos:["MCD","MC"],age:30,value:100,wage:22,rating:91,potential:91,tier:"rumor",reliability:"Muy difícil",source:"Reuters / prensa",note:"Pivote élite. Sería una inversión enorme y políticamente complicada."},
-  {name:"Erling Haaland",club:"Manchester City",pos:["DC"],age:25,value:180,wage:28,rating:92,potential:93,tier:"rumor",reliability:"Desmentido/rumor débil",source:"Reuters",note:"Nombre galáctico, pero informaciones recientes han sido desmentidas por el entorno del City."}
+  {name:"William Saliba",club:"Arsenal",pos:["DFC"],age:25,value:90,wage:14,rating:88,potential:91,tier:"rumor",reliability:"Muy difícil",source:"Rumores de mercado",note:"Central top, pero tras Konaté y Huijsen solo tendría sentido si vendes defensas."},
+  {name:"Nico Williams",club:"Athletic Club",pos:["EI","ED"],age:23,value:70,wage:10,rating:84,potential:89,tier:"rumor",reliability:"Opción de mercado",source:"Rumores recurrentes",note:"Extremo vertical. Interesante si vendes a Rodrygo o necesitas profundidad de banda."},
+  {name:"Miguel Gutiérrez",club:"Girona",pos:["LI","CAI"],age:24,value:35,wage:5,rating:81,potential:85,tier:"rumor",reliability:"Poco necesario ahora",source:"Rumores anteriores",note:"Con Cucurella, Carreras, Fran y Mendy, el lateral izquierdo ya está muy poblado."}
 ];
 
 let state = {
