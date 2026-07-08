@@ -7,43 +7,535 @@ const formations = {
 };
 
 const basePlayers = [
-  {id:1,name:"Thibaut Courtois",pos:["POR"],role:"Titular",value:15,wage:15,age:34,rating:87,potential:87,status:"available"},
-  {id:2,name:"Andriy Lunin",pos:["POR"],role:"Rotación",value:12,wage:4,age:27,rating:80,potential:83,status:"available"},
-  {id:3,name:"Fran González",pos:["POR"],role:"Canterano",value:3,wage:1,age:20,rating:66,potential:78,status:"available"},
-
-  {id:4,name:"Trent Alexander-Arnold",pos:["LD","CAD","MC"],role:"Titular",value:60,wage:15,age:27,rating:86,potential:87,status:"available"},
-  {id:5,name:"Dani Carvajal",pos:["LD","CAD"],role:"Veterano",value:4,wage:9,age:34,rating:82,potential:82,status:"available"},
-  {id:6,name:"Marc Cucurella",pos:["LI","CAI","MI"],role:"Fichaje / titular",value:50,wage:10,age:27,rating:84,potential:85,status:"available"},
-  {id:7,name:"Álvaro Carreras",pos:["LI","CAI"],role:"Fichaje / competencia",value:50,wage:5,age:23,rating:80,potential:87,status:"available"},
-  {id:8,name:"Fran García",pos:["LI","CAI"],role:"Rotación",value:10,wage:3,age:26,rating:77,potential:80,status:"available"},
-  {id:9,name:"Ferland Mendy",pos:["LI","CAI"],role:"Rotación / posible salida",value:4,wage:8,age:31,rating:78,potential:78,status:"available"},
-
-  {id:10,name:"Dean Huijsen",pos:["DFC"],role:"Titular futuro",value:60,wage:6,age:21,rating:81,potential:90,status:"available"},
-  {id:11,name:"Ibrahima Konaté",pos:["DFC"],role:"Fichaje / titular",value:45,wage:11,age:27,rating:85,potential:87,status:"available"},
-  {id:12,name:"Éder Militão",pos:["DFC","LD"],role:"Titular/rotación",value:20,wage:10,age:28,rating:82,potential:84,status:"available"},
-  {id:13,name:"Raúl Asencio",pos:["DFC"],role:"Promesa",value:20,wage:2,age:23,rating:78,potential:86,status:"available"},
-  {id:14,name:"Antonio Rüdiger",pos:["DFC"],role:"Veterano",value:6,wage:11,age:33,rating:84,potential:84,status:"available"},
-  {id:15,name:"David Alaba",pos:["DFC","LI","MCD"],role:"Veterano / rotación",value:3,wage:12,age:33,rating:79,potential:79,status:"available"},
-
-  {id:16,name:"Aurélien Tchouaméni",pos:["MCD","MC","DFC"],role:"Titular",value:70,wage:9,age:26,rating:86,potential:89,status:"available"},
-  {id:17,name:"Federico Valverde",pos:["MC","MD","LD"],role:"Titular",value:90,wage:10,age:27,rating:88,potential:89,status:"available"},
-  {id:18,name:"Eduardo Camavinga",pos:["MC","MCD","LI"],role:"Titular/rotación",value:50,wage:8,age:23,rating:84,potential:90,status:"available"},
-  {id:19,name:"Bernardo Silva",pos:["MCO","MC","ED"],role:"Fichaje / veterano creativo",value:22,wage:16,age:31,rating:86,potential:86,status:"available"},
-  {id:20,name:"Jude Bellingham",pos:["MCO","MC"],role:"Estrella",value:130,wage:15,age:22,rating:90,potential:94,status:"available"},
-  {id:21,name:"Arda Güler",pos:["MCO","MC","ED"],role:"Talento",value:90,wage:4,age:21,rating:83,potential:92,status:"available"},
-  {id:22,name:"Dani Ceballos",pos:["MC"],role:"Rotación",value:7,wage:5,age:29,rating:77,potential:77,status:"available"},
-  {id:23,name:"Thiago Pitarch",pos:["MC","MCO"],role:"Canterano",value:20,wage:1,age:18,rating:70,potential:85,status:"available"},
-  {id:24,name:"Jorge Cestero",pos:["MC","MCD"],role:"Canterano",value:7.5,wage:1,age:20,rating:68,potential:80,status:"available"},
-  {id:25,name:"Manuel Ángel",pos:["MC","MCO"],role:"Canterano",value:5,wage:1,age:22,rating:68,potential:79,status:"available"},
-  {id:26,name:"César Palacios",pos:["MCO","MC"],role:"Canterano",value:7.5,wage:1,age:21,rating:69,potential:82,status:"available"},
-  {id:27,name:"Brahim Díaz",pos:["MCO","ED","EI"],role:"Rotación ofensiva",value:35,wage:6,age:26,rating:82,potential:84,status:"available"},
-
-  {id:28,name:"Vinícius Jr.",pos:["EI","DC"],role:"Estrella",value:140,wage:20,age:25,rating:91,potential:93,status:"available"},
-  {id:29,name:"Kylian Mbappé",pos:["DC","EI"],role:"Estrella",value:180,wage:30,age:27,rating:92,potential:93,status:"available"},
-  {id:30,name:"Rodrygo",pos:["ED","EI","DC"],role:"Titular/rotación",value:45,wage:12,age:25,rating:84,potential:87,status:"available"},
-  {id:31,name:"Franco Mastantuono",pos:["ED","MCO"],role:"Promesa",value:45,wage:3,age:18,rating:77,potential:91,status:"available"},
-  {id:32,name:"Gonzalo García",pos:["DC"],role:"Canterano / rotación",value:30,wage:1,age:22,rating:76,potential:84,status:"available"},
-  {id:33,name:"Endrick",pos:["DC"],role:"Promesa",value:35,wage:4,age:19,rating:77,potential:91,status:"available"}
+  {
+    "id": 1,
+    "name": "Thibaut Courtois",
+    "pos": [
+      "POR"
+    ],
+    "role": "Titular",
+    "value": 15,
+    "wage": 15,
+    "age": 34,
+    "rating": 87,
+    "potential": 87,
+    "status": "available"
+  },
+  {
+    "id": 2,
+    "name": "Andriy Lunin",
+    "pos": [
+      "POR"
+    ],
+    "role": "Rotación",
+    "value": 12,
+    "wage": 4,
+    "age": 27,
+    "rating": 80,
+    "potential": 83,
+    "status": "available"
+  },
+  {
+    "id": 3,
+    "name": "Fran González",
+    "pos": [
+      "POR"
+    ],
+    "role": "Canterano / Castilla",
+    "value": 3,
+    "wage": 1,
+    "age": 21,
+    "rating": 66,
+    "potential": 78,
+    "status": "available"
+  },
+  {
+    "id": 4,
+    "name": "Trent Alexander-Arnold",
+    "pos": [
+      "LD",
+      "CAD",
+      "MC"
+    ],
+    "role": "Titular",
+    "value": 60,
+    "wage": 15,
+    "age": 27,
+    "rating": 86,
+    "potential": 87,
+    "status": "available"
+  },
+  {
+    "id": 5,
+    "name": "Denzel Dumfries",
+    "pos": [
+      "LD",
+      "CAD"
+    ],
+    "role": "Fichaje / carrilero físico",
+    "value": 20,
+    "wage": 8,
+    "age": 30,
+    "rating": 83,
+    "potential": 83,
+    "status": "available"
+  },
+  {
+    "id": 6,
+    "name": "David Jiménez",
+    "pos": [
+      "LD",
+      "CAD"
+    ],
+    "role": "Canterano / Castilla",
+    "value": 1.5,
+    "wage": 1,
+    "age": 22,
+    "rating": 68,
+    "potential": 79,
+    "status": "available"
+  },
+  {
+    "id": 7,
+    "name": "Marc Cucurella",
+    "pos": [
+      "LI",
+      "CAI",
+      "MI"
+    ],
+    "role": "Fichaje / titular",
+    "value": 55,
+    "wage": 10,
+    "age": 27,
+    "rating": 84,
+    "potential": 85,
+    "status": "available"
+  },
+  {
+    "id": 8,
+    "name": "Álvaro Carreras",
+    "pos": [
+      "LI",
+      "CAI"
+    ],
+    "role": "Fichaje / competencia",
+    "value": 50,
+    "wage": 5,
+    "age": 23,
+    "rating": 80,
+    "potential": 87,
+    "status": "available"
+  },
+  {
+    "id": 9,
+    "name": "Ferland Mendy",
+    "pos": [
+      "LI",
+      "CAI"
+    ],
+    "role": "Rotación / posible salida",
+    "value": 4,
+    "wage": 8,
+    "age": 31,
+    "rating": 78,
+    "potential": 78,
+    "status": "available"
+  },
+  {
+    "id": 10,
+    "name": "Dean Huijsen",
+    "pos": [
+      "DFC"
+    ],
+    "role": "Titular futuro",
+    "value": 60,
+    "wage": 6,
+    "age": 21,
+    "rating": 81,
+    "potential": 90,
+    "status": "available"
+  },
+  {
+    "id": 11,
+    "name": "Ibrahima Konaté",
+    "pos": [
+      "DFC"
+    ],
+    "role": "Fichaje / titular",
+    "value": 45,
+    "wage": 11,
+    "age": 27,
+    "rating": 85,
+    "potential": 87,
+    "status": "available"
+  },
+  {
+    "id": 12,
+    "name": "Éder Militão",
+    "pos": [
+      "DFC",
+      "LD"
+    ],
+    "role": "Titular/rotación",
+    "value": 20,
+    "wage": 10,
+    "age": 28,
+    "rating": 82,
+    "potential": 84,
+    "status": "available"
+  },
+  {
+    "id": 13,
+    "name": "Raúl Asencio",
+    "pos": [
+      "DFC"
+    ],
+    "role": "Promesa",
+    "value": 20,
+    "wage": 2,
+    "age": 23,
+    "rating": 78,
+    "potential": 86,
+    "status": "available"
+  },
+  {
+    "id": 14,
+    "name": "Antonio Rüdiger",
+    "pos": [
+      "DFC"
+    ],
+    "role": "Veterano",
+    "value": 6,
+    "wage": 11,
+    "age": 33,
+    "rating": 84,
+    "potential": 84,
+    "status": "available"
+  },
+  {
+    "id": 15,
+    "name": "Aurélien Tchouaméni",
+    "pos": [
+      "MCD",
+      "MC",
+      "DFC"
+    ],
+    "role": "Titular",
+    "value": 70,
+    "wage": 9,
+    "age": 26,
+    "rating": 86,
+    "potential": 89,
+    "status": "available"
+  },
+  {
+    "id": 16,
+    "name": "Federico Valverde",
+    "pos": [
+      "MC",
+      "MD",
+      "LD"
+    ],
+    "role": "Titular",
+    "value": 90,
+    "wage": 10,
+    "age": 27,
+    "rating": 88,
+    "potential": 89,
+    "status": "available"
+  },
+  {
+    "id": 17,
+    "name": "Eduardo Camavinga",
+    "pos": [
+      "MC",
+      "MCD",
+      "LI"
+    ],
+    "role": "Titular/rotación",
+    "value": 50,
+    "wage": 8,
+    "age": 23,
+    "rating": 84,
+    "potential": 90,
+    "status": "available"
+  },
+  {
+    "id": 18,
+    "name": "Bernardo Silva",
+    "pos": [
+      "MCO",
+      "MC",
+      "ED"
+    ],
+    "role": "Fichaje / veterano creativo",
+    "value": 22,
+    "wage": 16,
+    "age": 31,
+    "rating": 86,
+    "potential": 86,
+    "status": "available"
+  },
+  {
+    "id": 19,
+    "name": "Jude Bellingham",
+    "pos": [
+      "MCO",
+      "MC"
+    ],
+    "role": "Estrella",
+    "value": 130,
+    "wage": 15,
+    "age": 22,
+    "rating": 90,
+    "potential": 94,
+    "status": "available"
+  },
+  {
+    "id": 20,
+    "name": "Arda Güler",
+    "pos": [
+      "MCO",
+      "MC",
+      "ED"
+    ],
+    "role": "Talento",
+    "value": 90,
+    "wage": 4,
+    "age": 21,
+    "rating": 83,
+    "potential": 92,
+    "status": "available"
+  },
+  {
+    "id": 21,
+    "name": "Brahim Díaz",
+    "pos": [
+      "MCO",
+      "ED",
+      "EI"
+    ],
+    "role": "Rotación ofensiva",
+    "value": 35,
+    "wage": 6,
+    "age": 26,
+    "rating": 82,
+    "potential": 84,
+    "status": "available"
+  },
+  {
+    "id": 22,
+    "name": "César Palacios",
+    "pos": [
+      "MCO",
+      "MC"
+    ],
+    "role": "Canterano / Castilla",
+    "value": 7.5,
+    "wage": 1,
+    "age": 21,
+    "rating": 69,
+    "potential": 82,
+    "status": "available"
+  },
+  {
+    "id": 23,
+    "name": "Manuel Ángel",
+    "pos": [
+      "MC",
+      "MCO"
+    ],
+    "role": "Canterano / Castilla",
+    "value": 5,
+    "wage": 1,
+    "age": 22,
+    "rating": 68,
+    "potential": 79,
+    "status": "available"
+  },
+  {
+    "id": 24,
+    "name": "Thiago Pitarch",
+    "pos": [
+      "MC",
+      "MCO"
+    ],
+    "role": "Canterano / Castilla",
+    "value": 2.5,
+    "wage": 1,
+    "age": 18,
+    "rating": 70,
+    "potential": 85,
+    "status": "available"
+  },
+  {
+    "id": 25,
+    "name": "Jorge Cestero",
+    "pos": [
+      "MC",
+      "MCD"
+    ],
+    "role": "Canterano / Castilla",
+    "value": 1.5,
+    "wage": 1,
+    "age": 20,
+    "rating": 68,
+    "potential": 80,
+    "status": "available"
+  },
+  {
+    "id": 26,
+    "name": "Vinícius Jr.",
+    "pos": [
+      "EI",
+      "DC"
+    ],
+    "role": "Estrella",
+    "value": 140,
+    "wage": 20,
+    "age": 25,
+    "rating": 91,
+    "potential": 93,
+    "status": "available"
+  },
+  {
+    "id": 27,
+    "name": "Kylian Mbappé",
+    "pos": [
+      "DC",
+      "EI"
+    ],
+    "role": "Estrella",
+    "value": 180,
+    "wage": 30,
+    "age": 27,
+    "rating": 92,
+    "potential": 93,
+    "status": "available"
+  },
+  {
+    "id": 28,
+    "name": "Rodrygo",
+    "pos": [
+      "ED",
+      "EI",
+      "DC"
+    ],
+    "role": "Titular/rotación",
+    "value": 45,
+    "wage": 12,
+    "age": 25,
+    "rating": 84,
+    "potential": 87,
+    "status": "available"
+  },
+  {
+    "id": 29,
+    "name": "Franco Mastantuono",
+    "pos": [
+      "ED",
+      "MCO"
+    ],
+    "role": "Promesa",
+    "value": 45,
+    "wage": 3,
+    "age": 18,
+    "rating": 77,
+    "potential": 91,
+    "status": "available"
+  },
+  {
+    "id": 30,
+    "name": "Gonzalo García",
+    "pos": [
+      "DC"
+    ],
+    "role": "Canterano / rotación",
+    "value": 30,
+    "wage": 1,
+    "age": 22,
+    "rating": 76,
+    "potential": 84,
+    "status": "available"
+  },
+  {
+    "id": 31,
+    "name": "Endrick",
+    "pos": [
+      "DC"
+    ],
+    "role": "Promesa",
+    "value": 35,
+    "wage": 4,
+    "age": 19,
+    "rating": 77,
+    "potential": 91,
+    "status": "available"
+  },
+  {
+    "id": 90,
+    "name": "Dani Carvajal",
+    "pos": [
+      "LD",
+      "CAD"
+    ],
+    "role": "Salida reciente / histórico",
+    "value": 4,
+    "wage": 9,
+    "age": 34,
+    "rating": 82,
+    "potential": 82,
+    "status": "sold",
+    "soldFee": 0
+  },
+  {
+    "id": 91,
+    "name": "Dani Ceballos",
+    "pos": [
+      "MC"
+    ],
+    "role": "Salida reciente",
+    "value": 7,
+    "wage": 5,
+    "age": 29,
+    "rating": 77,
+    "potential": 77,
+    "status": "sold",
+    "soldFee": 0
+  },
+  {
+    "id": 92,
+    "name": "David Alaba",
+    "pos": [
+      "DFC",
+      "LI",
+      "MCD"
+    ],
+    "role": "Salida reciente",
+    "value": 3,
+    "wage": 12,
+    "age": 34,
+    "rating": 79,
+    "potential": 79,
+    "status": "sold",
+    "soldFee": 0
+  },
+  {
+    "id": 93,
+    "name": "Fran García",
+    "pos": [
+      "LI",
+      "CAI"
+    ],
+    "role": "Vendido a Betis",
+    "value": 10,
+    "wage": 3,
+    "age": 26,
+    "rating": 77,
+    "potential": 80,
+    "status": "sold",
+    "soldFee": 4
+  }
 ];
 
 const playerPhotoMap = {
@@ -75,27 +567,1123 @@ const playerPhotoMap = {
   "Gonzalo García": "https://img.a.transfermarkt.technology/portrait/medium/935230-1780664637.jpg?lm=1",
   "Franco Mastantuono": "https://img.a.transfermarkt.technology/portrait/medium/1057316-1755702696.jpg?lm=1"
 };
+
+Object.assign(playerPhotoMap, {
+  "Denzel Dumfries": "https://img.a.transfermarkt.technology/portrait/medium/321528-1694597685.jpg?lm=1",
+  "Álvaro Carreras": "https://img.a.transfermarkt.technology/portrait/medium/811779-1706534345.jpg?lm=1",
+  "Endrick": "https://img.a.transfermarkt.technology/portrait/medium/971570-1716398461.jpg?lm=1"
+});
 basePlayers.forEach(p => { if (playerPhotoMap[p.name]) p.photo = playerPhotoMap[p.name]; });
 
 const suggestedTargets = [
-  {name:"Erling Haaland",club:"Manchester City",pos:["DC"],age:25,value:180,wage:28,rating:92,potential:93,tier:"galactico",note:"Delantero total. Eleva el techo goleador, pero obliga a encajar a Mbappé/Vinícius."},
-  {name:"Florian Wirtz",club:"Bayern / Leverkusen",pos:["MCO","MC"],age:23,value:140,wage:18,rating:89,potential:93,tier:"galactico",note:"Creador diferencial entre líneas. Encaja si quieres más fútbol interior."},
-  {name:"Jamal Musiala",club:"Bayern",pos:["MCO","EI"],age:23,value:140,wage:18,rating:89,potential:93,tier:"galactico",note:"Talento generacional, ideal para un proyecto de posesión y desequilibrio."},
-  {name:"Rodri",club:"Manchester City",pos:["MCD","MC"],age:30,value:100,wage:22,rating:91,potential:91,tier:"top",note:"Pivote élite para controlar partidos grandes. Fichaje muy difícil."},
-  {name:"William Saliba",club:"Arsenal",pos:["DFC"],age:25,value:90,wage:14,rating:88,potential:91,tier:"top",note:"Central dominante para liderar la defensa muchos años."},
-  {name:"Achraf Hakimi",club:"PSG",pos:["LD","CAD"],age:27,value:65,wage:14,rating:86,potential:87,tier:"top",note:"Lateral muy ofensivo. Potencia el carril derecho."},
-  {name:"Alphonso Davies",club:"Bayern",pos:["LI","CAI"],age:25,value:70,wage:14,rating:85,potential:88,tier:"top",note:"Profundidad y velocidad para el lateral izquierdo."},
-  {name:"Nico Williams",club:"Athletic Club",pos:["EI","ED"],age:23,value:70,wage:10,rating:84,potential:89,tier:"top",note:"Extremo vertical. Buen recambio si vendes a Rodrygo o necesitas banda."},
-  {name:"Martín Zubimendi",club:"Arsenal / Real Sociedad",pos:["MCD","MC"],age:27,value:60,wage:10,rating:84,potential:86,tier:"top",note:"Pivote equilibrado, más realista que una megaestrella."},
-  {name:"Vitinha",club:"PSG",pos:["MC","MCD"],age:26,value:80,wage:12,rating:86,potential:88,tier:"top",note:"Control, presión y pase. Muy buen complemento para Bellingham/Valverde."},
-  {name:"Leny Yoro",club:"Manchester United",pos:["DFC"],age:20,value:55,wage:8,rating:80,potential:90,tier:"joven",note:"Central joven de alto potencial para proyecto a largo plazo."},
-  {name:"João Neves",club:"PSG",pos:["MC","MCD"],age:21,value:80,wage:9,rating:84,potential:91,tier:"joven",note:"Motor joven para muchos años. Encaja en proyecto de presión."},
-  {name:"Lamine Yamal",club:"Barcelona",pos:["ED"],age:18,value:180,wage:20,rating:88,potential:95,tier:"galactico",note:"Fichaje casi imposible, pero modo presidente permite soñar."},
-  {name:"Alejandro Balde",club:"Barcelona",pos:["LI","CAI"],age:22,value:50,wage:8,rating:82,potential:88,tier:"joven",note:"Lateral joven y profundo. Operación políticamente muy complicada."},
-  {name:"Micky van de Ven",club:"Tottenham",pos:["DFC","LI"],age:25,value:55,wage:8,rating:83,potential:87,tier:"top",note:"Central rapidísimo, útil si juegas con defensa adelantada."},
-  {name:"Álex Baena",club:"Atlético / Villarreal",pos:["MC","MCO","EI"],age:25,value:50,wage:7,rating:83,potential:86,tier:"barato",note:"Creatividad y balón parado a coste razonable."},
-  {name:"Miguel Gutiérrez",club:"Girona",pos:["LI","CAI"],age:24,value:35,wage:5,rating:81,potential:86,tier:"barato",note:"Opción conocida, buena salida de balón y precio asumible."},
-  {name:"Gregor Kobel",club:"Dortmund",pos:["POR"],age:28,value:40,wage:9,rating:85,potential:87,tier:"top",note:"Portero fiable si planificas relevo a medio plazo."}
+  {
+    "name": "Erling Haaland",
+    "club": "Manchester City",
+    "pos": [
+      "DC"
+    ],
+    "age": 25,
+    "value": 180,
+    "wage": 28,
+    "rating": 92,
+    "potential": 93,
+    "tier": "galactico",
+    "note": "Delantero total. Galáctico para modo inversión máxima."
+  },
+  {
+    "name": "Florian Wirtz",
+    "club": "Bayern / Leverkusen",
+    "pos": [
+      "MCO",
+      "MC"
+    ],
+    "age": 23,
+    "value": 140,
+    "wage": 18,
+    "rating": 89,
+    "potential": 93,
+    "tier": "galactico",
+    "note": "Creador diferencial entre líneas."
+  },
+  {
+    "name": "Jamal Musiala",
+    "club": "Bayern",
+    "pos": [
+      "MCO",
+      "EI"
+    ],
+    "age": 23,
+    "value": 140,
+    "wage": 18,
+    "rating": 89,
+    "potential": 93,
+    "tier": "galactico",
+    "note": "Talento generacional de regate y último pase."
+  },
+  {
+    "name": "Lamine Yamal",
+    "club": "Barcelona",
+    "pos": [
+      "ED"
+    ],
+    "age": 18,
+    "value": 180,
+    "wage": 20,
+    "rating": 88,
+    "potential": 95,
+    "tier": "galactico",
+    "note": "Fichaje casi imposible, pero perfecto para modo fantasía."
+  },
+  {
+    "name": "Rodri",
+    "club": "Manchester City",
+    "pos": [
+      "MCD",
+      "MC"
+    ],
+    "age": 30,
+    "value": 100,
+    "wage": 22,
+    "rating": 91,
+    "potential": 91,
+    "tier": "top",
+    "note": "Pivote élite para partidos grandes."
+  },
+  {
+    "name": "Vitinha",
+    "club": "PSG",
+    "pos": [
+      "MC",
+      "MCD"
+    ],
+    "age": 26,
+    "value": 80,
+    "wage": 12,
+    "rating": 86,
+    "potential": 88,
+    "tier": "top",
+    "note": "Control, presión y salida limpia."
+  },
+  {
+    "name": "João Neves",
+    "club": "PSG",
+    "pos": [
+      "MC",
+      "MCD"
+    ],
+    "age": 21,
+    "value": 80,
+    "wage": 9,
+    "rating": 84,
+    "potential": 91,
+    "tier": "joven",
+    "note": "Motor joven para muchos años."
+  },
+  {
+    "name": "Nicolò Barella",
+    "club": "Inter",
+    "pos": [
+      "MC",
+      "MCD"
+    ],
+    "age": 29,
+    "value": 70,
+    "wage": 12,
+    "rating": 86,
+    "potential": 86,
+    "tier": "top",
+    "note": "Interior competitivo y muy completo."
+  },
+  {
+    "name": "Enzo Fernández",
+    "club": "Chelsea",
+    "pos": [
+      "MC",
+      "MCD"
+    ],
+    "age": 25,
+    "value": 75,
+    "wage": 12,
+    "rating": 85,
+    "potential": 88,
+    "tier": "top",
+    "note": "Pase, salida y llegada desde segunda línea."
+  },
+  {
+    "name": "Alexis Mac Allister",
+    "club": "Liverpool",
+    "pos": [
+      "MC",
+      "MCD"
+    ],
+    "age": 27,
+    "value": 80,
+    "wage": 12,
+    "rating": 86,
+    "potential": 87,
+    "tier": "top",
+    "note": "Interior de mucho equilibrio."
+  },
+  {
+    "name": "Martín Zubimendi",
+    "club": "Arsenal / Real Sociedad",
+    "pos": [
+      "MCD",
+      "MC"
+    ],
+    "age": 27,
+    "value": 60,
+    "wage": 10,
+    "rating": 84,
+    "potential": 86,
+    "tier": "top",
+    "note": "Pivote más realista que un megafichaje."
+  },
+  {
+    "name": "Bruno Guimarães",
+    "club": "Newcastle",
+    "pos": [
+      "MC",
+      "MCD"
+    ],
+    "age": 28,
+    "value": 80,
+    "wage": 13,
+    "rating": 86,
+    "potential": 87,
+    "tier": "top",
+    "note": "Pivote/interior agresivo y técnico."
+  },
+  {
+    "name": "Ryan Gravenberch",
+    "club": "Liverpool",
+    "pos": [
+      "MC",
+      "MCD"
+    ],
+    "age": 24,
+    "value": 70,
+    "wage": 9,
+    "rating": 84,
+    "potential": 88,
+    "tier": "joven",
+    "note": "Físico y conducción para el medio."
+  },
+  {
+    "name": "Adam Wharton",
+    "club": "Crystal Palace",
+    "pos": [
+      "MCD",
+      "MC"
+    ],
+    "age": 22,
+    "value": 55,
+    "wage": 6,
+    "rating": 81,
+    "potential": 88,
+    "tier": "joven",
+    "note": "Pivote joven de alto techo."
+  },
+  {
+    "name": "Kobbie Mainoo",
+    "club": "Manchester United",
+    "pos": [
+      "MC",
+      "MCD"
+    ],
+    "age": 21,
+    "value": 55,
+    "wage": 6,
+    "rating": 81,
+    "potential": 88,
+    "tier": "joven",
+    "note": "Interior joven, técnico y con potencial."
+  },
+  {
+    "name": "Warren Zaïre-Emery",
+    "club": "PSG",
+    "pos": [
+      "MC",
+      "MCD"
+    ],
+    "age": 20,
+    "value": 60,
+    "wage": 8,
+    "rating": 82,
+    "potential": 90,
+    "tier": "joven",
+    "note": "Proyecto de centrocampista total."
+  },
+  {
+    "name": "Xavi Simons",
+    "club": "RB Leipzig / PSG",
+    "pos": [
+      "MCO",
+      "EI",
+      "ED"
+    ],
+    "age": 23,
+    "value": 70,
+    "wage": 10,
+    "rating": 84,
+    "potential": 89,
+    "tier": "top",
+    "note": "Mediapunta/extremo muy productivo."
+  },
+  {
+    "name": "Cole Palmer",
+    "club": "Chelsea",
+    "pos": [
+      "MCO",
+      "ED"
+    ],
+    "age": 24,
+    "value": 130,
+    "wage": 16,
+    "rating": 88,
+    "potential": 92,
+    "tier": "galactico",
+    "note": "Diferencial creativo, carísimo."
+  },
+  {
+    "name": "Phil Foden",
+    "club": "Manchester City",
+    "pos": [
+      "MCO",
+      "ED",
+      "MC"
+    ],
+    "age": 26,
+    "value": 110,
+    "wage": 18,
+    "rating": 88,
+    "potential": 90,
+    "tier": "galactico",
+    "note": "Técnica, gol y asociación."
+  },
+  {
+    "name": "Bukayo Saka",
+    "club": "Arsenal",
+    "pos": [
+      "ED",
+      "MD"
+    ],
+    "age": 24,
+    "value": 130,
+    "wage": 18,
+    "rating": 89,
+    "potential": 91,
+    "tier": "galactico",
+    "note": "Extremo derecho top mundial."
+  },
+  {
+    "name": "Nico Williams",
+    "club": "Athletic Club",
+    "pos": [
+      "EI",
+      "ED"
+    ],
+    "age": 23,
+    "value": 70,
+    "wage": 10,
+    "rating": 84,
+    "potential": 89,
+    "tier": "top",
+    "note": "Extremo vertical si vendes atacantes."
+  },
+  {
+    "name": "Khvicha Kvaratskhelia",
+    "club": "PSG / Napoli",
+    "pos": [
+      "EI",
+      "ED"
+    ],
+    "age": 25,
+    "value": 90,
+    "wage": 14,
+    "rating": 87,
+    "potential": 89,
+    "tier": "top",
+    "note": "Desequilibrio puro por izquierda."
+  },
+  {
+    "name": "Rafael Leão",
+    "club": "AC Milan",
+    "pos": [
+      "EI",
+      "DC"
+    ],
+    "age": 27,
+    "value": 75,
+    "wage": 13,
+    "rating": 85,
+    "potential": 87,
+    "tier": "top",
+    "note": "Potencia y ruptura al espacio."
+  },
+  {
+    "name": "Michael Olise",
+    "club": "Bayern",
+    "pos": [
+      "ED",
+      "MCO"
+    ],
+    "age": 24,
+    "value": 80,
+    "wage": 11,
+    "rating": 85,
+    "potential": 89,
+    "tier": "top",
+    "note": "Zurdo creativo para banda derecha."
+  },
+  {
+    "name": "Antonio Nusa",
+    "club": "RB Leipzig",
+    "pos": [
+      "EI",
+      "ED"
+    ],
+    "age": 21,
+    "value": 35,
+    "wage": 5,
+    "rating": 78,
+    "potential": 87,
+    "tier": "joven",
+    "note": "Extremo joven y explosivo."
+  },
+  {
+    "name": "Desiré Doué",
+    "club": "PSG",
+    "pos": [
+      "MCO",
+      "EI",
+      "ED"
+    ],
+    "age": 21,
+    "value": 60,
+    "wage": 8,
+    "rating": 82,
+    "potential": 90,
+    "tier": "joven",
+    "note": "Talento joven muy versátil."
+  },
+  {
+    "name": "Estevão",
+    "club": "Chelsea / Palmeiras",
+    "pos": [
+      "ED",
+      "MCO"
+    ],
+    "age": 19,
+    "value": 60,
+    "wage": 7,
+    "rating": 80,
+    "potential": 91,
+    "tier": "joven",
+    "note": "Extremo zurdo de enorme potencial."
+  },
+  {
+    "name": "Kenan Yıldız",
+    "club": "Juventus",
+    "pos": [
+      "EI",
+      "MCO"
+    ],
+    "age": 21,
+    "value": 55,
+    "wage": 6,
+    "rating": 81,
+    "potential": 89,
+    "tier": "joven",
+    "note": "Talento joven para banda o mediapunta."
+  },
+  {
+    "name": "Benjamin Šeško",
+    "club": "RB Leipzig / Arsenal",
+    "pos": [
+      "DC"
+    ],
+    "age": 23,
+    "value": 75,
+    "wage": 10,
+    "rating": 84,
+    "potential": 89,
+    "tier": "top",
+    "note": "Delantero joven de gran físico."
+  },
+  {
+    "name": "Viktor Gyökeres",
+    "club": "Sporting / Arsenal",
+    "pos": [
+      "DC"
+    ],
+    "age": 28,
+    "value": 75,
+    "wage": 12,
+    "rating": 86,
+    "potential": 86,
+    "tier": "top",
+    "note": "Gol inmediato, perfil de nueve potente."
+  },
+  {
+    "name": "Julián Álvarez",
+    "club": "Atlético de Madrid",
+    "pos": [
+      "DC",
+      "MCO"
+    ],
+    "age": 26,
+    "value": 90,
+    "wage": 13,
+    "rating": 87,
+    "potential": 89,
+    "tier": "top",
+    "note": "Delantero móvil y asociativo."
+  },
+  {
+    "name": "Lautaro Martínez",
+    "club": "Inter",
+    "pos": [
+      "DC"
+    ],
+    "age": 28,
+    "value": 95,
+    "wage": 16,
+    "rating": 88,
+    "potential": 88,
+    "tier": "top",
+    "note": "Nueve competitivo y goleador."
+  },
+  {
+    "name": "Victor Osimhen",
+    "club": "Galatasaray / Napoli",
+    "pos": [
+      "DC"
+    ],
+    "age": 27,
+    "value": 75,
+    "wage": 13,
+    "rating": 86,
+    "potential": 87,
+    "tier": "top",
+    "note": "Potencia, remate y profundidad."
+  },
+  {
+    "name": "Alexander Isak",
+    "club": "Newcastle",
+    "pos": [
+      "DC",
+      "EI"
+    ],
+    "age": 26,
+    "value": 110,
+    "wage": 15,
+    "rating": 88,
+    "potential": 90,
+    "tier": "galactico",
+    "note": "Delantero elegante, caro y diferencial."
+  },
+  {
+    "name": "Hugo Ekitiké",
+    "club": "Liverpool / Frankfurt",
+    "pos": [
+      "DC"
+    ],
+    "age": 24,
+    "value": 55,
+    "wage": 8,
+    "rating": 82,
+    "potential": 87,
+    "tier": "joven",
+    "note": "Nueve joven de movilidad."
+  },
+  {
+    "name": "Santiago Giménez",
+    "club": "AC Milan",
+    "pos": [
+      "DC"
+    ],
+    "age": 25,
+    "value": 40,
+    "wage": 7,
+    "rating": 82,
+    "potential": 85,
+    "tier": "barato",
+    "note": "Opción de nueve más económica."
+  },
+  {
+    "name": "Jonathan David",
+    "club": "Juventus / Lille",
+    "pos": [
+      "DC",
+      "MCO"
+    ],
+    "age": 26,
+    "value": 45,
+    "wage": 8,
+    "rating": 83,
+    "potential": 85,
+    "tier": "barato",
+    "note": "Delantero móvil, coste moderado."
+  },
+  {
+    "name": "Endrick alternativa: Vitor Roque",
+    "club": "Palmeiras / Betis",
+    "pos": [
+      "DC"
+    ],
+    "age": 21,
+    "value": 30,
+    "wage": 5,
+    "rating": 78,
+    "potential": 86,
+    "tier": "joven",
+    "note": "Fichaje joven para rotación ofensiva."
+  },
+  {
+    "name": "William Saliba",
+    "club": "Arsenal",
+    "pos": [
+      "DFC"
+    ],
+    "age": 25,
+    "value": 90,
+    "wage": 14,
+    "rating": 88,
+    "potential": 91,
+    "tier": "top",
+    "note": "Central dominante para defensa de élite."
+  },
+  {
+    "name": "Alessandro Bastoni",
+    "club": "Inter",
+    "pos": [
+      "DFC"
+    ],
+    "age": 27,
+    "value": 75,
+    "wage": 12,
+    "rating": 87,
+    "potential": 88,
+    "tier": "top",
+    "note": "Central zurdo con salida de balón."
+  },
+  {
+    "name": "Gabriel Magalhães",
+    "club": "Arsenal",
+    "pos": [
+      "DFC"
+    ],
+    "age": 28,
+    "value": 75,
+    "wage": 13,
+    "rating": 86,
+    "potential": 87,
+    "tier": "top",
+    "note": "Central fuerte y contundente."
+  },
+  {
+    "name": "Micky van de Ven",
+    "club": "Tottenham",
+    "pos": [
+      "DFC",
+      "LI"
+    ],
+    "age": 25,
+    "value": 55,
+    "wage": 8,
+    "rating": 83,
+    "potential": 87,
+    "tier": "top",
+    "note": "Central rapidísimo para defensa adelantada."
+  },
+  {
+    "name": "Giorgio Scalvini",
+    "club": "Atalanta",
+    "pos": [
+      "DFC",
+      "MCD"
+    ],
+    "age": 22,
+    "value": 45,
+    "wage": 5,
+    "rating": 80,
+    "potential": 88,
+    "tier": "joven",
+    "note": "Central joven con salida limpia."
+  },
+  {
+    "name": "Leny Yoro",
+    "club": "Manchester United",
+    "pos": [
+      "DFC"
+    ],
+    "age": 20,
+    "value": 55,
+    "wage": 8,
+    "rating": 80,
+    "potential": 90,
+    "tier": "joven",
+    "note": "Central joven de altísimo potencial."
+  },
+  {
+    "name": "Jarrad Branthwaite",
+    "club": "Everton",
+    "pos": [
+      "DFC"
+    ],
+    "age": 24,
+    "value": 50,
+    "wage": 7,
+    "rating": 82,
+    "potential": 87,
+    "tier": "joven",
+    "note": "Central zurdo, físico y Premier."
+  },
+  {
+    "name": "Castello Lukeba",
+    "club": "RB Leipzig",
+    "pos": [
+      "DFC"
+    ],
+    "age": 23,
+    "value": 45,
+    "wage": 6,
+    "rating": 81,
+    "potential": 87,
+    "tier": "joven",
+    "note": "Central rápido y técnico."
+  },
+  {
+    "name": "Ousmane Diomande",
+    "club": "Sporting CP",
+    "pos": [
+      "DFC"
+    ],
+    "age": 22,
+    "value": 45,
+    "wage": 6,
+    "rating": 80,
+    "potential": 87,
+    "tier": "joven",
+    "note": "Central físico para futuro."
+  },
+  {
+    "name": "Pau Cubarsí",
+    "club": "Barcelona",
+    "pos": [
+      "DFC"
+    ],
+    "age": 19,
+    "value": 80,
+    "wage": 9,
+    "rating": 82,
+    "potential": 91,
+    "tier": "joven",
+    "note": "Casi imposible por rivalidad, pero top futuro."
+  },
+  {
+    "name": "Achraf Hakimi",
+    "club": "PSG",
+    "pos": [
+      "LD",
+      "CAD"
+    ],
+    "age": 27,
+    "value": 65,
+    "wage": 14,
+    "rating": 86,
+    "potential": 87,
+    "tier": "top",
+    "note": "Carrilero ofensivo de nivel élite."
+  },
+  {
+    "name": "Pedro Porro",
+    "club": "Tottenham",
+    "pos": [
+      "LD",
+      "CAD"
+    ],
+    "age": 26,
+    "value": 55,
+    "wage": 9,
+    "rating": 84,
+    "potential": 86,
+    "tier": "top",
+    "note": "Lateral derecho ofensivo y golpeo."
+  },
+  {
+    "name": "Jeremie Frimpong",
+    "club": "Liverpool / Leverkusen",
+    "pos": [
+      "LD",
+      "CAD"
+    ],
+    "age": 25,
+    "value": 55,
+    "wage": 9,
+    "rating": 84,
+    "potential": 87,
+    "tier": "top",
+    "note": "Carrilero para sistemas de tres centrales."
+  },
+  {
+    "name": "Vanderson",
+    "club": "Monaco",
+    "pos": [
+      "LD",
+      "CAD"
+    ],
+    "age": 25,
+    "value": 35,
+    "wage": 6,
+    "rating": 81,
+    "potential": 85,
+    "tier": "barato",
+    "note": "Lateral con proyección a coste razonable."
+  },
+  {
+    "name": "Arnau Martínez",
+    "club": "Girona",
+    "pos": [
+      "LD",
+      "DFC"
+    ],
+    "age": 23,
+    "value": 25,
+    "wage": 4,
+    "rating": 78,
+    "potential": 84,
+    "tier": "barato",
+    "note": "Opción española para rotación."
+  },
+  {
+    "name": "Alphonso Davies",
+    "club": "Bayern",
+    "pos": [
+      "LI",
+      "CAI"
+    ],
+    "age": 25,
+    "value": 70,
+    "wage": 14,
+    "rating": 85,
+    "potential": 88,
+    "tier": "top",
+    "note": "Velocidad y profundidad por izquierda."
+  },
+  {
+    "name": "Theo Hernández",
+    "club": "AC Milan",
+    "pos": [
+      "LI",
+      "CAI"
+    ],
+    "age": 28,
+    "value": 60,
+    "wage": 12,
+    "rating": 85,
+    "potential": 85,
+    "tier": "top",
+    "note": "Lateral potente y ofensivo."
+  },
+  {
+    "name": "Alejandro Grimaldo",
+    "club": "Bayer Leverkusen",
+    "pos": [
+      "LI",
+      "CAI",
+      "MI"
+    ],
+    "age": 30,
+    "value": 35,
+    "wage": 8,
+    "rating": 84,
+    "potential": 84,
+    "tier": "barato",
+    "note": "Balón parado y mucha producción ofensiva."
+  },
+  {
+    "name": "Miguel Gutiérrez",
+    "club": "Girona",
+    "pos": [
+      "LI",
+      "CAI"
+    ],
+    "age": 24,
+    "value": 35,
+    "wage": 5,
+    "rating": 81,
+    "potential": 86,
+    "tier": "barato",
+    "note": "Canterano, buena salida de balón."
+  },
+  {
+    "name": "Alejandro Balde",
+    "club": "Barcelona",
+    "pos": [
+      "LI",
+      "CAI"
+    ],
+    "age": 22,
+    "value": 50,
+    "wage": 8,
+    "rating": 82,
+    "potential": 88,
+    "tier": "joven",
+    "note": "Lateral joven, operación casi imposible."
+  },
+  {
+    "name": "Destiny Udogie",
+    "club": "Tottenham",
+    "pos": [
+      "LI",
+      "CAI"
+    ],
+    "age": 23,
+    "value": 45,
+    "wage": 7,
+    "rating": 82,
+    "potential": 87,
+    "tier": "joven",
+    "note": "Lateral físico de recorrido."
+  },
+  {
+    "name": "Nuno Mendes",
+    "club": "PSG",
+    "pos": [
+      "LI",
+      "CAI"
+    ],
+    "age": 24,
+    "value": 70,
+    "wage": 12,
+    "rating": 85,
+    "potential": 89,
+    "tier": "top",
+    "note": "Lateral top, muy caro."
+  },
+  {
+    "name": "Gregor Kobel",
+    "club": "Dortmund",
+    "pos": [
+      "POR"
+    ],
+    "age": 28,
+    "value": 40,
+    "wage": 9,
+    "rating": 85,
+    "potential": 87,
+    "tier": "top",
+    "note": "Portero fiable para relevo a medio plazo."
+  },
+  {
+    "name": "Diogo Costa",
+    "club": "Porto",
+    "pos": [
+      "POR"
+    ],
+    "age": 26,
+    "value": 45,
+    "wage": 8,
+    "rating": 85,
+    "potential": 88,
+    "tier": "top",
+    "note": "Portero joven con buen pie."
+  },
+  {
+    "name": "Gianluigi Donnarumma",
+    "club": "PSG",
+    "pos": [
+      "POR"
+    ],
+    "age": 27,
+    "value": 40,
+    "wage": 12,
+    "rating": 86,
+    "potential": 87,
+    "tier": "top",
+    "note": "Portero de experiencia internacional."
+  },
+  {
+    "name": "Mike Maignan",
+    "club": "AC Milan",
+    "pos": [
+      "POR"
+    ],
+    "age": 31,
+    "value": 35,
+    "wage": 11,
+    "rating": 86,
+    "potential": 86,
+    "tier": "top",
+    "note": "Portero contrastado, menos proyecto futuro."
+  },
+  {
+    "name": "Bart Verbruggen",
+    "club": "Brighton",
+    "pos": [
+      "POR"
+    ],
+    "age": 24,
+    "value": 25,
+    "wage": 5,
+    "rating": 80,
+    "potential": 86,
+    "tier": "joven",
+    "note": "Portero joven para proyecto."
+  },
+  {
+    "name": "Lucas Chevalier",
+    "club": "PSG / Lille",
+    "pos": [
+      "POR"
+    ],
+    "age": 24,
+    "value": 35,
+    "wage": 6,
+    "rating": 82,
+    "potential": 87,
+    "tier": "joven",
+    "note": "Portero joven francés con proyección."
+  },
+  {
+    "name": "Giorgi Mamardashvili",
+    "club": "Liverpool / Valencia",
+    "pos": [
+      "POR"
+    ],
+    "age": 25,
+    "value": 45,
+    "wage": 7,
+    "rating": 84,
+    "potential": 88,
+    "tier": "top",
+    "note": "Portero alto y dominante."
+  },
+  {
+    "name": "Álex Baena",
+    "club": "Atlético / Villarreal",
+    "pos": [
+      "MC",
+      "MCO",
+      "EI"
+    ],
+    "age": 25,
+    "value": 50,
+    "wage": 7,
+    "rating": 83,
+    "potential": 86,
+    "tier": "barato",
+    "note": "Creatividad y balón parado."
+  },
+  {
+    "name": "Takefusa Kubo",
+    "club": "Real Sociedad",
+    "pos": [
+      "ED",
+      "MCO"
+    ],
+    "age": 25,
+    "value": 50,
+    "wage": 8,
+    "rating": 83,
+    "potential": 86,
+    "tier": "barato",
+    "note": "Extremo técnico, ex cantera."
+  },
+  {
+    "name": "Mikel Oyarzabal",
+    "club": "Real Sociedad",
+    "pos": [
+      "EI",
+      "DC"
+    ],
+    "age": 29,
+    "value": 40,
+    "wage": 8,
+    "rating": 83,
+    "potential": 83,
+    "tier": "barato",
+    "note": "Versatilidad ofensiva y experiencia."
+  },
+  {
+    "name": "Rayan Cherki",
+    "club": "Manchester City / Lyon",
+    "pos": [
+      "MCO",
+      "ED"
+    ],
+    "age": 22,
+    "value": 40,
+    "wage": 7,
+    "rating": 82,
+    "potential": 88,
+    "tier": "joven",
+    "note": "Talento creativo, algo irregular."
+  },
+  {
+    "name": "Bradley Barcola",
+    "club": "PSG",
+    "pos": [
+      "EI",
+      "ED"
+    ],
+    "age": 23,
+    "value": 70,
+    "wage": 10,
+    "rating": 84,
+    "potential": 89,
+    "tier": "top",
+    "note": "Extremo joven muy vertical."
+  },
+  {
+    "name": "Mohammed Kudus",
+    "club": "Tottenham / West Ham",
+    "pos": [
+      "ED",
+      "MCO",
+      "MC"
+    ],
+    "age": 25,
+    "value": 50,
+    "wage": 8,
+    "rating": 83,
+    "potential": 86,
+    "tier": "top",
+    "note": "Potencia y conducción."
+  },
+  {
+    "name": "Bryan Mbeumo",
+    "club": "Manchester United / Brentford",
+    "pos": [
+      "ED",
+      "DC"
+    ],
+    "age": 26,
+    "value": 55,
+    "wage": 9,
+    "rating": 83,
+    "potential": 85,
+    "tier": "top",
+    "note": "Producción ofensiva y trabajo."
+  },
+  {
+    "name": "Antoine Semenyo",
+    "club": "Bournemouth",
+    "pos": [
+      "ED",
+      "EI",
+      "DC"
+    ],
+    "age": 26,
+    "value": 35,
+    "wage": 6,
+    "rating": 80,
+    "potential": 84,
+    "tier": "barato",
+    "note": "Físico, velocidad y coste medio."
+  }
 ];
 
 const $ = id => document.getElementById(id);
@@ -109,8 +1697,8 @@ function fallbackPhotoFor(p){
   const initials = String(p?.name || "RM").split(" ").filter(Boolean).slice(0,2).map(x=>x[0]).join("").toUpperCase();
   return `data:image/svg+xml;utf8,${encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ffffff"/><stop offset=".55" stop-color="#eee9dc"/><stop offset="1" stop-color="#b99a52"/></linearGradient></defs><rect width="160" height="160" rx="34" fill="url(#g)"/><circle cx="80" cy="58" r="34" fill="#101c38" opacity=".92"/><path d="M28 145c9-39 29-58 52-58s43 19 52 58" fill="#101c38" opacity=".92"/><text x="80" y="148" text-anchor="middle" font-family="Arial" font-size="28" font-weight="800" fill="#b99a52">${initials}</text></svg>`)}`;
 }
-const storageKey = "madrid-president-simulator-v5-current-squad";
-const dataVersion = "21/06/2026 · plantilla revisada con Real Madrid oficial + Transfermarkt";
+const storageKey = "madrid-president-simulator-v6-expanded-market";
+const dataVersion = "08/07/2026 · plantilla oficial revisada + mercado ampliado";
 const sources = {
   transfermarktSquad: "https://www.transfermarkt.com/real-madrid/kader/verein/418",
   transfermarktRumours: "https://www.transfermarkt.com/real-madrid/geruechte/verein/418",
@@ -118,13 +1706,174 @@ const sources = {
 };
 
 const rumourTargets = [
-  {name:"Denzel Dumfries",club:"Inter de Milán",pos:["LD","CAD"],age:30,value:25,wage:8,rating:83,potential:83,tier:"rumor",reliability:"Rumor/posible objetivo",source:"Prensa / mercado",note:"Lateral derecho físico. Encaja si se busca competencia para Trent y Carvajal."},
-  {name:"Rodri",club:"Manchester City",pos:["MCD","MC"],age:30,value:100,wage:22,rating:91,potential:91,tier:"rumor",reliability:"Muy difícil",source:"Prensa",note:"Pivote élite. Sería una inversión enorme y muy complicada."},
-  {name:"Erling Haaland",club:"Manchester City",pos:["DC"],age:25,value:180,wage:28,rating:92,potential:93,tier:"rumor",reliability:"Rumor débil/galáctico",source:"Rumores recurrentes",note:"Nombre galáctico. Solo recomendable en modo inversión brutal."},
-  {name:"João Neves",club:"PSG",pos:["MC","MCD"],age:21,value:80,wage:9,rating:84,potential:91,tier:"rumor",reliability:"Rumor/objetivo",source:"Transfermarkt rumores",note:"Mediocentro joven de mucho potencial. Muy caro y complicado."},
-  {name:"William Saliba",club:"Arsenal",pos:["DFC"],age:25,value:90,wage:14,rating:88,potential:91,tier:"rumor",reliability:"Muy difícil",source:"Rumores de mercado",note:"Central top, pero tras Konaté y Huijsen solo tendría sentido si vendes defensas."},
-  {name:"Nico Williams",club:"Athletic Club",pos:["EI","ED"],age:23,value:70,wage:10,rating:84,potential:89,tier:"rumor",reliability:"Opción de mercado",source:"Rumores recurrentes",note:"Extremo vertical. Interesante si vendes a Rodrygo o necesitas profundidad de banda."},
-  {name:"Miguel Gutiérrez",club:"Girona",pos:["LI","CAI"],age:24,value:35,wage:5,rating:81,potential:85,tier:"rumor",reliability:"Poco necesario ahora",source:"Rumores anteriores",note:"Con Cucurella, Carreras, Fran y Mendy, el lateral izquierdo ya está muy poblado."}
+  {
+    "name": "Rodri",
+    "club": "Manchester City",
+    "pos": [
+      "MCD",
+      "MC"
+    ],
+    "age": 30,
+    "value": 100,
+    "wage": 22,
+    "rating": 91,
+    "potential": 91,
+    "tier": "rumor",
+    "reliability": "Muy difícil",
+    "source": "Prensa / rumores de mercado",
+    "note": "Pivote élite. Sería una inversión enorme y muy complicada."
+  },
+  {
+    "name": "Erling Haaland",
+    "club": "Manchester City",
+    "pos": [
+      "DC"
+    ],
+    "age": 25,
+    "value": 180,
+    "wage": 28,
+    "rating": 92,
+    "potential": 93,
+    "tier": "rumor",
+    "reliability": "Rumor débil/galáctico",
+    "source": "Rumores recurrentes",
+    "note": "Nombre galáctico. Solo recomendable en modo inversión brutal."
+  },
+  {
+    "name": "William Saliba",
+    "club": "Arsenal",
+    "pos": [
+      "DFC"
+    ],
+    "age": 25,
+    "value": 90,
+    "wage": 14,
+    "rating": 88,
+    "potential": 91,
+    "tier": "rumor",
+    "reliability": "Muy difícil",
+    "source": "Rumores de mercado",
+    "note": "Central top. Solo tendría sentido si vendes defensas o buscas salto competitivo."
+  },
+  {
+    "name": "Nico Williams",
+    "club": "Athletic Club",
+    "pos": [
+      "EI",
+      "ED"
+    ],
+    "age": 23,
+    "value": 70,
+    "wage": 10,
+    "rating": 84,
+    "potential": 89,
+    "tier": "rumor",
+    "reliability": "Opción de mercado",
+    "source": "Rumores recurrentes",
+    "note": "Extremo vertical. Interesante si vendes a Rodrygo o necesitas profundidad de banda."
+  },
+  {
+    "name": "Achraf Hakimi",
+    "club": "PSG",
+    "pos": [
+      "LD",
+      "CAD"
+    ],
+    "age": 27,
+    "value": 65,
+    "wage": 14,
+    "rating": 86,
+    "potential": 87,
+    "tier": "rumor",
+    "reliability": "Complicado",
+    "source": "Rumores recurrentes",
+    "note": "Lateral derecho top, pero con Trent y Dumfries ya hay overbooking."
+  },
+  {
+    "name": "Miguel Gutiérrez",
+    "club": "Girona",
+    "pos": [
+      "LI",
+      "CAI"
+    ],
+    "age": 24,
+    "value": 35,
+    "wage": 5,
+    "rating": 81,
+    "potential": 85,
+    "tier": "rumor",
+    "reliability": "Poco necesario ahora",
+    "source": "Rumores anteriores",
+    "note": "Con Cucurella, Carreras y Mendy, el lateral izquierdo ya está muy poblado."
+  },
+  {
+    "name": "Vitinha",
+    "club": "PSG",
+    "pos": [
+      "MC",
+      "MCD"
+    ],
+    "age": 26,
+    "value": 80,
+    "wage": 12,
+    "rating": 86,
+    "potential": 88,
+    "tier": "rumor",
+    "reliability": "Muy difícil",
+    "source": "Prensa / mercado",
+    "note": "Mediocentro ideal para control y presión."
+  },
+  {
+    "name": "Julián Álvarez",
+    "club": "Atlético de Madrid",
+    "pos": [
+      "DC",
+      "MCO"
+    ],
+    "age": 26,
+    "value": 90,
+    "wage": 13,
+    "rating": 87,
+    "potential": 89,
+    "tier": "rumor",
+    "reliability": "Casi imposible",
+    "source": "Rumor/fantasía",
+    "note": "Gran encaje deportivo, operación casi imposible por rivalidad."
+  },
+  {
+    "name": "Diogo Costa",
+    "club": "Porto",
+    "pos": [
+      "POR"
+    ],
+    "age": 26,
+    "value": 45,
+    "wage": 8,
+    "rating": 85,
+    "potential": 88,
+    "tier": "rumor",
+    "reliability": "Opción de relevo",
+    "source": "Radar de mercado",
+    "note": "Si quieres planificar relevo futuro en portería."
+  },
+  {
+    "name": "Álex Baena",
+    "club": "Atlético / Villarreal",
+    "pos": [
+      "MC",
+      "MCO",
+      "EI"
+    ],
+    "age": 25,
+    "value": 50,
+    "wage": 7,
+    "rating": 83,
+    "potential": 86,
+    "tier": "rumor",
+    "reliability": "Opción de mercado",
+    "source": "Prensa / mercado",
+    "note": "Creatividad interior, aunque el medio ya está cargado."
+  }
 ];
 
 let state = {
@@ -215,7 +1964,7 @@ function renderPitch() {
     card.className = `slot-card ${selected ? "" : "empty"}`;
     card.draggable = !!selected;
     card.dataset.playerId = selected?.id || "";
-    card.innerHTML = selected ? `<img class="slot-photo" src="${photoFor(selected)}" onerror="this.onerror=null;this.src=fallbackPhotoFor(selected)" alt=""><div class="slot-name">${selected.name}</div><div class="slot-meta">${selected.pos.join("/")} · ${selected.rating} · ${money(selected.value)}</div>` : `<div class="slot-name">Soltar jugador</div><div class="slot-meta">${label}</div>`;
+    card.innerHTML = selected ? `<img class="slot-photo" src="${photoFor(selected)}" onerror="this.onerror=null;this.src='${fallbackPhotoFor(selected)}'" alt=""><div class="slot-name">${selected.name}</div><div class="slot-meta">${selected.pos.join("/")} · ${selected.rating} · ${money(selected.value)}</div>` : `<div class="slot-name">Soltar jugador</div><div class="slot-meta">${label}</div>`;
     if (selected) card.addEventListener("dragstart", onDragStart);
     slot.appendChild(card);
     const select = document.createElement("select");
@@ -287,7 +2036,7 @@ function playerCard(p) {
   card.addEventListener("dragend", () => card.classList.remove("dragging"));
   card.innerHTML = `
     <div class="player-head">
-      <img class="player-photo" src="${photoFor(p)}" onerror="this.onerror=null;this.src=fallbackPhotoFor(p)" alt="Foto de ${p.name}">
+      <img class="player-photo" src="${photoFor(p)}" onerror="this.onerror=null;this.src='${fallbackPhotoFor(p)}'" alt="Foto de ${p.name}">
       <div class="player-info">
         <strong>${p.name}</strong>
         <div class="player-meta">
@@ -506,7 +2255,7 @@ function renderSuggestions() {
     .filter(t => tier === "all" || t.tier === tier)
     .filter(t => !pos || t.pos.includes(pos) || flexiblePosition(t.pos, pos))
     .filter(t => !state.players.some(p => p.name === t.name && p.status !== "wishlist"))
-    .slice(0, 8);
+    .slice(0, 40);
   const root = $("suggestions"); if (!root) return;
   root.innerHTML = list.length ? list.map((t,i) => `
     <div class="suggestion">
@@ -528,7 +2277,7 @@ function renderRumours() {
   const existing = new Set(state.players.map(p => p.name));
   root.innerHTML = rumourTargets.map((t, i) => `
     <div class="rumour-card">
-      <img class="rumour-photo" src="${photoFor(t)}" onerror="this.onerror=null;this.src=fallbackPhotoFor(t)" alt="">
+      <img class="rumour-photo" src="${photoFor(t)}" onerror="this.onerror=null;this.src='${fallbackPhotoFor(t)}'" alt="">
       <div>
         <div class="rumour-title"><strong>${t.name}</strong><span class="badge wishlist">${t.reliability}</span></div>
         <p>${t.club} · ${t.pos.join("/")} · ${money(t.value)} · Fuente: ${t.source}</p>
@@ -689,4 +2438,35 @@ function toast(msg) {
   setTimeout(()=>t.remove(), 2600);
 }
 
-init();
+
+async function loadExternalData() {
+  // En GitHub Pages la web intentará leer data.json si existe.
+  // Sirve para actualizar plantilla/rumores/mercado sin tocar app.js.
+  try {
+    const res = await fetch("data.json?ts=" + Date.now(), { cache: "no-store" });
+    if (!res.ok) return;
+    const data = await res.json();
+    if (Array.isArray(data.players) && data.players.length) {
+      data.players.forEach(np => {
+        const p = basePlayers.find(x => x.name.toLowerCase() === String(np.name || "").toLowerCase());
+        if (p) Object.assign(p, np);
+        else basePlayers.push({id: 10000 + basePlayers.length, status:"available", role:"Importado desde data.json", ...np});
+      });
+    }
+    if (Array.isArray(data.targets) && data.targets.length) {
+      data.targets.forEach(t => {
+        if (!suggestedTargets.some(x => x.name.toLowerCase() === String(t.name||"").toLowerCase())) suggestedTargets.push(t);
+      });
+    }
+    if (Array.isArray(data.rumours) && data.rumours.length) {
+      data.rumours.forEach(r => {
+        if (!rumourTargets.some(x => x.name.toLowerCase() === String(r.name||"").toLowerCase())) rumourTargets.push(r);
+      });
+    }
+    if (data.updatedAt && $("dataVersion")) $("dataVersion").textContent = data.updatedAt + " · data.json";
+  } catch (e) {
+    // En modo local file:// puede fallar; no pasa nada, usa datos internos.
+  }
+}
+
+loadExternalData().finally(init);

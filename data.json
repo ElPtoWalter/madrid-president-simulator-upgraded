@@ -1,0 +1,7 @@
+{
+  "updatedAt": "08/07/2026",
+  "notes": "Archivo opcional para actualizar plantilla, rumores y objetivos sin tocar app.js. Se puede editar manualmente o generar con GitHub Actions.",
+  "players": [],
+  "targets": [],
+  "rumours": []
+}
