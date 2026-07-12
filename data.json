@@ -1,0 +1,3810 @@
+{
+  "meta": {
+    "appName": "Madrid President Simulator 2.1 AutoMarket",
+    "version": "2.1.0-auto-market",
+    "lastManualReview": "2026-07-12",
+    "currency": "M€",
+    "notice": "Proyecto fan no oficial. Valores de mercado aproximados y editables. La plantilla puede cambiar con el mercado.",
+    "lastAutoUpdate": "pendiente de primera ejecución en GitHub Actions",
+    "automationNote": "AutoMarket preparado: GitHub Actions puede actualizar rumores automáticamente desde RSS/noticias públicas y, opcionalmente, desde X/Fabrizio con X_BEARER_TOKEN.",
+    "autoMarket": {
+      "enabled": true,
+      "lastRun": null,
+      "feedCount": 4,
+      "articlesFetched": 0,
+      "detections": 0,
+      "autoRumors": 0,
+      "strategy": "RSS gratuito + coincidencias con mercado interno + detección conservadora de nombres; sin scraping masivo de Transfermarkt."
+    }
+  },
+  "sources": [
+    {
+      "name": "Real Madrid - First Team",
+      "url": "https://www.realmadrid.com/en-US/football/first-team/players",
+      "purpose": "Plantilla oficial/provisional"
+    },
+    {
+      "name": "Transfermarkt - Real Madrid",
+      "url": "https://www.transfermarkt.com/real-madrid/kader/verein/418",
+      "purpose": "Valores, contratos, rumores y fichajes"
+    },
+    {
+      "name": "Transfermarkt - Real Madrid transfers",
+      "url": "https://www.transfermarkt.com/real-madrid/transfers/verein/418",
+      "purpose": "Entradas y salidas"
+    },
+    {
+      "name": "AutoMarket RSS · Google/Bing News",
+      "url": "https://news.google.com/",
+      "purpose": "Detección automática de rumores mediante búsquedas RSS públicas"
+    },
+    {
+      "name": "X API · Fabrizio opcional",
+      "url": "https://docs.x.com/x-api/",
+      "purpose": "Opcional: lectura oficial de posts si configuras X_BEARER_TOKEN en GitHub Secrets"
+    }
+  ],
+  "players": [
+    {
+      "id": "courtois",
+      "name": "Thibaut Courtois",
+      "age": 34,
+      "position": "POR",
+      "secondary": [],
+      "value": 25,
+      "salary": 7.5,
+      "club": "Real Madrid",
+      "nationality": "Bélgica",
+      "role": "Titular",
+      "status": "squad",
+      "potential": 90,
+      "rating": 90,
+      "foot": "Izquierdo",
+      "wiki": "Thibaut Courtois",
+      "tags": [
+        "portero",
+        "estrella"
+      ],
+      "difficulty": "muy alta",
+      "source": "Plantilla"
+    },
+    {
+      "id": "lunin",
+      "name": "Andriy Lunin",
+      "age": 27,
+      "position": "POR",
+      "secondary": [],
+      "value": 20,
+      "salary": 2.8,
+      "club": "Real Madrid",
+      "nationality": "Ucrania",
+      "role": "Rotación",
+      "status": "squad",
+      "potential": 84,
+      "rating": 82,
+      "foot": "Derecho",
+      "wiki": "Andriy Lunin",
+      "tags": [
+        "portero"
+      ],
+      "difficulty": "media",
+      "source": "Plantilla"
+    },
+    {
+      "id": "fran-gonzalez",
+      "name": "Fran González",
+      "age": 21,
+      "position": "POR",
+      "secondary": [],
+      "value": 8,
+      "salary": 0.5,
+      "club": "Real Madrid",
+      "nationality": "España",
+      "role": "Cantera",
+      "status": "squad",
+      "potential": 82,
+      "rating": 70,
+      "foot": "Derecho",
+      "wiki": "Fran González",
+      "tags": [
+        "cantera",
+        "joven"
+      ],
+      "difficulty": "media",
+      "source": "Plantilla"
+    },
+    {
+      "id": "dumfries",
+      "name": "Denzel Dumfries",
+      "age": 30,
+      "position": "LD",
+      "secondary": [
+        "CAD"
+      ],
+      "value": 25,
+      "salary": 4.5,
+      "club": "Real Madrid",
+      "nationality": "Países Bajos",
+      "role": "Titular/rotación",
+      "status": "squad",
+      "potential": 83,
+      "rating": 83,
+      "foot": "Derecho",
+      "wiki": "Denzel Dumfries",
+      "tags": [
+        "físico",
+        "carrilero"
+      ],
+      "difficulty": "media",
+      "source": "Plantilla"
+    },
+    {
+      "id": "trent",
+      "name": "Trent Alexander-Arnold",
+      "age": 27,
+      "position": "LD",
+      "secondary": [
+        "MC",
+        "CAD"
+      ],
+      "value": 75,
+      "salary": 12,
+      "club": "Real Madrid",
+      "nationality": "Inglaterra",
+      "role": "Titular",
+      "status": "squad",
+      "potential": 89,
+      "rating": 88,
+      "foot": "Derecho",
+      "wiki": "Trent Alexander-Arnold",
+      "tags": [
+        "creador",
+        "balón parado",
+        "galáctico"
+      ],
+      "difficulty": "alta",
+      "source": "Plantilla"
+    },
+    {
+      "id": "asencio",
+      "name": "Raúl Asencio",
+      "age": 23,
+      "position": "DFC",
+      "secondary": [
+        "LD"
+      ],
+      "value": 25,
+      "salary": 1.2,
+      "club": "Real Madrid",
+      "nationality": "España",
+      "role": "Rotación joven",
+      "status": "squad",
+      "potential": 84,
+      "rating": 78,
+      "foot": "Derecho",
+      "wiki": "Raúl Asencio",
+      "tags": [
+        "joven",
+        "cantera"
+      ],
+      "difficulty": "media",
+      "source": "Plantilla"
+    },
+    {
+      "id": "militao",
+      "name": "Éder Militão",
+      "age": 28,
+      "position": "DFC",
+      "secondary": [
+        "LD"
+      ],
+      "value": 30,
+      "salary": 9,
+      "club": "Real Madrid",
+      "nationality": "Brasil",
+      "role": "Titular/rotación",
+      "status": "squad",
+      "potential": 87,
+      "rating": 86,
+      "foot": "Derecho",
+      "wiki": "Éder Militão",
+      "tags": [
+        "rápido",
+        "físico"
+      ],
+      "difficulty": "media",
+      "source": "Plantilla"
+    },
+    {
+      "id": "rudiger",
+      "name": "Antonio Rüdiger",
+      "age": 33,
+      "position": "DFC",
+      "secondary": [],
+      "value": 20,
+      "salary": 10,
+      "club": "Real Madrid",
+      "nationality": "Alemania",
+      "role": "Veterano titular",
+      "status": "squad",
+      "potential": 86,
+      "rating": 86,
+      "foot": "Derecho",
+      "wiki": "Antonio Rüdiger",
+      "tags": [
+        "liderazgo",
+        "defensa"
+      ],
+      "difficulty": "media",
+      "source": "Plantilla"
+    },
+    {
+      "id": "huijsen",
+      "name": "Dean Huijsen",
+      "age": 21,
+      "position": "DFC",
+      "secondary": [
+        "MCD"
+      ],
+      "value": 60,
+      "salary": 4,
+      "club": "Real Madrid",
+      "nationality": "España",
+      "role": "Titular futuro",
+      "status": "squad",
+      "potential": 91,
+      "rating": 82,
+      "foot": "Derecho",
+      "wiki": "Dean Huijsen",
+      "tags": [
+        "joven",
+        "salida de balón",
+        "alto"
+      ],
+      "difficulty": "alta",
+      "source": "Plantilla"
+    },
+    {
+      "id": "konate",
+      "name": "Ibrahima Konaté",
+      "age": 27,
+      "position": "DFC",
+      "secondary": [],
+      "value": 60,
+      "salary": 8,
+      "club": "Real Madrid",
+      "nationality": "Francia",
+      "role": "Titular",
+      "status": "squad",
+      "potential": 88,
+      "rating": 86,
+      "foot": "Derecho",
+      "wiki": "Ibrahima Konaté",
+      "tags": [
+        "físico",
+        "rápido"
+      ],
+      "difficulty": "alta",
+      "source": "Plantilla"
+    },
+    {
+      "id": "cucurella",
+      "name": "Marc Cucurella",
+      "age": 27,
+      "position": "LI",
+      "secondary": [
+        "CAI"
+      ],
+      "value": 45,
+      "salary": 7,
+      "club": "Real Madrid",
+      "nationality": "España",
+      "role": "Titular/rotación",
+      "status": "squad",
+      "potential": 84,
+      "rating": 84,
+      "foot": "Derecho",
+      "wiki": "Marc Cucurella",
+      "tags": [
+        "intensidad",
+        "español"
+      ],
+      "difficulty": "media",
+      "source": "Plantilla"
+    },
+    {
+      "id": "carreras",
+      "name": "Álvaro Carreras",
+      "age": 23,
+      "position": "LI",
+      "secondary": [
+        "CAI"
+      ],
+      "value": 35,
+      "salary": 2.5,
+      "club": "Real Madrid",
+      "nationality": "España",
+      "role": "Rotación joven",
+      "status": "squad",
+      "potential": 86,
+      "rating": 80,
+      "foot": "Derecho",
+      "wiki": "Álvaro Carreras",
+      "tags": [
+        "joven",
+        "español"
+      ],
+      "difficulty": "media",
+      "source": "Plantilla"
+    },
+    {
+      "id": "mendy",
+      "name": "Ferland Mendy",
+      "age": 31,
+      "position": "LI",
+      "secondary": [],
+      "value": 18,
+      "salary": 6,
+      "club": "Real Madrid",
+      "nationality": "Francia",
+      "role": "Defensivo",
+      "status": "squad",
+      "potential": 81,
+      "rating": 81,
+      "foot": "Derecho",
+      "wiki": "Ferland Mendy",
+      "tags": [
+        "defensivo"
+      ],
+      "difficulty": "media",
+      "source": "Plantilla"
+    },
+    {
+      "id": "tchouameni",
+      "name": "Aurélien Tchouaméni",
+      "age": 26,
+      "position": "MCD",
+      "secondary": [
+        "MC",
+        "DFC"
+      ],
+      "value": 80,
+      "salary": 8,
+      "club": "Real Madrid",
+      "nationality": "Francia",
+      "role": "Titular",
+      "status": "squad",
+      "potential": 90,
+      "rating": 87,
+      "foot": "Derecho",
+      "wiki": "Aurélien Tchouaméni",
+      "tags": [
+        "pivote",
+        "físico",
+        "equilibrio"
+      ],
+      "difficulty": "muy alta",
+      "source": "Plantilla"
+    },
+    {
+      "id": "valverde",
+      "name": "Federico Valverde",
+      "age": 27,
+      "position": "MC",
+      "secondary": [
+        "MD",
+        "MCD"
+      ],
+      "value": 120,
+      "salary": 10,
+      "club": "Real Madrid",
+      "nationality": "Uruguay",
+      "role": "Intocable",
+      "status": "squad",
+      "potential": 91,
+      "rating": 90,
+      "foot": "Derecho",
+      "wiki": "Federico Valverde",
+      "tags": [
+        "motor",
+        "intocable",
+        "capitán"
+      ],
+      "difficulty": "muy alta",
+      "source": "Plantilla"
+    },
+    {
+      "id": "camavinga",
+      "name": "Eduardo Camavinga",
+      "age": 23,
+      "position": "MC",
+      "secondary": [
+        "MCD",
+        "LI"
+      ],
+      "value": 75,
+      "salary": 7,
+      "club": "Real Madrid",
+      "nationality": "Francia",
+      "role": "Titular/rotación",
+      "status": "squad",
+      "potential": 91,
+      "rating": 86,
+      "foot": "Derecho",
+      "wiki": "Eduardo Camavinga",
+      "tags": [
+        "joven",
+        "polivalente"
+      ],
+      "difficulty": "muy alta",
+      "source": "Plantilla"
+    },
+    {
+      "id": "bellingham",
+      "name": "Jude Bellingham",
+      "age": 22,
+      "position": "MCO",
+      "secondary": [
+        "MC"
+      ],
+      "value": 180,
+      "salary": 15,
+      "club": "Real Madrid",
+      "nationality": "Inglaterra",
+      "role": "Estrella",
+      "status": "squad",
+      "potential": 95,
+      "rating": 92,
+      "foot": "Derecho",
+      "wiki": "Jude Bellingham",
+      "tags": [
+        "galáctico",
+        "estrella",
+        "llegada"
+      ],
+      "difficulty": "intocable",
+      "source": "Plantilla"
+    },
+    {
+      "id": "arda",
+      "name": "Arda Güler",
+      "age": 21,
+      "position": "MCO",
+      "secondary": [
+        "ED",
+        "MC"
+      ],
+      "value": 60,
+      "salary": 3.5,
+      "club": "Real Madrid",
+      "nationality": "Turquía",
+      "role": "Joven diferencial",
+      "status": "squad",
+      "potential": 91,
+      "rating": 83,
+      "foot": "Derecho",
+      "wiki": "Arda Güler",
+      "tags": [
+        "joven",
+        "creativo",
+        "zurdo"
+      ],
+      "difficulty": "alta",
+      "source": "Plantilla"
+    },
+    {
+      "id": "bernardo",
+      "name": "Bernardo Silva",
+      "age": 31,
+      "position": "MC",
+      "secondary": [
+        "MCO",
+        "ED"
+      ],
+      "value": 65,
+      "salary": 13,
+      "club": "Real Madrid",
+      "nationality": "Portugal",
+      "role": "Titular técnico",
+      "status": "squad",
+      "potential": 88,
+      "rating": 88,
+      "foot": "Derecho",
+      "wiki": "Bernardo Silva",
+      "tags": [
+        "creador",
+        "veterano",
+        "control"
+      ],
+      "difficulty": "alta",
+      "source": "Plantilla"
+    },
+    {
+      "id": "cheikh",
+      "name": "Cheikh Cissé",
+      "age": 20,
+      "position": "MC",
+      "secondary": [
+        "MCD"
+      ],
+      "value": 10,
+      "salary": 0.7,
+      "club": "Real Madrid",
+      "nationality": "Senegal",
+      "role": "Cantera",
+      "status": "squad",
+      "potential": 84,
+      "rating": 70,
+      "foot": "Derecho",
+      "wiki": "Cheikh Cissé footballer",
+      "tags": [
+        "cantera",
+        "joven"
+      ],
+      "difficulty": "media",
+      "source": "Plantilla"
+    },
+    {
+      "id": "mbappe",
+      "name": "Kylian Mbappé",
+      "age": 27,
+      "position": "DC",
+      "secondary": [
+        "EI"
+      ],
+      "value": 180,
+      "salary": 25,
+      "club": "Real Madrid",
+      "nationality": "Francia",
+      "role": "Estrella",
+      "status": "squad",
+      "potential": 94,
+      "rating": 93,
+      "foot": "Derecho",
+      "wiki": "Kylian Mbappé",
+      "tags": [
+        "galáctico",
+        "estrella",
+        "velocidad"
+      ],
+      "difficulty": "intocable",
+      "source": "Plantilla"
+    },
+    {
+      "id": "vinicius",
+      "name": "Vinícius Júnior",
+      "age": 25,
+      "position": "EI",
+      "secondary": [
+        "DC"
+      ],
+      "value": 150,
+      "salary": 20,
+      "club": "Real Madrid",
+      "nationality": "Brasil",
+      "role": "Estrella",
+      "status": "squad",
+      "potential": 93,
+      "rating": 91,
+      "foot": "Derecho",
+      "wiki": "Vinícius Júnior",
+      "tags": [
+        "galáctico",
+        "desborde"
+      ],
+      "difficulty": "muy alta",
+      "source": "Plantilla"
+    },
+    {
+      "id": "rodrygo",
+      "name": "Rodrygo",
+      "age": 25,
+      "position": "ED",
+      "secondary": [
+        "EI",
+        "DC"
+      ],
+      "value": 60,
+      "salary": 10,
+      "club": "Real Madrid",
+      "nationality": "Brasil",
+      "role": "Titular/transferible",
+      "status": "squad",
+      "potential": 88,
+      "rating": 86,
+      "foot": "Derecho",
+      "wiki": "Rodrygo",
+      "tags": [
+        "polivalente",
+        "transferible"
+      ],
+      "difficulty": "media",
+      "source": "Plantilla"
+    },
+    {
+      "id": "brahim",
+      "name": "Brahim Díaz",
+      "age": 26,
+      "position": "ED",
+      "secondary": [
+        "MCO",
+        "EI"
+      ],
+      "value": 40,
+      "salary": 4,
+      "club": "Real Madrid",
+      "nationality": "Marruecos",
+      "role": "Rotación diferencial",
+      "status": "squad",
+      "potential": 85,
+      "rating": 84,
+      "foot": "Derecho",
+      "wiki": "Brahim Díaz",
+      "tags": [
+        "regate",
+        "rotación"
+      ],
+      "difficulty": "media",
+      "source": "Plantilla"
+    },
+    {
+      "id": "endrick",
+      "name": "Endrick",
+      "age": 20,
+      "position": "DC",
+      "secondary": [
+        "ED"
+      ],
+      "value": 45,
+      "salary": 3,
+      "club": "Real Madrid",
+      "nationality": "Brasil",
+      "role": "Promesa",
+      "status": "squad",
+      "potential": 91,
+      "rating": 79,
+      "foot": "Derecho",
+      "wiki": "Endrick",
+      "tags": [
+        "joven",
+        "promesa",
+        "brasil"
+      ],
+      "difficulty": "media",
+      "source": "Plantilla"
+    },
+    {
+      "id": "gonzalo",
+      "name": "Gonzalo García",
+      "age": 22,
+      "position": "DC",
+      "secondary": [
+        "EI"
+      ],
+      "value": 25,
+      "salary": 1,
+      "club": "Real Madrid",
+      "nationality": "España",
+      "role": "Cantera/rotación",
+      "status": "squad",
+      "potential": 84,
+      "rating": 76,
+      "foot": "Derecho",
+      "wiki": "Gonzalo García (footballer, born 2004)",
+      "tags": [
+        "cantera",
+        "español"
+      ],
+      "difficulty": "media",
+      "source": "Plantilla"
+    },
+    {
+      "id": "mastantuono",
+      "name": "Franco Mastantuono",
+      "age": 18,
+      "position": "MCO",
+      "secondary": [
+        "ED"
+      ],
+      "value": 45,
+      "salary": 2,
+      "club": "Real Madrid",
+      "nationality": "Argentina",
+      "role": "Promesa top",
+      "status": "squad",
+      "potential": 92,
+      "rating": 78,
+      "foot": "Derecho",
+      "wiki": "Franco Mastantuono",
+      "tags": [
+        "joven",
+        "promesa",
+        "zurdo"
+      ],
+      "difficulty": "media",
+      "source": "Plantilla"
+    },
+    {
+      "id": "modric",
+      "name": "Luka Modrić",
+      "age": 40,
+      "position": "MC",
+      "secondary": [
+        "MCO"
+      ],
+      "value": 5,
+      "salary": 8,
+      "club": "Sin plantilla activa",
+      "nationality": "Croacia",
+      "role": "Salida histórica",
+      "status": "former",
+      "potential": 83,
+      "rating": 83,
+      "foot": "Derecho",
+      "wiki": "Luka Modrić",
+      "tags": [
+        "salida",
+        "leyenda"
+      ],
+      "difficulty": "media",
+      "source": "Salida"
+    },
+    {
+      "id": "carvajal",
+      "name": "Dani Carvajal",
+      "age": 34,
+      "position": "LD",
+      "secondary": [],
+      "value": 8,
+      "salary": 7,
+      "club": "Salida/No activo",
+      "nationality": "España",
+      "role": "Salida reciente",
+      "status": "former",
+      "potential": 82,
+      "rating": 82,
+      "foot": "Derecho",
+      "wiki": "Dani Carvajal",
+      "tags": [
+        "salida",
+        "veterano",
+        "español"
+      ],
+      "difficulty": "media",
+      "source": "Salida"
+    },
+    {
+      "id": "ceballos",
+      "name": "Dani Ceballos",
+      "age": 30,
+      "position": "MC",
+      "secondary": [
+        "MCO"
+      ],
+      "value": 12,
+      "salary": 4,
+      "club": "Salida/No activo",
+      "nationality": "España",
+      "role": "Salida reciente",
+      "status": "former",
+      "potential": 80,
+      "rating": 80,
+      "foot": "Derecho",
+      "wiki": "Dani Ceballos",
+      "tags": [
+        "salida",
+        "español"
+      ],
+      "difficulty": "media",
+      "source": "Salida"
+    },
+    {
+      "id": "alaba",
+      "name": "David Alaba",
+      "age": 34,
+      "position": "DFC",
+      "secondary": [
+        "LI",
+        "MCD"
+      ],
+      "value": 10,
+      "salary": 10,
+      "club": "Salida/No activo",
+      "nationality": "Austria",
+      "role": "Salida reciente",
+      "status": "former",
+      "potential": 80,
+      "rating": 80,
+      "foot": "Derecho",
+      "wiki": "David Alaba",
+      "tags": [
+        "salida",
+        "veterano"
+      ],
+      "difficulty": "media",
+      "source": "Salida"
+    },
+    {
+      "id": "fran-garcia",
+      "name": "Fran García",
+      "age": 27,
+      "position": "LI",
+      "secondary": [
+        "CAI"
+      ],
+      "value": 15,
+      "salary": 2.5,
+      "club": "Salida/No activo",
+      "nationality": "España",
+      "role": "Salida reciente",
+      "status": "former",
+      "potential": 80,
+      "rating": 78,
+      "foot": "Derecho",
+      "wiki": "Fran García",
+      "tags": [
+        "salida",
+        "español"
+      ],
+      "difficulty": "media",
+      "source": "Salida"
+    },
+    {
+      "id": "donnarumma",
+      "name": "Gianluigi Donnarumma",
+      "age": 27,
+      "position": "POR",
+      "secondary": [],
+      "value": 45,
+      "salary": 10,
+      "club": "PSG",
+      "nationality": "Italia",
+      "role": "Objetivo de mercado",
+      "status": "market",
+      "potential": 88,
+      "rating": 88,
+      "foot": "Derecho",
+      "wiki": "Gianluigi Donnarumma",
+      "tags": [
+        "portero",
+        "estrella"
+      ],
+      "difficulty": "alta",
+      "source": "Mercado ampliado"
+    },
+    {
+      "id": "diogo-costa",
+      "name": "Diogo Costa",
+      "age": 26,
+      "position": "POR",
+      "secondary": [],
+      "value": 50,
+      "salary": 5,
+      "club": "FC Porto",
+      "nationality": "Portugal",
+      "role": "Objetivo de mercado",
+      "status": "market",
+      "potential": 89,
+      "rating": 86,
+      "foot": "Derecho",
+      "wiki": "Diogo Costa",
+      "tags": [
+        "portero",
+        "joven"
+      ],
+      "difficulty": "alta",
+      "source": "Mercado ampliado"
+    },
+    {
+      "id": "maignan",
+      "name": "Mike Maignan",
+      "age": 31,
+      "position": "POR",
+      "secondary": [],
+      "value": 35,
+      "salary": 7,
+      "club": "AC Milan",
+      "nationality": "Francia",
+      "role": "Objetivo de mercado",
+      "status": "market",
+      "potential": 86,
+      "rating": 86,
+      "foot": "Derecho",
+      "wiki": "Mike Maignan",
+      "tags": [
+        "portero"
+      ],
+      "difficulty": "media",
+      "source": "Mercado ampliado"
+    },
+    {
+      "id": "kobý",
+      "name": "Gregor Kobel",
+      "age": 28,
+      "position": "POR",
+      "secondary": [],
+      "value": 40,
+      "salary": 6,
+      "club": "Borussia Dortmund",
+      "nationality": "Suiza",
+      "role": "Objetivo de mercado",
+      "status": "market",
+      "potential": 87,
+      "rating": 86,
+      "foot": "Derecho",
+      "wiki": "Gregor Kobel",
+      "tags": [
+        "portero"
+      ],
+      "difficulty": "alta",
+      "source": "Mercado ampliado"
+    },
+    {
+      "id": "mamardashvili",
+      "name": "Giorgi Mamardashvili",
+      "age": 25,
+      "position": "POR",
+      "secondary": [],
+      "value": 35,
+      "salary": 4,
+      "club": "Liverpool",
+      "nationality": "Georgia",
+      "role": "Objetivo de mercado",
+      "status": "market",
+      "potential": 87,
+      "rating": 84,
+      "foot": "Derecho",
+      "wiki": "Giorgi Mamardashvili",
+      "tags": [
+        "portero"
+      ],
+      "difficulty": "media",
+      "source": "Mercado ampliado"
+    },
+    {
+      "id": "chevalier",
+      "name": "Lucas Chevalier",
+      "age": 24,
+      "position": "POR",
+      "secondary": [],
+      "value": 40,
+      "salary": 3.5,
+      "club": "PSG",
+      "nationality": "Francia",
+      "role": "Objetivo de mercado",
+      "status": "market",
+      "potential": 89,
+      "rating": 84,
+      "foot": "Derecho",
+      "wiki": "Lucas Chevalier",
+      "tags": [
+        "portero",
+        "joven"
+      ],
+      "difficulty": "alta",
+      "source": "Mercado ampliado"
+    },
+    {
+      "id": "verbruggen",
+      "name": "Bart Verbruggen",
+      "age": 24,
+      "position": "POR",
+      "secondary": [],
+      "value": 25,
+      "salary": 2.5,
+      "club": "Brighton",
+      "nationality": "Países Bajos",
+      "role": "Objetivo de mercado",
+      "status": "market",
+      "potential": 86,
+      "rating": 81,
+      "foot": "Derecho",
+      "wiki": "Bart Verbruggen",
+      "tags": [
+        "portero",
+        "joven"
+      ],
+      "difficulty": "media",
+      "source": "Mercado ampliado"
+    },
+    {
+      "id": "carnesecchi",
+      "name": "Marco Carnesecchi",
+      "age": 26,
+      "position": "POR",
+      "secondary": [],
+      "value": 22,
+      "salary": 2.2,
+      "club": "Atalanta",
+      "nationality": "Italia",
+      "role": "Objetivo de mercado",
+      "status": "market",
+      "potential": 85,
+      "rating": 82,
+      "foot": "Derecho",
+      "wiki": "Marco Carnesecchi",
+      "tags": [
+        "portero"
+      ],
+      "difficulty": "media",
+      "source": "Mercado ampliado"
+    },
+    {
+      "id": "saliba",
+      "name": "William Saliba",
+      "age": 25,
+      "position": "DFC",
+      "secondary": [],
+      "value": 80,
+      "salary": 10,
+      "club": "Arsenal",
+      "nationality": "Francia",
+      "role": "Objetivo de mercado",
+      "status": "market",
+      "potential": 92,
+      "rating": 89,
+      "foot": "Derecho",
+      "wiki": "William Saliba",
+      "tags": [
+        "central",
+        "top"
+      ],
+      "difficulty": "muy alta",
+      "source": "Mercado ampliado"
+    },
+    {
+      "id": "bastoni",
+      "name": "Alessandro Bastoni",
+      "age": 27,
+      "position": "DFC",
+      "secondary": [
+        "LI"
+      ],
+      "value": 75,
+      "salary": 8,
+      "club": "Inter",
+      "nationality": "Italia",
+      "role": "Objetivo de mercado",
+      "status": "market",
+      "potential": 90,
+      "rating": 88,
+      "foot": "Derecho",
+      "wiki": "Alessandro Bastoni",
+      "tags": [
+        "central",
+        "zurdo",
+        "salida de balón"
+      ],
+      "difficulty": "muy alta",
+      "source": "Mercado ampliado"
+    },
+    {
+      "id": "gvardiol",
+      "name": "Joško Gvardiol",
+      "age": 24,
+      "position": "DFC",
+      "secondary": [
+        "LI"
+      ],
+      "value": 75,
+      "salary": 9,
+      "club": "Manchester City",
+      "nationality": "Croacia",
+      "role": "Objetivo de mercado",
+      "status": "market",
+      "potential": 91,
+      "rating": 87,
+      "foot": "Derecho",
+      "wiki": "Joško Gvardiol",
+      "tags": [
+        "central",
+        "zurdo",
+        "polivalente"
+      ],
+      "difficulty": "muy alta",
+      "source": "Mercado ampliado"
+    },
+    {
+      "id": "cubarsi",
+      "name": "Pau Cubarsí",
+      "age": 19,
+      "position": "DFC",
+      "secondary": [],
+      "value": 70,
+      "salary": 4,
+      "club": "FC Barcelona",
+      "nationality": "España",
+      "role": "Objetivo de mercado",
+      "status": "market",
+      "potential": 92,
+      "rating": 83,
+      "foot": "Derecho",
+      "wiki": "Pau Cubarsí",
+      "tags": [
+        "central",
+        "joven",
+        "español"
+      ],
+      "difficulty": "intocable",
+      "source": "Mercado ampliado"
+    },
+    {
+      "id": "hincapie",
+      "name": "Piero Hincapié",
+      "age": 24,
+      "position": "DFC",
+      "secondary": [
+        "LI"
+      ],
+      "value": 50,
+      "salary": 5,
+      "club": "Bayer Leverkusen",
+      "nationality": "Ecuador",
+      "role": "Objetivo de mercado",
+      "status": "market",
+      "potential": 88,
+      "rating": 84,
+      "foot": "Derecho",
+      "wiki": "Piero Hincapié",
+      "tags": [
+        "central",
+        "zurdo"
+      ],
+      "difficulty": "alta",
+      "source": "Mercado ampliado"
+    },
+    {
+      "id": "diomande",
+      "name": "Ousmane Diomande",
+      "age": 22,
+      "position": "DFC",
+      "secondary": [],
+      "value": 45,
+      "salary": 3,
+      "club": "Sporting CP",
+      "nationality": "Costa de Marfil",
+      "role": "Objetivo de mercado",
+      "status": "market",
+      "potential": 88,
+      "rating": 82,
+      "foot": "Derecho",
+      "wiki": "Ousmane Diomande",
+      "tags": [
+        "central",
+        "joven"
+      ],
+      "difficulty": "alta",
+      "source": "Mercado ampliado"
+    },
+    {
+      "id": "lukeba",
+      "name": "Castello Lukeba",
+      "age": 23,
+      "position": "DFC",
+      "secondary": [],
+      "value": 45,
+      "salary": 4,
+      "club": "RB Leipzig",
+      "nationality": "Francia",
+      "role": "Objetivo de mercado",
+      "status": "market",
+      "potential": 88,
+      "rating": 83,
+      "foot": "Derecho",
+      "wiki": "Castello Lukeba",
+      "tags": [
+        "central",
+        "joven"
+      ],
+      "difficulty": "alta",
+      "source": "Mercado ampliado"
+    },
+    {
+      "id": "inacio",
+      "name": "Gonçalo Inácio",
+      "age": 24,
+      "position": "DFC",
+      "secondary": [],
+      "value": 45,
+      "salary": 3.5,
+      "club": "Sporting CP",
+      "nationality": "Portugal",
+      "role": "Objetivo de mercado",
+      "status": "market",
+      "potential": 87,
+      "rating": 83,
+      "foot": "Derecho",
+      "wiki": "Gonçalo Inácio",
+      "tags": [
+        "central",
+        "zurdo"
+      ],
+      "difficulty": "alta",
+      "source": "Mercado ampliado"
+    },
+    {
+      "id": "scalvini",
+      "name": "Giorgio Scalvini",
+      "age": 22,
+      "position": "DFC",
+      "secondary": [
+        "MCD"
+      ],
+      "value": 40,
+      "salary": 2.5,
+      "club": "Atalanta",
+      "nationality": "Italia",
+      "role": "Objetivo de mercado",
+      "status": "market",
+      "potential": 88,
+      "rating": 82,
+      "foot": "Derecho",
+      "wiki": "Giorgio Scalvini",
+      "tags": [
+        "central",
+        "joven"
+      ],
+      "difficulty": "alta",
+      "source": "Mercado ampliado"
+    },
+    {
+      "id": "guehi",
+      "name": "Marc Guéhi",
+      "age": 25,
+      "position": "DFC",
+      "secondary": [],
+      "value": 38,
+      "salary": 4,
+      "club": "Crystal Palace",
+      "nationality": "Inglaterra",
+      "role": "Objetivo de mercado",
+      "status": "market",
+      "potential": 86,
+      "rating": 83,
+      "foot": "Derecho",
+      "wiki": "Marc Guéhi",
+      "tags": [
+        "central"
+      ],
+      "difficulty": "media",
+      "source": "Mercado ampliado"
+    },
+    {
+      "id": "araujo",
+      "name": "Ronald Araújo",
+      "age": 27,
+      "position": "DFC",
+      "secondary": [
+        "LD"
+      ],
+      "value": 55,
+      "salary": 7,
+      "club": "FC Barcelona",
+      "nationality": "Uruguay",
+      "role": "Objetivo de mercado",
+      "status": "market",
+      "potential": 88,
+      "rating": 86,
+      "foot": "Derecho",
+      "wiki": "Ronald Araújo",
+      "tags": [
+        "central",
+        "físico"
+      ],
+      "difficulty": "muy alta",
+      "source": "Mercado ampliado"
+    },
+    {
+      "id": "tah",
+      "name": "Jonathan Tah",
+      "age": 30,
+      "position": "DFC",
+      "secondary": [],
+      "value": 30,
+      "salary": 5,
+      "club": "Bayer Leverkusen",
+      "nationality": "Alemania",
+      "role": "Objetivo de mercado",
+      "status": "market",
+      "potential": 84,
+      "rating": 84,
+      "foot": "Derecho",
+      "wiki": "Jonathan Tah",
+      "tags": [
+        "central",
+        "veterano"
+      ],
+      "difficulty": "media",
+      "source": "Mercado ampliado"
+    },
+    {
+      "id": "upamecano",
+      "name": "Dayot Upamecano",
+      "age": 27,
+      "position": "DFC",
+      "secondary": [],
+      "value": 50,
+      "salary": 8,
+      "club": "Bayern Munich",
+      "nationality": "Francia",
+      "role": "Objetivo de mercado",
+      "status": "market",
+      "potential": 87,
+      "rating": 85,
+      "foot": "Derecho",
+      "wiki": "Dayot Upamecano",
+      "tags": [
+        "central",
+        "físico"
+      ],
+      "difficulty": "alta",
+      "source": "Mercado ampliado"
+    },
+    {
+      "id": "yoro",
+      "name": "Leny Yoro",
+      "age": 20,
+      "position": "DFC",
+      "secondary": [],
+      "value": 55,
+      "salary": 5,
+      "club": "Manchester United",
+      "nationality": "Francia",
+      "role": "Objetivo de mercado",
+      "status": "market",
+      "potential": 91,
+      "rating": 81,
+      "foot": "Derecho",
+      "wiki": "Leny Yoro",
+      "tags": [
+        "central",
+        "joven"
+      ],
+      "difficulty": "muy alta",
+      "source": "Mercado ampliado"
+    },
+    {
+      "id": "nathan-zeze",
+      "name": "Nathan Zézé",
+      "age": 21,
+      "position": "DFC",
+      "secondary": [],
+      "value": 18,
+      "salary": 1.2,
+      "club": "Nantes",
+      "nationality": "Francia",
+      "role": "Objetivo de mercado",
+      "status": "market",
+      "potential": 85,
+      "rating": 76,
+      "foot": "Derecho",
+      "wiki": "Nathan Zézé",
+      "tags": [
+        "central",
+        "joven",
+        "barato"
+      ],
+      "difficulty": "media",
+      "source": "Mercado ampliado"
+    },
+    {
+      "id": "mosquera",
+      "name": "Cristhian Mosquera",
+      "age": 22,
+      "position": "DFC",
+      "secondary": [],
+      "value": 30,
+      "salary": 2,
+      "club": "Arsenal",
+      "nationality": "España",
+      "role": "Objetivo de mercado",
+      "status": "market",
+      "potential": 86,
+      "rating": 80,
+      "foot": "Derecho",
+      "wiki": "Cristhian Mosquera",
+      "tags": [
+        "central",
+        "español",
+        "joven"
+      ],
+      "difficulty": "media",
+      "source": "Mercado ampliado"
+    },
+    {
+      "id": "hakimi",
+      "name": "Achraf Hakimi",
+      "age": 27,
+      "position": "LD",
+      "secondary": [
+        "CAD"
+      ],
+      "value": 75,
+      "salary": 11,
+      "club": "PSG",
+      "nationality": "Marruecos",
+      "role": "Objetivo de mercado",
+      "status": "market",
+      "potential": 89,
+      "rating": 88,
+      "foot": "Derecho",
+      "wiki": "Achraf Hakimi",
+      "tags": [
+        "lateral",
+        "ofensivo",
+        "exmadrid"
+      ],
+      "difficulty": "muy alta",
+      "source": "Mercado ampliado"
+    },
+    {
+      "id": "frimpong",
+      "name": "Jeremie Frimpong",
+      "age": 25,
+      "position": "LD",
+      "secondary": [
+        "CAD",
+        "ED"
+      ],
+      "value": 55,
+      "salary": 6,
+      "club": "Liverpool",
+      "nationality": "Países Bajos",
+      "role": "Objetivo de mercado",
+      "status": "market",
+      "potential": 87,
+      "rating": 85,
+      "foot": "Derecho",
+      "wiki": "Jeremie Frimpong",
+      "tags": [
+        "lateral",
+        "carrilero",
+        "velocidad"
+      ],
+      "difficulty": "alta",
+      "source": "Mercado ampliado"
+    },
+    {
+      "id": "reece",
+      "name": "Reece James",
+      "age": 26,
+      "position": "LD",
+      "secondary": [
+        "CAD"
+      ],
+      "value": 40,
+      "salary": 8,
+      "club": "Chelsea",
+      "nationality": "Inglaterra",
+      "role": "Objetivo de mercado",
+      "status": "market",
+      "potential": 86,
+      "rating": 84,
+      "foot": "Derecho",
+      "wiki": "Reece James",
+      "tags": [
+        "lateral",
+        "físico"
+      ],
+      "difficulty": "alta",
+      "source": "Mercado ampliado"
+    },
+    {
+      "id": "porro",
+      "name": "Pedro Porro",
+      "age": 26,
+      "position": "LD",
+      "secondary": [
+        "CAD"
+      ],
+      "value": 45,
+      "salary": 5,
+      "club": "Tottenham",
+      "nationality": "España",
+      "role": "Objetivo de mercado",
+      "status": "market",
+      "potential": 86,
+      "rating": 84,
+      "foot": "Derecho",
+      "wiki": "Pedro Porro",
+      "tags": [
+        "lateral",
+        "español",
+        "ofensivo"
+      ],
+      "difficulty": "alta",
+      "source": "Mercado ampliado"
+    },
+    {
+      "id": "gusto",
+      "name": "Malo Gusto",
+      "age": 23,
+      "position": "LD",
+      "secondary": [
+        "CAD"
+      ],
+      "value": 35,
+      "salary": 3,
+      "club": "Chelsea",
+      "nationality": "Francia",
+      "role": "Objetivo de mercado",
+      "status": "market",
+      "potential": 87,
+      "rating": 81,
+      "foot": "Derecho",
+      "wiki": "Malo Gusto",
+      "tags": [
+        "lateral",
+        "joven"
+      ],
+      "difficulty": "media",
+      "source": "Mercado ampliado"
+    },
+    {
+      "id": "vanderson",
+      "name": "Vanderson",
+      "age": 25,
+      "position": "LD",
+      "secondary": [
+        "CAD"
+      ],
+      "value": 30,
+      "salary": 3,
+      "club": "Monaco",
+      "nationality": "Brasil",
+      "role": "Objetivo de mercado",
+      "status": "market",
+      "potential": 85,
+      "rating": 81,
+      "foot": "Derecho",
+      "wiki": "Vanderson",
+      "tags": [
+        "lateral"
+      ],
+      "difficulty": "media",
+      "source": "Mercado ampliado"
+    },
+    {
+      "id": "yan-couto",
+      "name": "Yan Couto",
+      "age": 24,
+      "position": "LD",
+      "secondary": [
+        "CAD"
+      ],
+      "value": 25,
+      "salary": 2.5,
+      "club": "Borussia Dortmund",
+      "nationality": "Brasil",
+      "role": "Objetivo de mercado",
+      "status": "market",
+      "potential": 84,
+      "rating": 80,
+      "foot": "Derecho",
+      "wiki": "Yan Couto",
+      "tags": [
+        "lateral",
+        "ofensivo"
+      ],
+      "difficulty": "media",
+      "source": "Mercado ampliado"
+    },
+    {
+      "id": "arnau",
+      "name": "Arnau Martínez",
+      "age": 23,
+      "position": "LD",
+      "secondary": [
+        "DFC"
+      ],
+      "value": 18,
+      "salary": 1.5,
+      "club": "Girona",
+      "nationality": "España",
+      "role": "Objetivo de mercado",
+      "status": "market",
+      "potential": 84,
+      "rating": 78,
+      "foot": "Derecho",
+      "wiki": "Arnau Martínez",
+      "tags": [
+        "lateral",
+        "español",
+        "barato"
+      ],
+      "difficulty": "media",
+      "source": "Mercado ampliado"
+    },
+    {
+      "id": "nuno-mendes",
+      "name": "Nuno Mendes",
+      "age": 24,
+      "position": "LI",
+      "secondary": [
+        "CAI"
+      ],
+      "value": 75,
+      "salary": 9,
+      "club": "PSG",
+      "nationality": "Portugal",
+      "role": "Objetivo de mercado",
+      "status": "market",
+      "potential": 91,
+      "rating": 87,
+      "foot": "Derecho",
+      "wiki": "Nuno Mendes",
+      "tags": [
+        "lateral",
+        "top",
+        "velocidad"
+      ],
+      "difficulty": "muy alta",
+      "source": "Mercado ampliado"
+    },
+    {
+      "id": "theo",
+      "name": "Theo Hernández",
+      "age": 28,
+      "position": "LI",
+      "secondary": [
+        "CAI"
+      ],
+      "value": 50,
+      "salary": 8,
+      "club": "AC Milan",
+      "nationality": "Francia",
+      "role": "Objetivo de mercado",
+      "status": "market",
+      "potential": 86,
+      "rating": 85,
+      "foot": "Derecho",
+      "wiki": "Theo Hernández",
+      "tags": [
+        "lateral",
+        "ofensivo"
+      ],
+      "difficulty": "alta",
+      "source": "Mercado ampliado"
+    },
+    {
+      "id": "dimarco",
+      "name": "Federico Dimarco",
+      "age": 28,
+      "position": "LI",
+      "secondary": [
+        "CAI"
+      ],
+      "value": 50,
+      "salary": 6,
+      "club": "Inter",
+      "nationality": "Italia",
+      "role": "Objetivo de mercado",
+      "status": "market",
+      "potential": 86,
+      "rating": 86,
+      "foot": "Derecho",
+      "wiki": "Federico Dimarco",
+      "tags": [
+        "lateral",
+        "centros"
+      ],
+      "difficulty": "alta",
+      "source": "Mercado ampliado"
+    },
+    {
+      "id": "grimaldo",
+      "name": "Álex Grimaldo",
+      "age": 30,
+      "position": "LI",
+      "secondary": [
+        "CAI",
+        "MC"
+      ],
+      "value": 45,
+      "salary": 5,
+      "club": "Bayer Leverkusen",
+      "nationality": "España",
+      "role": "Objetivo de mercado",
+      "status": "market",
+      "potential": 86,
+      "rating": 86,
+      "foot": "Derecho",
+      "wiki": "Álex Grimaldo",
+      "tags": [
+        "lateral",
+        "español",
+        "creador"
+      ],
+      "difficulty": "media",
+      "source": "Mercado ampliado"
+    },
+    {
+      "id": "balde",
+      "name": "Alejandro Balde",
+      "age": 22,
+      "position": "LI",
+      "secondary": [
+        "CAI"
+      ],
+      "value": 50,
+      "salary": 5,
+      "club": "FC Barcelona",
+      "nationality": "España",
+      "role": "Objetivo de mercado",
+      "status": "market",
+      "potential": 88,
+      "rating": 82,
+      "foot": "Derecho",
+      "wiki": "Alejandro Balde",
+      "tags": [
+        "lateral",
+        "joven",
+        "español"
+      ],
+      "difficulty": "muy alta",
+      "source": "Mercado ampliado"
+    },
+    {
+      "id": "miguel",
+      "name": "Miguel Gutiérrez",
+      "age": 25,
+      "position": "LI",
+      "secondary": [
+        "CAI"
+      ],
+      "value": 28,
+      "salary": 2.5,
+      "club": "Girona",
+      "nationality": "España",
+      "role": "Objetivo de mercado",
+      "status": "market",
+      "potential": 85,
+      "rating": 81,
+      "foot": "Derecho",
+      "wiki": "Miguel Gutiérrez",
+      "tags": [
+        "lateral",
+        "exmadrid",
+        "español"
+      ],
+      "difficulty": "media",
+      "source": "Mercado ampliado"
+    },
+    {
+      "id": "kerkez",
+      "name": "Milos Kerkez",
+      "age": 22,
+      "position": "LI",
+      "secondary": [
+        "CAI"
+      ],
+      "value": 45,
+      "salary": 5,
+      "club": "Liverpool",
+      "nationality": "Hungría",
+      "role": "Objetivo de mercado",
+      "status": "market",
+      "potential": 88,
+      "rating": 82,
+      "foot": "Derecho",
+      "wiki": "Milos Kerkez",
+      "tags": [
+        "lateral",
+        "joven"
+      ],
+      "difficulty": "alta",
+      "source": "Mercado ampliado"
+    },
+    {
+      "id": "cambiaso",
+      "name": "Andrea Cambiaso",
+      "age": 26,
+      "position": "LI",
+      "secondary": [
+        "LD",
+        "MC"
+      ],
+      "value": 40,
+      "salary": 4,
+      "club": "Juventus",
+      "nationality": "Italia",
+      "role": "Objetivo de mercado",
+      "status": "market",
+      "potential": 86,
+      "rating": 83,
+      "foot": "Derecho",
+      "wiki": "Andrea Cambiaso",
+      "tags": [
+        "lateral",
+        "polivalente"
+      ],
+      "difficulty": "alta",
+      "source": "Mercado ampliado"
+    },
+    {
+      "id": "ait-nouri",
+      "name": "Rayan Aït-Nouri",
+      "age": 25,
+      "position": "LI",
+      "secondary": [
+        "CAI"
+      ],
+      "value": 35,
+      "salary": 4,
+      "club": "Manchester City",
+      "nationality": "Argelia",
+      "role": "Objetivo de mercado",
+      "status": "market",
+      "potential": 86,
+      "rating": 82,
+      "foot": "Derecho",
+      "wiki": "Rayan Aït-Nouri",
+      "tags": [
+        "lateral",
+        "regate"
+      ],
+      "difficulty": "alta",
+      "source": "Mercado ampliado"
+    },
+    {
+      "id": "rodri",
+      "name": "Rodri",
+      "age": 30,
+      "position": "MCD",
+      "secondary": [
+        "MC"
+      ],
+      "value": 110,
+      "salary": 16,
+      "club": "Manchester City",
+      "nationality": "España",
+      "role": "Objetivo de mercado",
+      "status": "market",
+      "potential": 92,
+      "rating": 92,
+      "foot": "Derecho",
+      "wiki": "Rodri",
+      "tags": [
+        "pivote",
+        "balón de oro",
+        "español"
+      ],
+      "difficulty": "intocable",
+      "source": "Mercado ampliado"
+    },
+    {
+      "id": "zubimendi",
+      "name": "Martín Zubimendi",
+      "age": 27,
+      "position": "MCD",
+      "secondary": [
+        "MC"
+      ],
+      "value": 60,
+      "salary": 6,
+      "club": "Arsenal",
+      "nationality": "España",
+      "role": "Objetivo de mercado",
+      "status": "market",
+      "potential": 88,
+      "rating": 86,
+      "foot": "Derecho",
+      "wiki": "Martín Zubimendi",
+      "tags": [
+        "pivote",
+        "español",
+        "control"
+      ],
+      "difficulty": "alta",
+      "source": "Mercado ampliado"
+    },
+    {
+      "id": "joao-neves",
+      "name": "João Neves",
+      "age": 21,
+      "position": "MC",
+      "secondary": [
+        "MCD"
+      ],
+      "value": 90,
+      "salary": 8,
+      "club": "PSG",
+      "nationality": "Portugal",
+      "role": "Objetivo de mercado",
+      "status": "market",
+      "potential": 92,
+      "rating": 86,
+      "foot": "Derecho",
+      "wiki": "João Neves",
+      "tags": [
+        "joven",
+        "motor",
+        "pivote"
+      ],
+      "difficulty": "muy alta",
+      "source": "Mercado ampliado"
+    },
+    {
+      "id": "vitinha",
+      "name": "Vitinha",
+      "age": 26,
+      "position": "MC",
+      "secondary": [
+        "MCO"
+      ],
+      "value": 90,
+      "salary": 10,
+      "club": "PSG",
+      "nationality": "Portugal",
+      "role": "Objetivo de mercado",
+      "status": "market",
+      "potential": 90,
+      "rating": 88,
+      "foot": "Derecho",
+      "wiki": "Vitinha",
+      "tags": [
+        "control",
+        "creador"
+      ],
+      "difficulty": "muy alta",
+      "source": "Mercado ampliado"
+    },
+    {
+      "id": "barella",
+      "name": "Nicolò Barella",
+      "age": 29,
+      "position": "MC",
+      "secondary": [],
+      "value": 75,
+      "salary": 8,
+      "club": "Inter",
+      "nationality": "Italia",
+      "role": "Objetivo de mercado",
+      "status": "market",
+      "potential": 88,
+      "rating": 87,
+      "foot": "Derecho",
+      "wiki": "Nicolò Barella",
+      "tags": [
+        "motor",
+        "interior"
+      ],
+      "difficulty": "alta",
+      "source": "Mercado ampliado"
+    },
+    {
+      "id": "enzo",
+      "name": "Enzo Fernández",
+      "age": 25,
+      "position": "MC",
+      "secondary": [
+        "MCD"
+      ],
+      "value": 75,
+      "salary": 9,
+      "club": "Chelsea",
+      "nationality": "Argentina",
+      "role": "Objetivo de mercado",
+      "status": "market",
+      "potential": 88,
+      "rating": 86,
+      "foot": "Derecho",
+      "wiki": "Enzo Fernández",
+      "tags": [
+        "pase",
+        "interior"
+      ],
+      "difficulty": "alta",
+      "source": "Mercado ampliado"
+    },
+    {
+      "id": "macallister",
+      "name": "Alexis Mac Allister",
+      "age": 27,
+      "position": "MC",
+      "secondary": [
+        "MCD",
+        "MCO"
+      ],
+      "value": 80,
+      "salary": 8,
+      "club": "Liverpool",
+      "nationality": "Argentina",
+      "role": "Objetivo de mercado",
+      "status": "market",
+      "potential": 88,
+      "rating": 87,
+      "foot": "Derecho",
+      "wiki": "Alexis Mac Allister",
+      "tags": [
+        "equilibrio",
+        "campeón"
+      ],
+      "difficulty": "muy alta",
+      "source": "Mercado ampliado"
+    },
+    {
+      "id": "bruno-g",
+      "name": "Bruno Guimarães",
+      "age": 28,
+      "position": "MC",
+      "secondary": [
+        "MCD"
+      ],
+      "value": 70,
+      "salary": 8,
+      "club": "Newcastle",
+      "nationality": "Brasil",
+      "role": "Objetivo de mercado",
+      "status": "market",
+      "potential": 87,
+      "rating": 86,
+      "foot": "Derecho",
+      "wiki": "Bruno Guimarães",
+      "tags": [
+        "pivote",
+        "interior"
+      ],
+      "difficulty": "alta",
+      "source": "Mercado ampliado"
+    },
+    {
+      "id": "declan-rice",
+      "name": "Declan Rice",
+      "age": 27,
+      "position": "MCD",
+      "secondary": [
+        "MC"
+      ],
+      "value": 120,
+      "salary": 13,
+      "club": "Arsenal",
+      "nationality": "Inglaterra",
+      "role": "Objetivo de mercado",
+      "status": "market",
+      "potential": 91,
+      "rating": 89,
+      "foot": "Derecho",
+      "wiki": "Declan Rice",
+      "tags": [
+        "pivote",
+        "físico"
+      ],
+      "difficulty": "intocable",
+      "source": "Mercado ampliado"
+    },
+    {
+      "id": "caicedo",
+      "name": "Moisés Caicedo",
+      "age": 24,
+      "position": "MCD",
+      "secondary": [
+        "MC"
+      ],
+      "value": 90,
+      "salary": 9,
+      "club": "Chelsea",
+      "nationality": "Ecuador",
+      "role": "Objetivo de mercado",
+      "status": "market",
+      "potential": 90,
+      "rating": 87,
+      "foot": "Derecho",
+      "wiki": "Moisés Caicedo",
+      "tags": [
+        "físico",
+        "pivote"
+      ],
+      "difficulty": "muy alta",
+      "source": "Mercado ampliado"
+    },
+    {
+      "id": "pedri",
+      "name": "Pedri",
+      "age": 23,
+      "position": "MC",
+      "secondary": [
+        "MCO"
+      ],
+      "value": 140,
+      "salary": 10,
+      "club": "FC Barcelona",
+      "nationality": "España",
+      "role": "Objetivo de mercado",
+      "status": "market",
+      "potential": 92,
+      "rating": 89,
+      "foot": "Derecho",
+      "wiki": "Pedri",
+      "tags": [
+        "creador",
+        "español",
+        "estrella"
+      ],
+      "difficulty": "intocable",
+      "source": "Mercado ampliado"
+    },
+    {
+      "id": "musiala",
+      "name": "Jamal Musiala",
+      "age": 23,
+      "position": "MCO",
+      "secondary": [
+        "EI",
+        "MC"
+      ],
+      "value": 140,
+      "salary": 14,
+      "club": "Bayern Munich",
+      "nationality": "Alemania",
+      "role": "Objetivo de mercado",
+      "status": "market",
+      "potential": 94,
+      "rating": 90,
+      "foot": "Derecho",
+      "wiki": "Jamal Musiala",
+      "tags": [
+        "galáctico",
+        "creativo"
+      ],
+      "difficulty": "intocable",
+      "source": "Mercado ampliado"
+    },
+    {
+      "id": "wirtz",
+      "name": "Florian Wirtz",
+      "age": 23,
+      "position": "MCO",
+      "secondary": [
+        "EI",
+        "MC"
+      ],
+      "value": 140,
+      "salary": 14,
+      "club": "Liverpool",
+      "nationality": "Alemania",
+      "role": "Objetivo de mercado",
+      "status": "market",
+      "potential": 94,
+      "rating": 90,
+      "foot": "Derecho",
+      "wiki": "Florian Wirtz",
+      "tags": [
+        "galáctico",
+        "creativo"
+      ],
+      "difficulty": "muy alta",
+      "source": "Mercado ampliado"
+    },
+    {
+      "id": "xavi-simons",
+      "name": "Xavi Simons",
+      "age": 23,
+      "position": "MCO",
+      "secondary": [
+        "EI",
+        "ED"
+      ],
+      "value": 70,
+      "salary": 6,
+      "club": "RB Leipzig",
+      "nationality": "Países Bajos",
+      "role": "Objetivo de mercado",
+      "status": "market",
+      "potential": 89,
+      "rating": 85,
+      "foot": "Derecho",
+      "wiki": "Xavi Simons",
+      "tags": [
+        "creativo",
+        "joven"
+      ],
+      "difficulty": "alta",
+      "source": "Mercado ampliado"
+    },
+    {
+      "id": "olmo",
+      "name": "Dani Olmo",
+      "age": 28,
+      "position": "MCO",
+      "secondary": [
+        "EI",
+        "MC"
+      ],
+      "value": 60,
+      "salary": 8,
+      "club": "FC Barcelona",
+      "nationality": "España",
+      "role": "Objetivo de mercado",
+      "status": "market",
+      "potential": 86,
+      "rating": 86,
+      "foot": "Derecho",
+      "wiki": "Dani Olmo",
+      "tags": [
+        "español",
+        "creativo"
+      ],
+      "difficulty": "muy alta",
+      "source": "Mercado ampliado"
+    },
+    {
+      "id": "foden",
+      "name": "Phil Foden",
+      "age": 26,
+      "position": "MCO",
+      "secondary": [
+        "EI",
+        "ED"
+      ],
+      "value": 110,
+      "salary": 12,
+      "club": "Manchester City",
+      "nationality": "Inglaterra",
+      "role": "Objetivo de mercado",
+      "status": "market",
+      "potential": 91,
+      "rating": 89,
+      "foot": "Derecho",
+      "wiki": "Phil Foden",
+      "tags": [
+        "creativo",
+        "zurdo"
+      ],
+      "difficulty": "intocable",
+      "source": "Mercado ampliado"
+    },
+    {
+      "id": "eze",
+      "name": "Eberechi Eze",
+      "age": 27,
+      "position": "MCO",
+      "secondary": [
+        "EI"
+      ],
+      "value": 65,
+      "salary": 7,
+      "club": "Arsenal",
+      "nationality": "Inglaterra",
+      "role": "Objetivo de mercado",
+      "status": "market",
+      "potential": 87,
+      "rating": 86,
+      "foot": "Derecho",
+      "wiki": "Eberechi Eze",
+      "tags": [
+        "creativo",
+        "regate"
+      ],
+      "difficulty": "alta",
+      "source": "Mercado ampliado"
+    },
+    {
+      "id": "cherki",
+      "name": "Rayan Cherki",
+      "age": 22,
+      "position": "MCO",
+      "secondary": [
+        "ED"
+      ],
+      "value": 45,
+      "salary": 4,
+      "club": "Manchester City",
+      "nationality": "Francia",
+      "role": "Objetivo de mercado",
+      "status": "market",
+      "potential": 89,
+      "rating": 83,
+      "foot": "Derecho",
+      "wiki": "Rayan Cherki",
+      "tags": [
+        "zurdo",
+        "creativo",
+        "joven"
+      ],
+      "difficulty": "alta",
+      "source": "Mercado ampliado"
+    },
+    {
+      "id": "wharton",
+      "name": "Adam Wharton",
+      "age": 22,
+      "position": "MC",
+      "secondary": [
+        "MCD"
+      ],
+      "value": 45,
+      "salary": 3,
+      "club": "Crystal Palace",
+      "nationality": "Inglaterra",
+      "role": "Objetivo de mercado",
+      "status": "market",
+      "potential": 88,
+      "rating": 81,
+      "foot": "Derecho",
+      "wiki": "Adam Wharton",
+      "tags": [
+        "joven",
+        "pase"
+      ],
+      "difficulty": "media",
+      "source": "Mercado ampliado"
+    },
+    {
+      "id": "zaire-emery",
+      "name": "Warren Zaïre-Emery",
+      "age": 20,
+      "position": "MC",
+      "secondary": [
+        "MCD"
+      ],
+      "value": 60,
+      "salary": 5,
+      "club": "PSG",
+      "nationality": "Francia",
+      "role": "Objetivo de mercado",
+      "status": "market",
+      "potential": 90,
+      "rating": 82,
+      "foot": "Derecho",
+      "wiki": "Warren Zaïre-Emery",
+      "tags": [
+        "joven",
+        "físico"
+      ],
+      "difficulty": "muy alta",
+      "source": "Mercado ampliado"
+    },
+    {
+      "id": "frenkie",
+      "name": "Frenkie de Jong",
+      "age": 29,
+      "position": "MC",
+      "secondary": [
+        "MCD"
+      ],
+      "value": 60,
+      "salary": 12,
+      "club": "FC Barcelona",
+      "nationality": "Países Bajos",
+      "role": "Objetivo de mercado",
+      "status": "market",
+      "potential": 87,
+      "rating": 87,
+      "foot": "Derecho",
+      "wiki": "Frenkie de Jong",
+      "tags": [
+        "control",
+        "salida"
+      ],
+      "difficulty": "muy alta",
+      "source": "Mercado ampliado"
+    },
+    {
+      "id": "kimmich",
+      "name": "Joshua Kimmich",
+      "age": 31,
+      "position": "MCD",
+      "secondary": [
+        "LD",
+        "MC"
+      ],
+      "value": 50,
+      "salary": 12,
+      "club": "Bayern Munich",
+      "nationality": "Alemania",
+      "role": "Objetivo de mercado",
+      "status": "market",
+      "potential": 87,
+      "rating": 87,
+      "foot": "Derecho",
+      "wiki": "Joshua Kimmich",
+      "tags": [
+        "liderazgo",
+        "pivote"
+      ],
+      "difficulty": "alta",
+      "source": "Mercado ampliado"
+    },
+    {
+      "id": "udehogie",
+      "name": "Destiny Udogie",
+      "age": 23,
+      "position": "LI",
+      "secondary": [
+        "CAI"
+      ],
+      "value": 45,
+      "salary": 5,
+      "club": "Tottenham",
+      "nationality": "Italia",
+      "role": "Objetivo de mercado",
+      "status": "market",
+      "potential": 88,
+      "rating": 82,
+      "foot": "Derecho",
+      "wiki": "Destiny Udogie",
+      "tags": [
+        "lateral",
+        "joven"
+      ],
+      "difficulty": "alta",
+      "source": "Mercado ampliado"
+    },
+    {
+      "id": "haaland",
+      "name": "Erling Haaland",
+      "age": 25,
+      "position": "DC",
+      "secondary": [],
+      "value": 180,
+      "salary": 25,
+      "club": "Manchester City",
+      "nationality": "Noruega",
+      "role": "Objetivo de mercado",
+      "status": "market",
+      "potential": 94,
+      "rating": 93,
+      "foot": "Derecho",
+      "wiki": "Erling Haaland",
+      "tags": [
+        "galáctico",
+        "goleador"
+      ],
+      "difficulty": "intocable",
+      "source": "Mercado ampliado"
+    },
+    {
+      "id": "isak",
+      "name": "Alexander Isak",
+      "age": 26,
+      "position": "DC",
+      "secondary": [
+        "EI"
+      ],
+      "value": 120,
+      "salary": 12,
+      "club": "Liverpool",
+      "nationality": "Suecia",
+      "role": "Objetivo de mercado",
+      "status": "market",
+      "potential": 91,
+      "rating": 89,
+      "foot": "Derecho",
+      "wiki": "Alexander Isak",
+      "tags": [
+        "delantero",
+        "técnico"
+      ],
+      "difficulty": "muy alta",
+      "source": "Mercado ampliado"
+    },
+    {
+      "id": "lautaro",
+      "name": "Lautaro Martínez",
+      "age": 28,
+      "position": "DC",
+      "secondary": [],
+      "value": 95,
+      "salary": 11,
+      "club": "Inter",
+      "nationality": "Argentina",
+      "role": "Objetivo de mercado",
+      "status": "market",
+      "potential": 90,
+      "rating": 89,
+      "foot": "Derecho",
+      "wiki": "Lautaro Martínez",
+      "tags": [
+        "delantero",
+        "liderazgo"
+      ],
+      "difficulty": "alta",
+      "source": "Mercado ampliado"
+    },
+    {
+      "id": "julian",
+      "name": "Julián Álvarez",
+      "age": 26,
+      "position": "DC",
+      "secondary": [
+        "MCO",
+        "EI"
+      ],
+      "value": 100,
+      "salary": 10,
+      "club": "Atlético de Madrid",
+      "nationality": "Argentina",
+      "role": "Objetivo de mercado",
+      "status": "market",
+      "potential": 90,
+      "rating": 88,
+      "foot": "Derecho",
+      "wiki": "Julián Álvarez",
+      "tags": [
+        "polivalente",
+        "presión"
+      ],
+      "difficulty": "muy alta",
+      "source": "Mercado ampliado"
+    },
+    {
+      "id": "osimhen",
+      "name": "Victor Osimhen",
+      "age": 27,
+      "position": "DC",
+      "secondary": [],
+      "value": 75,
+      "salary": 12,
+      "club": "Galatasaray",
+      "nationality": "Nigeria",
+      "role": "Objetivo de mercado",
+      "status": "market",
+      "potential": 88,
+      "rating": 87,
+      "foot": "Derecho",
+      "wiki": "Victor Osimhen",
+      "tags": [
+        "delantero",
+        "físico"
+      ],
+      "difficulty": "alta",
+      "source": "Mercado ampliado"
+    },
+    {
+      "id": "gyokeres",
+      "name": "Viktor Gyökeres",
+      "age": 28,
+      "position": "DC",
+      "secondary": [],
+      "value": 75,
+      "salary": 9,
+      "club": "Arsenal",
+      "nationality": "Suecia",
+      "role": "Objetivo de mercado",
+      "status": "market",
+      "potential": 88,
+      "rating": 87,
+      "foot": "Derecho",
+      "wiki": "Viktor Gyökeres",
+      "tags": [
+        "goleador",
+        "físico"
+      ],
+      "difficulty": "alta",
+      "source": "Mercado ampliado"
+    },
+    {
+      "id": "sesko",
+      "name": "Benjamin Šeško",
+      "age": 23,
+      "position": "DC",
+      "secondary": [],
+      "value": 70,
+      "salary": 6,
+      "club": "Manchester United",
+      "nationality": "Eslovenia",
+      "role": "Objetivo de mercado",
+      "status": "market",
+      "potential": 90,
+      "rating": 84,
+      "foot": "Derecho",
+      "wiki": "Benjamin Šeško",
+      "tags": [
+        "joven",
+        "delantero"
+      ],
+      "difficulty": "alta",
+      "source": "Mercado ampliado"
+    },
+    {
+      "id": "kane",
+      "name": "Harry Kane",
+      "age": 32,
+      "position": "DC",
+      "secondary": [
+        "MCO"
+      ],
+      "value": 75,
+      "salary": 20,
+      "club": "Bayern Munich",
+      "nationality": "Inglaterra",
+      "role": "Objetivo de mercado",
+      "status": "market",
+      "potential": 90,
+      "rating": 90,
+      "foot": "Derecho",
+      "wiki": "Harry Kane",
+      "tags": [
+        "goleador",
+        "veterano"
+      ],
+      "difficulty": "alta",
+      "source": "Mercado ampliado"
+    },
+    {
+      "id": "retеgui",
+      "name": "Mateo Retegui",
+      "age": 27,
+      "position": "DC",
+      "secondary": [],
+      "value": 45,
+      "salary": 5,
+      "club": "Al-Qadsiah",
+      "nationality": "Italia",
+      "role": "Objetivo de mercado",
+      "status": "market",
+      "potential": 85,
+      "rating": 84,
+      "foot": "Derecho",
+      "wiki": "Mateo Retegui",
+      "tags": [
+        "delantero"
+      ],
+      "difficulty": "media",
+      "source": "Mercado ampliado"
+    },
+    {
+      "id": "samug",
+      "name": "Samu Aghehowa",
+      "age": 22,
+      "position": "DC",
+      "secondary": [],
+      "value": 50,
+      "salary": 4,
+      "club": "FC Porto",
+      "nationality": "España",
+      "role": "Objetivo de mercado",
+      "status": "market",
+      "potential": 89,
+      "rating": 82,
+      "foot": "Derecho",
+      "wiki": "Samu Aghehowa",
+      "tags": [
+        "joven",
+        "español",
+        "físico"
+      ],
+      "difficulty": "alta",
+      "source": "Mercado ampliado"
+    },
+    {
+      "id": "ekitike",
+      "name": "Hugo Ekitiké",
+      "age": 24,
+      "position": "DC",
+      "secondary": [],
+      "value": 55,
+      "salary": 5,
+      "club": "Liverpool",
+      "nationality": "Francia",
+      "role": "Objetivo de mercado",
+      "status": "market",
+      "potential": 88,
+      "rating": 83,
+      "foot": "Derecho",
+      "wiki": "Hugo Ekitiké",
+      "tags": [
+        "delantero",
+        "joven"
+      ],
+      "difficulty": "alta",
+      "source": "Mercado ampliado"
+    },
+    {
+      "id": "delap",
+      "name": "Liam Delap",
+      "age": 23,
+      "position": "DC",
+      "secondary": [],
+      "value": 40,
+      "salary": 4,
+      "club": "Chelsea",
+      "nationality": "Inglaterra",
+      "role": "Objetivo de mercado",
+      "status": "market",
+      "potential": 87,
+      "rating": 81,
+      "foot": "Derecho",
+      "wiki": "Liam Delap",
+      "tags": [
+        "delantero",
+        "joven"
+      ],
+      "difficulty": "media",
+      "source": "Mercado ampliado"
+    },
+    {
+      "id": "nico",
+      "name": "Nico Williams",
+      "age": 24,
+      "position": "EI",
+      "secondary": [
+        "ED"
+      ],
+      "value": 80,
+      "salary": 8,
+      "club": "Athletic Club",
+      "nationality": "España",
+      "role": "Objetivo de mercado",
+      "status": "market",
+      "potential": 90,
+      "rating": 87,
+      "foot": "Derecho",
+      "wiki": "Nico Williams",
+      "tags": [
+        "extremo",
+        "español",
+        "velocidad"
+      ],
+      "difficulty": "alta",
+      "source": "Mercado ampliado"
+    },
+    {
+      "id": "kvara",
+      "name": "Khvicha Kvaratskhelia",
+      "age": 25,
+      "position": "EI",
+      "secondary": [
+        "ED"
+      ],
+      "value": 90,
+      "salary": 9,
+      "club": "PSG",
+      "nationality": "Georgia",
+      "role": "Objetivo de mercado",
+      "status": "market",
+      "potential": 90,
+      "rating": 88,
+      "foot": "Derecho",
+      "wiki": "Khvicha Kvaratskhelia",
+      "tags": [
+        "extremo",
+        "regate"
+      ],
+      "difficulty": "muy alta",
+      "source": "Mercado ampliado"
+    },
+    {
+      "id": "leao",
+      "name": "Rafael Leão",
+      "age": 27,
+      "position": "EI",
+      "secondary": [
+        "DC"
+      ],
+      "value": 80,
+      "salary": 9,
+      "club": "AC Milan",
+      "nationality": "Portugal",
+      "role": "Objetivo de mercado",
+      "status": "market",
+      "potential": 88,
+      "rating": 87,
+      "foot": "Derecho",
+      "wiki": "Rafael Leão",
+      "tags": [
+        "extremo",
+        "velocidad"
+      ],
+      "difficulty": "alta",
+      "source": "Mercado ampliado"
+    },
+    {
+      "id": "saka",
+      "name": "Bukayo Saka",
+      "age": 24,
+      "position": "ED",
+      "secondary": [
+        "EI"
+      ],
+      "value": 150,
+      "salary": 14,
+      "club": "Arsenal",
+      "nationality": "Inglaterra",
+      "role": "Objetivo de mercado",
+      "status": "market",
+      "potential": 92,
+      "rating": 90,
+      "foot": "Derecho",
+      "wiki": "Bukayo Saka",
+      "tags": [
+        "extremo",
+        "estrella"
+      ],
+      "difficulty": "intocable",
+      "source": "Mercado ampliado"
+    },
+    {
+      "id": "yamal",
+      "name": "Lamine Yamal",
+      "age": 19,
+      "position": "ED",
+      "secondary": [
+        "EI"
+      ],
+      "value": 200,
+      "salary": 9,
+      "club": "FC Barcelona",
+      "nationality": "España",
+      "role": "Objetivo de mercado",
+      "status": "market",
+      "potential": 95,
+      "rating": 90,
+      "foot": "Derecho",
+      "wiki": "Lamine Yamal",
+      "tags": [
+        "galáctico",
+        "joven",
+        "español"
+      ],
+      "difficulty": "intocable",
+      "source": "Mercado ampliado"
+    },
+    {
+      "id": "olise",
+      "name": "Michael Olise",
+      "age": 24,
+      "position": "ED",
+      "secondary": [
+        "MCO"
+      ],
+      "value": 100,
+      "salary": 10,
+      "club": "Bayern Munich",
+      "nationality": "Francia",
+      "role": "Objetivo de mercado",
+      "status": "market",
+      "potential": 91,
+      "rating": 88,
+      "foot": "Derecho",
+      "wiki": "Michael Olise",
+      "tags": [
+        "zurdo",
+        "creativo"
+      ],
+      "difficulty": "muy alta",
+      "source": "Mercado ampliado"
+    },
+    {
+      "id": "barcola",
+      "name": "Bradley Barcola",
+      "age": 23,
+      "position": "EI",
+      "secondary": [
+        "ED"
+      ],
+      "value": 70,
+      "salary": 5,
+      "club": "PSG",
+      "nationality": "Francia",
+      "role": "Objetivo de mercado",
+      "status": "market",
+      "potential": 90,
+      "rating": 85,
+      "foot": "Derecho",
+      "wiki": "Bradley Barcola",
+      "tags": [
+        "extremo",
+        "joven"
+      ],
+      "difficulty": "muy alta",
+      "source": "Mercado ampliado"
+    },
+    {
+      "id": "doué",
+      "name": "Désiré Doué",
+      "age": 21,
+      "position": "MCO",
+      "secondary": [
+        "EI",
+        "ED"
+      ],
+      "value": 90,
+      "salary": 6,
+      "club": "PSG",
+      "nationality": "Francia",
+      "role": "Objetivo de mercado",
+      "status": "market",
+      "potential": 93,
+      "rating": 86,
+      "foot": "Derecho",
+      "wiki": "Désiré Doué",
+      "tags": [
+        "joven",
+        "creativo"
+      ],
+      "difficulty": "muy alta",
+      "source": "Mercado ampliado"
+    },
+    {
+      "id": "garnacho",
+      "name": "Alejandro Garnacho",
+      "age": 22,
+      "position": "EI",
+      "secondary": [
+        "ED"
+      ],
+      "value": 45,
+      "salary": 5,
+      "club": "Chelsea",
+      "nationality": "Argentina",
+      "role": "Objetivo de mercado",
+      "status": "market",
+      "potential": 88,
+      "rating": 82,
+      "foot": "Derecho",
+      "wiki": "Alejandro Garnacho",
+      "tags": [
+        "joven",
+        "extremo"
+      ],
+      "difficulty": "media",
+      "source": "Mercado ampliado"
+    },
+    {
+      "id": "palmer",
+      "name": "Cole Palmer",
+      "age": 24,
+      "position": "MCO",
+      "secondary": [
+        "ED"
+      ],
+      "value": 120,
+      "salary": 12,
+      "club": "Chelsea",
+      "nationality": "Inglaterra",
+      "role": "Objetivo de mercado",
+      "status": "market",
+      "potential": 92,
+      "rating": 89,
+      "foot": "Derecho",
+      "wiki": "Cole Palmer",
+      "tags": [
+        "creativo",
+        "estrella"
+      ],
+      "difficulty": "intocable",
+      "source": "Mercado ampliado"
+    },
+    {
+      "id": "ferran",
+      "name": "Ferran Torres",
+      "age": 26,
+      "position": "ED",
+      "secondary": [
+        "DC",
+        "EI"
+      ],
+      "value": 35,
+      "salary": 6,
+      "club": "FC Barcelona",
+      "nationality": "España",
+      "role": "Objetivo de mercado",
+      "status": "market",
+      "potential": 83,
+      "rating": 82,
+      "foot": "Derecho",
+      "wiki": "Ferran Torres",
+      "tags": [
+        "español",
+        "polivalente"
+      ],
+      "difficulty": "alta",
+      "source": "Mercado ampliado"
+    },
+    {
+      "id": "raphinha",
+      "name": "Raphinha",
+      "age": 29,
+      "position": "ED",
+      "secondary": [
+        "EI"
+      ],
+      "value": 70,
+      "salary": 9,
+      "club": "FC Barcelona",
+      "nationality": "Brasil",
+      "role": "Objetivo de mercado",
+      "status": "market",
+      "potential": 87,
+      "rating": 87,
+      "foot": "Derecho",
+      "wiki": "Raphinha",
+      "tags": [
+        "extremo",
+        "trabajo"
+      ],
+      "difficulty": "muy alta",
+      "source": "Mercado ampliado"
+    },
+    {
+      "id": "rodrygo-alt",
+      "name": "Savinho",
+      "age": 22,
+      "position": "ED",
+      "secondary": [
+        "EI"
+      ],
+      "value": 55,
+      "salary": 5,
+      "club": "Manchester City",
+      "nationality": "Brasil",
+      "role": "Objetivo de mercado",
+      "status": "market",
+      "potential": 89,
+      "rating": 84,
+      "foot": "Derecho",
+      "wiki": "Savinho",
+      "tags": [
+        "joven",
+        "regate"
+      ],
+      "difficulty": "alta",
+      "source": "Mercado ampliado"
+    },
+    {
+      "id": "mbeumo",
+      "name": "Bryan Mbeumo",
+      "age": 26,
+      "position": "ED",
+      "secondary": [
+        "DC"
+      ],
+      "value": 55,
+      "salary": 6,
+      "club": "Manchester United",
+      "nationality": "Camerún",
+      "role": "Objetivo de mercado",
+      "status": "market",
+      "potential": 86,
+      "rating": 84,
+      "foot": "Derecho",
+      "wiki": "Bryan Mbeumo",
+      "tags": [
+        "extremo",
+        "físico"
+      ],
+      "difficulty": "alta",
+      "source": "Mercado ampliado"
+    },
+    {
+      "id": "kubо",
+      "name": "Takefusa Kubo",
+      "age": 25,
+      "position": "ED",
+      "secondary": [
+        "MCO"
+      ],
+      "value": 50,
+      "salary": 4,
+      "club": "Real Sociedad",
+      "nationality": "Japón",
+      "role": "Objetivo de mercado",
+      "status": "market",
+      "potential": 86,
+      "rating": 84,
+      "foot": "Derecho",
+      "wiki": "Takefusa Kubo",
+      "tags": [
+        "exmadrid",
+        "zurdo",
+        "creativo"
+      ],
+      "difficulty": "alta",
+      "source": "Mercado ampliado"
+    },
+    {
+      "id": "guler-alt",
+      "name": "Kenan Yıldız",
+      "age": 21,
+      "position": "EI",
+      "secondary": [
+        "MCO"
+      ],
+      "value": 50,
+      "salary": 4,
+      "club": "Juventus",
+      "nationality": "Turquía",
+      "role": "Objetivo de mercado",
+      "status": "market",
+      "potential": 90,
+      "rating": 82,
+      "foot": "Derecho",
+      "wiki": "Kenan Yıldız",
+      "tags": [
+        "joven",
+        "creativo"
+      ],
+      "difficulty": "alta",
+      "source": "Mercado ampliado"
+    },
+    {
+      "id": "ansu",
+      "name": "Ansu Fati",
+      "age": 23,
+      "position": "EI",
+      "secondary": [
+        "DC"
+      ],
+      "value": 20,
+      "salary": 5,
+      "club": "FC Barcelona",
+      "nationality": "España",
+      "role": "Objetivo de mercado",
+      "status": "market",
+      "potential": 83,
+      "rating": 78,
+      "foot": "Derecho",
+      "wiki": "Ansu Fati",
+      "tags": [
+        "barato",
+        "español"
+      ],
+      "difficulty": "media",
+      "source": "Mercado ampliado"
+    },
+    {
+      "id": "doku",
+      "name": "Jérémy Doku",
+      "age": 24,
+      "position": "EI",
+      "secondary": [
+        "ED"
+      ],
+      "value": 65,
+      "salary": 7,
+      "club": "Manchester City",
+      "nationality": "Bélgica",
+      "role": "Objetivo de mercado",
+      "status": "market",
+      "potential": 88,
+      "rating": 85,
+      "foot": "Derecho",
+      "wiki": "Jérémy Doku",
+      "tags": [
+        "regate",
+        "velocidad"
+      ],
+      "difficulty": "alta",
+      "source": "Mercado ampliado"
+    },
+    {
+      "id": "rashford",
+      "name": "Marcus Rashford",
+      "age": 28,
+      "position": "EI",
+      "secondary": [
+        "DC"
+      ],
+      "value": 50,
+      "salary": 10,
+      "club": "Manchester United",
+      "nationality": "Inglaterra",
+      "role": "Objetivo de mercado",
+      "status": "market",
+      "potential": 85,
+      "rating": 84,
+      "foot": "Derecho",
+      "wiki": "Marcus Rashford",
+      "tags": [
+        "velocidad",
+        "goleador"
+      ],
+      "difficulty": "media",
+      "source": "Mercado ampliado"
+    },
+    {
+      "id": "marmoush",
+      "name": "Omar Marmoush",
+      "age": 27,
+      "position": "EI",
+      "secondary": [
+        "DC"
+      ],
+      "value": 75,
+      "salary": 8,
+      "club": "Manchester City",
+      "nationality": "Egipto",
+      "role": "Objetivo de mercado",
+      "status": "market",
+      "potential": 87,
+      "rating": 86,
+      "foot": "Derecho",
+      "wiki": "Omar Marmoush",
+      "tags": [
+        "polivalente",
+        "goleador"
+      ],
+      "difficulty": "alta",
+      "source": "Mercado ampliado"
+    },
+    {
+      "id": "joao-felix",
+      "name": "João Félix",
+      "age": 26,
+      "position": "MCO",
+      "secondary": [
+        "EI",
+        "DC"
+      ],
+      "value": 35,
+      "salary": 7,
+      "club": "Al Nassr",
+      "nationality": "Portugal",
+      "role": "Objetivo de mercado",
+      "status": "market",
+      "potential": 84,
+      "rating": 82,
+      "foot": "Derecho",
+      "wiki": "João Félix",
+      "tags": [
+        "creativo",
+        "apuesta"
+      ],
+      "difficulty": "media",
+      "source": "Mercado ampliado"
+    }
+  ],
+  "rumors": [
+    {
+      "id": "rum-haaland",
+      "playerId": "haaland",
+      "status": "Rumor difícil",
+      "confidence": 24,
+      "source": "Radar prensa / X",
+      "note": "Fichaje galáctico, operación económicamente extrema."
+    },
+    {
+      "id": "rum-saliba",
+      "playerId": "saliba",
+      "status": "Interés defensivo",
+      "confidence": 38,
+      "source": "Radar prensa",
+      "note": "Central top para liderar la defensa a largo plazo."
+    },
+    {
+      "id": "rum-wirtz",
+      "playerId": "wirtz",
+      "status": "Objetivo creativo",
+      "confidence": 32,
+      "source": "Radar mercado",
+      "note": "Mediapunta galáctico, encaje con Bellingham a estudiar."
+    },
+    {
+      "id": "rum-rodri",
+      "playerId": "rodri",
+      "status": "Muy difícil",
+      "confidence": 18,
+      "source": "Radar prensa",
+      "note": "Pivote ideal para equilibrio, pero operación casi imposible."
+    },
+    {
+      "id": "rum-nico",
+      "playerId": "nico",
+      "status": "Opción española",
+      "confidence": 45,
+      "source": "Radar mercado",
+      "note": "Extremo español con desequilibrio, útil si sale un atacante."
+    },
+    {
+      "id": "rum-miguel",
+      "playerId": "miguel",
+      "status": "Recompra / opción lógica",
+      "confidence": 58,
+      "source": "Radar mercado",
+      "note": "Perfil de lateral izquierdo con ADN Madrid."
+    },
+    {
+      "id": "rum-bastoni",
+      "playerId": "bastoni",
+      "status": "Central zurdo top",
+      "confidence": 30,
+      "source": "Radar mercado",
+      "note": "Mejora salida de balón y defensa de área."
+    },
+    {
+      "id": "rum-vitinha",
+      "playerId": "vitinha",
+      "status": "Control del medio",
+      "confidence": 25,
+      "source": "Radar mercado",
+      "note": "Sube el control y presión tras pérdida."
+    },
+    {
+      "id": "rum-joao-neves",
+      "playerId": "joao-neves",
+      "status": "Joven elite",
+      "confidence": 22,
+      "source": "Radar mercado",
+      "note": "Interior/pivote de futuro, coste altísimo."
+    },
+    {
+      "id": "rum-theo",
+      "playerId": "theo",
+      "status": "Posible regreso",
+      "confidence": 40,
+      "source": "Radar mercado",
+      "note": "Lateral profundo, ideal para sistema ofensivo."
+    },
+    {
+      "id": "rum-isak",
+      "playerId": "isak",
+      "status": "Delantero premium",
+      "confidence": 28,
+      "source": "Radar mercado",
+      "note": "Alternativa más asociativa al 9 puro."
+    }
+  ],
+  "formations": {
+    "4-3-3": [
+      {
+        "id": "gk",
+        "label": "POR",
+        "x": 50,
+        "y": 90,
+        "group": "POR"
+      },
+      {
+        "id": "lb",
+        "label": "LI",
+        "x": 17,
+        "y": 72,
+        "group": "DEF"
+      },
+      {
+        "id": "lcb",
+        "label": "DFC",
+        "x": 39,
+        "y": 74,
+        "group": "DEF"
+      },
+      {
+        "id": "rcb",
+        "label": "DFC",
+        "x": 61,
+        "y": 74,
+        "group": "DEF"
+      },
+      {
+        "id": "rb",
+        "label": "LD",
+        "x": 83,
+        "y": 72,
+        "group": "DEF"
+      },
+      {
+        "id": "dm",
+        "label": "MCD",
+        "x": 50,
+        "y": 56,
+        "group": "MID"
+      },
+      {
+        "id": "lcm",
+        "label": "MC",
+        "x": 33,
+        "y": 45,
+        "group": "MID"
+      },
+      {
+        "id": "rcm",
+        "label": "MC",
+        "x": 67,
+        "y": 45,
+        "group": "MID"
+      },
+      {
+        "id": "lw",
+        "label": "EI",
+        "x": 20,
+        "y": 24,
+        "group": "FWD"
+      },
+      {
+        "id": "st",
+        "label": "DC",
+        "x": 50,
+        "y": 18,
+        "group": "FWD"
+      },
+      {
+        "id": "rw",
+        "label": "ED",
+        "x": 80,
+        "y": 24,
+        "group": "FWD"
+      }
+    ],
+    "4-2-3-1": [
+      {
+        "id": "gk",
+        "label": "POR",
+        "x": 50,
+        "y": 90,
+        "group": "POR"
+      },
+      {
+        "id": "lb",
+        "label": "LI",
+        "x": 17,
+        "y": 72,
+        "group": "DEF"
+      },
+      {
+        "id": "lcb",
+        "label": "DFC",
+        "x": 39,
+        "y": 74,
+        "group": "DEF"
+      },
+      {
+        "id": "rcb",
+        "label": "DFC",
+        "x": 61,
+        "y": 74,
+        "group": "DEF"
+      },
+      {
+        "id": "rb",
+        "label": "LD",
+        "x": 83,
+        "y": 72,
+        "group": "DEF"
+      },
+      {
+        "id": "ldm",
+        "label": "MCD",
+        "x": 40,
+        "y": 56,
+        "group": "MID"
+      },
+      {
+        "id": "rdm",
+        "label": "MCD",
+        "x": 60,
+        "y": 56,
+        "group": "MID"
+      },
+      {
+        "id": "lam",
+        "label": "EI",
+        "x": 22,
+        "y": 37,
+        "group": "FWD"
+      },
+      {
+        "id": "cam",
+        "label": "MCO",
+        "x": 50,
+        "y": 34,
+        "group": "MID"
+      },
+      {
+        "id": "ram",
+        "label": "ED",
+        "x": 78,
+        "y": 37,
+        "group": "FWD"
+      },
+      {
+        "id": "st",
+        "label": "DC",
+        "x": 50,
+        "y": 18,
+        "group": "FWD"
+      }
+    ],
+    "4-4-2": [
+      {
+        "id": "gk",
+        "label": "POR",
+        "x": 50,
+        "y": 90,
+        "group": "POR"
+      },
+      {
+        "id": "lb",
+        "label": "LI",
+        "x": 17,
+        "y": 72,
+        "group": "DEF"
+      },
+      {
+        "id": "lcb",
+        "label": "DFC",
+        "x": 39,
+        "y": 74,
+        "group": "DEF"
+      },
+      {
+        "id": "rcb",
+        "label": "DFC",
+        "x": 61,
+        "y": 74,
+        "group": "DEF"
+      },
+      {
+        "id": "rb",
+        "label": "LD",
+        "x": 83,
+        "y": 72,
+        "group": "DEF"
+      },
+      {
+        "id": "lm",
+        "label": "MI",
+        "x": 18,
+        "y": 47,
+        "group": "MID"
+      },
+      {
+        "id": "lcm",
+        "label": "MC",
+        "x": 40,
+        "y": 49,
+        "group": "MID"
+      },
+      {
+        "id": "rcm",
+        "label": "MC",
+        "x": 60,
+        "y": 49,
+        "group": "MID"
+      },
+      {
+        "id": "rm",
+        "label": "MD",
+        "x": 82,
+        "y": 47,
+        "group": "MID"
+      },
+      {
+        "id": "lst",
+        "label": "DC",
+        "x": 40,
+        "y": 20,
+        "group": "FWD"
+      },
+      {
+        "id": "rst",
+        "label": "DC",
+        "x": 60,
+        "y": 20,
+        "group": "FWD"
+      }
+    ],
+    "3-5-2": [
+      {
+        "id": "gk",
+        "label": "POR",
+        "x": 50,
+        "y": 90,
+        "group": "POR"
+      },
+      {
+        "id": "lcb",
+        "label": "DFC",
+        "x": 30,
+        "y": 73,
+        "group": "DEF"
+      },
+      {
+        "id": "cb",
+        "label": "DFC",
+        "x": 50,
+        "y": 76,
+        "group": "DEF"
+      },
+      {
+        "id": "rcb",
+        "label": "DFC",
+        "x": 70,
+        "y": 73,
+        "group": "DEF"
+      },
+      {
+        "id": "lwb",
+        "label": "CAI",
+        "x": 14,
+        "y": 52,
+        "group": "DEF"
+      },
+      {
+        "id": "dm",
+        "label": "MCD",
+        "x": 50,
+        "y": 56,
+        "group": "MID"
+      },
+      {
+        "id": "cm1",
+        "label": "MC",
+        "x": 35,
+        "y": 44,
+        "group": "MID"
+      },
+      {
+        "id": "cm2",
+        "label": "MC",
+        "x": 65,
+        "y": 44,
+        "group": "MID"
+      },
+      {
+        "id": "rwb",
+        "label": "CAD",
+        "x": 86,
+        "y": 52,
+        "group": "DEF"
+      },
+      {
+        "id": "lst",
+        "label": "DC",
+        "x": 40,
+        "y": 19,
+        "group": "FWD"
+      },
+      {
+        "id": "rst",
+        "label": "DC",
+        "x": 60,
+        "y": 19,
+        "group": "FWD"
+      }
+    ],
+    "3-4-3": [
+      {
+        "id": "gk",
+        "label": "POR",
+        "x": 50,
+        "y": 90,
+        "group": "POR"
+      },
+      {
+        "id": "lcb",
+        "label": "DFC",
+        "x": 30,
+        "y": 73,
+        "group": "DEF"
+      },
+      {
+        "id": "cb",
+        "label": "DFC",
+        "x": 50,
+        "y": 76,
+        "group": "DEF"
+      },
+      {
+        "id": "rcb",
+        "label": "DFC",
+        "x": 70,
+        "y": 73,
+        "group": "DEF"
+      },
+      {
+        "id": "lm",
+        "label": "CAI",
+        "x": 17,
+        "y": 50,
+        "group": "MID"
+      },
+      {
+        "id": "cm1",
+        "label": "MC",
+        "x": 42,
+        "y": 50,
+        "group": "MID"
+      },
+      {
+        "id": "cm2",
+        "label": "MC",
+        "x": 58,
+        "y": 50,
+        "group": "MID"
+      },
+      {
+        "id": "rm",
+        "label": "CAD",
+        "x": 83,
+        "y": 50,
+        "group": "MID"
+      },
+      {
+        "id": "lw",
+        "label": "EI",
+        "x": 22,
+        "y": 24,
+        "group": "FWD"
+      },
+      {
+        "id": "st",
+        "label": "DC",
+        "x": 50,
+        "y": 18,
+        "group": "FWD"
+      },
+      {
+        "id": "rw",
+        "label": "ED",
+        "x": 78,
+        "y": 24,
+        "group": "FWD"
+      }
+    ]
+  },
+  "projects": {
+    "champions": {
+      "name": "Proyecto Champions",
+      "description": "Máximo rendimiento inmediato. Se penaliza poco gastar, pero mucho debilitar el once."
+    },
+    "galactico": {
+      "name": "Proyecto Galáctico",
+      "description": "Fichar estrellas mundiales aunque el balance quede negativo."
+    },
+    "sostenible": {
+      "name": "Proyecto Sostenible",
+      "description": "No gastar claramente más de lo vendido y mantener masa salarial controlada."
+    },
+    "cantera": {
+      "name": "Proyecto Cantera",
+      "description": "Dar peso a jóvenes, españoles y jugadores de desarrollo."
+    },
+    "espanol": {
+      "name": "Proyecto Español",
+      "description": "Aumentar presencia de jugadores españoles competitivos."
+    },
+    "rebuild": {
+      "name": "Proyecto Rebuild",
+      "description": "Rejuvenecer plantilla, vender veteranos y construir 3-5 años."
+    }
+  },
+  "events": [
+    "Oferta sorpresa por un jugador transferible",
+    "Rumor fuerte detectado en mercado",
+    "Canterano sube potencial",
+    "Veterano baja valor por edad",
+    "Lesión corta en defensa",
+    "Club inglés prepara oferta millonaria"
+  ],
+  "autoMarket": {
+    "enabled": true,
+    "schedule": "4 veces al día vía GitHub Actions",
+    "feeds": [
+      {
+        "name": "Google News · Real Madrid fichajes",
+        "type": "rss",
+        "url": "https://news.google.com/rss/search?q=Real%20Madrid%20fichajes%20rumores%20mercado%20OR%20traspaso&hl=es&gl=ES&ceid=ES:es",
+        "weight": 10
+      },
+      {
+        "name": "Google News · Real Madrid transfers",
+        "type": "rss",
+        "url": "https://news.google.com/rss/search?q=Real%20Madrid%20transfer%20rumours%20target%20signing&hl=en-US&gl=US&ceid=US:en",
+        "weight": 10
+      },
+      {
+        "name": "Google News · Fabrizio + Real Madrid",
+        "type": "rss",
+        "url": "https://news.google.com/rss/search?q=Fabrizio%20Romano%20Real%20Madrid%20transfer%20OR%20signing&hl=en-US&gl=US&ceid=US:en",
+        "weight": 18
+      },
+      {
+        "name": "Bing News · Real Madrid transfer",
+        "type": "rss",
+        "url": "https://www.bing.com/news/search?q=Real+Madrid+transfer+rumours+Fabrizio+Romano&format=rss",
+        "weight": 8
+      }
+    ],
+    "x": {
+      "enabledWhenSecretExists": true,
+      "secretName": "X_BEARER_TOKEN",
+      "username": "FabrizioRomano"
+    },
+    "notes": [
+      "No hace scraping masivo de Transfermarkt.",
+      "No copia tweets completos; solo registra rumor, fuente y enlace.",
+      "Los jugadores nuevos detectados se añaden como objetivos de mercado revisables."
+    ]
+  }
+}

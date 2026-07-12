@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Madrid President Simulator 2.1 AutoMarket</title>
+  <meta name="description" content="Simulador fan no oficial para gestionar plantilla, fichajes, rumores, once y balance económico del Real Madrid." />
+  <meta property="og:title" content="Madrid President Simulator 2.1 AutoMarket" />
+  <meta property="og:description" content="Vende, ficha, negocia y monta tu Real Madrid ideal." />
+  <meta name="theme-color" content="#0b0f1a" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="hero glass">
+      <div class="hero__content">
+        <p class="eyebrow">Fan project · Real Madrid inspired · No oficial</p>
+        <h1>Madrid President Simulator <span>2.1 AutoMarket</span></h1>
+        <p class="hero__lead">Gestiona plantilla, ventas, fichajes, rumores automáticos, negociación, once, balance salarial y proyecto deportivo en una sola app.</p>
+        <div class="hero__actions">
+          <button id="btnShare" class="btn btn-primary">Compartir web</button>
+          <button id="btnExportPng" class="btn btn-soft">Exportar once PNG</button>
+          <button id="btnReset" class="btn btn-danger-soft">Reiniciar demo</button>
+        </div>
+      </div>
+      <div class="hero__scoreboard">
+        <div><span id="kpiSquad">0</span><small>Plantilla</small></div>
+        <div><span id="kpiMarket">0</span><small>Mercado</small></div>
+        <div><span id="kpiBalance">0 M€</span><small>Balance</small></div>
+        <div><span id="kpiRating">—</span><small>Nota XI</small></div>
+      </div>
+    </header>
+
+    <nav class="topnav glass" aria-label="Navegación principal">
+      <button data-tab="dashboard" class="nav-btn active">Dashboard</button>
+      <button data-tab="squad" class="nav-btn">Plantilla</button>
+      <button data-tab="market" class="nav-btn">Mercado Pro</button>
+      <button data-tab="analysis" class="nav-btn">Análisis</button>
+      <button data-tab="season" class="nav-btn">Temporada</button>
+      <button data-tab="data" class="nav-btn">Datos</button>
+    </nav>
+
+    <main>
+      <section id="tab-dashboard" class="tab active">
+        <div class="dashboard-grid">
+          <aside class="panel glass controls-panel">
+            <div class="panel-head">
+              <h2>Proyecto</h2>
+              <span class="pill" id="lastUpdate">Cargando datos…</span>
+            </div>
+            <label class="field">
+              <span>Nombre de simulación</span>
+              <input id="simName" placeholder="Proyecto Galáctico" />
+            </label>
+            <label class="field">
+              <span>Objetivo presidencial</span>
+              <select id="projectSelect"></select>
+            </label>
+            <label class="field inline-field">
+              <span>Presupuesto inicial</span>
+              <input id="initialBudget" type="number" step="5" />
+              <b>M€</b>
+            </label>
+            <label class="field">
+              <span>Formación</span>
+              <select id="formationSelect"></select>
+            </label>
+            <div class="button-row">
+              <button id="btnSuggestedXI" class="btn btn-primary">XI sugerido</button>
+              <button id="btnClearXI" class="btn btn-soft">Vaciar campo</button>
+            </div>
+            <div class="button-row">
+              <button id="btnSaveSim" class="btn btn-soft">Guardar</button>
+              <button id="btnNewSim" class="btn btn-soft">Nueva</button>
+            </div>
+            <label class="field">
+              <span>Simulaciones guardadas</span>
+              <select id="savedSelect"></select>
+            </label>
+            <div class="button-row">
+              <button id="btnLoadSim" class="btn btn-soft">Cargar</button>
+              <button id="btnDuplicateSim" class="btn btn-soft">Duplicar</button>
+            </div>
+          </aside>
+
+          <section class="panel glass pitch-panel">
+            <div class="panel-head">
+              <div>
+                <h2>Once titular</h2>
+                <p>Arrastra jugadores desde disponibles o mercado. Al entrar al campo, desaparecen de disponibles.</p>
+              </div>
+              <span class="pill" id="formationBadge">4-3-3</span>
+            </div>
+            <div id="pitch" class="pitch" aria-label="Campo de fútbol"></div>
+          </section>
+
+          <aside class="panel glass finance-panel">
+            <div class="panel-head"><h2>Finanzas</h2><span id="riskBadge" class="pill">—</span></div>
+            <div id="financeCards" class="finance-cards"></div>
+            <div class="mini-chart" aria-hidden="true">
+              <div id="barSales" class="bar sales"></div>
+              <div id="barBuys" class="bar buys"></div>
+              <div id="barSalary" class="bar salary"></div>
+            </div>
+            <div class="sponsor-card">
+              <b>Espacio sponsor</b>
+              <p>Zona preparada para patrocinio, donaciones o anuncio manual discreto.</p>
+              <button id="btnSupport" class="btn btn-gold">Apoyar proyecto</button>
+            </div>
+          </aside>
+        </div>
+
+        <div class="lower-grid">
+          <section class="panel glass">
+            <div class="panel-head">
+              <h2>Disponibles</h2>
+              <div class="tools"><input id="availableSearch" placeholder="Buscar en plantilla…" /></div>
+            </div>
+            <div id="availableList" class="card-grid compact"></div>
+          </section>
+          <section class="panel glass">
+            <div class="panel-head">
+              <h2>Banquillo y gestión</h2>
+              <span class="pill">Click en jugador para detalles</span>
+            </div>
+            <div id="benchList" class="card-grid compact"></div>
+          </section>
+        </div>
+      </section>
+
+      <section id="tab-squad" class="tab">
+        <div class="panel glass">
+          <div class="panel-head">
+            <div><h2>Plantilla actual</h2><p>Base revisada y editable. Usa filtros para detectar exceso o falta por posición.</p></div>
+            <div class="tools">
+              <input id="squadSearch" placeholder="Buscar jugador…" />
+              <select id="squadFilter"><option value="all">Todas</option></select>
+            </div>
+          </div>
+          <div id="squadGrid" class="card-grid"></div>
+        </div>
+        <div class="panel glass mt">
+          <div class="panel-head"><h2>Salidas / no activos</h2><span class="pill">Contexto</span></div>
+          <div id="formerGrid" class="card-grid compact"></div>
+        </div>
+      </section>
+
+      <section id="tab-market" class="tab">
+        <div class="market-layout">
+          <section class="panel glass">
+            <div class="panel-head">
+              <div><h2>Mercado Pro</h2><p>Busca, filtra, negocia y ficha jugadores. Los precios de compra estiman sobreprecio realista.</p></div>
+            </div>
+            <div class="market-filters">
+              <input id="marketSearch" placeholder="Nombre, club, país, etiqueta…" />
+              <select id="marketPosition"><option value="all">Posición</option></select>
+              <select id="marketDifficulty"><option value="all">Dificultad</option></select>
+              <label><span>Edad máx.</span><input id="marketAge" type="number" min="16" max="45" placeholder="99" /></label>
+              <label><span>Valor máx.</span><input id="marketValue" type="number" min="1" step="5" placeholder="999" /></label>
+              <button id="btnNeedTargets" class="btn btn-primary">Sugerir por necesidades</button>
+            </div>
+            <div id="marketGrid" class="card-grid"></div>
+          </section>
+          <aside class="panel glass sticky-panel">
+            <div class="panel-head"><h2>Rumores</h2><span class="pill live">Radar</span></div>
+            <p class="muted">Panel preparado para alimentar desde <code>data.json</code> y futura automatización. No copia tweets: resume estado, jugador y fuente.</p>
+            <div id="rumorList" class="rumor-list"></div>
+            <div class="source-links" id="sourceLinks"></div>
+          </aside>
+        </div>
+      </section>
+
+      <section id="tab-analysis" class="tab">
+        <div class="analysis-grid">
+          <section class="panel glass">
+            <div class="panel-head"><h2>Análisis táctico avanzado</h2><span id="analysisScore" class="big-pill">—</span></div>
+            <div id="lineScores" class="line-scores"></div>
+            <div id="analysisText" class="analysis-text"></div>
+          </section>
+          <section class="panel glass">
+            <div class="panel-head"><h2>Estado de plantilla</h2><span id="projectScore" class="big-pill">—</span></div>
+            <div id="squadNeeds" class="needs-list"></div>
+          </section>
+          <section class="panel glass wide">
+            <div class="panel-head"><h2>Historial de operaciones</h2><button id="btnUndo" class="btn btn-soft">Deshacer última</button></div>
+            <div id="historyList" class="history-list"></div>
+          </section>
+        </div>
+      </section>
+
+      <section id="tab-season" class="tab">
+        <div class="season-grid">
+          <section class="panel glass">
+            <div class="panel-head"><h2>Modo temporada</h2><span class="pill" id="seasonBadge">2026/27 · Verano</span></div>
+            <p>Simula eventos de mercado, crecimiento joven, bajada de veteranos, ofertas y riesgo financiero.</p>
+            <div class="button-row">
+              <button id="btnAdvanceWindow" class="btn btn-primary">Avanzar ventana</button>
+              <button id="btnSimEvent" class="btn btn-soft">Generar evento</button>
+            </div>
+            <div id="seasonLog" class="season-log"></div>
+          </section>
+          <section class="panel glass">
+            <div class="panel-head"><h2>Comparador rápido</h2><span class="pill">Antes / después</span></div>
+            <div id="compareStats" class="compare-stats"></div>
+          </section>
+        </div>
+      </section>
+
+      <section id="tab-data" class="tab">
+        <div class="data-grid">
+          <section class="panel glass">
+            <div class="panel-head"><h2>Datos y automatización</h2><span class="pill">data.json</span></div>
+            <p>La app ya lee jugadores, rumores y formaciones desde <code>data.json</code>. Esto permite actualizar sin tocar la lógica.</p>
+            <div class="button-row">
+              <button id="btnExportJson" class="btn btn-primary">Exportar simulación JSON</button>
+              <label class="btn btn-soft file-label">Importar data/simulación <input id="fileImport" type="file" accept="application/json" /></label>
+            </div>
+            <textarea id="dataPreview" spellcheck="false"></textarea>
+          </section>
+          <section class="panel glass">
+            <div class="panel-head"><h2>Roadmap automático</h2><span class="pill live">GitHub Actions</span></div>
+            <ol class="roadmap">
+              <li><b>Fase actual:</b> datos separados, mercado ampliado, rumour board y script base.</li>
+              <li><b>Siguiente:</b> conectar una API/fuente autorizada para rumores y actualizar <code>data.json</code> diariamente.</li>
+              <li><b>Fabrizio/X:</b> requiere API oficial de X/Bearer Token; guardar solo resumen, jugador, estado y enlace.</li>
+              <li><b>Transfermarkt:</b> usar enlaces y revisión; evitar scraping masivo no autorizado.</li>
+            </ol>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer glass">
+      <p><b>Proyecto fan no oficial.</b> No afiliado al Real Madrid, Transfermarkt, X ni periodistas. Valores orientativos y editables.</p>
+      <p>Versión 2.0 · Diseñado para GitHub Pages · Datos separados en <code>data.json</code></p>
+    </footer>
+  </div>
+
+  <dialog id="playerModal" class="modal">
+    <div class="modal-card glass">
+      <button id="modalClose" class="modal-close">×</button>
+      <div id="modalContent"></div>
+    </div>
+  </dialog>
+
+  <div id="toast" class="toast" role="status"></div>
+  <script src="app.js"></script>
+</body>
+</html>
