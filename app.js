@@ -379,9 +379,16 @@ function getWikiTitle(p){
 function faceHtml(p){
   const initials = getInitials(p.name);
   const manual = p.photo;
-  const srcAttr = manual ? `data-src="${escapeAttr(manual)}"` : '';
   const wikiTitle = getWikiTitle(p);
-  return `<div class="face" data-face="${p.id}" data-player-id="${p.id}" data-wiki="${escapeAttr(wikiTitle)}" ${srcAttr}>${initials}</div>`;
+
+  if (manual) {
+    return `<div class="face face-direct" data-face="${p.id}" data-player-id="${p.id}">
+      <img class="face-img" src="${escapeAttr(manual)}" alt="${escapeAttr(p.name)}" loading="lazy" referrerpolicy="no-referrer"
+        onerror="this.remove(); this.parentElement.textContent='${escapeAttr(initials)}'; this.parentElement.classList.add('face-fallback');">
+    </div>`;
+  }
+
+  return `<div class="face" data-face="${p.id}" data-player-id="${p.id}" data-wiki="${escapeAttr(wikiTitle)}">${initials}</div>`;
 }
 function initFaceObserver(){
   faceObserver = new IntersectionObserver(entries => entries.forEach(entry => {
@@ -390,7 +397,7 @@ function initFaceObserver(){
 }
 function observeFaces(){
   if(!faceObserver) return;
-  document.querySelectorAll('.face[data-face]:not([data-observed])').forEach(el => { el.dataset.observed='1'; faceObserver.observe(el); });
+  document.querySelectorAll('.face[data-face]:not(.face-direct):not([data-observed])').forEach(el => { el.dataset.observed='1'; faceObserver.observe(el); });
 }
 async function loadFace(el){
   if(el.dataset.loaded) return;
@@ -465,7 +472,10 @@ function openPlayerModal(id){
   const buyCost = estimateBuyCost(p);
   const sellOffer = estimateSellOffer(p);
   els.modalContent.innerHTML = `<div class="modal-player">
-    <div class="modal-photo face" data-face="modal-${p.id}" data-wiki="${escapeAttr(getWikiTitle(p))}" ${p.photo ? `data-src="${escapeAttr(p.photo)}"` : ''}>${getInitials(p.name)}</div>
+    ${p.photo ? `<div class="modal-photo face face-direct" data-face="modal-${p.id}">
+      <img class="face-img" src="${escapeAttr(p.photo)}" alt="${escapeAttr(p.name)}" loading="lazy" referrerpolicy="no-referrer"
+        onerror="this.remove(); this.parentElement.textContent='${escapeAttr(getInitials(p.name))}'; this.parentElement.classList.add('face-fallback');">
+    </div>` : `<div class="modal-photo face" data-face="modal-${p.id}" data-wiki="${escapeAttr(getWikiTitle(p))}">${getInitials(p.name)}</div>`}
     <div>
       <span class="pill">${escapeHtml(p.status)} · ${escapeHtml(p.difficulty || 'media')}</span>
       <h2>${escapeHtml(p.name)}</h2>

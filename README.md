@@ -64,3 +64,9 @@ Esta versión incluye una imagen local fija para cada jugador en `assets/faces/`
 
 Esta versión no necesita subir `assets/`.
 Las imágenes de los jugadores van integradas dentro de `data.json` como SVG embebido.
+
+
+## Fix de imágenes directas
+
+Las imágenes integradas en `data.json` se renderizan ahora directamente como `<img>`.
+Esto evita que se queden bloqueadas como iniciales si el cargador lazy externo no actúa.
