@@ -53,3 +53,8 @@ Pulsa `Ctrl + F5` si ves una versión antigua.
 ## Aviso
 
 Proyecto fan no oficial. No está afiliado al Real Madrid, Transfermarkt, X ni periodistas. Los valores son orientativos y el usuario decide manualmente los precios reales de compra y venta.
+
+
+## Imágenes fijas locales
+
+Esta versión incluye una imagen local fija para cada jugador en `assets/faces/`, por lo que siempre se verá una imagen sin depender de búsquedas externas o APIs.
