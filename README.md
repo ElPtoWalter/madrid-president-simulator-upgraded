@@ -1,35 +1,55 @@
-# Madrid President Simulator 2.2 · Temporada 26/27
+# Madrid President Simulator 3.0 · Reality Mode 26/27
 
-Proyecto fan no oficial inspirado en el Real Madrid. Esta versión cambia el enfoque: la app trabaja **solo con la temporada 2026/27** y sirve para que cada usuario diseñe la plantilla más cercana a la realidad posible.
+Proyecto fan no oficial para planificar la plantilla del Real Madrid 2026/27 con José Mourinho como entrenador del contexto de simulación.
 
-## Novedades 2.2
+## Enfoque
 
-- Temporada fija: **2026/27**. No hay progresión a 27/28 ni envejecimiento automático.
-- Plantilla base 26/27 revisada con Real Madrid oficial/provisional y Transfermarkt 26/27.
-- Mantiene once, drag & drop, mercado, rumores, balance, salarios, análisis y AutoMarket.
-- Cada operación parte de un **valor base de mercado**, pero el usuario decide manualmente:
-  - por cuánto vende a un jugador;
-  - cuánto paga por un fichaje.
-- El balance muestra el **diferencial vs valor base** para ver si has negociado por encima o por debajo.
-- Añadidos jugadores de plantilla amplia/cantera/retornos 26/27 detectados en contexto de Transfermarkt.
+La web ya no busca simular muchas temporadas. Está centrada en una pregunta:
 
-## Archivos
+> ¿Qué plantilla debería construir el Real Madrid para la temporada 2026/27 de la forma más realista posible?
 
-- `index.html`
-- `styles.css`
-- `app.js`
-- `data.json`
-- `scripts/update-data.mjs`
-- `.github/workflows/update-data.yml`
+Puedes vender, fichar, ajustar manualmente precios, controlar presupuesto, montar el XI, comparar proyectos y compartir tu plantilla.
 
-## Uso en GitHub Pages
+## Novedades 3.0
 
-Sustituye todos los archivos anteriores por los de este ZIP. Después abre:
+- Reality Score 0-100.
+- Modo realismo ON/OFF.
+- Plan Mourinho 26/27.
+- Enlaces compartibles de plantilla exacta.
+- Imagen premium para redes.
+- Negociación avanzada con rango realista.
+- Evaluación de cada compra/venta: ganga, realista, cara, venta excelente, etc.
+- Análisis de plantilla completa por posición.
+- Fair Play financiero simplificado.
+- Director deportivo IA local: sugiere fichajes, ventas y prioridades.
+- Comparador de proyectos guardados.
+- Alertas AutoMarket más visuales.
+- Botón móvil para colocar jugador en el campo sin drag & drop.
+- Fotos mejoradas mediante Wikipedia/Wikimedia y URL manual opcional.
+
+## Subida a GitHub Pages
+
+Sube/reemplaza en tu repositorio:
 
 ```text
-https://elptowalter.github.io/madrid-president-simulator-upgraded/?v=season-2627
+index.html
+styles.css
+app.js
+data.json
+README.md
+scripts/update-data.mjs
 ```
+
+No hace falta subir `.github` si ya tienes el workflow creado. Si lo borras, crea manualmente `.github/workflows/automarket.yml` como hiciste antes.
+
+Después abre:
+
+```text
+https://elptowalter.github.io/madrid-president-simulator-upgraded/?v=3-reality-mode
+```
+
+Pulsa `Ctrl + F5` si ves una versión antigua.
 
 ## Aviso
 
-No es una web oficial. No está afiliada al Real Madrid, Transfermarkt, X ni periodistas. Los valores son base/orientativos y editables. Las operaciones son simuladas.
+Proyecto fan no oficial. No está afiliado al Real Madrid, Transfermarkt, X ni periodistas. Los valores son orientativos y el usuario decide manualmente los precios reales de compra y venta.

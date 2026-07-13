@@ -1,5 +1,5 @@
-const STORE_KEY = 'madrid-president-state-v22-season-2627';
-const SIMS_KEY = 'madrid-president-sims-v22-season-2627';
+const STORE_KEY = 'madrid-president-state-v30-reality-2627';
+const SIMS_KEY = 'madrid-president-sims-v30-reality-2627';
 const FACE_CACHE_KEY = 'madrid-president-face-cache-v4-fixed-wikimedia';
 
 const els = {};
@@ -57,7 +57,7 @@ async function init(){
     toast('No he podido cargar data.json. En GitHub Pages funcionará; en local usa un servidor o sube todos los archivos.');
     data = fallbackData();
   }
-  state = loadState() || createInitialState();
+  state = loadSharedStateFromUrl() || loadState() || createInitialState();
   ensureStateIntegrity();
   initFaceObserver();
   fillStaticControls();
@@ -71,9 +71,11 @@ function cacheEls(){
 function createInitialState(){
   return {
     simName: 'Proyecto Real Madrid 26/27',
-    project: 'champions',
+    project: 'mourinho',
     formation: '4-3-3',
     initialBudget: 0,
+    realityMode: true,
+    coach: 'José Mourinho',
     season: {year:'2026/27', window:'Planificación', tick:0},
     lineup: {},
     sold: [],
@@ -113,23 +115,31 @@ function bindStaticEvents(){
   document.querySelectorAll('.nav-btn').forEach(btn => btn.addEventListener('click', () => switchTab(btn.dataset.tab)));
   els.btnReset?.addEventListener('click', () => { if(confirm('¿Reiniciar esta simulación?')){ state=createInitialState(); saveState(); fillStaticControls(); renderAll(); }});
   els.btnShare?.addEventListener('click', shareSite);
+  els.btnShareSquad?.addEventListener('click', shareSquadLink);
   els.btnExportPng?.addEventListener('click', exportLineupPng);
+  els.btnExportSocial?.addEventListener('click', exportSocialPng);
   els.btnSupport?.addEventListener('click', () => toast('Aquí puedes poner tu enlace de Ko-fi, PayPal o Buy Me a Coffee cuando lo tengas.'));
   els.btnSuggestedXI?.addEventListener('click', applySuggestedXI);
+  els.btnMourinhoXI?.addEventListener('click', applyMourinhoXI);
   els.btnClearXI?.addEventListener('click', () => { state.lineup={}; pushHistory('once','Campo vaciado',0); saveAndRender(); });
   els.btnSaveSim?.addEventListener('click', saveNamedSimulation);
   els.btnLoadSim?.addEventListener('click', loadNamedSimulation);
   els.btnDuplicateSim?.addEventListener('click', duplicateSimulation);
   els.btnNewSim?.addEventListener('click', () => { state=createInitialState(); fillStaticControls(); saveAndRender(); });
   els.btnNeedTargets?.addEventListener('click', suggestByNeeds);
+  els.btnAiTargets?.addEventListener('click', aiSuggestTargets);
+  els.btnAiSale?.addEventListener('click', aiSuggestSale);
+  els.btnAiFix?.addEventListener('click', aiFixPlan);
   els.btnUndo?.addEventListener('click', undoLast);
   els.btnAdvanceWindow?.addEventListener('click', cycleSeasonPhase);
   els.btnSimEvent?.addEventListener('click', generateSeasonEvent);
   els.btnExportJson?.addEventListener('click', exportSimulationJson);
   els.fileImport?.addEventListener('change', importJson);
+  els.compareSelect?.addEventListener('change', renderCompare);
+  els.realismMode?.addEventListener('change', e => { state.realityMode = !!e.target.checked; saveAndRender(); });
   els.modalClose?.addEventListener('click', () => els.playerModal.close());
   els.playerModal?.addEventListener('click', (e)=>{ if(e.target === els.playerModal) els.playerModal.close(); });
-  ['availableSearch','squadSearch','squadFilter','marketSearch','marketPosition','marketDifficulty','marketAge','marketValue'].forEach(id => els[id]?.addEventListener('input', renderAll));
+  ['availableSearch','squadSearch','squadFilter','marketSearch','marketPosition','marketDifficulty','marketAge','marketValue','marketPotential','marketSalary','marketRole'].forEach(id => els[id]?.addEventListener('input', renderAll));
   els.projectSelect?.addEventListener('change', e => { state.project=e.target.value; saveAndRender(); });
   els.formationSelect?.addEventListener('change', e => { state.formation=e.target.value; state.lineup={}; pushHistory('once',`Cambio a ${state.formation}`,0); saveAndRender(); });
   els.initialBudget?.addEventListener('input', e => { state.initialBudget = Number(e.target.value || 0); saveAndRender(); });
@@ -152,10 +162,12 @@ function fillStaticControls(){
     sel.innerHTML = first + POS_LABELS.map(p => `<option value="${p}">${p}</option>`).join('');
   });
   els.marketDifficulty.innerHTML = '<option value="all">Dificultad</option>' + DIFFS.map(d => `<option value="${d}">${capitalize(d)}</option>`).join('');
+  if(els.marketRole){ const tags=uniqueBy(getAllPlayers().flatMap(p=>p.tags||[]).filter(Boolean).sort(), x=>x); els.marketRole.innerHTML = '<option value="all">Rol / etiqueta</option>' + tags.map(t=>`<option value="${escapeAttr(t)}">${escapeHtml(t)}</option>`).join(''); }
   els.projectSelect.value = state.project;
   els.formationSelect.value = state.formation;
   els.initialBudget.value = state.initialBudget;
   els.simName.value = state.simName || '';
+  if(els.realismMode) els.realismMode.checked = state.realityMode !== false;
   renderSavedSelect();
 }
 
@@ -171,6 +183,10 @@ function renderAll(){
   renderRumors();
   renderFinance();
   renderAnalysis();
+  renderRealityMode();
+  renderSquadMatrix();
+  renderAIDirector();
+  renderCompare();
   renderHistory();
   renderSeason();
   renderDataPreview();
@@ -182,7 +198,8 @@ function syncControls(){
   els.formationSelect && (els.formationSelect.value = state.formation);
   els.initialBudget && (els.initialBudget.value = state.initialBudget);
   els.simName && (els.simName.value = state.simName || '');
-  els.lastUpdate.textContent = `Datos: ${data.meta?.lastManualReview || '—'} · AutoMarket: ${formatAutoDate(data.meta?.lastAutoUpdate || data.meta?.autoMarket?.lastRun)}`;
+  els.realismMode && (els.realismMode.checked = state.realityMode !== false);
+  els.lastUpdate.textContent = `Datos: ${data.meta?.lastManualReview || '—'} · AutoMarket: ${formatAutoDate(data.meta?.lastAutoUpdate || data.meta?.autoMarket?.lastRun)} · Coach: José Mourinho`;
   els.formationBadge.textContent = state.formation;
   els.seasonBadge.textContent = `${state.season.year} · ${state.season.window}`;
 }
@@ -282,14 +299,18 @@ function renderMarket(){
   const diff = els.marketDifficulty?.value || 'all';
   const maxAge = Number(els.marketAge?.value || 99);
   const maxVal = Number(els.marketValue?.value || 999);
+  const minPotential = Number(els.marketPotential?.value || 0);
+  const maxSalary = Number(els.marketSalary?.value || 999);
+  const role = els.marketRole?.value || 'all';
   let market = playersByStatus('market').filter(p => !isSigned(p.id) && !isSold(p.id));
-  market = market.filter(p => (pos==='all'||p.position===pos||p.secondary.includes(pos)) && (diff==='all'||p.difficulty===diff) && p.age<=maxAge && p.value<=maxVal);
+  market = market.filter(p => (pos==='all'||p.position===pos||p.secondary.includes(pos)) && (diff==='all'||p.difficulty===diff) && p.age<=maxAge && p.value<=maxVal && (p.potential||0)>=minPotential && (p.salary||0)<=maxSalary && (role==='all'||(p.tags||[]).includes(role))); 
   if(q) market = market.filter(p => norm(`${p.name} ${p.club} ${p.nationality} ${p.position} ${p.secondary.join(' ')} ${p.tags.join(' ')}`).includes(q));
   market.sort((a,b)=> b.rating - a.rating || b.potential - a.potential || a.value-b.value);
   els.marketGrid.innerHTML = market.map(p => playerCardHtml(p, {actions:['open','negotiate','target']})).join('') || empty('No hay objetivos con esos filtros.');
   bindCardEvents(els.marketGrid);
 }
 function renderRumors(){
+  renderAutoMarketAlerts();
   const sorted = (data.rumors||[]).slice().sort((a,b)=>(b.auto?1:0)-(a.auto?1:0) || (b.confidence||0)-(a.confidence||0));
   els.rumorList.innerHTML = sorted.map(r => {
     const p = getPlayer(r.playerId);
@@ -459,11 +480,13 @@ function openPlayerModal(id){
       <div class="analysis-text mt">
         <div class="note"><b>Rol:</b> ${escapeHtml(p.role || '—')}</div>
         <div class="note"><b>Compra estimada:</b> ${fmtMoney(buyCost)} · <b>Oferta de venta estimada:</b> ${fmtMoney(sellOffer)}</div>
+        <div class="note"><b>Rango realista compra:</b> ${formatRange(getRealisticRange('buy', p))} · <b>venta:</b> ${formatRange(getRealisticRange('sale', p))}</div>
         ${slot ? `<div class="note warn">Está colocado en el campo. Si lo vendes, saldrá del XI.</div>` : ''}
       </div>
       <div class="button-row">
         ${p.status==='market' && !isSigned(p.id) ? `<button class="btn btn-primary" data-modal-action="buy" data-id="${p.id}">Fichar con precio manual</button>` : ''}
         ${(p.status==='squad'||isSigned(p.id)) && !isSold(p.id) ? `<button class="btn btn-danger-soft" data-modal-action="sell" data-id="${p.id}">Vender con precio manual</button>` : ''}
+        <button class="btn btn-soft" data-modal-action="place" data-id="${p.id}">Poner en campo</button>
         <button class="btn btn-soft" data-modal-action="photo" data-id="${p.id}">Cambiar foto</button>
         <button class="btn btn-soft" data-modal-action="target" data-id="${p.id}">Añadir al radar</button>
       </div>
@@ -475,6 +498,7 @@ function openPlayerModal(id){
     if(action==='buy') { buyPlayer(pid); els.playerModal.close(); }
     if(action==='sell') { sellPlayer(pid); els.playerModal.close(); }
     if(action==='photo') { setPhoto(pid); }
+    if(action==='place') { placePlayerMobile(pid); els.playerModal.close(); }
     if(action==='target') { addTarget(pid); }
   }));
   els.playerModal.showModal();
@@ -495,9 +519,10 @@ function buyPlayer(id, cost=null){
   state.signed.push(id);
   state.sold = state.sold.filter(x=>x!==id);
   const diff = Number(fee) - Number(p.value || 0);
-  pushHistory('buy', `Fichaje: ${p.name} por ${fmtMoney(fee)} · valor base ${fmtMoney(p.value)} · ${diff>=0?'+':''}${fmtMoney(diff)} vs base`, -fee, {playerId:id, fee, baseValue:p.value, suggested});
+  const assessment = evaluateDeal('buy', p, fee);
+  pushHistory('buy', `Fichaje: ${p.name} por ${fmtMoney(fee)} · valor base ${fmtMoney(p.value)} · ${diff>=0?'+':''}${fmtMoney(diff)} vs base · ${assessment.label}`, -fee, {playerId:id, fee, baseValue:p.value, suggested, assessment});
   saveAndRender();
-  toast(`${p.name} fichado por ${fmtMoney(fee)}.`);
+  toast(`${p.name} fichado por ${fmtMoney(fee)}. ${assessment.label}`);
 }
 function sellPlayer(id){
   const p=getPlayer(id); if(!p || isSold(id)) return;
@@ -507,15 +532,17 @@ function sellPlayer(id){
   state.sold.push(id);
   Object.keys(state.lineup).forEach(slot => { if(state.lineup[slot]===id) delete state.lineup[slot]; });
   const diff = Number(offer) - Number(p.value || 0);
-  pushHistory('sale', `Venta: ${p.name} por ${fmtMoney(offer)} · valor base ${fmtMoney(p.value)} · ${diff>=0?'+':''}${fmtMoney(diff)} vs base`, offer, {playerId:id, fee:offer, baseValue:p.value, suggested});
+  const assessment = evaluateDeal('sale', p, offer);
+  pushHistory('sale', `Venta: ${p.name} por ${fmtMoney(offer)} · valor base ${fmtMoney(p.value)} · ${diff>=0?'+':''}${fmtMoney(diff)} vs base · ${assessment.label}`, offer, {playerId:id, fee:offer, baseValue:p.value, suggested, assessment});
   saveAndRender();
-  toast(`${p.name} vendido por ${fmtMoney(offer)}.`);
+  toast(`${p.name} vendido por ${fmtMoney(offer)}. ${assessment.label}`);
 }
 function askTransactionFee(type, p, suggested){
   const label = type === 'sale' ? 'venta' : 'compra';
+  const range = getRealisticRange(type, p);
   const helper = type === 'sale'
-    ? `Puedes vender por encima o por debajo de su valor base. Valor base: ${fmtMoney(p.value)}. Oferta sugerida: ${fmtMoney(suggested)}.`
-    : `Puedes pagar más o menos que el valor base. Valor base: ${fmtMoney(p.value)}. Precio sugerido realista: ${fmtMoney(suggested)}.`;
+    ? `Puedes vender por encima o por debajo de su valor base. Valor base: ${fmtMoney(p.value)}. Oferta sugerida: ${fmtMoney(suggested)}. Rango realista: ${formatRange(range)}.`
+    : `Puedes pagar más o menos que el valor base. Valor base: ${fmtMoney(p.value)}. Precio sugerido realista: ${fmtMoney(suggested)}. Rango realista: ${formatRange(range)}.`;
   const raw = prompt(`Precio manual de ${label} para ${p.name} en M€\n\n${helper}\n\nEscribe solo el número, por ejemplo 85.`, String(suggested));
   if(raw === null) return null;
   const normalized = String(raw).replace(',', '.').replace(/[^0-9.\-]/g, '');
@@ -574,7 +601,7 @@ function renderFinance(){
   els.riskBadge.textContent = `Riesgo ${f.risk}`;
   els.riskBadge.style.borderColor = f.risk==='Alto' ? 'rgba(255,107,107,.5)' : f.risk==='Medio' ? 'rgba(255,179,92,.5)' : 'rgba(95,224,160,.5)';
   const items = [
-    ['Presupuesto inicial', fmtMoney(Number(state.initialBudget||0))], ['Ventas', fmtMoney(f.sales)], ['Fichajes', fmtMoney(f.buys)], ['Balance', fmtMoney(f.balance)], ['Diferencial vs valor base', fmtMoney(f.negotiationDelta)], ['Masa salarial', fmtMoney(f.salaryNow)], ['Delta salarial', fmtMoney(f.salaryDelta)]
+    ['Presupuesto inicial', fmtMoney(Number(state.initialBudget||0))], ['Ventas', fmtMoney(f.sales)], ['Fichajes', fmtMoney(f.buys)], ['Balance', fmtMoney(f.balance)], ['Diferencial vs valor base', fmtMoney(f.negotiationDelta)], ['Masa salarial', fmtMoney(f.salaryNow)], ['Delta salarial', fmtMoney(f.salaryDelta)], ['Fair Play simplificado', `${computeFfpScore()} / 100`]
   ];
   els.financeCards.innerHTML = items.map(([k,v]) => `<div class="finance-item"><span>${k}</span><b>${v}</b></div>`).join('');
   const max = Math.max(20, f.sales, f.buys, Math.abs(f.salaryDelta));
@@ -628,6 +655,7 @@ function buildAnalysisNotes(a){
   const age=avg(line.map(p=>p.age)); if(age && age<25) notes.push({type:'good', text:'Once joven con margen de crecimiento y revalorización.'}); if(age>29) notes.push({type:'warn', text:'Once veterano: rendimiento inmediato alto, pero menor recorrido a medio plazo.'});
   const fin=computeFinance(); if(fin.balance < -200) notes.push({type:'bad', text:'La inversión es muy agresiva. Deportivamente puede ser brutal, pero el riesgo económico sube.'}); else if(fin.balance>=0) notes.push({type:'good', text:'Balance positivo o controlado. Tienes margen para otra operación.'});
   if(a.scores.ataque >= 88 && a.scores.defensa < 84) notes.push({type:'warn', text:'Ataque de élite, pero la defensa queda un escalón por debajo. Ojo en Champions.'});
+  if(state.project==='mourinho') notes.push({type:'warn', text:'Lectura Mourinho: prioriza centrales fiables, laterales con recorrido pero protegidos, un MCD claro y dos amenazas de transición. Si falta físico en medio, el plan pierde realismo.'});
   if(!notes.length) notes.push({type:'good', text:'Equipo equilibrado y sin alertas graves.'});
   return notes;
 }
@@ -655,6 +683,7 @@ function computeProjectScore(active,a){
   if(state.project==='cantera') score += active.filter(p=>p.tags?.includes('cantera')||p.age<=22).length*4;
   if(state.project==='espanol') score += active.filter(p=>p.nationality==='España').length*5;
   if(state.project==='rebuild') score += (avg(active.map(p=>p.age))<26?20:0) + active.filter(p=>p.age<=23).length*2;
+  if(state.project==='mourinho') score += computeMourinhoFit(active, a).score*.35 + (detectNeedPositions().includes('MCD') ? -10 : 6);
   if(state.project==='champions') score += (a.overall||0)*2.2 - (a.complete?0:20);
   return Math.round(clamp(score,0,100));
 }
@@ -679,7 +708,7 @@ function detectNeedPositions(){
 }
 
 function renderHistory(){
-  els.historyList.innerHTML = state.history.length ? state.history.slice().reverse().map(h=>`<div class="history-item"><b class="type-${h.type}">${typeLabel(h.type)}</b><span>${escapeHtml(h.text)}</span><b>${fmtMoney(h.amount)}</b></div>`).join('') : empty('Aún no hay operaciones.');
+  els.historyList.innerHTML = state.history.length ? state.history.slice().reverse().map(h=>`<div class="history-item"><b class="type-${h.type}">${typeLabel(h.type)}</b><span>${escapeHtml(h.text)} ${h.meta?.assessment ? `<em class="deal-pill">Realismo ${h.meta.assessment.score}/100</em>` : ''}</span><b>${fmtMoney(h.amount)}</b></div>`).join('') : empty('Aún no hay operaciones.');
 }
 function pushHistory(type,text,amount,meta={}){ state.history.push({id:crypto.randomUUID?.() || String(Date.now()+Math.random()), type, text, amount, meta, at:new Date().toISOString()}); if(state.history.length>120) state.history.shift(); }
 function undoLast(){
@@ -688,7 +717,7 @@ function undoLast(){
   if(h.type==='sale'){ state.sold = state.sold.filter(id=>id!==h.meta?.playerId); }
   saveAndRender(); toast('Última operación deshecha.');
 }
-function typeLabel(t){ return ({buy:'Compra',sale:'Venta',once:'Once',event:'Evento'}[t] || t); }
+function typeLabel(t){ return ({buy:'Compra',sale:'Venta',once:'Once',event:'Evento',advice:'IA'}[t] || t); }
 
 function applySuggestedXI(){
   const slots = data.formations[state.formation] || [];
@@ -774,29 +803,260 @@ function saveNamedSimulation(){
 function getSims(){ try { return JSON.parse(localStorage.getItem(SIMS_KEY)||'{}'); } catch { return {}; } }
 function renderSavedSelect(){
   const sims=getSims(); const entries=Object.entries(sims).sort((a,b)=>new Date(b[1].updatedAt)-new Date(a[1].updatedAt));
-  els.savedSelect.innerHTML = entries.length ? entries.map(([id,s])=>`<option value="${id}">${escapeHtml(s.name)} · ${new Date(s.updatedAt).toLocaleDateString()}</option>`).join('') : '<option value="">Sin guardados</option>';
+  const options = entries.length ? entries.map(([id,s])=>`<option value="${id}">${escapeHtml(s.name)} · ${new Date(s.updatedAt).toLocaleDateString()}</option>`).join('') : '<option value="">Sin guardados</option>';
+  if(els.savedSelect) els.savedSelect.innerHTML = options;
+  if(els.compareSelect) els.compareSelect.innerHTML = '<option value="">Elegir simulación guardada</option>' + (entries.length ? entries.map(([id,s])=>`<option value="${id}">${escapeHtml(s.name)} · ${new Date(s.updatedAt).toLocaleDateString()}</option>`).join('') : '');
 }
 function loadNamedSimulation(){ const id=els.savedSelect.value; const sim=getSims()[id]; if(sim){ state=sim.state; ensureStateIntegrity(); fillStaticControls(); saveAndRender(); toast('Simulación cargada.'); } }
 function duplicateSimulation(){ state={...JSON.parse(JSON.stringify(state)), id:null, simName:(state.simName||'Simulación')+' copia'}; saveNamedSimulation(); fillStaticControls(); saveAndRender(); }
 
 async function shareSite(){
   const url = location.href.split('?')[0];
-  const text = `Mi plantilla Real Madrid 26/27: balance ${fmtMoney(computeFinance().balance)} y nota XI ${computeAnalysis().overall?.toFixed(1) || '—'}/10`;
-  if(navigator.share){ try{ await navigator.share({title:'Madrid President Simulator 2.2', text, url}); return; }catch{} }
+  const text = `Mi plantilla Real Madrid 26/27 de Mourinho: balance ${fmtMoney(computeFinance().balance)}, Reality Score ${computeRealityScore().total}/100 y nota XI ${computeAnalysis().overall?.toFixed(1) || '—'}/10`;
+  if(navigator.share){ try{ await navigator.share({title:'Madrid President Simulator 3.0', text, url}); return; }catch{} }
   await navigator.clipboard?.writeText(`${text}\n${url}`); toast('Enlace copiado al portapapeles.');
 }
 function exportLineupPng(){
   const canvas=document.createElement('canvas'); canvas.width=1400; canvas.height=1800; const ctx=canvas.getContext('2d');
   const grad=ctx.createLinearGradient(0,0,1400,1800); grad.addColorStop(0,'#080b14'); grad.addColorStop(.55,'#123d25'); grad.addColorStop(1,'#05070d'); ctx.fillStyle=grad; ctx.fillRect(0,0,1400,1800);
   ctx.strokeStyle='rgba(255,255,255,.35)'; ctx.lineWidth=4; roundRect(ctx,80,230,1240,1280,34,true); ctx.beginPath(); ctx.moveTo(80,870); ctx.lineTo(1320,870); ctx.stroke(); ctx.beginPath(); ctx.arc(700,870,140,0,Math.PI*2); ctx.stroke();
-  ctx.fillStyle='#f3d98b'; ctx.font='900 64px system-ui'; ctx.fillText('Madrid President Simulator 2.2',80,110); ctx.fillStyle='#fff'; ctx.font='700 34px system-ui'; ctx.fillText(`${state.simName || 'Proyecto'} · ${state.formation} · Balance ${fmtMoney(computeFinance().balance)}`,80,165);
+  ctx.fillStyle='#f3d98b'; ctx.font='900 64px system-ui'; ctx.fillText('Madrid President Simulator 3.0',80,110); ctx.fillStyle='#fff'; ctx.font='700 34px system-ui'; ctx.fillText(`${state.simName || 'Proyecto'} · ${state.formation} · Balance ${fmtMoney(computeFinance().balance)}`,80,165);
   const slots=data.formations[state.formation]||[];
   for(const slot of slots){ const p=getPlayer(state.lineup[slot.id]); const x=80 + slot.x/100*1240; const y=230 + slot.y/100*1280; ctx.fillStyle='rgba(5,7,13,.82)'; roundRect(ctx,x-95,y-42,190,84,18,true); ctx.strokeStyle='rgba(243,217,139,.45)'; roundRect(ctx,x-95,y-42,190,84,18,false); ctx.fillStyle='#f3d98b'; ctx.font='900 22px system-ui'; ctx.textAlign='center'; ctx.fillText(slot.label,x,y-8); ctx.fillStyle='#fff'; ctx.font='800 24px system-ui'; ctx.fillText(p?shortName(p.name):'—',x,y+22); }
-  ctx.textAlign='left'; ctx.fillStyle='rgba(255,255,255,.72)'; ctx.font='500 24px system-ui'; ctx.fillText('Proyecto fan no oficial · No afiliado a Real Madrid ni Transfermarkt',80,1690);
+  ctx.textAlign='left'; ctx.fillStyle='rgba(255,255,255,.72)'; ctx.font='500 24px system-ui'; ctx.fillText('Proyecto fan no oficial · Reality Mode 26/27 · José Mourinho',80,1690);
   const a=document.createElement('a'); a.href=canvas.toDataURL('image/png'); a.download=`${slug(state.simName || 'once')}.png`; a.click();
 }
 function roundRect(ctx,x,y,w,h,r,fill){ ctx.beginPath(); ctx.moveTo(x+r,y); ctx.arcTo(x+w,y,x+w,y+h,r); ctx.arcTo(x+w,y+h,x,y+h,r); ctx.arcTo(x,y+h,x,y,r); ctx.arcTo(x,y,x+w,y,r); ctx.closePath(); fill?ctx.fill():ctx.stroke(); }
 
+
+
+/* =========================
+   Reality Mode 3.0 helpers
+   ========================= */
+function renderAutoMarketAlerts(){
+  if(!els.autoMarketAlerts) return;
+  const autoRumors = (data.rumors||[]).filter(r=>r.auto).sort((a,b)=>(b.confidence||0)-(a.confidence||0)).slice(0,3);
+  const now = formatAutoDate(data.meta?.autoMarket?.lastRun || data.meta?.lastAutoUpdate);
+  if(!autoRumors.length){
+    els.autoMarketAlerts.innerHTML = `<div class="alert-card"><b>AutoMarket listo</b><small>Última revisión: ${now}. Cuando detecte rumores nuevos aparecerán destacados aquí.</small></div>`;
+    return;
+  }
+  els.autoMarketAlerts.innerHTML = autoRumors.map(r=>{
+    const p=getPlayer(r.playerId);
+    return `<div class="alert-card"><b>Nuevo radar: ${escapeHtml(p?.name || r.playerId)}</b><small>${escapeHtml(r.status||'rumor')} · confianza ${r.confidence||0}% · ${escapeHtml(r.source||'AutoMarket')}</small></div>`;
+  }).join('');
+}
+
+function getRealisticRange(type, p){
+  const base = Number(p.value || 0);
+  const diff = {baja:0.05, media:0.15, alta:0.30, 'muy alta':0.52, intocable:0.85}[p.difficulty] || 0.18;
+  const young = p.age <= 23 ? 0.10 : 0;
+  const star = (p.tags||[]).some(t=>['estrella','galáctico','intocable'].includes(t)) ? 0.16 : 0;
+  const veteranDiscount = p.age >= 31 ? -0.12 : 0;
+  if(type === 'buy'){
+    const mid = base * (1 + diff + young + star + veteranDiscount);
+    return {min: round5(mid*.88), max: round5(mid*1.18), mid: round5(mid)};
+  }
+  let saleMid = base * (1.02 + star + young + veteranDiscount);
+  if((p.tags||[]).includes('transferible')) saleMid = base*.92;
+  return {min: round5(saleMid*.82), max: round5(saleMid*1.18), mid: round5(saleMid)};
+}
+function formatRange(r){ return `${fmtMoney(r.min)} - ${fmtMoney(r.max)}`; }
+function evaluateDeal(type, p, fee){
+  const r = getRealisticRange(type,p);
+  let score=70, label='Precio razonable', tone='warn';
+  if(type==='buy'){
+    if(fee < r.min*.72){ score=22; label='Compra irrealmente barata'; tone='bad'; }
+    else if(fee < r.min){ score=58; label='Ganga agresiva'; tone='warn'; }
+    else if(fee <= r.max){ score=88; label='Compra realista'; tone='good'; }
+    else if(fee <= r.max*1.35){ score=62; label='Sobreprecio asumible'; tone='warn'; }
+    else { score=30; label='Compra muy cara / poco realista'; tone='bad'; }
+  }else{
+    if(fee < r.min*.72){ score=25; label='Venta muy mala'; tone='bad'; }
+    else if(fee < r.min){ score=55; label='Venta baja'; tone='warn'; }
+    else if(fee <= r.max){ score=84; label='Venta realista'; tone='good'; }
+    else if(fee <= r.max*1.35){ score=93; label='Venta excelente'; tone='good'; }
+    else { score=66; label='Venta extraordinaria pero difícil'; tone='warn'; }
+  }
+  return {score, label, tone, range:r};
+}
+
+function computeFfpScore(){
+  const f=computeFinance();
+  let score=86;
+  if(f.balance < 0) score += f.balance/8;
+  if(f.salaryDelta > 0) score -= f.salaryDelta*.9;
+  if(f.negotiationDelta < -50) score -= 8;
+  if(activePlayers().length > 28) score -= (activePlayers().length-28)*2;
+  return Math.round(clamp(score, 0, 100));
+}
+
+function computeMourinhoFit(active=activePlayers(), a=computeAnalysis()){
+  let score=58; const notes=[];
+  const count = pos => active.filter(p=>p.position===pos||p.secondary.includes(pos)).length;
+  const physicalMid = active.filter(p=>['MCD','MC'].includes(p.position) && (p.rating>=84 || (p.tags||[]).includes('físico'))).length;
+  const fastFwd = active.filter(p=>['EI','ED','DC'].includes(p.position) && ((p.tags||[]).includes('rápido') || p.rating>=87)).length;
+  if(count('DFC')>=4){score+=10; notes.push(['good','Base de centrales suficiente para un equipo competitivo.']);} else notes.push(['bad','Para Mourinho faltan centrales o jerarquía defensiva.']);
+  if(count('MCD')>=1){score+=12; notes.push(['good','Hay pivote defensivo para sostener el bloque.']);} else notes.push(['bad','Sin MCD claro, el plan Mourinho pierde equilibrio.']);
+  if(physicalMid>=3){score+=8; notes.push(['good','Centro del campo con físico/duelo suficiente.']);} else notes.push(['warn','Conviene añadir músculo o trabajo sin balón en medio.']);
+  if(fastFwd>=3){score+=8; notes.push(['good','Amenaza de transición suficiente para atacar espacios.']);} else notes.push(['warn','Falta velocidad o golpe arriba para el plan de transiciones.']);
+  if(a.scores.defensa>=85 && a.scores.equilibrio>=80) score+=12;
+  if(computeFinance().balance < -200) {score-=8; notes.push(['warn','El plan es competitivo, pero la inversión puede ser demasiado agresiva.']);}
+  return {score:Math.round(clamp(score,0,100)), notes};
+}
+
+function computeRealityScore(){
+  const a=computeAnalysis(), f=computeFinance(), active=activePlayers(), mourinho=computeMourinhoFit(active,a);
+  let deportivo = Math.round(clamp((a.overall||0)*10,0,100));
+  let economia = computeFfpScore();
+  let plantilla = Math.round(clamp(100 - detectNeedPositions().length*10 - Math.max(0,active.length-28)*2, 0, 100));
+  let mercado = 82;
+  const deals = state.history.filter(h=>['buy','sale'].includes(h.type) && h.meta?.assessment);
+  if(deals.length) mercado = Math.round(avg(deals.map(h=>h.meta.assessment.score)));
+  let realismo = Math.round(clamp((economia*.30 + plantilla*.22 + mercado*.23 + mourinho.score*.25),0,100));
+  const total = Math.round(clamp(deportivo*.28 + economia*.20 + plantilla*.20 + mercado*.17 + mourinho.score*.15,0,100));
+  return {total, deportivo, economia, plantilla, mercado, realismo, mourinho:mourinho.score, notes:mourinho.notes};
+}
+
+function renderRealityMode(){
+  if(!els.realityScore || !els.realityBreakdown) return;
+  const r=computeRealityScore();
+  els.realityScore.textContent = `${r.total}/100`;
+  const rows=[['Deportivo',r.deportivo],['Economía / FFP',r.economia],['Plantilla completa',r.plantilla],['Realismo mercado',r.mercado],['Encaje Mourinho',r.mourinho]];
+  els.realityBreakdown.innerHTML = rows.map(([k,v])=>`<div class="note"><b>${k}: ${v}/100</b><div class="reality-meter"><i style="width:${v}%"></i></div></div>`).join('') +
+    `<div class="note ${r.total>=80?'good':r.total>=60?'warn':'bad'}"><b>Diagnóstico:</b> ${realityDiagnosis(r.total)}</div>`;
+}
+function realityDiagnosis(score){
+  if(score>=88) return 'Proyecto muy sólido: competitivo, vendible y razonablemente realista para 26/27.';
+  if(score>=75) return 'Buen proyecto, pero aún hay detalles de balance, profundidad o precio que ajustar.';
+  if(score>=60) return 'Proyecto divertido pero discutible: la web detecta riesgos deportivos o económicos.';
+  return 'Proyecto poco realista: demasiada inversión, operaciones raras o plantilla desequilibrada.';
+}
+
+function renderSquadMatrix(){
+  if(!els.squadMatrix) return;
+  const active=activePlayers();
+  const specs=[['POR','Porteros',2,3],['DFC','Centrales',4,5],['LD','Laterales der.',2,3],['LI','Laterales izq.',2,3],['MCD','Pivotes',1,2],['MC','Interiores',4,6],['MCO','Mediapuntas',1,3],['EI','Ext. izq.',2,3],['ED','Ext. der.',2,3],['DC','Delanteros',2,3]];
+  els.squadMatrix.innerHTML = specs.map(([pos,label,min,max])=>{
+    const count=active.filter(p=>p.position===pos||p.secondary.includes(pos)).length;
+    const cls=count<min?'bad':count>max?'warn':'good';
+    const msg=count<min?'Débil':count>max?'Exceso':'Correcto';
+    return `<div class="matrix-card ${cls}"><small>${label}</small><b>${count}</b><span>${msg}</span></div>`;
+  }).join('');
+}
+
+function renderAIDirector(){
+  if(!els.aiDirector) return;
+  const needs = detectNeedPositions();
+  const f=computeFinance(); const r=computeRealityScore();
+  const notes=[];
+  if(needs.length) notes.push(`<div class="note warn"><b>Prioridad:</b> reforzar ${needs.slice(0,3).join(', ')} antes de fichar otra estrella ofensiva.</div>`);
+  if(f.balance < -150) notes.push(`<div class="note bad"><b>Control económico:</b> con ${fmtMoney(f.balance)} de balance, conviene vender o elegir una operación más barata.</div>`);
+  if(r.mourinho < 72) notes.push(`<div class="note warn"><b>José Mourinho:</b> falta equilibrio competitivo. Mejoraría pivote, central o jugador de trabajo antes que un fichaje de lujo.</div>`);
+  if(!notes.length) notes.push(`<div class="note good"><b>Director deportivo:</b> proyecto estable. Puedes buscar una oportunidad de mercado sin romper el bloque.</div>`);
+  els.aiDirector.innerHTML = notes.join('');
+}
+function aiSuggestTargets(){
+  const needs=detectNeedPositions(); const pos=needs[0]||'MCD';
+  const options=playersByStatus('market').filter(p=>!isSigned(p.id) && (p.position===pos||p.secondary.includes(pos))).sort((a,b)=>estimateBuyCost(a)-estimateBuyCost(b)).slice(0,3);
+  const text=options.length ? options.map(p=>`${p.name} (${p.position}, ${fmtMoney(estimateBuyCost(p))})`).join(' · ') : 'No hay objetivos claros para esa necesidad.';
+  pushHistory('advice', `IA sugiere fichajes realistas: ${text}`, 0, {suggestions:options.map(p=>p.id)});
+  switchTab('market'); if(els.marketPosition) els.marketPosition.value=pos; renderMarket(); renderHistory(); toast('He filtrado el mercado por la prioridad principal.');
+}
+function aiSuggestSale(){
+  const candidates=activePlayers().filter(p=>!isInLineup(p.id) && p.status==='squad').sort((a,b)=>estimateSellOffer(b)-estimateSellOffer(a));
+  const p=candidates[0]; if(!p) return toast('No veo una venta inteligente clara ahora mismo.');
+  pushHistory('advice', `Venta inteligente sugerida: ${p.name}. Oferta orientativa ${fmtMoney(estimateSellOffer(p))}.`,0,{playerId:p.id});
+  renderHistory(); toast(`Venta sugerida: ${p.name}.`);
+}
+function aiFixPlan(){
+  const needs=detectNeedPositions();
+  if(needs[0]){ els.marketPosition && (els.marketPosition.value=needs[0]); els.marketAge && (els.marketAge.value=28); els.marketDifficulty && (els.marketDifficulty.value='all'); switchTab('market'); renderMarket(); toast(`Plan Mourinho: primero resolver ${needs[0]}.`); return; }
+  applyMourinhoXI(); toast('Plantilla razonable: he aplicado un XI de perfil Mourinho.');
+}
+function applyMourinhoXI(){
+  const slots = data.formations[state.formation] || [];
+  const candidates = activePlayers().slice().sort((a,b)=>mourinhoPlayerWeight(b)-mourinhoPlayerWeight(a));
+  const used = new Set(); const next = {};
+  for(const slot of slots){
+    let best = candidates.find(p => !used.has(p.id) && fitsSlot(p, slot));
+    if(!best) best = candidates.find(p => !used.has(p.id));
+    if(best){ next[slot.id]=best.id; used.add(best.id); }
+  }
+  state.lineup=next; pushHistory('once','XI Mourinho aplicado: prioridad a equilibrio, jerarquía, físico y transiciones.',0); saveAndRender();
+}
+function mourinhoPlayerWeight(p){
+  let w=(p.rating||0)*2 + (p.potential||0)*.35;
+  if(['DFC','MCD','LD','LI','DC'].includes(p.position)) w+=6;
+  if((p.tags||[]).some(t=>['estrella','galáctico','físico','polivalente'].includes(t))) w+=5;
+  if(p.age>=24 && p.age<=30) w+=3;
+  return w;
+}
+
+function snapshotMetrics(st=state){
+  const current = state;
+  if(st !== state){ state = st; ensureStateIntegrity(); }
+  const a=computeAnalysis(), f=computeFinance(), r=computeRealityScore();
+  const active=activePlayers();
+  const snap={balance:f.balance, salary:f.salaryNow, age:avg(active.map(p=>p.age)), value:sum(active.map(p=>p.value)), xi:a.overall||0, reality:r.total, squad:active.length};
+  if(st !== current){ state=current; ensureStateIntegrity(); }
+  return snap;
+}
+function renderCompare(){
+  if(!els.comparePanel) return;
+  const id=els.compareSelect?.value; const current=snapshotMetrics(state);
+  const sim=id ? getSims()[id]?.state : null;
+  if(!sim){ els.comparePanel.innerHTML = '<div class="note">Guarda varias simulaciones y elige una para comparar tu proyecto actual.</div>'; return; }
+  const other=snapshotMetrics(sim);
+  const rows=[['Balance',fmtMoney(current.balance),fmtMoney(other.balance)],['Masa salarial',fmtMoney(current.salary),fmtMoney(other.salary)],['Edad media',current.age.toFixed(1),other.age.toFixed(1)],['Valor plantilla',fmtMoney(current.value),fmtMoney(other.value)],['Nota XI',current.xi.toFixed(1),other.xi.toFixed(1)],['Reality Score',`${current.reality}/100`,`${other.reality}/100`],['Jugadores activos',current.squad,other.squad]];
+  els.comparePanel.innerHTML = `<table><thead><tr><th>Métrica</th><th>Actual</th><th>Guardado</th></tr></thead><tbody>${rows.map(r=>`<tr><td>${r[0]}</td><td><b>${r[1]}</b></td><td>${r[2]}</td></tr>`).join('')}</tbody></table>`;
+}
+
+function encodeShareState(){
+  const compact={simName:state.simName,project:state.project,formation:state.formation,initialBudget:state.initialBudget,realityMode:state.realityMode,lineup:state.lineup,sold:state.sold,signed:state.signed,targets:state.targets,history:state.history,customPlayers:state.customPlayers,season:state.season};
+  const json=JSON.stringify(compact);
+  return btoa(unescape(encodeURIComponent(json))).replace(/\+/g,'-').replace(/\//g,'_').replace(/=+$/,'');
+}
+function decodeShareState(raw){
+  try{ raw=raw.replace(/-/g,'+').replace(/_/g,'/'); raw += '='.repeat((4-raw.length%4)%4); return JSON.parse(decodeURIComponent(escape(atob(raw)))); }catch{ return null; }
+}
+function loadSharedStateFromUrl(){
+  const params=new URLSearchParams(location.search); const raw=params.get('share') || (location.hash.startsWith('#share=') ? location.hash.slice(7) : '');
+  if(!raw) return null;
+  const decoded=decodeShareState(raw);
+  if(decoded){ toast('Plantilla compartida cargada.'); return {...createInitialState(), ...decoded}; }
+  return null;
+}
+async function shareSquadLink(){
+  const url = `${location.origin}${location.pathname}?share=${encodeShareState()}`;
+  await navigator.clipboard?.writeText(url);
+  toast('Enlace exacto de tu plantilla copiado.');
+}
+
+function exportSocialPng(){
+  const canvas=document.createElement('canvas'); canvas.width=1600; canvas.height=2000; const ctx=canvas.getContext('2d');
+  const f=computeFinance(), r=computeRealityScore(), a=computeAnalysis();
+  const grad=ctx.createLinearGradient(0,0,1600,2000); grad.addColorStop(0,'#05070d'); grad.addColorStop(.45,'#111827'); grad.addColorStop(1,'#1f1705'); ctx.fillStyle=grad; ctx.fillRect(0,0,1600,2000);
+  ctx.fillStyle='rgba(214,178,94,.12)'; for(let i=0;i<8;i++){ ctx.beginPath(); ctx.arc(1300-i*180,120+i*220,120,0,Math.PI*2); ctx.fill(); }
+  ctx.fillStyle='#f3d98b'; ctx.font='900 76px system-ui'; ctx.fillText('REAL MADRID 26/27',90,120); ctx.fillStyle='#fff'; ctx.font='800 46px system-ui'; ctx.fillText(state.simName || 'Proyecto Mourinho',90,185); ctx.fillStyle='rgba(255,255,255,.75)'; ctx.font='500 30px system-ui'; ctx.fillText(`José Mourinho · ${state.formation} · Reality Score ${r.total}/100 · Balance ${fmtMoney(f.balance)}`,90,235);
+  // Pitch card
+  ctx.strokeStyle='rgba(255,255,255,.28)'; ctx.lineWidth=4; ctx.fillStyle='rgba(12,86,46,.65)'; roundRect(ctx,110,330,1380,1180,40,true); roundRect(ctx,110,330,1380,1180,40,false); ctx.beginPath(); ctx.moveTo(110,920); ctx.lineTo(1490,920); ctx.stroke(); ctx.beginPath(); ctx.arc(800,920,130,0,Math.PI*2); ctx.stroke();
+  const slots=data.formations[state.formation]||[]; ctx.textAlign='center';
+  for(const slot of slots){ const p=getPlayer(state.lineup[slot.id]); const x=110 + slot.x/100*1380; const y=330 + slot.y/100*1180; ctx.fillStyle='rgba(5,7,13,.88)'; roundRect(ctx,x-115,y-46,230,92,20,true); ctx.strokeStyle='rgba(243,217,139,.48)'; roundRect(ctx,x-115,y-46,230,92,20,false); ctx.fillStyle='#f3d98b'; ctx.font='900 22px system-ui'; ctx.fillText(slot.label,x,y-10); ctx.fillStyle='#fff'; ctx.font='800 25px system-ui'; ctx.fillText(p?shortName(p.name):'—',x,y+24); }
+  ctx.textAlign='left';
+  const cards=[['Ventas',fmtMoney(f.sales)],['Fichajes',fmtMoney(f.buys)],['Balance',fmtMoney(f.balance)],['Masa salarial',fmtMoney(f.salaryNow)],['Nota XI',a.overall?a.overall.toFixed(1)+'/10':'—'],['Reality',r.total+'/100']];
+  cards.forEach(([k,v],i)=>{ const x=90+(i%3)*470, y=1600+Math.floor(i/3)*140; ctx.fillStyle='rgba(255,255,255,.075)'; roundRect(ctx,x,y,420,100,22,true); ctx.fillStyle='#f3d98b'; ctx.font='800 26px system-ui'; ctx.fillText(k,x+24,y+36); ctx.fillStyle='#fff'; ctx.font='900 42px system-ui'; ctx.fillText(v,x+24,y+80); });
+  ctx.fillStyle='rgba(255,255,255,.62)'; ctx.font='500 24px system-ui'; ctx.fillText('Proyecto fan no oficial · No afiliado al Real Madrid, Transfermarkt ni X',90,1930);
+  const aEl=document.createElement('a'); aEl.href=canvas.toDataURL('image/png'); aEl.download=`${slug(state.simName || 'madrid-reality')}-social.png`; aEl.click();
+}
+
+function placePlayerMobile(id){
+  const p=getPlayer(id); if(!p) return;
+  const slots=data.formations[state.formation]||[];
+  const options=slots.map((s,i)=>`${i+1}. ${s.label}${state.lineup[s.id] ? ` (${shortName(getPlayer(state.lineup[s.id])?.name || '')})` : ''}`).join('\n');
+  const raw=prompt(`Elige posición para ${p.name}:\n\n${options}\n\nEscribe el número.`, '1');
+  if(raw===null) return; const idx=Number(raw)-1; if(!slots[idx]) return toast('Posición no válida.'); assignPlayerToSlot(id, slots[idx].id);
+}
 
 function formatAutoDate(value){
   if(!value) return 'pendiente';
@@ -807,7 +1067,7 @@ function formatAutoDate(value){
 }
 
 function fallbackData(){
-  return {meta:{appName:'Madrid President Simulator 2.2',lastManualReview:'sin data.json'},players:[],rumors:[],formations:{'4-3-3':[]},projects:{champions:{name:'Proyecto Champions',description:''}},sources:[]};
+  return {meta:{appName:'Madrid President Simulator 3.0',lastManualReview:'sin data.json'},players:[],rumors:[],formations:{'4-3-3':[]},projects:{champions:{name:'Proyecto Champions',description:''}},sources:[]};
 }
 function fmtMoney(n){ n=Number(n||0); const sign=n<0?'-':''; return `${sign}${Math.abs(n).toLocaleString('es-ES',{maximumFractionDigits:0})} M€`; }
 function sum(arr){ return arr.reduce((a,b)=>a+Number(b||0),0); } function avg(arr){ const f=arr.filter(n=>Number.isFinite(Number(n))); return f.length?sum(f)/f.length:0; }

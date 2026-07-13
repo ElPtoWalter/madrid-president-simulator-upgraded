@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Madrid President Simulator 2.2 · Temporada 26/27</title>
+  <title>Madrid President Simulator 3.0 · Reality Mode 26/27</title>
   <meta name="description" content="Simulador fan no oficial para gestionar plantilla, fichajes, rumores, once y balance económico del Real Madrid." />
-  <meta property="og:title" content="Madrid President Simulator 2.2 · Temporada 26/27" />
-  <meta property="og:description" content="Vende, ficha, negocia y monta tu Real Madrid ideal." />
+  <meta property="og:title" content="Madrid President Simulator 3.0 · Reality Mode 26/27" />
+  <meta property="og:description" content="Planifica el Real Madrid 26/27 de José Mourinho con realismo, mercado, ventas, fichajes y presupuesto." />
   <meta name="theme-color" content="#0b0f1a" />
   <link rel="stylesheet" href="styles.css" />
 </head>
@@ -15,11 +15,13 @@
     <header class="hero glass">
       <div class="hero__content">
         <p class="eyebrow">Fan project · Real Madrid inspired · No oficial</p>
-        <h1>Madrid President Simulator <span>2.2 · Temporada 26/27</span></h1>
-        <p class="hero__lead">Diseña la plantilla más realista posible del Real Madrid 26/27: vende, ficha, negocia precios manuales, controla presupuesto y monta tu XI ideal.</p>
+        <h1>Madrid President Simulator <span>3.0 · Reality Mode 26/27</span></h1>
+        <p class="hero__lead">Diseña la plantilla 26/27 más cercana a la realidad para el Real Madrid de José Mourinho: ventas, fichajes, precios manuales, presupuesto, realismo y análisis de plantilla completa.</p>
         <div class="hero__actions">
           <button id="btnShare" class="btn btn-primary">Compartir web</button>
+          <button id="btnShareSquad" class="btn btn-gold">Copiar plantilla compartible</button>
           <button id="btnExportPng" class="btn btn-soft">Exportar once PNG</button>
+          <button id="btnExportSocial" class="btn btn-soft">Imagen premium redes</button>
           <button id="btnReset" class="btn btn-danger-soft">Reiniciar demo</button>
         </div>
       </div>
@@ -36,7 +38,7 @@
       <button data-tab="squad" class="nav-btn">Plantilla</button>
       <button data-tab="market" class="nav-btn">Mercado Pro</button>
       <button data-tab="analysis" class="nav-btn">Análisis</button>
-      <button data-tab="season" class="nav-btn">Plan 26/27</button>
+      <button data-tab="season" class="nav-btn">Plan Mourinho</button>
       <button data-tab="data" class="nav-btn">Datos</button>
     </nav>
 
@@ -56,6 +58,10 @@
               <span>Objetivo presidencial</span>
               <select id="projectSelect"></select>
             </label>
+            <label class="toggle-field">
+              <input id="realismMode" type="checkbox" checked />
+              <span><b>Modo realismo ON</b><small>Evalúa precios, balance, plantilla y encaje con José Mourinho.</small></span>
+            </label>
             <label class="field inline-field">
               <span>Presupuesto inicial</span>
               <input id="initialBudget" type="number" step="5" />
@@ -67,8 +73,10 @@
             </label>
             <div class="button-row">
               <button id="btnSuggestedXI" class="btn btn-primary">XI sugerido</button>
+              <button id="btnMourinhoXI" class="btn btn-gold">XI Mourinho</button>
               <button id="btnClearXI" class="btn btn-soft">Vaciar campo</button>
             </div>
+            <div id="mourinhoBrief" class="note coach-note">Mourinho prioriza bloque competitivo, defensa fuerte, transiciones, jerarquía y banquillo útil.</div>
             <div class="button-row">
               <button id="btnSaveSim" class="btn btn-soft">Guardar</button>
               <button id="btnNewSim" class="btn btn-soft">Nueva</button>
@@ -157,6 +165,9 @@
               <select id="marketDifficulty"><option value="all">Dificultad</option></select>
               <label><span>Edad máx.</span><input id="marketAge" type="number" min="16" max="45" placeholder="99" /></label>
               <label><span>Valor máx.</span><input id="marketValue" type="number" min="1" step="5" placeholder="999" /></label>
+              <label><span>Potencial mín.</span><input id="marketPotential" type="number" min="60" max="99" placeholder="0" /></label>
+              <label><span>Salario máx.</span><input id="marketSalary" type="number" min="0" step="1" placeholder="999" /></label>
+              <select id="marketRole"><option value="all">Rol / etiqueta</option></select>
               <button id="btnNeedTargets" class="btn btn-primary">Sugerir por necesidades</button>
             </div>
             <div id="marketGrid" class="card-grid"></div>
@@ -164,6 +175,7 @@
           <aside class="panel glass sticky-panel">
             <div class="panel-head"><h2>Rumores</h2><span class="pill live">Radar</span></div>
             <p class="muted">Panel preparado para alimentar desde <code>data.json</code> y futura automatización. No copia tweets: resume estado, jugador y fuente.</p>
+            <div id="autoMarketAlerts" class="alert-stack"></div>
             <div id="rumorList" class="rumor-list"></div>
             <div class="source-links" id="sourceLinks"></div>
           </aside>
@@ -181,6 +193,28 @@
             <div class="panel-head"><h2>Estado de plantilla</h2><span id="projectScore" class="big-pill">—</span></div>
             <div id="squadNeeds" class="needs-list"></div>
           </section>
+          <section class="panel glass">
+            <div class="panel-head"><h2>Reality Score</h2><span id="realityScore" class="big-pill">—</span></div>
+            <div id="realityBreakdown" class="needs-list"></div>
+          </section>
+          <section class="panel glass">
+            <div class="panel-head"><h2>Director deportivo IA</h2><span class="pill">José Mourinho</span></div>
+            <div class="button-row">
+              <button id="btnAiTargets" class="btn btn-primary">3 fichajes realistas</button>
+              <button id="btnAiSale" class="btn btn-soft">Venta inteligente</button>
+              <button id="btnAiFix" class="btn btn-gold">Optimizar plantilla</button>
+            </div>
+            <div id="aiDirector" class="analysis-text"></div>
+          </section>
+          <section class="panel glass wide">
+            <div class="panel-head"><h2>Matriz de plantilla completa</h2><span class="pill">No solo XI</span></div>
+            <div id="squadMatrix" class="squad-matrix"></div>
+          </section>
+          <section class="panel glass wide">
+            <div class="panel-head"><h2>Comparador de proyectos</h2><span class="pill">Actual vs guardado</span></div>
+            <label class="field"><span>Comparar con simulación guardada</span><select id="compareSelect"></select></label>
+            <div id="comparePanel" class="compare-table"></div>
+          </section>
           <section class="panel glass wide">
             <div class="panel-head"><h2>Historial de operaciones</h2><button id="btnUndo" class="btn btn-soft">Deshacer última</button></div>
             <div id="historyList" class="history-list"></div>
@@ -191,8 +225,9 @@
       <section id="tab-season" class="tab">
         <div class="season-grid">
           <section class="panel glass">
-            <div class="panel-head"><h2>Planificador 26/27</h2><span class="pill" id="seasonBadge">2026/27 · Planificación</span></div>
-            <p>La app queda centrada únicamente en la temporada 2026/27. No se avanza a otras temporadas: solo se simulan fases del mercado y eventos realistas dentro de ese curso.</p>
+            <div class="panel-head"><h2>Plan Mourinho 26/27</h2><span class="pill" id="seasonBadge">2026/27 · Planificación</span></div>
+            <p>La app queda centrada únicamente en la temporada 2026/27 y toma como contexto de trabajo a José Mourinho: bloque competitivo, intensidad, jerarquía, transición rápida, defensa fuerte y mercado realista.</p>
+            <div id="mourinhoPlan" class="analysis-text"></div>
             <div class="button-row">
               <button id="btnAdvanceWindow" class="btn btn-primary">Cambiar fase 26/27</button>
               <button id="btnSimEvent" class="btn btn-soft">Generar evento</button>
@@ -200,7 +235,7 @@
             <div id="seasonLog" class="season-log"></div>
           </section>
           <section class="panel glass">
-            <div class="panel-head"><h2>Comparador rápido</h2><span class="pill">Antes / después</span></div>
+            <div class="panel-head"><h2>Dashboard de proyecto</h2><span class="pill">26/27</span></div>
             <div id="compareStats" class="compare-stats"></div>
           </section>
         </div>
@@ -220,7 +255,7 @@
           <section class="panel glass">
             <div class="panel-head"><h2>Roadmap automático</h2><span class="pill live">GitHub Actions</span></div>
             <ol class="roadmap">
-              <li><b>Fase actual:</b> datos separados, mercado ampliado, rumour board y script base.</li>
+              <li><b>Fase actual:</b> Reality Mode, enlace compartible, ranking, mercado ampliado, AutoMarket, plantilla completa y script base.</li>
               <li><b>Siguiente:</b> conectar una API/fuente autorizada para rumores y actualizar <code>data.json</code> diariamente.</li>
               <li><b>Fabrizio/X:</b> requiere API oficial de X/Bearer Token; guardar solo resumen, jugador, estado y enlace.</li>
               <li><b>Transfermarkt:</b> usar enlaces y revisión; evitar scraping masivo no autorizado.</li>
@@ -232,7 +267,7 @@
 
     <footer class="footer glass">
       <p><b>Proyecto fan no oficial.</b> No afiliado al Real Madrid, Transfermarkt, X ni periodistas. Valores base orientativos y precios de operación editables por el usuario.</p>
-      <p>Versión 2.2 · Temporada 26/27 · Diseñado para GitHub Pages · Datos separados en <code>data.json</code></p>
+      <p>Versión 3.0 · Reality Mode 26/27 · José Mourinho · Diseñado para GitHub Pages · Datos separados en <code>data.json</code></p>
     </footer>
   </div>
 
