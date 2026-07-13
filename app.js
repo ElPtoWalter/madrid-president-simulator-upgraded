@@ -1,5 +1,5 @@
-const STORE_KEY = 'madrid-president-simulator-21-automarket-state-v1';
-const SIMS_KEY = 'madrid-president-simulator-21-automarket-sims-v1';
+const STORE_KEY = 'madrid-president-state-v22-season-2627';
+const SIMS_KEY = 'madrid-president-sims-v22-season-2627';
 const FACE_CACHE_KEY = 'madrid-president-face-cache-v2';
 
 const els = {};
@@ -40,11 +40,11 @@ function cacheEls(){
 
 function createInitialState(){
   return {
-    simName: 'Proyecto Presidente 2.0',
+    simName: 'Proyecto Real Madrid 26/27',
     project: 'champions',
     formation: '4-3-3',
     initialBudget: 0,
-    season: {year:'2026/27', window:'Verano', tick:0},
+    season: {year:'2026/27', window:'Planificación', tick:0},
     lineup: {},
     sold: [],
     signed: [],
@@ -93,7 +93,7 @@ function bindStaticEvents(){
   els.btnNewSim?.addEventListener('click', () => { state=createInitialState(); fillStaticControls(); saveAndRender(); });
   els.btnNeedTargets?.addEventListener('click', suggestByNeeds);
   els.btnUndo?.addEventListener('click', undoLast);
-  els.btnAdvanceWindow?.addEventListener('click', advanceWindow);
+  els.btnAdvanceWindow?.addEventListener('click', cycleSeasonPhase);
   els.btnSimEvent?.addEventListener('click', generateSeasonEvent);
   els.btnExportJson?.addEventListener('click', exportSimulationJson);
   els.fileImport?.addEventListener('change', importJson);
@@ -378,8 +378,8 @@ function openPlayerModal(id){
         ${slot ? `<div class="note warn">Está colocado en el campo. Si lo vendes, saldrá del XI.</div>` : ''}
       </div>
       <div class="button-row">
-        ${p.status==='market' && !isSigned(p.id) ? `<button class="btn btn-primary" data-modal-action="buy" data-id="${p.id}">Fichar por ${fmtMoney(buyCost)}</button>` : ''}
-        ${(p.status==='squad'||isSigned(p.id)) && !isSold(p.id) ? `<button class="btn btn-danger-soft" data-modal-action="sell" data-id="${p.id}">Vender por ${fmtMoney(sellOffer)}</button>` : ''}
+        ${p.status==='market' && !isSigned(p.id) ? `<button class="btn btn-primary" data-modal-action="buy" data-id="${p.id}">Fichar con precio manual</button>` : ''}
+        ${(p.status==='squad'||isSigned(p.id)) && !isSold(p.id) ? `<button class="btn btn-danger-soft" data-modal-action="sell" data-id="${p.id}">Vender con precio manual</button>` : ''}
         <button class="btn btn-soft" data-modal-action="photo" data-id="${p.id}">Cambiar foto</button>
         <button class="btn btn-soft" data-modal-action="target" data-id="${p.id}">Añadir al radar</button>
       </div>
@@ -399,28 +399,45 @@ function openPlayerModal(id){
 function openNegotiation(id){
   const p=getPlayer(id); if(!p) return;
   const cost=estimateBuyCost(p);
-  const text = `Negociación por ${p.name}\n\nValor: ${fmtMoney(p.value)}\nPrecio estimado realista: ${fmtMoney(cost)}\nDificultad: ${p.difficulty}\n\n¿Quieres ficharlo?`;
-  if(confirm(text)) buyPlayer(id, cost);
+  const fee = askTransactionFee('buy', p, cost);
+  if(fee !== null) buyPlayer(id, fee);
 }
 function buyPlayer(id, cost=null){
   const p=getPlayer(id); if(!p) return;
   if(isSigned(id)) return toast(`${p.name} ya está fichado.`);
-  const fee = cost ?? estimateBuyCost(p);
+  const suggested = estimateBuyCost(p);
+  const fee = cost ?? askTransactionFee('buy', p, suggested);
+  if(fee === null) return;
   state.signed.push(id);
   state.sold = state.sold.filter(x=>x!==id);
-  pushHistory('buy', `Fichaje: ${p.name}`, -fee, {playerId:id, fee});
+  const diff = Number(fee) - Number(p.value || 0);
+  pushHistory('buy', `Fichaje: ${p.name} por ${fmtMoney(fee)} · valor base ${fmtMoney(p.value)} · ${diff>=0?'+':''}${fmtMoney(diff)} vs base`, -fee, {playerId:id, fee, baseValue:p.value, suggested});
   saveAndRender();
   toast(`${p.name} fichado por ${fmtMoney(fee)}.`);
 }
 function sellPlayer(id){
   const p=getPlayer(id); if(!p || isSold(id)) return;
-  const offer = estimateSellOffer(p);
-  if(!confirm(`Vender a ${p.name} por ${fmtMoney(offer)}?`)) return;
+  const suggested = estimateSellOffer(p);
+  const offer = askTransactionFee('sale', p, suggested);
+  if(offer === null) return;
   state.sold.push(id);
   Object.keys(state.lineup).forEach(slot => { if(state.lineup[slot]===id) delete state.lineup[slot]; });
-  pushHistory('sale', `Venta: ${p.name}`, offer, {playerId:id, fee:offer});
+  const diff = Number(offer) - Number(p.value || 0);
+  pushHistory('sale', `Venta: ${p.name} por ${fmtMoney(offer)} · valor base ${fmtMoney(p.value)} · ${diff>=0?'+':''}${fmtMoney(diff)} vs base`, offer, {playerId:id, fee:offer, baseValue:p.value, suggested});
   saveAndRender();
   toast(`${p.name} vendido por ${fmtMoney(offer)}.`);
+}
+function askTransactionFee(type, p, suggested){
+  const label = type === 'sale' ? 'venta' : 'compra';
+  const helper = type === 'sale'
+    ? `Puedes vender por encima o por debajo de su valor base. Valor base: ${fmtMoney(p.value)}. Oferta sugerida: ${fmtMoney(suggested)}.`
+    : `Puedes pagar más o menos que el valor base. Valor base: ${fmtMoney(p.value)}. Precio sugerido realista: ${fmtMoney(suggested)}.`;
+  const raw = prompt(`Precio manual de ${label} para ${p.name} en M€\n\n${helper}\n\nEscribe solo el número, por ejemplo 85.`, String(suggested));
+  if(raw === null) return null;
+  const normalized = String(raw).replace(',', '.').replace(/[^0-9.\-]/g, '');
+  const value = Number(normalized);
+  if(!Number.isFinite(value) || value < 0){ toast('Precio no válido. Operación cancelada.'); return null; }
+  return Math.round(value*10)/10;
 }
 function addTarget(id){
   const p=getPlayer(id); if(!p) return;
@@ -454,22 +471,26 @@ function estimateSellOffer(p){
 function round5(n){ return Math.round(n/5)*5; }
 
 function computeFinance(){
-  let sales=0, buys=0;
-  for(const h of state.history){ if(h.type==='sale') sales += h.amount; if(h.type==='buy') buys += Math.abs(h.amount); }
+  let sales=0, buys=0, baseSales=0, baseBuys=0;
+  for(const h of state.history){
+    if(h.type==='sale'){ sales += h.amount; baseSales += Number(h.meta?.baseValue ?? h.amount); }
+    if(h.type==='buy'){ buys += Math.abs(h.amount); baseBuys += Number(h.meta?.baseValue ?? Math.abs(h.amount)); }
+  }
+  const negotiationDelta = (sales - baseSales) + (baseBuys - buys);
   const active = activePlayers();
   const salaryNow = sum(active.map(p=>p.salary));
   const salaryBase = state.baseline?.salary || salaryNow;
   const salaryDelta = salaryNow - salaryBase;
   const balance = Number(state.initialBudget||0) + sales - buys;
   const risk = balance < -250 || salaryDelta > 40 ? 'Alto' : balance < -100 || salaryDelta > 20 ? 'Medio' : 'Controlado';
-  return {sales, buys, balance, salaryNow, salaryBase, salaryDelta, risk};
+  return {sales, buys, baseSales, baseBuys, negotiationDelta, balance, salaryNow, salaryBase, salaryDelta, risk};
 }
 function renderFinance(){
   const f=computeFinance();
   els.riskBadge.textContent = `Riesgo ${f.risk}`;
   els.riskBadge.style.borderColor = f.risk==='Alto' ? 'rgba(255,107,107,.5)' : f.risk==='Medio' ? 'rgba(255,179,92,.5)' : 'rgba(95,224,160,.5)';
   const items = [
-    ['Presupuesto inicial', fmtMoney(Number(state.initialBudget||0))], ['Ventas', fmtMoney(f.sales)], ['Fichajes', fmtMoney(f.buys)], ['Balance', fmtMoney(f.balance)], ['Masa salarial', fmtMoney(f.salaryNow)], ['Delta salarial', fmtMoney(f.salaryDelta)]
+    ['Presupuesto inicial', fmtMoney(Number(state.initialBudget||0))], ['Ventas', fmtMoney(f.sales)], ['Fichajes', fmtMoney(f.buys)], ['Balance', fmtMoney(f.balance)], ['Diferencial vs valor base', fmtMoney(f.negotiationDelta)], ['Masa salarial', fmtMoney(f.salaryNow)], ['Delta salarial', fmtMoney(f.salaryDelta)]
   ];
   els.financeCards.innerHTML = items.map(([k,v]) => `<div class="finance-item"><span>${k}</span><b>${v}</b></div>`).join('');
   const max = Math.max(20, f.sales, f.buys, Math.abs(f.salaryDelta));
@@ -598,19 +619,16 @@ function applySuggestedXI(){
 }
 
 function renderSeason(){
+  state.season.year = '2026/27';
   els.seasonBadge.textContent = `${state.season.year} · ${state.season.window}`;
-  els.seasonLog.innerHTML = state.events.length ? state.events.slice().reverse().map(e=>`<div class="note ${e.type||''}"><b>${escapeHtml(e.title)}</b><br>${escapeHtml(e.text)}</div>`).join('') : empty('Sin eventos todavía.');
+  els.seasonLog.innerHTML = state.events.length ? state.events.slice().reverse().map(e=>`<div class="note ${e.type||''}"><b>${escapeHtml(e.title)}</b><br>${escapeHtml(e.text)}</div>`).join('') : empty('Sin eventos todavía. Esta sección simula únicamente escenarios de mercado dentro de 2026/27.');
   const active=activePlayers(); const f=computeFinance();
-  const stats=[['Valor plantilla',fmtMoney(sum(active.map(p=>p.value)))],['Edad media',avg(active.map(p=>p.age)).toFixed(1)],['Media plantilla',avg(active.map(p=>p.rating)).toFixed(1)],['Masa salarial',fmtMoney(f.salaryNow)],['Jugadores ≤23',active.filter(p=>p.age<=23).length],['Españoles',active.filter(p=>p.nationality==='España').length]];
+  const stats=[['Valor base plantilla',fmtMoney(sum(active.map(p=>p.value)))],['Edad media',avg(active.map(p=>p.age)).toFixed(1)],['Media plantilla',avg(active.map(p=>p.rating)).toFixed(1)],['Masa salarial',fmtMoney(f.salaryNow)],['Diferencial negociado',fmtMoney(f.negotiationDelta)],['Españoles',active.filter(p=>p.nationality==='España').length]];
   els.compareStats.innerHTML = stats.map(([k,v])=>`<div class="finance-item"><span>${k}</span><b>${v}</b></div>`).join('');
 }
-function advanceWindow(){
-  const order=['Verano','Primera vuelta','Invierno','Segunda vuelta'];
-  let idx=order.indexOf(state.season.window); idx=(idx+1)%order.length; state.season.window=order[idx]; state.season.tick++;
-  if(idx===0){
-    const year = state.season.year.split('/')[0]; const y=Number(year)+1; state.season.year=`${y}/${String(y+1).slice(-2)}`;
-    agePlayersOneYear();
-  }
+function cycleSeasonPhase(){
+  const order=['Planificación','Mercado de verano','Pretemporada','Plantilla cerrada','Mercado de invierno','Tramo final 26/27'];
+  let idx=order.indexOf(state.season.window); idx=(idx+1)%order.length; state.season.window=order[idx]; state.season.year='2026/27'; state.season.tick++;
   generateSeasonEvent(); saveAndRender();
 }
 function agePlayersOneYear(){
@@ -628,7 +646,7 @@ function generateSeasonEvent(){
   const templates = [
     {type:'warn',title:'Oferta recibida',text:`Un club de la Premier pregunta por ${p.name}. Oferta orientativa: ${fmtMoney(estimateSellOffer(p))}.`},
     {type:'good',title:'Subida de valor',text:`${p.name} se revaloriza por buen rendimiento. +${fmtMoney(5)} de valor estimado.`},
-    {type:'warn',title:'Rumor de mercado',text:`La prensa vincula al Madrid con ${randomMarketTarget().name}. Revísalo en Mercado Pro.`},
+    {type:'warn',title:'Rumor de mercado',text:`La prensa vincula al Madrid con ${randomMarketTarget().name} para la plantilla 26/27. Revísalo en Mercado Pro.`},
     {type:'bad',title:'Alerta física',text:`${p.name} arrastra molestias. Revisa profundidad de banquillo en su posición.`}
   ];
   const e = templates[Math.floor(Math.random()*templates.length)];
@@ -679,15 +697,15 @@ function duplicateSimulation(){ state={...JSON.parse(JSON.stringify(state)), id:
 
 async function shareSite(){
   const url = location.href.split('?')[0];
-  const text = `Mi Madrid President Simulator 2.0: balance ${fmtMoney(computeFinance().balance)} y nota XI ${computeAnalysis().overall?.toFixed(1) || '—'}/10`;
-  if(navigator.share){ try{ await navigator.share({title:'Madrid President Simulator 2.0', text, url}); return; }catch{} }
+  const text = `Mi plantilla Real Madrid 26/27: balance ${fmtMoney(computeFinance().balance)} y nota XI ${computeAnalysis().overall?.toFixed(1) || '—'}/10`;
+  if(navigator.share){ try{ await navigator.share({title:'Madrid President Simulator 2.2', text, url}); return; }catch{} }
   await navigator.clipboard?.writeText(`${text}\n${url}`); toast('Enlace copiado al portapapeles.');
 }
 function exportLineupPng(){
   const canvas=document.createElement('canvas'); canvas.width=1400; canvas.height=1800; const ctx=canvas.getContext('2d');
   const grad=ctx.createLinearGradient(0,0,1400,1800); grad.addColorStop(0,'#080b14'); grad.addColorStop(.55,'#123d25'); grad.addColorStop(1,'#05070d'); ctx.fillStyle=grad; ctx.fillRect(0,0,1400,1800);
   ctx.strokeStyle='rgba(255,255,255,.35)'; ctx.lineWidth=4; roundRect(ctx,80,230,1240,1280,34,true); ctx.beginPath(); ctx.moveTo(80,870); ctx.lineTo(1320,870); ctx.stroke(); ctx.beginPath(); ctx.arc(700,870,140,0,Math.PI*2); ctx.stroke();
-  ctx.fillStyle='#f3d98b'; ctx.font='900 64px system-ui'; ctx.fillText('Madrid President Simulator 2.0',80,110); ctx.fillStyle='#fff'; ctx.font='700 34px system-ui'; ctx.fillText(`${state.simName || 'Proyecto'} · ${state.formation} · Balance ${fmtMoney(computeFinance().balance)}`,80,165);
+  ctx.fillStyle='#f3d98b'; ctx.font='900 64px system-ui'; ctx.fillText('Madrid President Simulator 2.2',80,110); ctx.fillStyle='#fff'; ctx.font='700 34px system-ui'; ctx.fillText(`${state.simName || 'Proyecto'} · ${state.formation} · Balance ${fmtMoney(computeFinance().balance)}`,80,165);
   const slots=data.formations[state.formation]||[];
   for(const slot of slots){ const p=getPlayer(state.lineup[slot.id]); const x=80 + slot.x/100*1240; const y=230 + slot.y/100*1280; ctx.fillStyle='rgba(5,7,13,.82)'; roundRect(ctx,x-95,y-42,190,84,18,true); ctx.strokeStyle='rgba(243,217,139,.45)'; roundRect(ctx,x-95,y-42,190,84,18,false); ctx.fillStyle='#f3d98b'; ctx.font='900 22px system-ui'; ctx.textAlign='center'; ctx.fillText(slot.label,x,y-8); ctx.fillStyle='#fff'; ctx.font='800 24px system-ui'; ctx.fillText(p?shortName(p.name):'—',x,y+22); }
   ctx.textAlign='left'; ctx.fillStyle='rgba(255,255,255,.72)'; ctx.font='500 24px system-ui'; ctx.fillText('Proyecto fan no oficial · No afiliado a Real Madrid ni Transfermarkt',80,1690);
@@ -705,7 +723,7 @@ function formatAutoDate(value){
 }
 
 function fallbackData(){
-  return {meta:{appName:'Madrid President Simulator 2.0',lastManualReview:'sin data.json'},players:[],rumors:[],formations:{'4-3-3':[]},projects:{champions:{name:'Proyecto Champions',description:''}},sources:[]};
+  return {meta:{appName:'Madrid President Simulator 2.2',lastManualReview:'sin data.json'},players:[],rumors:[],formations:{'4-3-3':[]},projects:{champions:{name:'Proyecto Champions',description:''}},sources:[]};
 }
 function fmtMoney(n){ n=Number(n||0); const sign=n<0?'-':''; return `${sign}${Math.abs(n).toLocaleString('es-ES',{maximumFractionDigits:0})} M€`; }
 function sum(arr){ return arr.reduce((a,b)=>a+Number(b||0),0); } function avg(arr){ const f=arr.filter(n=>Number.isFinite(Number(n))); return f.length?sum(f)/f.length:0; }

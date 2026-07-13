@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Madrid President Simulator 2.1 AutoMarket</title>
+  <title>Madrid President Simulator 2.2 · Temporada 26/27</title>
   <meta name="description" content="Simulador fan no oficial para gestionar plantilla, fichajes, rumores, once y balance económico del Real Madrid." />
-  <meta property="og:title" content="Madrid President Simulator 2.1 AutoMarket" />
+  <meta property="og:title" content="Madrid President Simulator 2.2 · Temporada 26/27" />
   <meta property="og:description" content="Vende, ficha, negocia y monta tu Real Madrid ideal." />
   <meta name="theme-color" content="#0b0f1a" />
   <link rel="stylesheet" href="styles.css" />
@@ -15,8 +15,8 @@
     <header class="hero glass">
       <div class="hero__content">
         <p class="eyebrow">Fan project · Real Madrid inspired · No oficial</p>
-        <h1>Madrid President Simulator <span>2.1 AutoMarket</span></h1>
-        <p class="hero__lead">Gestiona plantilla, ventas, fichajes, rumores automáticos, negociación, once, balance salarial y proyecto deportivo en una sola app.</p>
+        <h1>Madrid President Simulator <span>2.2 · Temporada 26/27</span></h1>
+        <p class="hero__lead">Diseña la plantilla más realista posible del Real Madrid 26/27: vende, ficha, negocia precios manuales, controla presupuesto y monta tu XI ideal.</p>
         <div class="hero__actions">
           <button id="btnShare" class="btn btn-primary">Compartir web</button>
           <button id="btnExportPng" class="btn btn-soft">Exportar once PNG</button>
@@ -36,7 +36,7 @@
       <button data-tab="squad" class="nav-btn">Plantilla</button>
       <button data-tab="market" class="nav-btn">Mercado Pro</button>
       <button data-tab="analysis" class="nav-btn">Análisis</button>
-      <button data-tab="season" class="nav-btn">Temporada</button>
+      <button data-tab="season" class="nav-btn">Plan 26/27</button>
       <button data-tab="data" class="nav-btn">Datos</button>
     </nav>
 
@@ -86,8 +86,8 @@
           <section class="panel glass pitch-panel">
             <div class="panel-head">
               <div>
-                <h2>Once titular</h2>
-                <p>Arrastra jugadores desde disponibles o mercado. Al entrar al campo, desaparecen de disponibles.</p>
+                <h2>Once objetivo 26/27</h2>
+                <p>Arrastra jugadores desde disponibles o mercado. Al entrar al campo, desaparecen de disponibles. La simulación queda fijada en la temporada 26/27.</p>
               </div>
               <span class="pill" id="formationBadge">4-3-3</span>
             </div>
@@ -131,7 +131,7 @@
       <section id="tab-squad" class="tab">
         <div class="panel glass">
           <div class="panel-head">
-            <div><h2>Plantilla actual</h2><p>Base revisada y editable. Usa filtros para detectar exceso o falta por posición.</p></div>
+            <div><h2>Plantilla base 26/27</h2><p>Base revisada y editable para construir la plantilla más cercana a la realidad. Usa filtros para detectar exceso o falta por posición.</p></div>
             <div class="tools">
               <input id="squadSearch" placeholder="Buscar jugador…" />
               <select id="squadFilter"><option value="all">Todas</option></select>
@@ -149,7 +149,7 @@
         <div class="market-layout">
           <section class="panel glass">
             <div class="panel-head">
-              <div><h2>Mercado Pro</h2><p>Busca, filtra, negocia y ficha jugadores. Los precios de compra estiman sobreprecio realista.</p></div>
+              <div><h2>Mercado Pro 26/27</h2><p>Busca, filtra y ficha jugadores. Cada operación parte de un valor base, pero tú decides manualmente el precio real de compra o venta.</p></div>
             </div>
             <div class="market-filters">
               <input id="marketSearch" placeholder="Nombre, club, país, etiqueta…" />
@@ -191,10 +191,10 @@
       <section id="tab-season" class="tab">
         <div class="season-grid">
           <section class="panel glass">
-            <div class="panel-head"><h2>Modo temporada</h2><span class="pill" id="seasonBadge">2026/27 · Verano</span></div>
-            <p>Simula eventos de mercado, crecimiento joven, bajada de veteranos, ofertas y riesgo financiero.</p>
+            <div class="panel-head"><h2>Planificador 26/27</h2><span class="pill" id="seasonBadge">2026/27 · Planificación</span></div>
+            <p>La app queda centrada únicamente en la temporada 2026/27. No se avanza a otras temporadas: solo se simulan fases del mercado y eventos realistas dentro de ese curso.</p>
             <div class="button-row">
-              <button id="btnAdvanceWindow" class="btn btn-primary">Avanzar ventana</button>
+              <button id="btnAdvanceWindow" class="btn btn-primary">Cambiar fase 26/27</button>
               <button id="btnSimEvent" class="btn btn-soft">Generar evento</button>
             </div>
             <div id="seasonLog" class="season-log"></div>
@@ -209,8 +209,8 @@
       <section id="tab-data" class="tab">
         <div class="data-grid">
           <section class="panel glass">
-            <div class="panel-head"><h2>Datos y automatización</h2><span class="pill">data.json</span></div>
-            <p>La app ya lee jugadores, rumores y formaciones desde <code>data.json</code>. Esto permite actualizar sin tocar la lógica.</p>
+            <div class="panel-head"><h2>Datos 26/27 y automatización</h2><span class="pill">data.json</span></div>
+            <p>La app trabaja sobre una base 26/27 en <code>data.json</code>. Los valores son base/orientativos; cada usuario puede fijar manualmente el precio real de venta o compra.</p>
             <div class="button-row">
               <button id="btnExportJson" class="btn btn-primary">Exportar simulación JSON</button>
               <label class="btn btn-soft file-label">Importar data/simulación <input id="fileImport" type="file" accept="application/json" /></label>
@@ -231,8 +231,8 @@
     </main>
 
     <footer class="footer glass">
-      <p><b>Proyecto fan no oficial.</b> No afiliado al Real Madrid, Transfermarkt, X ni periodistas. Valores orientativos y editables.</p>
-      <p>Versión 2.0 · Diseñado para GitHub Pages · Datos separados en <code>data.json</code></p>
+      <p><b>Proyecto fan no oficial.</b> No afiliado al Real Madrid, Transfermarkt, X ni periodistas. Valores base orientativos y precios de operación editables por el usuario.</p>
+      <p>Versión 2.2 · Temporada 26/27 · Diseñado para GitHub Pages · Datos separados en <code>data.json</code></p>
     </footer>
   </div>
 
