@@ -58,3 +58,9 @@ Proyecto fan no oficial. No está afiliado al Real Madrid, Transfermarkt, X ni p
 ## Imágenes fijas locales
 
 Esta versión incluye una imagen local fija para cada jugador en `assets/faces/`, por lo que siempre se verá una imagen sin depender de búsquedas externas o APIs.
+
+
+## Imágenes integradas
+
+Esta versión no necesita subir `assets/`.
+Las imágenes de los jugadores van integradas dentro de `data.json` como SVG embebido.
