@@ -1,6 +1,6 @@
 const STORE_KEY = 'madrid-president-state-v22-season-2627';
 const SIMS_KEY = 'madrid-president-sims-v22-season-2627';
-const FACE_CACHE_KEY = 'madrid-president-face-cache-v2';
+const FACE_CACHE_KEY = 'madrid-president-face-cache-v4-fixed-wikimedia';
 
 const els = {};
 let data = null;
@@ -12,6 +12,36 @@ const POS_GROUPS = {
 };
 const POS_LABELS = ['POR','DFC','LI','LD','CAI','CAD','MCD','MC','MCO','MI','MD','EI','ED','DC'];
 const DIFFS = ['baja','media','alta','muy alta','intocable'];
+
+const WIKI_TITLE_OVERRIDES = {
+  rodri: 'Rodri (footballer, born 1996)',
+  endrick: 'Endrick (footballer)',
+  'fran-gonzalez': 'Fran González (footballer)',
+  asencio: 'Raúl Asencio',
+  carreras: 'Álvaro Carreras (footballer)',
+  cheikh: 'Cheikh Cissé (footballer)',
+  gonzalo: 'Gonzalo García (footballer, born 2004)',
+  'cesar-palacios': 'César Palacios (footballer)',
+  'manuel-angel': 'Manuel Ángel',
+  'david-jimenez': 'David Jiménez (footballer)',
+  'mario-martin': 'Mario Martín',
+  pedri: 'Pedri',
+  vitinha: 'Vitinha (footballer, born February 2000)',
+  vanderson: 'Vanderson (footballer)',
+  arnau: 'Arnau Martínez',
+  theo: 'Theo Hernández',
+  miguel: 'Miguel Gutiérrez',
+  nico: 'Nico Williams',
+  kvara: 'Khvicha Kvaratskhelia',
+  leao: 'Rafael Leão',
+  doué: 'Désiré Doué',
+  raphinha: 'Raphinha',
+  ferran: 'Ferran Torres',
+  samug: 'Samu Aghehowa',
+  'rodrygo-alt': 'Savinho',
+  'guler-alt': 'Kenan Yıldız'
+};
+
 
 window.addEventListener('DOMContentLoaded', init);
 
@@ -318,11 +348,19 @@ function bindCardEvents(root){
   observeFaces();
 }
 
+
+function getWikiTitle(p){
+  if(!p) return '';
+  const override = WIKI_TITLE_OVERRIDES[p.id] || WIKI_TITLE_OVERRIDES[(p.id||'').replace(/-/g,'_')];
+  return override || p.wiki || p.name;
+}
+
 function faceHtml(p){
   const initials = getInitials(p.name);
   const manual = p.photo;
   const srcAttr = manual ? `data-src="${escapeAttr(manual)}"` : '';
-  return `<div class="face" data-face="${p.id}" data-wiki="${escapeAttr(p.wiki || p.name)}" ${srcAttr}>${initials}</div>`;
+  const wikiTitle = getWikiTitle(p);
+  return `<div class="face" data-face="${p.id}" data-player-id="${p.id}" data-wiki="${escapeAttr(wikiTitle)}" ${srcAttr}>${initials}</div>`;
 }
 function initFaceObserver(){
   faceObserver = new IntersectionObserver(entries => entries.forEach(entry => {
@@ -378,7 +416,7 @@ async function resolveFaceUrl(name){
 }
 async function fetchWikiThumb(title, lang='en'){
   try{
-    const url = `https://${lang}.wikipedia.org/w/api.php?action=query&prop=pageimages&piprop=thumbnail&pithumbsize=400&titles=${encodeURIComponent(title)}&format=json&origin=*`;
+    const url = `https://${lang}.wikipedia.org/w/api.php?action=query&prop=pageimages&piprop=thumbnail&pithumbsize=420&titles=${encodeURIComponent(title)}&format=json&origin=*`;
     const res = await fetch(url, {cache:'no-store'});
     const js = await res.json();
     const pages = js?.query?.pages || {};
@@ -388,7 +426,7 @@ async function fetchWikiThumb(title, lang='en'){
 }
 async function searchWikiThumb(query, lang='en'){
   try{
-    const url = `https://${lang}.wikipedia.org/w/api.php?action=query&generator=search&gsrsearch=${encodeURIComponent(query)}&gsrlimit=1&prop=pageimages&piprop=thumbnail&pithumbsize=400&format=json&origin=*`;
+    const url = `https://${lang}.wikipedia.org/w/api.php?action=query&generator=search&gsrsearch=${encodeURIComponent(query)}&gsrlimit=1&prop=pageimages&piprop=thumbnail&pithumbsize=420&format=json&origin=*`;
     const res = await fetch(url, {cache:'no-store'});
     const js = await res.json();
     const pages = Object.values(js?.query?.pages || {});
@@ -406,7 +444,7 @@ function openPlayerModal(id){
   const buyCost = estimateBuyCost(p);
   const sellOffer = estimateSellOffer(p);
   els.modalContent.innerHTML = `<div class="modal-player">
-    <div class="modal-photo face" data-face="modal-${p.id}" data-wiki="${escapeAttr(p.wiki || p.name)}" ${p.photo ? `data-src="${escapeAttr(p.photo)}"` : ''}>${getInitials(p.name)}</div>
+    <div class="modal-photo face" data-face="modal-${p.id}" data-wiki="${escapeAttr(getWikiTitle(p))}" ${p.photo ? `data-src="${escapeAttr(p.photo)}"` : ''}>${getInitials(p.name)}</div>
     <div>
       <span class="pill">${escapeHtml(p.status)} · ${escapeHtml(p.difficulty || 'media')}</span>
       <h2>${escapeHtml(p.name)}</h2>
