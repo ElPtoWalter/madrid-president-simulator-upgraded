@@ -337,20 +337,66 @@ async function loadFace(el){
   if(el.dataset.loaded) return;
   el.dataset.loaded = '1';
   const manual = el.dataset.src;
-  let url = manual || getFaceCache(el.dataset.wiki);
-  if(!url && el.dataset.wiki){
-    try{
-      const res = await fetch(`https://en.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(el.dataset.wiki)}`);
-      const js = await res.json();
-      url = js?.thumbnail?.source || js?.originalimage?.source || '';
-      if(url) setFaceCache(el.dataset.wiki, url);
-    }catch{ /* fallback */ }
+  const key = (el.dataset.wiki || '').trim();
+  let url = manual || getFaceCache(key);
+  if(!url && key){
+    url = await resolveFaceUrl(key);
+    if(url) setFaceCache(key, url);
   }
   if(url){
-    const img = new Image(); img.referrerPolicy='no-referrer'; img.loading='lazy'; img.src=url;
-    img.onload = () => { el.textContent=''; el.appendChild(img); img.className='face-img'; Object.assign(img.style,{width:'100%',height:'100%',objectFit:'cover',borderRadius:'inherit'}); };
+    const img = new Image();
+    img.referrerPolicy='no-referrer';
+    img.loading='lazy';
+    img.src=url;
+    img.onload = () => {
+      el.textContent='';
+      el.appendChild(img);
+      img.className='face-img';
+      Object.assign(img.style,{width:'100%',height:'100%',objectFit:'cover',borderRadius:'inherit'});
+    };
+    img.onerror = () => { el.classList.add('face-fallback'); };
+  }else{
+    el.classList.add('face-fallback');
   }
 }
+async function resolveFaceUrl(name){
+  const candidates = Array.from(new Set([
+    name,
+    name.replace(/_/g, ' '),
+    stripDiacritics(name),
+    stripDiacritics(name).replace(/_/g, ' ')
+  ].filter(Boolean)));
+  for(const candidate of candidates){
+    const direct = await fetchWikiThumb(candidate, 'en') || await fetchWikiThumb(candidate, 'es');
+    if(direct) return direct;
+  }
+  for(const candidate of candidates){
+    const searched = await searchWikiThumb(candidate, 'en') || await searchWikiThumb(candidate, 'es');
+    if(searched) return searched;
+  }
+  return '';
+}
+async function fetchWikiThumb(title, lang='en'){
+  try{
+    const url = `https://${lang}.wikipedia.org/w/api.php?action=query&prop=pageimages&piprop=thumbnail&pithumbsize=400&titles=${encodeURIComponent(title)}&format=json&origin=*`;
+    const res = await fetch(url, {cache:'no-store'});
+    const js = await res.json();
+    const pages = js?.query?.pages || {};
+    const first = Object.values(pages)[0];
+    return first?.thumbnail?.source || '';
+  }catch{ return ''; }
+}
+async function searchWikiThumb(query, lang='en'){
+  try{
+    const url = `https://${lang}.wikipedia.org/w/api.php?action=query&generator=search&gsrsearch=${encodeURIComponent(query)}&gsrlimit=1&prop=pageimages&piprop=thumbnail&pithumbsize=400&format=json&origin=*`;
+    const res = await fetch(url, {cache:'no-store'});
+    const js = await res.json();
+    const pages = Object.values(js?.query?.pages || {});
+    const withThumb = pages.find(p => p?.thumbnail?.source);
+    return withThumb?.thumbnail?.source || '';
+  }catch{ return ''; }
+}
+function stripDiacritics(v=''){ return v.normalize('NFD').replace(/[̀-ͯ]/g,''); }
 function getFaceCache(k){ try { return JSON.parse(localStorage.getItem(FACE_CACHE_KEY)||'{}')[k]; } catch { return ''; } }
 function setFaceCache(k,v){ try { const c=JSON.parse(localStorage.getItem(FACE_CACHE_KEY)||'{}'); c[k]=v; localStorage.setItem(FACE_CACHE_KEY, JSON.stringify(c)); } catch{} }
 
