@@ -5,14 +5,14 @@
     "lastManualReview": "2026-07-13",
     "currency": "M€",
     "notice": "Proyecto fan no oficial centrado solo en la temporada 2026/27. Valores base orientativos; el usuario decide manualmente el precio real de cada compra o venta.",
-    "lastAutoUpdate": "2026-07-18T07:55:23.055Z",
+    "lastAutoUpdate": "2026-07-18T13:20:45.793Z",
     "automationNote": "AutoMarket actualiza rumores desde RSS/noticias públicas. X/Fabrizio se usa solo si configuras X_BEARER_TOKEN en GitHub Secrets.",
     "autoMarket": {
       "enabled": true,
-      "lastRun": "2026-07-18T07:55:23.055Z",
+      "lastRun": "2026-07-18T13:20:45.793Z",
       "feedCount": 4,
       "articlesFetched": 120,
-      "detections": 33,
+      "detections": 31,
       "autoRumors": 34,
       "strategy": "RSS gratuito + coincidencia con mercado interno + detección conservadora de nombres; sin scraping masivo de Transfermarkt."
     },
@@ -24,7 +24,7 @@
     "photoNote": "All player images are embedded directly in data.json, so no assets/faces folder is needed.",
     "coach": "José Mourinho",
     "focus": "Temporada 2026/27 · Plantilla realista · Presupuesto · Reality Score · Plan Mourinho",
-    "lastAutomationCheck": "2026-07-18T07:55:23.055Z"
+    "lastAutomationCheck": "2026-07-18T13:20:45.793Z"
   },
   "sources": [
     {
@@ -3648,7 +3648,7 @@
       "sourceUrl": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNcmladXBwMEQtMXJvMTNjWUt4ZVlGeF9oMUxJUTF5NUlLM1RFX2l4MkdEY0RRUExJY0IxQnpFSlN1c0ZBaFd3ci0zRlJ6THlFNVJRNkRaRzNnZmg3VkFuVDlvSWkwMHQwcXpFcGV1S1BMczNIZzhSRnhkeG5JWFdfdl9OT0dXdlgzQ19RQWJoaHhVdEVKbkJSN1Y2cWtFbEUxOFpnLTNnRU9KMFRQ?oc=5",
       "note": "Detectado automáticamente en noticias recientes. Titular: Blog de fichajes: Real Madrid busca un gran acuerdo por Olise - ESPN Deportes",
       "auto": true,
-      "updatedAt": "2026-07-18T07:55:23.055Z",
+      "updatedAt": "2026-07-18T13:20:45.793Z",
       "detectedFrom": "rss-news",
       "headlineHash": "db76681831b1"
     },
@@ -3661,7 +3661,7 @@
       "sourceUrl": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxQNEIwUU1zU2dZUGthYmJIWUQzdW5La0hpYnY0aG03SjlYTXlSM2MxR2ZidFJ4S2d3ZmdjQW5JTnJNTGRSMU5RWWp2dHR1a1k5X3Uta09NZnBPeUJBcXVKLW8zMGVrNXFicUlQZXptU1ZJbTh6MVJfQVFPQy1VcDZEYWlzMk5sNzZuc2tiem9OTjFtWGVGM0tvMTN5S3haanNzQ29iNS1IWjhqUXhoZlVTamdFRE5qdWNHV3ZyY1Z5TUt4UVNvQXYwZ29abUtXSkI4LTAwSE9rYlpITFp2MkdJdE9R?oc=5",
       "note": "Detectado automáticamente en noticias recientes. Titular: El Manchester City mueve ficha por Gvardiol ante los rumores de su fichaje: Real Madrid y Barcelona, atentos - El Desmarque",
       "auto": true,
-      "updatedAt": "2026-07-18T07:55:23.055Z",
+      "updatedAt": "2026-07-18T13:20:45.793Z",
       "detectedFrom": "rss-news",
       "headlineHash": "ebeeba926eb5"
     },
@@ -3674,7 +3674,7 @@
       "sourceUrl": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQc0FwX2JzY1JmZngxUnJSWUVIZk1jdU9LcC1lTkRKczhYUC1WZGhOaDJ6NFZxRW1RSXlzM0pidWFnWTZ2SnFFWS15emtpLWZWalNSTmIyN0JuSjMtcUQ3SzMxRUtnZEFWMHZUQnpvRUlnN1cxZU9wNGQxbFlkUkQ1aXlIZlJnVnVsX19VcDFQRnZSOTY4eU5BcGpROW9jd1NDcjhaX0djZ3PSAbwBQVVfeXFMUHVmbWcxcHhwendJQ3Bra1FHcGczSndoajZLaHVlMDIyVW9EYTV6ZzZ0SDJIWnlnM2VSR0FjNEp4RUYzWGk2dW9qdmVrV1pzS3I1UzV5Mm9GaU5qQ21sX3pIcHlFQmNBNzN5LXg5X29uVldyWmt0RzZpOTNaYmFzSmNrNWl3dlExWGpwams1aDRPTFlTYzR6MDZ3Y19PTGo2cFNsc3ZqTUtDT0szYzJPUDBQemh4TU1pZ2hMd2k?oc=5",
       "note": "Detectado automáticamente en noticias recientes. Titular: El Real Madrid hace oficial el fichaje de Cucurella - Cadena SER",
       "auto": true,
-      "updatedAt": "2026-07-18T07:55:23.055Z",
+      "updatedAt": "2026-07-18T13:20:45.793Z",
       "detectedFrom": "rss-news",
       "headlineHash": "8e4ad209d3f5"
     },
@@ -3687,7 +3687,7 @@
       "sourceUrl": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxQV2lvY211ZXRDbEpmcXllMGtzdVVwVmx0R19zSGpaU3c0SUVsZFNiNEFyT3JfZnJHY2otTVBoc1FaX3Yyb20xVUdRZjMxNWlxZ0hnS1RVTGhSVm1DTkRyR2EtSi1kVWFDMllVekhGVW0zU0d1ZUpPdEx4ZHpTRncyMnNMYTNIMVJfWTBXb0pPNS1ubkgxNDZxcTA5dW4zcUZhMlcyZXdFaFhtRVlsdGt4QW9jVjJVOHhTVm1OSlZ2UmFPbnhLM1E2QWQxVE1EMlV4bzR5c1hkUQ?oc=5",
       "note": "Detectado automáticamente en noticias recientes. Titular: Mercado de fichajes: el Real Madrid recibe una oferta irrechazable por Vinícius Jr; Julián Álvarez, Salah y más - Sports Illustrated",
       "auto": true,
-      "updatedAt": "2026-07-18T07:55:23.055Z",
+      "updatedAt": "2026-07-18T13:20:45.793Z",
       "detectedFrom": "rss-news",
       "headlineHash": "336ebc3a56f0"
     },
@@ -3700,7 +3700,7 @@
       "sourceUrl": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOVVFGSGlhX0R5ZGprc3NyS3ZRRm1CYThYWkl2dmhid0ExQkVLRG85VmUzWGRjM24zdnkwdVhReUR0bzNVbmFOUTFoLVhtZHowdGxJVTMxcFd3Z3BYMWpYYXJKb0lhNFdCMlI4RWdIeGl1bWlhdnk3ZlhBR0dJZS1vNU5Oc1pPcTVMRFRuRUtXSXE1a1JYbXhNZ3hfdkcxazBlVmdsbktOSUNBTVNRa3RFNGpwdHN2UQ?oc=5",
       "note": "Detectado automáticamente en noticias recientes. Titular: Mercado de fichajes: el Real Madrid prepara una oferta por Kane; Mbappé, Bastoni y más - Sports Illustrated",
       "auto": true,
-      "updatedAt": "2026-07-18T07:55:23.055Z",
+      "updatedAt": "2026-07-18T13:20:45.793Z",
       "detectedFrom": "rss-news",
       "headlineHash": "41f4b4e5d934"
     },
@@ -3713,7 +3713,7 @@
       "sourceUrl": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxOUDByYlB3VHQtYjJHY0RRSk8zcV9yeGZ2VS1MeHdQME9WSXg2OENYZV9IellidS1TeXJ3VER5dnhBbnpFMkg2ejBmYy1yZEtmWUpCSkhPbVVkT01BclZZemVxeVJOcWJYLUcyU0ptNzFibFJZLTZpT3dsWUhlZkRYS3J6enJhRUdSNVFrSG5MR0syQm00ZVNoblNUOEJLMUotODJ3X25hN0stc01TZTJIWkh1aDdIYnRYbWxIbkZiOERvb3JmYWw2dg?oc=5",
       "note": "Detectado automáticamente en noticias recientes. Titular: Mercado de fichajes: el Real Madrid presenta una gran oferta por Olise; Rashford, Yan Diomande y más - Sports Illustrated",
       "auto": true,
-      "updatedAt": "2026-07-18T07:55:23.055Z",
+      "updatedAt": "2026-07-18T13:20:45.793Z",
       "detectedFrom": "rss-news",
       "headlineHash": "58176bc8b528"
     },
@@ -3726,7 +3726,7 @@
       "sourceUrl": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQN0MtMlZySjRRY19IVlV1WllURUNkUFBvbThHNUdaMHNGTDlnbVdNZnAteDcxcmFrMnc0MEtIWFpLS2pHZkVlXzBfNjY4OGpiUjNGWVZZNURxa25nRnJmWVdKeF93T3BCdlR6YWU4UDJZSFc5dVZUNzV0SGpfbW5VcWd2ekRiZTZna1FpRGdOYXZEMGp5UEt3di1FUk01SDNWRExvQUttcVljQUxpQW1GNnpjaVVjLWpiZWVvVUxkaFpRZw?oc=5",
       "note": "Detectado automáticamente en noticias recientes. Titular: Mercado de fichajes: la oferta récord del Real Madrid por Olise; Rashford, Enzo Fernández y más - Sports Illustrated",
       "auto": true,
-      "updatedAt": "2026-07-18T07:55:23.055Z",
+      "updatedAt": "2026-07-18T13:20:45.793Z",
       "detectedFrom": "rss-news",
       "headlineHash": "ace977efe705"
     },
@@ -3739,7 +3739,7 @@
       "sourceUrl": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQN0MtMlZySjRRY19IVlV1WllURUNkUFBvbThHNUdaMHNGTDlnbVdNZnAteDcxcmFrMnc0MEtIWFpLS2pHZkVlXzBfNjY4OGpiUjNGWVZZNURxa25nRnJmWVdKeF93T3BCdlR6YWU4UDJZSFc5dVZUNzV0SGpfbW5VcWd2ekRiZTZna1FpRGdOYXZEMGp5UEt3di1FUk01SDNWRExvQUttcVljQUxpQW1GNnpjaVVjLWpiZWVvVUxkaFpRZw?oc=5",
       "note": "Detectado automáticamente en noticias recientes. Titular: Mercado de fichajes: la oferta récord del Real Madrid por Olise; Rashford, Enzo Fernández y más - Sports Illustrated",
       "auto": true,
-      "updatedAt": "2026-07-18T07:55:23.055Z",
+      "updatedAt": "2026-07-18T13:20:45.793Z",
       "detectedFrom": "rss-news",
       "headlineHash": "ace977efe705"
     },
@@ -3752,7 +3752,7 @@
       "sourceUrl": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQOUIxQTVVQV9hQ1ZWeW44UkpkenBHSDk2Wmpia0dzeE5OdkQyd1I5Q0VMYVpIWU5TQ3dQU3pISUNuSDhxaDEwNUZZZXF4ZThVTGRlNDBCNllXWDl1SnRSRlBmR2picVZ3UFpLcXR0bnkyRmtsVkVaWjJFSlI2ck5IcWRPSTNmak9rcTlpVXU3MFQ0b1FXYVhqLVBRcmVOXzJWbVpZMVZLN3VHYzZtZWhfNy1tWEpnb3ZvYlNITVRUZGw?oc=5",
       "note": "Detectado automáticamente en noticias recientes. Titular: Mercado de fichajes: el Real Madrid prepara una oferta por Pedri; Raphinha, Jules Koundé y más - Sports Illustrated",
       "auto": true,
-      "updatedAt": "2026-07-18T07:55:23.055Z",
+      "updatedAt": "2026-07-18T13:20:45.793Z",
       "detectedFrom": "rss-news",
       "headlineHash": "cda1e6057f50"
     },
@@ -3765,7 +3765,7 @@
       "sourceUrl": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQOUIxQTVVQV9hQ1ZWeW44UkpkenBHSDk2Wmpia0dzeE5OdkQyd1I5Q0VMYVpIWU5TQ3dQU3pISUNuSDhxaDEwNUZZZXF4ZThVTGRlNDBCNllXWDl1SnRSRlBmR2picVZ3UFpLcXR0bnkyRmtsVkVaWjJFSlI2ck5IcWRPSTNmak9rcTlpVXU3MFQ0b1FXYVhqLVBRcmVOXzJWbVpZMVZLN3VHYzZtZWhfNy1tWEpnb3ZvYlNITVRUZGw?oc=5",
       "note": "Detectado automáticamente en noticias recientes. Titular: Mercado de fichajes: el Real Madrid prepara una oferta por Pedri; Raphinha, Jules Koundé y más - Sports Illustrated",
       "auto": true,
-      "updatedAt": "2026-07-18T07:55:23.055Z",
+      "updatedAt": "2026-07-18T13:20:45.793Z",
       "detectedFrom": "rss-news",
       "headlineHash": "cda1e6057f50"
     },
@@ -3778,7 +3778,7 @@
       "sourceUrl": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOVVFGSGlhX0R5ZGprc3NyS3ZRRm1CYThYWkl2dmhid0ExQkVLRG85VmUzWGRjM24zdnkwdVhReUR0bzNVbmFOUTFoLVhtZHowdGxJVTMxcFd3Z3BYMWpYYXJKb0lhNFdCMlI4RWdIeGl1bWlhdnk3ZlhBR0dJZS1vNU5Oc1pPcTVMRFRuRUtXSXE1a1JYbXhNZ3hfdkcxazBlVmdsbktOSUNBTVNRa3RFNGpwdHN2UQ?oc=5",
       "note": "Detectado automáticamente en noticias recientes. Titular: Mercado de fichajes: el Real Madrid prepara una oferta por Kane; Mbappé, Bastoni y más - Sports Illustrated",
       "auto": true,
-      "updatedAt": "2026-07-18T07:55:23.055Z",
+      "updatedAt": "2026-07-18T13:20:45.793Z",
       "detectedFrom": "rss-news",
       "headlineHash": "41f4b4e5d934"
     },
@@ -3791,7 +3791,7 @@
       "sourceUrl": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxOUndicXRpNnpoR21hcW52czczN1I0SFpMZjNQMmxBXzhwOUdzN1kwSkFVS2FLWFdGejFHSjRsMlJRSUlwbzNqaUdadDZxal9BNnVzakZ1b2lyQ1ZBeDBkUHF0NHBlUzl2NkY0RzhvMEFmclVoNU1USkFBOHI2amdRMk9OdG83aVVXVUNRRW1VWHlmR05jbC1CSk03bGNDUXZnWTJrY2tseEVQVFhpaU9PaHBReFQyWWszS3h1Y2JEa2ZBa1RhUmdNR195aEZaUG9q?oc=5",
       "note": "Detectado automáticamente en noticias recientes. Titular: Mercado de fichajes: el Real Madrid rechaza millonaria oferta por una de sus figuras; Osimhen, Salah y más - Sports Illustrated",
       "auto": true,
-      "updatedAt": "2026-07-18T07:55:23.055Z",
+      "updatedAt": "2026-07-18T13:20:45.793Z",
       "detectedFrom": "rss-news",
       "headlineHash": "c12337a64800"
     },
@@ -3804,7 +3804,7 @@
       "sourceUrl": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQcVMzWG55b1NYUWktTDRQV19MRGY2VzNldFN1U0lGdmxtY2NkekdxMEV4cWFSTUt0U1pTOEtkem52aWF5TjAxazI4ZXZmdlRDU0dWLVJTTHlLN1pLcGYtZF9UNjRONXdPWGh3M1hmV3k0VWJ2S2lhTGprd3ZkR3RkdVhhYWlsbVhUQWJqYQ?oc=5",
       "note": "Detectado automáticamente en noticias recientes. Titular: Transfer rumour roundup: Real Madrid ready to smash world record for Olise; Arsenal shut door on Gyokeres exit - Yahoo Sports",
       "auto": true,
-      "updatedAt": "2026-07-18T07:55:23.055Z",
+      "updatedAt": "2026-07-18T13:20:45.793Z",
       "detectedFrom": "rss-news",
       "headlineHash": "1217da64ad62"
     },
@@ -3817,7 +3817,7 @@
       "sourceUrl": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxPZHhLaXR3ZmpWUmN2cUoySUtxSFg4NklmZVU1bGRZMWNpczBPajhQZjA4RlFHc1FZSl9hejFpeEItVkViZXhDQlBnNlhqMjlCbXBTSE82YUR3TzV2NVRVNThlb0lXb2s1QTVHSl9nQl9VZkhDaEYwRVhzazhBcTNtdHU4WlNwQlkyMU5id05FaHFCcnh2UXR2Mm9aeGY1RURMel9seGg3b3RXLURGUnZQVU1JczJGRGd5MWtSVGstMWkyUHN1LVBBWFJLUTR4NnhSN2c?oc=5",
       "note": "Detectado automáticamente en noticias recientes. Titular: El padre de Erling Haaland aviva los rumores de su fichaje por el Real Madrid: \"Cualquiera quiere jugar allí\" - El Desmarque",
       "auto": true,
-      "updatedAt": "2026-07-18T07:55:23.055Z",
+      "updatedAt": "2026-07-18T13:20:45.793Z",
       "detectedFrom": "rss-news",
       "headlineHash": "d92f08fe60e2"
     },
@@ -3843,7 +3843,7 @@
       "sourceUrl": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOVVFGSGlhX0R5ZGprc3NyS3ZRRm1CYThYWkl2dmhid0ExQkVLRG85VmUzWGRjM24zdnkwdVhReUR0bzNVbmFOUTFoLVhtZHowdGxJVTMxcFd3Z3BYMWpYYXJKb0lhNFdCMlI4RWdIeGl1bWlhdnk3ZlhBR0dJZS1vNU5Oc1pPcTVMRFRuRUtXSXE1a1JYbXhNZ3hfdkcxazBlVmdsbktOSUNBTVNRa3RFNGpwdHN2UQ?oc=5",
       "note": "Detectado automáticamente en noticias recientes. Titular: Mercado de fichajes: el Real Madrid prepara una oferta por Kane; Mbappé, Bastoni y más - Sports Illustrated",
       "auto": true,
-      "updatedAt": "2026-07-18T07:55:23.055Z",
+      "updatedAt": "2026-07-18T13:20:45.793Z",
       "detectedFrom": "rss-news",
       "headlineHash": "41f4b4e5d934"
     },
@@ -3856,7 +3856,7 @@
       "sourceUrl": "https://news.google.com/rss/articles/CBMixwFBVV95cUxNb3F3cWRRSlZBZGJGWFoxQVdIcV9ucDZwejBTQzV5UDQ3NVZlQ2s4Znk3RFR0OUVjT0U1TVk5SU9YeXdyOGMwdENWdlF4eGJGMTJZUGg3YUowdTEyT0VvajVtWEdfZGRiemRZZjh6aVhUb0ZJbF9kdHlvd3ZPSGd1Q25RMDVwbWV6SEdtYW10UDgzeEVsWmxiSUVvM0NmTGREZWgzWFlfd3RHUGk1ZVUxWHdVMWJlYmxYME0xVlZ4aFZJZ1lwWXZv?oc=5",
       "note": "Detectado automáticamente en noticias recientes. Titular: Mercado de fichajes: el Real Madrid se fija en Kvaratskhelia; Julián Álvarez, Vinícius Junior y más - Sports Illustrated",
       "auto": true,
-      "updatedAt": "2026-07-18T07:55:23.055Z",
+      "updatedAt": "2026-07-18T13:20:45.793Z",
       "detectedFrom": "rss-news",
       "headlineHash": "cbbb47877a81"
     },
@@ -3869,7 +3869,7 @@
       "sourceUrl": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxPTlI5WHdIZGFDWjNwTlFrSzNJWU84SFBqS0VwWk1yTU5uNmt1TUl1VHh4Z0RhOVdYOHVGeEZPOTYyWmlpNk1LRExpM3pobUdVTmpLNXVWa2lGS0ZCWHhDVjdDZ2g0cHl1VnhBRktNQkdJLTdrUTA4a3JJM2Zfbmx0YkxoLVRZTW8zcjBNMS1lLVBNZGdOajFpcVFNa0k5Z1FjN1JEd0o0S3NtaEpQejhtVHk3eWo1SHU4Z3dCcTE1OFJpckN2bzlLVw?oc=5",
       "note": "Detectado automáticamente en noticias recientes. Titular: Mercado de fichajes: el Real Madrid ofrece un récord mundial por Olise; Van Dijk, Kenan Yıldız y más - Sports Illustrated",
       "auto": true,
-      "updatedAt": "2026-07-18T07:55:23.055Z",
+      "updatedAt": "2026-07-18T13:20:45.793Z",
       "detectedFrom": "rss-news",
       "headlineHash": "78a40c5e0628"
     },
@@ -3882,7 +3882,7 @@
       "sourceUrl": "https://news.google.com/rss/articles/CBMimwNBVV95cUxPa0Y3dG1aTUNJOUxCMkgyNkNEanFmMnJfMTJMMXk4MmI4WDhkVGdsTkhZLVQzMW9LUmhmZzZyUkV1endPTDk5R3c3ZXhvVlVoU1p6SDJxLTQ5S3ZXekEtRHRFUzJXQWExbFpNZmkzRHoyd2J6VGFnazVyX0NVVVpvVmtmNjdZTVEtTHhDOEZHWFBkSUpPTHBxOEszbGw0Q2FqdTdKY1lWQWZ3NUZHZ000VVNZektfZ0hxVG5kSE1ZaTYyNU9qcUt2dnVCQ2k5em5SLUVxZGl2UlV4Z0d2V2tUM0J0M2xFOWt0YTF1SDF6NGRBR3Z0b3dnZzJER1NISTBWcnpTTkpZQVJuc3ZpWGJzcWhva0N0QWE4WjFTWnhVTDVBMUZGRlBBTFR2Q2ZEaUV3bF9LNFU0RXJMN3ZsMFdTRjRuREtidFJDbE5FcUNRLVRPNGFFNXVDVERBdXJibjN4Y1V0cmxUU1c2OU1BZlJPQVVfNDJ1djA3Uzhsdm42aDRjREFjLXJ3MTVJOU82a0k1T0U5WlJSNlRUbms?oc=5",
       "note": "Detectado automáticamente en noticias recientes. Titular: El Real Madrid recibe un mensaje contundente sobre el fichaje de Michael Olise por parte del Bayern de Múnich y del defensa francés Dayot Upamecano, mientras se intensifican los rumores sobre un traspaso récord de 223 millones de euros - Goal.com",
       "auto": true,
-      "updatedAt": "2026-07-18T07:55:23.055Z",
+      "updatedAt": "2026-07-18T13:20:45.793Z",
       "detectedFrom": "rss-news",
       "headlineHash": "8ae08cc51e04"
     },
@@ -3895,7 +3895,7 @@
       "sourceUrl": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQbDVsUUdTNDNDSjRqOEhWS2RHZUVLeTVibmdzbThYZ2NQZnRJMUJ3eHVRX0RmNmgxUWdhakZBN0s0NnBLRVN6aFp1S2xiZGpLamxsdVEydjRxa0ZvMTdtMXVHazZuTnJla0hrRmkzQk5lZFZrWnlDZy12U2JSQjFibzJJaEdHeVpBZVlmWHNqWHZ5MTlIUlZMZ193YzVPdHc1VEo3OGJMZGR1cFhwNlpWQ1NwRVp0dlMxcVUwRGxxc1hJS1BnVFE?oc=5",
       "note": "Detectado automáticamente en noticias recientes. Titular: Últimas noticias de fichajes del Real Madrid: Gvardiol, Nico Paz, Silva, Pedro, Vitinha y João Neves - Sports Illustrated",
       "auto": true,
-      "updatedAt": "2026-07-18T07:55:23.055Z",
+      "updatedAt": "2026-07-18T13:20:45.793Z",
       "detectedFrom": "rss-news",
       "headlineHash": "b8c410b8e891"
     },
@@ -3908,22 +3908,22 @@
       "sourceUrl": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQbDVsUUdTNDNDSjRqOEhWS2RHZUVLeTVibmdzbThYZ2NQZnRJMUJ3eHVRX0RmNmgxUWdhakZBN0s0NnBLRVN6aFp1S2xiZGpLamxsdVEydjRxa0ZvMTdtMXVHazZuTnJla0hrRmkzQk5lZFZrWnlDZy12U2JSQjFibzJJaEdHeVpBZVlmWHNqWHZ5MTlIUlZMZ193YzVPdHc1VEo3OGJMZGR1cFhwNlpWQ1NwRVp0dlMxcVUwRGxxc1hJS1BnVFE?oc=5",
       "note": "Detectado automáticamente en noticias recientes. Titular: Últimas noticias de fichajes del Real Madrid: Gvardiol, Nico Paz, Silva, Pedro, Vitinha y João Neves - Sports Illustrated",
       "auto": true,
-      "updatedAt": "2026-07-18T07:55:23.055Z",
+      "updatedAt": "2026-07-18T13:20:45.793Z",
       "detectedFrom": "rss-news",
       "headlineHash": "b8c410b8e891"
     },
     {
       "id": "auto-barcola",
       "playerId": "barcola",
-      "status": "Posible salida",
+      "status": "Rumor",
       "confidence": 44,
       "source": "Google News · Real Madrid fichajes",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxNQTFTZDRpWHVGUlQ1blJOUjI0RUZ3djIta19ISnhDbVl2emFnZmZvTmVjY0p6bExhVnJ4ZUlLQldDejNwbHFmSTBhSEI5TlMtUlNYSmduM19UNG11TURkdjNmaEM4bmY5bWhJUDVMUWpwYlFlV3dkYXljZEgxejExMHZHUGJjeWFQY1BjNWQxXzMtY3paWS1HbDIxZWs2TjF0VnM5aFNwTVkzblNLUzllLVNwOHlFeUNNZUtuSVAxdVBmMXVvQWJCZG1mUnVCbTQ0alE?oc=5",
-      "note": "Detectado automáticamente en noticias recientes. Titular: Mercado de fichajes: el agente de Olise busca forzar su salida al Real Madrid; Ferran Torres, Barcola, y más - Sports Illustrated",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNQUpNSFlPajJ5SG9sczJRai1WV05rb194R3BJc2RCbTVOOEpfWXpZcWZGbHRIWGt3RVo1cHppVW0xcWhqZnJ4ZnN3LXA0TmxGM1VKdmppb3RFWFIxYndaVEIxTnJ5ZnVjajdJT01PVm81anNqRENjbGdDMGdZU0VfUVNoS0hxby1UeWExdmZKWTdiRzQ3czZqbUgtOVZkWWJEVUR2am5JRVFzX3BzVFFJeDQ4SWRGSE5QR2RPUWRWZnY?oc=5",
+      "note": "Detectado automáticamente en noticias recientes. Titular: Mercado de fichajes: el Real Madrid planea fichar a Rashford; Barcola, Federico Valverde y más - Sports Illustrated",
       "auto": true,
-      "updatedAt": "2026-07-18T07:55:23.055Z",
+      "updatedAt": "2026-07-18T13:20:45.793Z",
       "detectedFrom": "rss-news",
-      "headlineHash": "e588049b67bf"
+      "headlineHash": "87b27fabf10e"
     },
     {
       "id": "auto-nico",
@@ -3934,7 +3934,7 @@
       "sourceUrl": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNUTZsbjQzSFlJa29Samk4bExHZmdwdWZfUXR2MkV5bFlVOEFnM3Z5S1JaaWN6a2dieTlMbzZ3S29UeFZsZzdOeEt3UmNPVEk2LXhUZTItcXc3VllwZF9pTl9oUkZ5R3c4YzBYdXhicHE1S1IzV3NuMU1KWEZSbElpcUhWdXl1TDczOXpYb1RXc3VlVjR4TFVxNG5XMERMSXFYR2pKb3A2a2xSUkFIeF83NVFMV1dwN3Z6RGxTb0VFajg1UQ?oc=5",
       "note": "Detectado automáticamente en noticias recientes. Titular: Mercado de fichajes: el Real Madrid prepara el fichaje de Haaland; Éderson, Nico Williams y más - Sports Illustrated",
       "auto": true,
-      "updatedAt": "2026-07-18T07:55:23.055Z",
+      "updatedAt": "2026-07-18T13:20:45.793Z",
       "detectedFrom": "rss-news",
       "headlineHash": "a1a0ab2e4be6"
     },
@@ -3947,7 +3947,7 @@
       "sourceUrl": "https://news.google.com/rss/articles/CBMiuAJBVV95cUxONFMtRFNzZGNXOC1rSDlxOXRSYl85WkpRUVFwMzRRRVV3eWV3YnRnOF9NWS1CRFpQb1NlX2xabnlQU05kaDFaNW5yRTZSdFFjOVlZdTJVajBlajVPeHp0QjNoZldWNmViNnFFcUlCd3huV1ROMTlxUkxGVnJpOTVfdnBucXdLaDRZZWtPcTZsWXZmRHJEdVhJU0ZVTmdoUHNnenRmeU9RQXAzcXUyZ0xwb3ZYS2JUQmNwWlBJTnVXRldaRXZwV2lKMGU0YTc3U1FfOENhUW9lMTJCdGRBY2h0RE9fbFVUVFV3cHZES3FidldJMTZGT0I0NzkwRUtueWdxdjZOSTRTS0dES2ZmWmVQcVNZVjdUQkt3WWhrNWlIYmFkWjFRZ3o0dDFFZ2JaTThQRnltUkNhREY?oc=5",
       "note": "Detectado automáticamente en noticias recientes. Titular: ¿Podrían Vitinha y João Neves dejar el PSG? Jorge Mendes revela su postura sobre el mercado de fichajes de verano, ante rumores que los vinculan con el Real Madrid - Goal.com",
       "auto": true,
-      "updatedAt": "2026-07-18T07:55:23.055Z",
+      "updatedAt": "2026-07-18T13:20:45.793Z",
       "detectedFrom": "rss-news",
       "headlineHash": "20319084e33d"
     },
@@ -3986,7 +3986,7 @@
       "sourceUrl": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPV3pIekhHZ0dERkI5ejE3Vm1NelVObzhJX3hhVmw1UXZXbFRWTlhtbDBLd1A1emRiT1FUZlB0WEU4Vlp3ejVTR1ZjOGZXbGM1LXJnMEdVSDRFVkxvclhFb3NhNm9Xd3QyUUh1OGdsSU04UGthR1AzVHJJVnFhSW9ULWpLbzkzZDFjWmRoWElKc3BpcFU1R0E?oc=5",
       "note": "Detectado automáticamente en noticias recientes. Titular: Transfer Rumors: Man Utd Target Valued at $140 Million; Real Madrid Plot Tchouameni Sale - Sports Illustrated",
       "auto": true,
-      "updatedAt": "2026-07-18T07:55:23.055Z",
+      "updatedAt": "2026-07-18T13:20:45.793Z",
       "detectedFrom": "rss-news",
       "headlineHash": "ed578dd4cad4"
     },
@@ -3999,7 +3999,7 @@
       "sourceUrl": "https://news.google.com/rss/articles/CBMixwFBVV95cUxNb3F3cWRRSlZBZGJGWFoxQVdIcV9ucDZwejBTQzV5UDQ3NVZlQ2s4Znk3RFR0OUVjT0U1TVk5SU9YeXdyOGMwdENWdlF4eGJGMTJZUGg3YUowdTEyT0VvajVtWEdfZGRiemRZZjh6aVhUb0ZJbF9kdHlvd3ZPSGd1Q25RMDVwbWV6SEdtYW10UDgzeEVsWmxiSUVvM0NmTGREZWgzWFlfd3RHUGk1ZVUxWHdVMWJlYmxYME0xVlZ4aFZJZ1lwWXZv?oc=5",
       "note": "Detectado automáticamente en noticias recientes. Titular: Mercado de fichajes: el Real Madrid se fija en Kvaratskhelia; Julián Álvarez, Vinícius Junior y más - Sports Illustrated",
       "auto": true,
-      "updatedAt": "2026-07-18T07:55:23.055Z",
+      "updatedAt": "2026-07-18T13:20:45.793Z",
       "detectedFrom": "rss-news",
       "headlineHash": "cbbb47877a81"
     },
@@ -4012,7 +4012,7 @@
       "sourceUrl": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQSXA3T3dYNkJWaFBfTk9ta0RSek9ER1hJb2F2WllrOUtuTkFHQWZPQXVpNnY5SEc0YlBxUzVZcU90aEttd0V6bXVyaXFzTzZ1Y2E4aUdWOTlnVFVscmh0N2kwSEx5cUhWajBwa2FXa0hEME1mVWw0eXBiQTVIekwwVjBxcXpRc3RiWHlXUjZaT3JuUEFWRUxPN2xicHBKa2hXV2RtVGxjRjA0Q3FWaUNmU1Z3YkZ1MkRYaEFQLThUQlZfRGgt?oc=5",
       "note": "Detectado automáticamente en noticias recientes. Titular: Últimas noticias de fichajes del Real Madrid: Michael Olise, Álvaro Carreras, António Silva y más - Sports Illustrated",
       "auto": true,
-      "updatedAt": "2026-07-18T07:55:23.055Z",
+      "updatedAt": "2026-07-18T13:20:45.793Z",
       "detectedFrom": "rss-news",
       "headlineHash": "af815fb26f72"
     },
@@ -4025,7 +4025,7 @@
       "sourceUrl": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNQUpNSFlPajJ5SG9sczJRai1WV05rb194R3BJc2RCbTVOOEpfWXpZcWZGbHRIWGt3RVo1cHppVW0xcWhqZnJ4ZnN3LXA0TmxGM1VKdmppb3RFWFIxYndaVEIxTnJ5ZnVjajdJT01PVm81anNqRENjbGdDMGdZU0VfUVNoS0hxby1UeWExdmZKWTdiRzQ3czZqbUgtOVZkWWJEVUR2am5JRVFzX3BzVFFJeDQ4SWRGSE5QR2RPUWRWZnY?oc=5",
       "note": "Detectado automáticamente en noticias recientes. Titular: Mercado de fichajes: el Real Madrid planea fichar a Rashford; Barcola, Federico Valverde y más - Sports Illustrated",
       "auto": true,
-      "updatedAt": "2026-07-18T07:55:23.055Z",
+      "updatedAt": "2026-07-18T13:20:45.793Z",
       "detectedFrom": "rss-news",
       "headlineHash": "87b27fabf10e"
     },
@@ -4038,7 +4038,7 @@
       "sourceUrl": "https://news.google.com/rss/articles/CBMizgFBVV95cUxQVmV1ZWVlR2l2cmZNYktkVVJ1ZDVaWFp4ZG1EbXVLQTlMMlVFS29jWUN3V09fdWYxeUtnY29vZ1AtMGtVcnc3WmdjUXk4bkZSVjM0aGt1VlgtX3BTSFZzNnlDOUgtSm80ejlTOWpObmVoSWVKT0JRSlpzR3Y5dDVLdXNOd2hhQlV0VFJCU1RuWWhReTJKeFRxVG9oWm4wX19KLVlOU2FhUURQMFI0UFhTRFFjblBLck8ybFgyQk1KaW9Id0o2N3JaTnR1VS1ydw?oc=5",
       "note": "Detectado automáticamente en noticias recientes. Titular: Mercado de fichajes: el Real Madrid considera la venta de Bellingham; Kylian Mbappé, Mohamed Salah y más - Sports Illustrated",
       "auto": true,
-      "updatedAt": "2026-07-18T07:55:23.055Z",
+      "updatedAt": "2026-07-18T13:20:45.793Z",
       "detectedFrom": "rss-news",
       "headlineHash": "f4e933b9d383"
     },
@@ -4051,7 +4051,7 @@
       "sourceUrl": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQSXA3T3dYNkJWaFBfTk9ta0RSek9ER1hJb2F2WllrOUtuTkFHQWZPQXVpNnY5SEc0YlBxUzVZcU90aEttd0V6bXVyaXFzTzZ1Y2E4aUdWOTlnVFVscmh0N2kwSEx5cUhWajBwa2FXa0hEME1mVWw0eXBiQTVIekwwVjBxcXpRc3RiWHlXUjZaT3JuUEFWRUxPN2xicHBKa2hXV2RtVGxjRjA0Q3FWaUNmU1Z3YkZ1MkRYaEFQLThUQlZfRGgt?oc=5",
       "note": "Detectado automáticamente en noticias recientes. Titular: Últimas noticias de fichajes del Real Madrid: Michael Olise, Álvaro Carreras, António Silva y más - Sports Illustrated",
       "auto": true,
-      "updatedAt": "2026-07-18T07:55:23.055Z",
+      "updatedAt": "2026-07-18T13:20:45.793Z",
       "detectedFrom": "rss-news",
       "headlineHash": "af815fb26f72"
     },
@@ -4064,7 +4064,7 @@
       "sourceUrl": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxOYVRNQjUyTkY3cUhIc1N1dW9YSGt0TXdrUXd5amo3dzhQNzNELU9vWWVoRnEzQzFZSzdJcjkwUENSQlkzc0JJWjNUT0lQWVZXS1l4TFZKZm9tRTJfbHVpUGlHZV9NZjlKTTRBZzNMblJUS3Awbm8xeHV5Ykt6eUxGWE4zby1VTk9jSE4wNWxuZzRBbi1hb1J0T29oOWxqaEJ6V3hna2RuSTJOcFpIZEpUd2Y0R2o3UVlmR0VFZUoxNjZvcnBtYmZpZHdfMG1xMXM4dlBFdFVYamp2dw?oc=5",
       "note": "Detectado automáticamente en noticias recientes. Titular: Mercado de fichajes: el plan de Haaland para fichar por el Real Madrid en 2027; Gabriel Martinelli, Endrick y más - Sports Illustrated",
       "auto": true,
-      "updatedAt": "2026-07-18T07:55:23.055Z",
+      "updatedAt": "2026-07-18T13:20:45.793Z",
       "detectedFrom": "rss-news",
       "headlineHash": "548aad45101d"
     },
@@ -4077,7 +4077,7 @@
       "sourceUrl": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxOYVRNQjUyTkY3cUhIc1N1dW9YSGt0TXdrUXd5amo3dzhQNzNELU9vWWVoRnEzQzFZSzdJcjkwUENSQlkzc0JJWjNUT0lQWVZXS1l4TFZKZm9tRTJfbHVpUGlHZV9NZjlKTTRBZzNMblJUS3Awbm8xeHV5Ykt6eUxGWE4zby1VTk9jSE4wNWxuZzRBbi1hb1J0T29oOWxqaEJ6V3hna2RuSTJOcFpIZEpUd2Y0R2o3UVlmR0VFZUoxNjZvcnBtYmZpZHdfMG1xMXM4dlBFdFVYamp2dw?oc=5",
       "note": "Detectado automáticamente en noticias recientes. Titular: Mercado de fichajes: el plan de Haaland para fichar por el Real Madrid en 2027; Gabriel Martinelli, Endrick y más - Sports Illustrated",
       "auto": true,
-      "updatedAt": "2026-07-18T07:55:23.055Z",
+      "updatedAt": "2026-07-18T13:20:45.793Z",
       "detectedFrom": "rss-news",
       "headlineHash": "548aad45101d"
     }
