@@ -61,3 +61,8 @@ input,select,textarea{width:100%;background:rgba(7,10,18,.7);border:1px solid va
   object-fit: cover;
   border-radius: inherit;
 }
+
+
+/* AutoScout Pro 4.0 */
+.scout-summary{margin:12px 0 14px;padding:12px;border:1px solid rgba(255,255,255,.12);border-radius:18px;background:linear-gradient(180deg,rgba(214,178,94,.12),rgba(255,255,255,.04))}
+.scout-kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:8px}.scout-kpis div{padding:10px;border-radius:14px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.09)}.scout-kpis b{display:block;font-size:1.25rem;color:var(--gold2)}.scout-kpis small{color:var(--muted);font-size:.68rem;text-transform:uppercase;font-weight:800}.tiny-note{font-size:.76rem;margin-top:7px;padding:7px 9px}.tag-auto{background:rgba(214,178,94,.18)!important;border-color:rgba(214,178,94,.45)!important;color:#ffe5a3!important}@media(max-width:760px){.scout-kpis{grid-template-columns:1fr 1fr}}

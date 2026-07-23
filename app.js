@@ -1,6 +1,6 @@
-const STORE_KEY = 'madrid-president-state-v30-reality-2627';
-const SIMS_KEY = 'madrid-president-sims-v30-reality-2627';
-const FACE_CACHE_KEY = 'madrid-president-face-cache-v4-fixed-wikimedia';
+const STORE_KEY = 'madrid-president-state-v40-autoscout-2627';
+const SIMS_KEY = 'madrid-president-sims-v40-autoscout-2627';
+const FACE_CACHE_KEY = 'madrid-president-face-cache-v5-real-first';
 
 const els = {};
 let data = null;
@@ -311,25 +311,47 @@ function renderMarket(){
 }
 function renderRumors(){
   renderAutoMarketAlerts();
+  renderScoutSummary();
   const sorted = (data.rumors||[]).slice().sort((a,b)=>(b.auto?1:0)-(a.auto?1:0) || (b.confidence||0)-(a.confidence||0));
   els.rumorList.innerHTML = sorted.map(r => {
     const p = getPlayer(r.playerId);
     if(!p) return '';
-    const source = r.sourceUrl ? `<a target="_blank" rel="noopener" href="${escapeAttr(r.sourceUrl)}">${escapeHtml(r.source || 'Fuente')}</a>` : escapeHtml(r.source || 'Radar');
-    const autoBadge = r.auto ? '<span class="tag tag-auto">AutoMarket</span>' : '<span class="tag">Manual</span>';
+    const urls = r.sourceUrls?.length ? r.sourceUrls : (r.sourceUrl ? [r.sourceUrl] : []);
+    const source = urls[0] ? `<a target="_blank" rel="noopener" href="${escapeAttr(urls[0])}">${escapeHtml(r.source || 'Fuente')}</a>` : escapeHtml(r.source || 'Radar');
+    const autoBadge = r.auto ? '<span class="tag tag-auto">AutoScout</span>' : '<span class="tag">Manual</span>';
+    const created = p.source?.includes('AutoScout') ? '<span class="tag tag-auto">Candidato creado</span>' : '';
     const updated = r.updatedAt ? `<small> · ${formatAutoDate(r.updatedAt)}</small>` : '';
+    const sourceCount = r.sourceCount || urls.length || 1;
     return `<article class="rumor-item ${r.auto ? 'auto-rumor' : ''}">
       <header><div><b>${escapeHtml(p.name)}</b><small>${escapeHtml(r.status)} · ${escapeHtml(p.club)} · ${fmtMoney(p.value)} ${updated}</small></div><span class="pill">${r.confidence}%</span></header>
-      <p>${escapeHtml(r.note || '')}</p><small>Fuente: ${source} · ${autoBadge}</small>
+      <p>${escapeHtml(r.note || '')}</p>
+      <small>Fuente: ${source} · ${sourceCount} impacto(s) · ${autoBadge} ${created}</small>
+      ${r.lastTitle ? `<div class="note tiny-note">Último titular: ${escapeHtml(r.lastTitle)}</div>` : ''}
       <div class="confidence"><i style="width:${Math.max(5, Math.min(100, r.confidence || 0))}%"></i></div>
       <div class="card-actions"><button class="btn btn-primary" data-action="negotiate" data-id="${p.id}">Negociar</button><button class="btn btn-soft" data-action="target" data-id="${p.id}">Radar</button><button class="btn btn-soft" data-action="open" data-id="${p.id}">Ficha</button></div>
     </article>`;
-  }).join('') || empty('Todavía no hay rumores. Cuando GitHub Actions ejecute AutoMarket, aparecerán aquí.');
+  }).join('') || empty('Todavía no hay rumores. Cuando GitHub Actions ejecute AutoScout, aparecerán aquí.');
   bindCardEvents(els.rumorList);
-  const auto = data.meta?.autoMarket;
-  const autoCard = auto ? `<a class="source-auto" href="#"><b>AutoMarket activo</b><small><br>${auto.articlesFetched||0} noticias leídas · ${auto.detections||0} detecciones · ${formatAutoDate(auto.lastRun || data.meta?.lastAutoUpdate)}</small></a>` : '';
+  const auto = data.meta?.autoMarket || data.meta?.autoScoutPro;
+  const autoCard = auto ? `<a class="source-auto" href="#"><b>AutoScout Pro activo</b><small><br>${auto.articlesFetched||0} noticias leídas · ${auto.detections||0} detecciones · ${formatAutoDate(auto.lastRun || data.meta?.lastAutoUpdate)}</small></a>` : '';
   els.sourceLinks.innerHTML = autoCard + (data.sources||[]).map(s => `<a target="_blank" rel="noopener" href="${s.url}"><b>${escapeHtml(s.name)}</b><small><br>${escapeHtml(s.purpose)}</small></a>`).join('');
 }
+
+function renderScoutSummary(){
+  if(!els.scoutSummary) return;
+  const auto = data.meta?.autoMarket || {};
+  const pro = data.meta?.autoScoutPro || {};
+  const autoRumors = (data.rumors||[]).filter(r=>r.auto).length;
+  const autoPlayers = (data.players||[]).filter(p=>String(p.source||'').includes('AutoScout')).length;
+  els.scoutSummary.innerHTML = `<div class="scout-kpis">
+    <div><b>${data.players?.length || 0}</b><small>jugadores BD</small></div>
+    <div><b>${pro.marketPlayers || playersByStatus('market').length}</b><small>fichables</small></div>
+    <div><b>${autoRumors}</b><small>rumores auto</small></div>
+    <div><b>${autoPlayers}</b><small>creados por radar</small></div>
+  </div>
+  <p class="muted">Si un medio deportivo vincula al Madrid con un jugador que no está, AutoScout lo puede crear como candidato fichable con valores provisionales.</p>`;
+}
+
 
 function playerCardHtml(p, opts={}){
   const cls = p.tags?.includes('estrella')||p.tags?.includes('galáctico') ? 'role-star' : p.tags?.includes('joven')||p.tags?.includes('promesa') ? 'role-young' : p.tags?.includes('transferible') ? 'role-transfer' : p.status==='market' ? 'role-market' : '';
@@ -378,16 +400,7 @@ function getWikiTitle(p){
 
 function faceHtml(p){
   const initials = getInitials(p.name);
-  const manual = p.photo;
   const wikiTitle = getWikiTitle(p);
-
-  if (manual) {
-    return `<div class="face face-direct" data-face="${p.id}" data-player-id="${p.id}">
-      <img class="face-img" src="${escapeAttr(manual)}" alt="${escapeAttr(p.name)}" loading="lazy" referrerpolicy="no-referrer"
-        onerror="this.remove(); this.parentElement.textContent='${escapeAttr(initials)}'; this.parentElement.classList.add('face-fallback');">
-    </div>`;
-  }
-
   return `<div class="face" data-face="${p.id}" data-player-id="${p.id}" data-wiki="${escapeAttr(wikiTitle)}">${initials}</div>`;
 }
 function initFaceObserver(){
@@ -397,34 +410,55 @@ function initFaceObserver(){
 }
 function observeFaces(){
   if(!faceObserver) return;
-  document.querySelectorAll('.face[data-face]:not(.face-direct):not([data-observed])').forEach(el => { el.dataset.observed='1'; faceObserver.observe(el); });
+  document.querySelectorAll('.face[data-face]:not([data-observed])').forEach(el => { el.dataset.observed='1'; faceObserver.observe(el); });
 }
 async function loadFace(el){
   if(el.dataset.loaded) return;
   el.dataset.loaded = '1';
-  const manual = el.dataset.src;
-  const key = (el.dataset.wiki || '').trim();
-  let url = manual || getFaceCache(key);
+
+  const player = getPlayer(el.dataset.playerId);
+  const fallback = player?.photo || '';
+  const key = (el.dataset.wiki || player?.wiki || player?.name || '').trim();
+
+  let url = getFaceCache(key);
   if(!url && key){
     url = await resolveFaceUrl(key);
     if(url) setFaceCache(key, url);
   }
+
   if(url){
-    const img = new Image();
-    img.referrerPolicy='no-referrer';
-    img.loading='lazy';
-    img.src=url;
-    img.onload = () => {
-      el.textContent='';
-      el.appendChild(img);
-      img.className='face-img';
-      Object.assign(img.style,{width:'100%',height:'100%',objectFit:'cover',borderRadius:'inherit'});
-    };
-    img.onerror = () => { el.classList.add('face-fallback'); };
+    setFaceImage(el, url, player?.name || key, () => {
+      if(fallback) setFaceImage(el, fallback, player?.name || key);
+      else showFaceInitials(el, player?.name || key);
+    });
+  }else if(fallback){
+    setFaceImage(el, fallback, player?.name || key);
   }else{
-    el.classList.add('face-fallback');
+    showFaceInitials(el, player?.name || key);
   }
 }
+function setFaceImage(el, src, alt='', onError=null){
+  const img = new Image();
+  img.referrerPolicy='no-referrer';
+  img.loading='lazy';
+  img.alt = alt;
+  img.src = src;
+  img.onload = () => {
+    el.textContent='';
+    el.appendChild(img);
+    img.className='face-img';
+    Object.assign(img.style,{width:'100%',height:'100%',objectFit:'cover',borderRadius:'inherit',display:'block'});
+  };
+  img.onerror = () => {
+    if(onError) onError();
+    else showFaceInitials(el, alt);
+  };
+}
+function showFaceInitials(el, name=''){
+  el.textContent = getInitials(name);
+  el.classList.add('face-fallback');
+}
+
 async function resolveFaceUrl(name){
   const candidates = Array.from(new Set([
     name,
@@ -454,11 +488,11 @@ async function fetchWikiThumb(title, lang='en'){
 }
 async function searchWikiThumb(query, lang='en'){
   try{
-    const url = `https://${lang}.wikipedia.org/w/api.php?action=query&generator=search&gsrsearch=${encodeURIComponent(query)}&gsrlimit=1&prop=pageimages&piprop=thumbnail&pithumbsize=420&format=json&origin=*`;
+    const url = `https://${lang}.wikipedia.org/w/api.php?action=query&generator=search&gsrsearch=${encodeURIComponent(query)}&gsrlimit=3&prop=pageimages&piprop=thumbnail&pithumbsize=420&format=json&origin=*`;
     const res = await fetch(url, {cache:'no-store'});
     const js = await res.json();
     const pages = Object.values(js?.query?.pages || {});
-    const withThumb = pages.find(p => p?.thumbnail?.source);
+    const withThumb = pages.find(p => p?.thumbnail?.source && !/logo|flag|crest/i.test(p.title || ''));
     return withThumb?.thumbnail?.source || '';
   }catch{ return ''; }
 }
@@ -472,10 +506,7 @@ function openPlayerModal(id){
   const buyCost = estimateBuyCost(p);
   const sellOffer = estimateSellOffer(p);
   els.modalContent.innerHTML = `<div class="modal-player">
-    ${p.photo ? `<div class="modal-photo face face-direct" data-face="modal-${p.id}">
-      <img class="face-img" src="${escapeAttr(p.photo)}" alt="${escapeAttr(p.name)}" loading="lazy" referrerpolicy="no-referrer"
-        onerror="this.remove(); this.parentElement.textContent='${escapeAttr(getInitials(p.name))}'; this.parentElement.classList.add('face-fallback');">
-    </div>` : `<div class="modal-photo face" data-face="modal-${p.id}" data-wiki="${escapeAttr(getWikiTitle(p))}">${getInitials(p.name)}</div>`}
+    <div class="modal-photo face" data-face="modal-${p.id}" data-player-id="${p.id}" data-wiki="${escapeAttr(getWikiTitle(p))}">${getInitials(p.name)}</div>
     <div>
       <span class="pill">${escapeHtml(p.status)} · ${escapeHtml(p.difficulty || 'media')}</span>
       <h2>${escapeHtml(p.name)}</h2>
@@ -823,14 +854,14 @@ function duplicateSimulation(){ state={...JSON.parse(JSON.stringify(state)), id:
 async function shareSite(){
   const url = location.href.split('?')[0];
   const text = `Mi plantilla Real Madrid 26/27 de Mourinho: balance ${fmtMoney(computeFinance().balance)}, Reality Score ${computeRealityScore().total}/100 y nota XI ${computeAnalysis().overall?.toFixed(1) || '—'}/10`;
-  if(navigator.share){ try{ await navigator.share({title:'Madrid President Simulator 3.0', text, url}); return; }catch{} }
+  if(navigator.share){ try{ await navigator.share({title:'Madrid President Simulator 4.0', text, url}); return; }catch{} }
   await navigator.clipboard?.writeText(`${text}\n${url}`); toast('Enlace copiado al portapapeles.');
 }
 function exportLineupPng(){
   const canvas=document.createElement('canvas'); canvas.width=1400; canvas.height=1800; const ctx=canvas.getContext('2d');
   const grad=ctx.createLinearGradient(0,0,1400,1800); grad.addColorStop(0,'#080b14'); grad.addColorStop(.55,'#123d25'); grad.addColorStop(1,'#05070d'); ctx.fillStyle=grad; ctx.fillRect(0,0,1400,1800);
   ctx.strokeStyle='rgba(255,255,255,.35)'; ctx.lineWidth=4; roundRect(ctx,80,230,1240,1280,34,true); ctx.beginPath(); ctx.moveTo(80,870); ctx.lineTo(1320,870); ctx.stroke(); ctx.beginPath(); ctx.arc(700,870,140,0,Math.PI*2); ctx.stroke();
-  ctx.fillStyle='#f3d98b'; ctx.font='900 64px system-ui'; ctx.fillText('Madrid President Simulator 3.0',80,110); ctx.fillStyle='#fff'; ctx.font='700 34px system-ui'; ctx.fillText(`${state.simName || 'Proyecto'} · ${state.formation} · Balance ${fmtMoney(computeFinance().balance)}`,80,165);
+  ctx.fillStyle='#f3d98b'; ctx.font='900 64px system-ui'; ctx.fillText('Madrid President Simulator 4.0',80,110); ctx.fillStyle='#fff'; ctx.font='700 34px system-ui'; ctx.fillText(`${state.simName || 'Proyecto'} · ${state.formation} · Balance ${fmtMoney(computeFinance().balance)}`,80,165);
   const slots=data.formations[state.formation]||[];
   for(const slot of slots){ const p=getPlayer(state.lineup[slot.id]); const x=80 + slot.x/100*1240; const y=230 + slot.y/100*1280; ctx.fillStyle='rgba(5,7,13,.82)'; roundRect(ctx,x-95,y-42,190,84,18,true); ctx.strokeStyle='rgba(243,217,139,.45)'; roundRect(ctx,x-95,y-42,190,84,18,false); ctx.fillStyle='#f3d98b'; ctx.font='900 22px system-ui'; ctx.textAlign='center'; ctx.fillText(slot.label,x,y-8); ctx.fillStyle='#fff'; ctx.font='800 24px system-ui'; ctx.fillText(p?shortName(p.name):'—',x,y+22); }
   ctx.textAlign='left'; ctx.fillStyle='rgba(255,255,255,.72)'; ctx.font='500 24px system-ui'; ctx.fillText('Proyecto fan no oficial · Reality Mode 26/27 · José Mourinho',80,1690);
@@ -848,12 +879,12 @@ function renderAutoMarketAlerts(){
   const autoRumors = (data.rumors||[]).filter(r=>r.auto).sort((a,b)=>(b.confidence||0)-(a.confidence||0)).slice(0,3);
   const now = formatAutoDate(data.meta?.autoMarket?.lastRun || data.meta?.lastAutoUpdate);
   if(!autoRumors.length){
-    els.autoMarketAlerts.innerHTML = `<div class="alert-card"><b>AutoMarket listo</b><small>Última revisión: ${now}. Cuando detecte rumores nuevos aparecerán destacados aquí.</small></div>`;
+    els.autoMarketAlerts.innerHTML = `<div class="alert-card"><b>AutoScout listo</b><small>Última revisión: ${now}. Cuando detecte rumores o jugadores nuevos aparecerán destacados aquí.</small></div>`;
     return;
   }
   els.autoMarketAlerts.innerHTML = autoRumors.map(r=>{
     const p=getPlayer(r.playerId);
-    return `<div class="alert-card"><b>Nuevo radar: ${escapeHtml(p?.name || r.playerId)}</b><small>${escapeHtml(r.status||'rumor')} · confianza ${r.confidence||0}% · ${escapeHtml(r.source||'AutoMarket')}</small></div>`;
+    return `<div class="alert-card"><b>Radar AutoScout: ${escapeHtml(p?.name || r.playerId)}</b><small>${escapeHtml(r.status||'rumor')} · confianza ${r.confidence||0}% · ${escapeHtml(r.source||'AutoMarket')}</small></div>`;
   }).join('');
 }
 
@@ -1077,7 +1108,7 @@ function formatAutoDate(value){
 }
 
 function fallbackData(){
-  return {meta:{appName:'Madrid President Simulator 3.0',lastManualReview:'sin data.json'},players:[],rumors:[],formations:{'4-3-3':[]},projects:{champions:{name:'Proyecto Champions',description:''}},sources:[]};
+  return {meta:{appName:'Madrid President Simulator 4.0',lastManualReview:'sin data.json'},players:[],rumors:[],formations:{'4-3-3':[]},projects:{champions:{name:'Proyecto Champions',description:''}},sources:[]};
 }
 function fmtMoney(n){ n=Number(n||0); const sign=n<0?'-':''; return `${sign}${Math.abs(n).toLocaleString('es-ES',{maximumFractionDigits:0})} M€`; }
 function sum(arr){ return arr.reduce((a,b)=>a+Number(b||0),0); } function avg(arr){ const f=arr.filter(n=>Number.isFinite(Number(n))); return f.length?sum(f)/f.length:0; }

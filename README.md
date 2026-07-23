@@ -1,35 +1,19 @@
-# Madrid President Simulator 3.0 · Reality Mode 26/27
+# Madrid President Simulator 4.0 · AutoScout Pro
 
-Proyecto fan no oficial para planificar la plantilla del Real Madrid 2026/27 con José Mourinho como entrenador del contexto de simulación.
+Proyecto fan no oficial inspirado en el Real Madrid para planificar la plantilla 2026/27 con José Mourinho.
 
-## Enfoque
+## Novedades 4.0
 
-La web ya no busca simular muchas temporadas. Está centrada en una pregunta:
-
-> ¿Qué plantilla debería construir el Real Madrid para la temporada 2026/27 de la forma más realista posible?
-
-Puedes vender, fichar, ajustar manualmente precios, controlar presupuesto, montar el XI, comparar proyectos y compartir tu plantilla.
-
-## Novedades 3.0
-
-- Reality Score 0-100.
-- Modo realismo ON/OFF.
-- Plan Mourinho 26/27.
-- Enlaces compartibles de plantilla exacta.
-- Imagen premium para redes.
-- Negociación avanzada con rango realista.
-- Evaluación de cada compra/venta: ganga, realista, cara, venta excelente, etc.
-- Análisis de plantilla completa por posición.
-- Fair Play financiero simplificado.
-- Director deportivo IA local: sugiere fichajes, ventas y prioridades.
-- Comparador de proyectos guardados.
-- Alertas AutoMarket más visuales.
-- Botón móvil para colocar jugador en el campo sin drag & drop.
-- Fotos mejoradas mediante Wikipedia/Wikimedia y URL manual opcional.
+- Base de datos ampliada con más jugadores fichables.
+- AutoScout Pro: actualización automática de rumores desde RSS/noticias deportivas.
+- Si un rumor menciona un jugador que no existe en la base, AutoScout puede crearlo como candidato fichable.
+- Rumores con confianza, estado, fuente, último titular y enlaces.
+- Fotos reales primero vía Wikimedia/Wikipedia y tarjeta local embebida como respaldo.
+- Mantiene ventas, compras, presupuesto manual, Reality Score, análisis Mourinho, comparador y exportación.
 
 ## Subida a GitHub Pages
 
-Sube/reemplaza en tu repositorio:
+Reemplaza:
 
 ```text
 index.html
@@ -40,33 +24,10 @@ README.md
 scripts/update-data.mjs
 ```
 
-No hace falta subir `.github` si ya tienes el workflow creado. Si lo borras, crea manualmente `.github/workflows/automarket.yml` como hiciste antes.
+No hace falta tocar `.github` si ya tienes el workflow creado.
 
-Después abre:
+## AutoScout Pro
 
-```text
-https://elptowalter.github.io/madrid-president-simulator-upgraded/?v=3-reality-mode
-```
+El workflow existente puede seguir ejecutando `node scripts/update-data.mjs`. El script no hace scraping masivo de Transfermarkt; usa RSS/noticias públicas y el catálogo interno.
 
-Pulsa `Ctrl + F5` si ves una versión antigua.
-
-## Aviso
-
-Proyecto fan no oficial. No está afiliado al Real Madrid, Transfermarkt, X ni periodistas. Los valores son orientativos y el usuario decide manualmente los precios reales de compra y venta.
-
-
-## Imágenes fijas locales
-
-Esta versión incluye una imagen local fija para cada jugador en `assets/faces/`, por lo que siempre se verá una imagen sin depender de búsquedas externas o APIs.
-
-
-## Imágenes integradas
-
-Esta versión no necesita subir `assets/`.
-Las imágenes de los jugadores van integradas dentro de `data.json` como SVG embebido.
-
-
-## Fix de imágenes directas
-
-Las imágenes integradas en `data.json` se renderizan ahora directamente como `<img>`.
-Esto evita que se queden bloqueadas como iniciales si el cargador lazy externo no actúa.
+Proyecto fan no oficial. No afiliado al Real Madrid, Transfermarkt, X ni ningún medio deportivo.

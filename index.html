@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Madrid President Simulator 3.0 · Reality Mode 26/27</title>
+  <title>Madrid President Simulator 4.0 · AutoScout Pro 26/27</title>
   <meta name="description" content="Simulador fan no oficial para gestionar plantilla, fichajes, rumores, once y balance económico del Real Madrid." />
-  <meta property="og:title" content="Madrid President Simulator 3.0 · Reality Mode 26/27" />
+  <meta property="og:title" content="Madrid President Simulator 4.0 · AutoScout Pro 26/27" />
   <meta property="og:description" content="Planifica el Real Madrid 26/27 de José Mourinho con realismo, mercado, ventas, fichajes y presupuesto." />
   <meta name="theme-color" content="#0b0f1a" />
   <link rel="stylesheet" href="styles.css" />
@@ -15,8 +15,8 @@
     <header class="hero glass">
       <div class="hero__content">
         <p class="eyebrow">Fan project · Real Madrid inspired · No oficial</p>
-        <h1>Madrid President Simulator <span>3.0 · Reality Mode 26/27</span></h1>
-        <p class="hero__lead">Diseña la plantilla 26/27 más cercana a la realidad para el Real Madrid de José Mourinho: ventas, fichajes, precios manuales, presupuesto, realismo y análisis de plantilla completa.</p>
+        <h1>Madrid President Simulator <span>4.0 · AutoScout Pro 26/27</span></h1>
+        <p class="hero__lead">Diseña la plantilla 26/27 más cercana a la realidad para el Real Madrid de José Mourinho: mercado ampliado, rumores automáticos desde medios deportivos, fichajes creados por AutoScout, ventas, presupuesto y realismo.</p>
         <div class="hero__actions">
           <button id="btnShare" class="btn btn-primary">Compartir web</button>
           <button id="btnShareSquad" class="btn btn-gold">Copiar plantilla compartible</button>
@@ -174,8 +174,9 @@
           </section>
           <aside class="panel glass sticky-panel">
             <div class="panel-head"><h2>Rumores</h2><span class="pill live">Radar</span></div>
-            <p class="muted">Panel preparado para alimentar desde <code>data.json</code> y futura automatización. No copia tweets: resume estado, jugador y fuente.</p>
+            <p class="muted">AutoScout Pro lee RSS/noticias deportivas, cruza nombres con el mercado interno y añade candidatos fichables si aparecen en rumores.</p>
             <div id="autoMarketAlerts" class="alert-stack"></div>
+            <div id="scoutSummary" class="scout-summary"></div>
             <div id="rumorList" class="rumor-list"></div>
             <div class="source-links" id="sourceLinks"></div>
           </aside>
