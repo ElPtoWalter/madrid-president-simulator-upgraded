@@ -1,6 +1,6 @@
 const STORE_KEY = 'madrid-president-state-v40-autoscout-2627';
 const SIMS_KEY = 'madrid-president-sims-v40-autoscout-2627';
-const FACE_CACHE_KEY = 'madrid-president-face-cache-v5-real-first';
+const FACE_CACHE_KEY = 'madrid-president-face-cache-v6-action-hydrated';
 
 const els = {};
 let data = null;
@@ -420,7 +420,7 @@ async function loadFace(el){
   const fallback = player?.photo || '';
   const key = (el.dataset.wiki || player?.wiki || player?.name || '').trim();
 
-  let url = getFaceCache(key);
+  let url = player?.remotePhoto || getFaceCache(key);
   if(!url && key){
     url = await resolveFaceUrl(key);
     if(url) setFaceCache(key, url);
@@ -854,14 +854,14 @@ function duplicateSimulation(){ state={...JSON.parse(JSON.stringify(state)), id:
 async function shareSite(){
   const url = location.href.split('?')[0];
   const text = `Mi plantilla Real Madrid 26/27 de Mourinho: balance ${fmtMoney(computeFinance().balance)}, Reality Score ${computeRealityScore().total}/100 y nota XI ${computeAnalysis().overall?.toFixed(1) || '—'}/10`;
-  if(navigator.share){ try{ await navigator.share({title:'Madrid President Simulator 4.0', text, url}); return; }catch{} }
+  if(navigator.share){ try{ await navigator.share({title:'Madrid President Simulator 4.1', text, url}); return; }catch{} }
   await navigator.clipboard?.writeText(`${text}\n${url}`); toast('Enlace copiado al portapapeles.');
 }
 function exportLineupPng(){
   const canvas=document.createElement('canvas'); canvas.width=1400; canvas.height=1800; const ctx=canvas.getContext('2d');
   const grad=ctx.createLinearGradient(0,0,1400,1800); grad.addColorStop(0,'#080b14'); grad.addColorStop(.55,'#123d25'); grad.addColorStop(1,'#05070d'); ctx.fillStyle=grad; ctx.fillRect(0,0,1400,1800);
   ctx.strokeStyle='rgba(255,255,255,.35)'; ctx.lineWidth=4; roundRect(ctx,80,230,1240,1280,34,true); ctx.beginPath(); ctx.moveTo(80,870); ctx.lineTo(1320,870); ctx.stroke(); ctx.beginPath(); ctx.arc(700,870,140,0,Math.PI*2); ctx.stroke();
-  ctx.fillStyle='#f3d98b'; ctx.font='900 64px system-ui'; ctx.fillText('Madrid President Simulator 4.0',80,110); ctx.fillStyle='#fff'; ctx.font='700 34px system-ui'; ctx.fillText(`${state.simName || 'Proyecto'} · ${state.formation} · Balance ${fmtMoney(computeFinance().balance)}`,80,165);
+  ctx.fillStyle='#f3d98b'; ctx.font='900 64px system-ui'; ctx.fillText('Madrid President Simulator 4.1',80,110); ctx.fillStyle='#fff'; ctx.font='700 34px system-ui'; ctx.fillText(`${state.simName || 'Proyecto'} · ${state.formation} · Balance ${fmtMoney(computeFinance().balance)}`,80,165);
   const slots=data.formations[state.formation]||[];
   for(const slot of slots){ const p=getPlayer(state.lineup[slot.id]); const x=80 + slot.x/100*1240; const y=230 + slot.y/100*1280; ctx.fillStyle='rgba(5,7,13,.82)'; roundRect(ctx,x-95,y-42,190,84,18,true); ctx.strokeStyle='rgba(243,217,139,.45)'; roundRect(ctx,x-95,y-42,190,84,18,false); ctx.fillStyle='#f3d98b'; ctx.font='900 22px system-ui'; ctx.textAlign='center'; ctx.fillText(slot.label,x,y-8); ctx.fillStyle='#fff'; ctx.font='800 24px system-ui'; ctx.fillText(p?shortName(p.name):'—',x,y+22); }
   ctx.textAlign='left'; ctx.fillStyle='rgba(255,255,255,.72)'; ctx.font='500 24px system-ui'; ctx.fillText('Proyecto fan no oficial · Reality Mode 26/27 · José Mourinho',80,1690);
@@ -1108,7 +1108,7 @@ function formatAutoDate(value){
 }
 
 function fallbackData(){
-  return {meta:{appName:'Madrid President Simulator 4.0',lastManualReview:'sin data.json'},players:[],rumors:[],formations:{'4-3-3':[]},projects:{champions:{name:'Proyecto Champions',description:''}},sources:[]};
+  return {meta:{appName:'Madrid President Simulator 4.1',lastManualReview:'sin data.json'},players:[],rumors:[],formations:{'4-3-3':[]},projects:{champions:{name:'Proyecto Champions',description:''}},sources:[]};
 }
 function fmtMoney(n){ n=Number(n||0); const sign=n<0?'-':''; return `${sign}${Math.abs(n).toLocaleString('es-ES',{maximumFractionDigits:0})} M€`; }
 function sum(arr){ return arr.reduce((a,b)=>a+Number(b||0),0); } function avg(arr){ const f=arr.filter(n=>Number.isFinite(Number(n))); return f.length?sum(f)/f.length:0; }

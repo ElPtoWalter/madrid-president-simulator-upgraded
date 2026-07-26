@@ -1,33 +1,33 @@
-# Madrid President Simulator 4.0 · AutoScout Pro
+# Madrid President Simulator 4.1 · Live Squad & AutoScout Pro
 
-Proyecto fan no oficial inspirado en el Real Madrid para planificar la plantilla 2026/27 con José Mourinho.
+Proyecto fan no oficial inspirado en el Real Madrid. Planificador de plantilla 26/27 para el Madrid de José Mourinho.
 
-## Novedades 4.0
+## Novedades 4.1
 
-- Base de datos ampliada con más jugadores fichables.
-- AutoScout Pro: actualización automática de rumores desde RSS/noticias deportivas.
-- Si un rumor menciona un jugador que no existe en la base, AutoScout puede crearlo como candidato fichable.
-- Rumores con confianza, estado, fuente, último titular y enlaces.
-- Fotos reales primero vía Wikimedia/Wikipedia y tarjeta local embebida como respaldo.
-- Mantiene ventas, compras, presupuesto manual, Reality Score, análisis Mourinho, comparador y exportación.
+- Sincronización de plantilla 26/27 con lista provisional interna basada en la página oficial del Real Madrid.
+- AutoScout Pro amplía rumores desde RSS/noticias públicas.
+- Si aparece un jugador nuevo en rumores y no está en la base, lo crea automáticamente como candidato fichable.
+- Resolución automática de fotos reales vía Wikimedia desde GitHub Actions.
+- Fallback integrado: si no hay foto real, siempre aparece una tarjeta local, nunca queda vacío.
+- Se preservan fotos y jugadores al actualizar `data.json`.
 
-## Subida a GitHub Pages
+## Archivos a subir en GitHub web
 
-Reemplaza:
+Sube/reemplaza:
 
-```text
-index.html
-styles.css
-app.js
-data.json
-README.md
-scripts/update-data.mjs
-```
+- `index.html`
+- `styles.css`
+- `app.js`
+- `data.json`
+- `README.md`
+- `scripts/update-data.mjs`
 
-No hace falta tocar `.github` si ya tienes el workflow creado.
+No subas `.github/` si ya tienes creado el workflow.
 
-## AutoScout Pro
+## AutoScout
 
-El workflow existente puede seguir ejecutando `node scripts/update-data.mjs`. El script no hace scraping masivo de Transfermarkt; usa RSS/noticias públicas y el catálogo interno.
+Después de subir, ejecuta:
 
-Proyecto fan no oficial. No afiliado al Real Madrid, Transfermarkt, X ni ningún medio deportivo.
+`Actions → AutoMarket update → Run workflow`
+
+El workflow actualizará `data.json` con nuevos rumores, candidatos fichables y fotos remotas cuando estén disponibles.
