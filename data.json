@@ -5,10 +5,10 @@
     "lastManualReview": "2026-07-26",
     "currency": "M€",
     "notice": "Proyecto fan no oficial centrado solo en la temporada 2026/27. Valores base orientativos; el usuario decide manualmente el precio real de cada compra o venta.",
-    "lastAutoUpdate": "2026-08-02T13:26:09.272Z",
+    "lastAutoUpdate": "2026-08-02T19:14:01.336Z",
     "automationNote": "AutoScout Pro actualiza rumores, crea candidatos fichables, sincroniza plantilla provisional 26/27 y resuelve fotos reales desde Wikimedia cuando están disponibles.",
     "autoMarket": {
-      "lastRun": "2026-08-02T13:26:09.272Z",
+      "lastRun": "2026-08-02T19:14:01.336Z",
       "articlesFetched": 220,
       "xPostsFetched": 0,
       "detections": 83,
@@ -44,7 +44,7 @@
       "strategy": "RSS/noticias deportivas + catálogo ampliado + creación automática conservadora de candidatos"
     },
     "squadUpdateNote": "La plantilla 26/27 se sincroniza con una lista provisional basada en la página oficial del Real Madrid y se revisa por AutoScout.",
-    "lastAutomationCheck": "2026-08-02T13:26:09.272Z"
+    "lastAutomationCheck": "2026-08-02T19:14:01.336Z"
   },
   "sources": [
     {
@@ -8064,10 +8064,10 @@
         "https://news.google.com/rss/articles/CBMirAFBVV95cUxQSzJrT0FxVjdWTk5PUU51MEJPWWRJSExkUmlfbnlRendCc1J0blRsTVJCVnNKTGo3cDUzekpseFB4N1NqOS1SQzdyZ1VqVUg3R1RzTTRXVExSenRlaVZiVk9PVS1tdUdnMFlEa0V0aEgxSDlHTWdMSXRiYUNFV28yN1RjNl9qQTg5NnYwaUVyd3RZcERPdlB2TlVNTGt4aWd2VHZtTE9rWmwySkI40gGyAUFVX3lxTE9sSmJTVU1JUnlXaGZxYmQwT3dMbG16dG1SdEpCcUVGc1NaZXFFbGxxVUdLU3llQXhKMmxNY3RXWnpNZXc2Sk5HSE5aamNTbmIwN2FJRTl1bHNSYXJDOHVEYkp2SlRkaXZhT0VGWVVsTURUTmRJVWZqQkJ1QVFYWGo4RGJyYldQYkxGVTRNV3hYS1RUS0FjNXkwRlBnT05CNTliRGh6WUY0Y21qa2JDSExuS0E?oc=5"
       ],
       "auto": true,
-      "updatedAt": "2026-08-02T13:26:09.272Z",
-      "lastTitle": "Yan Diomande £85m bid launched as Liverpool learn talks underway with Real Madrid - Liverpool Echo",
-      "note": "Detectado en radar de medios deportivos. Estado: Negociación. Último titular: Yan Diomande £85m bid launched as Liverpool learn talks underway with Real Madrid - Liverpool Echo",
-      "sourceCount": 30
+      "updatedAt": "2026-08-02T19:14:01.336Z",
+      "lastTitle": "Yan Diomande £85m bid launched as Liverpool learn talks underway with Real Madrid - liverpoolecho.co.uk",
+      "note": "Detectado en radar de medios deportivos. Estado: Negociación. Último titular: Yan Diomande £85m bid launched as Liverpool learn talks underway with Real Madrid - liverpoolecho.co.uk",
+      "sourceCount": 31
     },
     {
       "id": "auto-autoscout-man-utd-target-e107844b",
@@ -8080,10 +8080,10 @@
         "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQZ3RqbE0wblVVVGJIR1hEM3QyWFlwR1EtdnB5UGYwOUNhSlhUVS1BTDhwMS1yX0xBVDYyUHk0SFdwdkZHa1JmNFFhMU91a183RVBIVUZ6Y1NZcEt0YTJTYzJDNGM4M25FcWNmVExIN0FSSjZZRDJuRl9EN3pEYkNCZVltSEFIaG5QSkRpNVZPdlNTQXRuRlQwdm5EUFhCN0pxTjUyVEFNVkw?oc=5",
         "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQZFNBc0hiNTBMRU5hY1ZQQ3hoNU1CUl82N2ZvYU5KTFR0NjdNc0h4NENhbzg3UEI4dU0zckVpeWVFNUpMd045ZHh2WnE0T1FoaE50ZUk2WVBya0dvZlBaOG9ZbXV6U2ZKWDJrZG1QWHlZa2ZJb3VwS1oya0lnVzZNVnV0NDluWGRzZEhPekVNTnMwb2x4REJIbGRKY25fc3AwUzdFc2ZRSkVzX0xwakdpcHlJV0Q5aGhN?oc=5"
       ],
-      "sourceCount": 26,
+      "sourceCount": 27,
       "auto": true,
       "createdByAutoScout": false,
-      "updatedAt": "2026-08-02T13:26:09.272Z",
+      "updatedAt": "2026-08-02T19:14:01.336Z",
       "lastTitle": "'Agreement in place': Fabrizio Romano provides major update on Real Madrid target - The Real Champs",
       "note": "Detectado en radar de medios deportivos. Estado: Muy avanzado. Último titular: 'Agreement in place': Fabrizio Romano provides major update on Real Madrid target - The Real Champs"
     },
@@ -8116,12 +8116,12 @@
         "https://news.google.com/rss/articles/CBMizAFBVV95cUxPVmgxN1o5QzNjbGpxOEw1aUkzcjd4c0dTT0RqdzVHeHZ2T19NYUM0LWM0M0c5MTZfMnk1bG5fZU1HTlgyem9mOGFUeklXLXdHUzRCYzdTOUtkRFJzQWpkZGZjMkFvZGU0c0JuRENvbmltbkVQZDVFbUxEUFRnUHBpdms2NUpzY1pxMUVNd2V4OVZiNTZZdnR0QTY3cENycWNCZlU5S0cwU3NWY2FJQzNiUjF5SHIyUEgyWUpTbWJHUTB1OXNSaFpad0V1QW0?oc=5",
         "https://news.google.com/rss/articles/CBMirAFBVV95cUxQSzJrT0FxVjdWTk5PUU51MEJPWWRJSExkUmlfbnlRendCc1J0blRsTVJCVnNKTGo3cDUzekpseFB4N1NqOS1SQzdyZ1VqVUg3R1RzTTRXVExSenRlaVZiVk9PVS1tdUdnMFlEa0V0aEgxSDlHTWdMSXRiYUNFV28yN1RjNl9qQTg5NnYwaUVyd3RZcERPdlB2TlVNTGt4aWd2VHZtTE9rWmwySkI40gGyAUFVX3lxTE9sSmJTVU1JUnlXaGZxYmQwT3dMbG16dG1SdEpCcUVGc1NaZXFFbGxxVUdLU3llQXhKMmxNY3RXWnpNZXc2Sk5HSE5aamNTbmIwN2FJRTl1bHNSYXJDOHVEYkp2SlRkaXZhT0VGWVVsTURUTmRJVWZqQkJ1QVFYWGo4RGJyYldQYkxGVTRNV3hYS1RUS0FjNXkwRlBnT05CNTliRGh6WUY0Y21qa2JDSExuS0E?oc=5"
       ],
-      "sourceCount": 29,
+      "sourceCount": 30,
       "auto": true,
       "createdByAutoScout": false,
-      "updatedAt": "2026-08-02T13:26:09.272Z",
-      "lastTitle": "Yan Diomande £85m bid launched as Liverpool learn talks underway with Real Madrid - Liverpool Echo",
-      "note": "Detectado en radar de medios deportivos. Estado: Negociación. Último titular: Yan Diomande £85m bid launched as Liverpool learn talks underway with Real Madrid - Liverpool Echo"
+      "updatedAt": "2026-08-02T19:14:01.336Z",
+      "lastTitle": "Yan Diomande £85m bid launched as Liverpool learn talks underway with Real Madrid - liverpoolecho.co.uk",
+      "note": "Detectado en radar de medios deportivos. Estado: Negociación. Último titular: Yan Diomande £85m bid launched as Liverpool learn talks underway with Real Madrid - liverpoolecho.co.uk"
     },
     {
       "id": "auto-autoscout-man-utd-target-e1c1b7d3",
@@ -8135,10 +8135,10 @@
         "https://news.google.com/rss/articles/CBMitwFBVV95cUxPVlJRRkxHVEdPb20tdFcxRGdNR0xKejg0RE80d2hhNEZmYl9zelVoMGtueWFnUVhIdEMtdGlKQjZtZldBUFhyMUM2UkpoeHN2czNNS292ZEt3R0pVZ0lmR0JKOC1xQW1ITDdFYlFXVXFBemxTUGpGYW9sajZSN19qbUhaWVlKUWdvbDBNZEw3Nnl0em9NSUlrNjRPMy1GRXdKVU5sSENPTE9zNUJoRG8zQ1FBWnBWR3c?oc=5",
         "https://news.google.com/rss/articles/CBMivgFBVV95cUxNeVd6T3FmUlhkMEZkcG8zYklqU1ZES2F1dG13X0l4VmstVWk5clM3M1RvdE9mWTNEQ0I5YUhQMnBVOXRZRnlTLTdDSk9Cc2NtSEhNVXN6UllWME5iNVB6R09Ta3RTaXVaRV90ZkFvTW5Wd2wwWlNDaTBrN1NPTF9FMFRyRG5TZ3QtVUZBejRmV19DSDlReUVpUFo3TGR6UmJVSkZ1LXoxOGU2S2EyQ3N3SktOY1VRbndmZXdWZlNR?oc=5"
       ],
-      "sourceCount": 29,
+      "sourceCount": 30,
       "auto": true,
       "createdByAutoScout": false,
-      "updatedAt": "2026-08-02T13:26:09.272Z",
+      "updatedAt": "2026-08-02T19:14:01.336Z",
       "lastTitle": "Yan Diomande: Real Madrid attempt shock hijack for Liverpool and PSG target with €100m bid - inkl",
       "note": "Detectado en radar de medios deportivos. Estado: Negociación. Último titular: Yan Diomande: Real Madrid attempt shock hijack for Liverpool and PSG target with €100m bid - inkl"
     },
@@ -8172,10 +8172,10 @@
         "https://news.google.com/rss/articles/CBMitwFBVV95cUxQLTBYMUpoX3lBQmpqVTVqdC1jZU4xZlJCbjZLX2RES2tYMnA2cU5tRVB1Tl83MHp2bjQ5Z1NXZnYxY05sZ1QyYjFEUUIxOUNFcEhjSzFZOVo3RTVJaDFPNGdpMVZDSmozVjc2QUNiNFVTelhZVlNMREphbmFUdVJaMlRfRkR4cFotMVI0SGtkWmVLTHJhR1hYeDJjWk1Dc292cHlNSEZJNGc4aFNEenc0em1uWFNUWUU?oc=5",
         "https://news.google.com/rss/articles/CBMif0FVX3lxTFAyc2R0ZFo4MkxqaElaQ09xSjlSbXVXbXI2ME42NF9ha0pkS0Z0VGZKczBuaVdXMmRrUkczb2JSZTJ4QWwyQlZ3bVZCTENKVDhOdkNEX1N0LTY2eXVUVkhBX2ZhMl9qNDVUZG1qcHR3VEh4b0hCTHh0N1FSN3JFOUU?oc=5"
       ],
-      "sourceCount": 29,
+      "sourceCount": 30,
       "auto": true,
       "createdByAutoScout": false,
-      "updatedAt": "2026-08-02T13:26:09.272Z",
+      "updatedAt": "2026-08-02T19:14:01.336Z",
       "lastTitle": "Real Madrid Enter Race to Hijack Transfer of Top Liverpool, PSG Target—Report - Sports Illustrated",
       "note": "Detectado en radar de medios deportivos. Estado: Interés. Último titular: Real Madrid Enter Race to Hijack Transfer of Top Liverpool, PSG Target—Report - Sports Illustrated"
     },
@@ -8206,10 +8206,10 @@
       "sourceUrls": [
         "https://news.google.com/rss/articles/CBMi6AFBVV95cUxQQ2Uzdk5MeUxaWTFKRzFIRXdhSnBPZlQyUFlUV1pwOFhWZzNJUXNmVjRscG5MZmNfdkhObHhhR01qMDNVRVdSb1ZWV3IxSG1BR2pPZ2s2SVkzSE1NVUJlNDVhaEQ2WHUtQkpJcWtRSktTNGpoUmZwZjhCb3pfTHN3eERaN2d4bURVcjBfV0J1Y09xVWhIYTJGMDRsTEUtSDFyRUlIVXZYWGV2bVJLOGpMSXNLQUtiN0VoSzNSSl92MFQ1Zjd5MUlaWXMyeXQ1RmdNWW9sZW5HMHkwR2RRRzVzQWNKTlFBQmN6?oc=5"
       ],
-      "sourceCount": 29,
+      "sourceCount": 30,
       "auto": true,
       "createdByAutoScout": false,
-      "updatedAt": "2026-08-02T13:26:09.272Z",
+      "updatedAt": "2026-08-02T19:14:01.336Z",
       "lastTitle": "Real Madrid receive €230m Vinicius Jr offer - footballtransfers.com",
       "note": "Detectado en radar de medios deportivos. Estado: Negociación. Último titular: Real Madrid receive €230m Vinicius Jr offer - footballtransfers.com"
     },
@@ -8226,10 +8226,10 @@
         "https://news.google.com/rss/articles/CBMihAFBVV95cUxNQ1pGc2lLQXRGNzBlWkxRSjc2b1dGWEFrNUVwNzdBRDBNV0VZR2RjUUxRdUFjWTZycEtCNFhJWE9adDNSRVBuMjhraUM0dzByV0RXbXpSTkFjcGg3cFAyYmx3SjlQY0Z5blBvcGtHN3RsSmYtTDJnQThOVWRMd09lTXhJNm4?oc=5",
         "https://news.google.com/rss/articles/CBMisAFBVV95cUxPOVpGYTVVSVpMS0pUVk4tNW85eEVKanVPVGtpNUFLODB4TDBYWThXb2g5SnNQck9LZmFCOTUyTjhvMExsRDRxNHMzWktCREUtZ3hibzA4SU8wUTBVVHIzZWhLUGljVEpLZVhRb0cydUlfZ0E3YXNjTzVLdm9QZlZydHh5bm1ZWXJNblkxN0F0Tm03YW4wUGJuaUphREtLSmh5RXUwYzNjRnRiS2JBM01aeQ?oc=5"
       ],
-      "sourceCount": 29,
+      "sourceCount": 30,
       "auto": true,
       "createdByAutoScout": false,
-      "updatedAt": "2026-08-02T13:26:09.272Z",
+      "updatedAt": "2026-08-02T19:14:01.336Z",
       "lastTitle": "Fabrizio Romano offers the Michael Olise clarity Real Madrid fans needed - The Real Champs",
       "note": "Detectado en radar de medios deportivos. Estado: Negociación. Último titular: Fabrizio Romano offers the Michael Olise clarity Real Madrid fans needed - The Real Champs"
     },
@@ -8245,10 +8245,10 @@
         "https://news.google.com/rss/articles/CBMixwFBVV95cUxNb3F3cWRRSlZBZGJGWFoxQVdIcV9ucDZwejBTQzV5UDQ3NVZlQ2s4Znk3RFR0OUVjT0U1TVk5SU9YeXdyOGMwdENWdlF4eGJGMTJZUGg3YUowdTEyT0VvajVtWEdfZGRiemRZZjh6aVhUb0ZJbF9kdHlvd3ZPSGd1Q25RMDVwbWV6SEdtYW10UDgzeEVsWmxiSUVvM0NmTGREZWgzWFlfd3RHUGk1ZVUxWHdVMWJlYmxYME0xVlZ4aFZJZ1lwWXZv?oc=5",
         "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPa1JlalJqWkhjdXhSTWVqelpweEh4VVhIeHpKamNSUjNiR2lKZXcxcVpISU9WZFBWcklhQ25KSzB3N2lOUWZrQjlUcUM4UmtJTm0ySFY3ODE4RGR5dFFxMDU0ZC01Q0swRm1LRHYxaC11dkxkT292REVmQzBvaUhMbFY3b0FXRE84aXcxYnBOTWdiTTNvR1Vxc2pIOUFpTWVkdFJ4TE9TZFR4UDU4OEdaeE1pc3lWWEJFcHRqYldETTM?oc=5"
       ],
-      "sourceCount": 29,
+      "sourceCount": 30,
       "auto": true,
       "createdByAutoScout": false,
-      "updatedAt": "2026-08-02T13:26:09.272Z",
+      "updatedAt": "2026-08-02T19:14:01.336Z",
       "lastTitle": "Mercado de fichajes: el Real Madrid se fija en Kvaratskhelia; Julián Álvarez, Vinícius Junior y más - Sports Illustrated",
       "note": "Detectado en radar de medios deportivos. Estado: Rumor. Último titular: Mercado de fichajes: el Real Madrid se fija en Kvaratskhelia; Julián Álvarez, Vinícius Junior y más - Sports Illustrated"
     },
@@ -8263,10 +8263,10 @@
         "https://news.google.com/rss/articles/CBMixgFBVV95cUxQb19veDlWOWVDNjdMbVRUSmFBWWMyZ29WUk1OelB0WVNkc3dkX3FIM2lVMmJjYUwzOGhfX2lSd191Ri1jdy1FclF6cml6YmNWMmNBb0tJUjUzVi0ybzZyaEdnMmhXX0ZrU0ZLb1pLdldzUWxCX0pxS2dNbVB5TE5MWlN1YlAyRTA4N0l3VXdsU3hSaVBPZDZsY0FNZUVQWktHbmVDdk81dUk5YUdIbGRDSE9paGNJQThjUTFrRTZSTmVBUkh4UVE?oc=5",
         "https://news.google.com/rss/articles/CBMidEFVX3lxTE1lY2cwZzhsdVZIdVR3Zy1zdUlLZy0wMFptam9FeDE1eW51Q1g4Zm9nRWs5dW5TYnFEQnZtVkZCbzNneFNUb0dfWW44VzVzRFBpa3l4XzNnWS1pNlFicDQ0R3g5UVV2MDcyVmRLSlpaM3FtbXJq?oc=5"
       ],
-      "sourceCount": 29,
+      "sourceCount": 30,
       "auto": true,
       "createdByAutoScout": false,
-      "updatedAt": "2026-08-02T13:26:09.272Z",
+      "updatedAt": "2026-08-02T19:14:01.336Z",
       "lastTitle": "What Does Yan Diomande Bring to Real Madrid? - Sports Illustrated",
       "note": "Detectado en radar de medios deportivos. Estado: Rumor. Último titular: What Does Yan Diomande Bring to Real Madrid? - Sports Illustrated"
     },
@@ -8281,10 +8281,10 @@
         "https://news.google.com/rss/articles/CBMixgFBVV95cUxQb19veDlWOWVDNjdMbVRUSmFBWWMyZ29WUk1OelB0WVNkc3dkX3FIM2lVMmJjYUwzOGhfX2lSd191Ri1jdy1FclF6cml6YmNWMmNBb0tJUjUzVi0ybzZyaEdnMmhXX0ZrU0ZLb1pLdldzUWxCX0pxS2dNbVB5TE5MWlN1YlAyRTA4N0l3VXdsU3hSaVBPZDZsY0FNZUVQWktHbmVDdk81dUk5YUdIbGRDSE9paGNJQThjUTFrRTZSTmVBUkh4UVE?oc=5",
         "https://news.google.com/rss/articles/CBMidEFVX3lxTE1lY2cwZzhsdVZIdVR3Zy1zdUlLZy0wMFptam9FeDE1eW51Q1g4Zm9nRWs5dW5TYnFEQnZtVkZCbzNneFNUb0dfWW44VzVzRFBpa3l4XzNnWS1pNlFicDQ0R3g5UVV2MDcyVmRLSlpaM3FtbXJq?oc=5"
       ],
-      "sourceCount": 29,
+      "sourceCount": 30,
       "auto": true,
       "createdByAutoScout": false,
-      "updatedAt": "2026-08-02T13:26:09.272Z",
+      "updatedAt": "2026-08-02T19:14:01.336Z",
       "lastTitle": "What Does Yan Diomande Bring to Real Madrid? - Sports Illustrated",
       "note": "Detectado en radar de medios deportivos. Estado: Rumor. Último titular: What Does Yan Diomande Bring to Real Madrid? - Sports Illustrated"
     },
@@ -8298,10 +8298,10 @@
       "sourceUrls": [
         "https://news.google.com/rss/articles/CBMizwFBVV95cUxQMUFIV2pqS3VGTU5tMWU3cHJ4emZBRmVjRllOTklySkNzUVk1Nm9nT0xtMHJJc0xsQkR0MFRzdWVybXlaNDFJM21vWnE3cW5kMVZWZTRQaGdMeVlhSW1pT2RfNGdCa3YwZWR0dUtQYmZtcVg2WU5MYlIwcXB5dTYwOWdXQUp1Z0hXWmpqeDFEaEdydmRRX1pTd0c4SFZrcmZyWUlISm52X0psU1dlTTZqc1JQM0dLTWZkOEVfbUhlODNVMmlFeWNUb29Od084U3c?oc=5"
       ],
-      "sourceCount": 29,
+      "sourceCount": 30,
       "auto": true,
       "createdByAutoScout": false,
-      "updatedAt": "2026-08-02T13:26:09.272Z",
+      "updatedAt": "2026-08-02T19:14:01.336Z",
       "lastTitle": "Fabrizio Romano drops bombshell update on Man Utd signing Aurelien Tchouameni from Real Madrid - TEAMtalk",
       "note": "Detectado en radar de medios deportivos. Estado: Rumor. Último titular: Fabrizio Romano drops bombshell update on Man Utd signing Aurelien Tchouameni from Real Madrid - TEAMtalk"
     },
@@ -8316,10 +8316,10 @@
         "https://news.google.com/rss/articles/CBMiwwFBVV95cUxORnh2S1o0S3N2cGpWQVUzYzVzWTliNWE4TXdqS0MwOTE4OEhIdkxqVWs3d2ZVaWd5Q1V1TDVKMWQ2NGhyS19nMmUwN3E4U3NURzc4cDJQVG1KZmctVzFoMnlabzdZY3JLV0Z2LWpGRGlQS19veDR5Nl9BT0c2Q1R6MTQ1S0I3WVNkZ1NpeVVQRmNpVWFpYU9fMncyTExXN3NpTUphVnVXbG5RakJOWTF2ZnJlOC10ZFhCQWRzNnBxZE1zLUk?oc=5",
         "https://news.google.com/rss/articles/CBMiyAFBVV95cUxPd29VNTVOQkhNRFNlX0RnZjdaeWFNWU1zM2tNMW1BNVAtRkFOQW5HWGUzQjgzWGlfTXhjSGw4Y3FjSEFuLXY1bVJubEpZbXE0NHBaRWduZHNOUGZIbTBBVnRnNjZxUHlZZjBqM0dGYUNSc2ZNWUQ4X05oRUx0ZVJpVzBMVkpDdUlvX3B4T2FRYzRlLWl3TVJQbThnZzlsUlIzSHpBYm8tNXdLMmJKSzBLS1V4X2hTZHhCRnpLQmd4cFB3ekJtazhHOA?oc=5"
       ],
-      "sourceCount": 29,
+      "sourceCount": 30,
       "auto": true,
       "createdByAutoScout": false,
-      "updatedAt": "2026-08-02T13:26:09.272Z",
+      "updatedAt": "2026-08-02T19:14:01.336Z",
       "lastTitle": "Fabrizio Romano makes Real Madrid's latest Michael Olise transfer stance crystal clear - The Real Champs",
       "note": "Detectado en radar de medios deportivos. Estado: Rumor. Último titular: Fabrizio Romano makes Real Madrid's latest Michael Olise transfer stance crystal clear - The Real Champs"
     },
@@ -8333,10 +8333,10 @@
       "sourceUrls": [
         "https://news.google.com/rss/articles/CBMilgFBVV95cUxPV3pIekhHZ0dERkI5ejE3Vm1NelVObzhJX3hhVmw1UXZXbFRWTlhtbDBLd1A1emRiT1FUZlB0WEU4Vlp3ejVTR1ZjOGZXbGM1LXJnMEdVSDRFVkxvclhFb3NhNm9Xd3QyUUh1OGdsSU04UGthR1AzVHJJVnFhSW9ULWpLbzkzZDFjWmRoWElKc3BpcFU1R0E?oc=5"
       ],
-      "sourceCount": 29,
+      "sourceCount": 30,
       "auto": true,
       "createdByAutoScout": false,
-      "updatedAt": "2026-08-02T13:26:09.272Z",
+      "updatedAt": "2026-08-02T19:14:01.336Z",
       "lastTitle": "Transfer Rumors: Man Utd Target Valued at $140 Million; Real Madrid Plot Tchouameni Sale - Sports Illustrated",
       "note": "Detectado en radar de medios deportivos. Estado: Posible salida. Último titular: Transfer Rumors: Man Utd Target Valued at $140 Million; Real Madrid Plot Tchouameni Sale - Sports Illustrated"
     },
@@ -8350,10 +8350,10 @@
       "sourceUrls": [
         "https://news.google.com/rss/articles/CBMilgFBVV95cUxPV3pIekhHZ0dERkI5ejE3Vm1NelVObzhJX3hhVmw1UXZXbFRWTlhtbDBLd1A1emRiT1FUZlB0WEU4Vlp3ejVTR1ZjOGZXbGM1LXJnMEdVSDRFVkxvclhFb3NhNm9Xd3QyUUh1OGdsSU04UGthR1AzVHJJVnFhSW9ULWpLbzkzZDFjWmRoWElKc3BpcFU1R0E?oc=5"
       ],
-      "sourceCount": 29,
+      "sourceCount": 30,
       "auto": true,
       "createdByAutoScout": false,
-      "updatedAt": "2026-08-02T13:26:09.272Z",
+      "updatedAt": "2026-08-02T19:14:01.336Z",
       "lastTitle": "Transfer Rumors: Man Utd Target Valued at $140 Million; Real Madrid Plot Tchouameni Sale - Sports Illustrated",
       "note": "Detectado en radar de medios deportivos. Estado: Posible salida. Último titular: Transfer Rumors: Man Utd Target Valued at $140 Million; Real Madrid Plot Tchouameni Sale - Sports Illustrated"
     },
@@ -8367,10 +8367,10 @@
       "sourceUrls": [
         "https://news.google.com/rss/articles/CBMikgFBVV95cUxOR2xMSHBuMHZValZOUk9DWl80b1hnN1lDelRWdEd5NFIzQ0ZGVmJKdUxVRVdXYzRnSDZYNjlXSmVMZ0Uta2staF9BMUJJNHBCd293dzZybzBMOThlZlQ5WWpIRzBHN2NRdTFGN3lPS3piOWVabm9Mdnh2S3RpWGhPN0RpZlRUal9nNldkNjRuV2VyUQ?oc=5"
       ],
-      "sourceCount": 27,
+      "sourceCount": 28,
       "auto": true,
       "createdByAutoScout": true,
-      "updatedAt": "2026-08-02T13:26:09.272Z",
+      "updatedAt": "2026-08-02T19:14:01.336Z",
       "lastTitle": "Transfer: Mourinho tells Real Madrid next player to sign - Daily Post Nigeria",
       "note": "Detectado en radar de medios deportivos. Estado: Rumor. Último titular: Transfer: Mourinho tells Real Madrid next player to sign - Daily Post Nigeria"
     },
@@ -8386,10 +8386,10 @@
         "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPZnRDM2NLTmRZc09FZkJMbFB3S3RURzl0VWtFdUpuU3R2RzVaamIxNlo1cHlRdUV0OG02eUQ4VjB3ZGk0bDRyTGlyanM0cFVWNFdmUDFGbHp5VFhPdGNRVUtsNV9uNFNmb1lXdXFRUjdzeFVfWEVRNVg4cXFMNTVvbFczR28xSEJEMExpVXk0ZjVfRHpSck9zY0dfd0dhREVRUWV2d3lvOXU5ei10elVhT3VPNnd0by1Qa0NJNlJiaUI?oc=5",
         "https://news.google.com/rss/articles/CBMi1AFBVV95cUxNSTVHamxOM2cxQjdPLThWeWVvTXJNVk5pVUpBbFhsRlBQaWZuZjJlRU1TTllLa1dicldkTVM3dk1RQ1ZJdTd0N1ZaMHBzdnRjYUtENUxxV2JER19GaFVJZWJpV0s0Yk9ac3liV0pKTVZzTW9LU25yX2hGR1BvVDNlR1JwNWo4eFhGYkNlVS1NQWtMTThQUjVJbWpKUV8zbFFoY1F5RjlCTmhfdE1rdFZicUVadXE0Ul9QU3dQeWhVRDA0bU8wOVFjc2JPaVgwT214ZlIxLQ?oc=5"
       ],
-      "sourceCount": 29,
+      "sourceCount": 30,
       "auto": true,
       "createdByAutoScout": false,
-      "updatedAt": "2026-08-02T13:26:09.272Z",
+      "updatedAt": "2026-08-02T19:14:01.336Z",
       "lastTitle": "Fabrizio Romano Names Real Madrid's Original €150m Target Before Julian Alvarez - roundtable.io",
       "note": "Detectado en radar de medios deportivos. Estado: Interés. Último titular: Fabrizio Romano Names Real Madrid's Original €150m Target Before Julian Alvarez - roundtable.io"
     },
@@ -8404,10 +8404,10 @@
         "https://news.google.com/rss/articles/CBMizwFBVV95cUxQRGhuRUVxQ2RENk9ucFVfYXFfc3NPVTE0NjRUTUtXaGR5cDM2WS0yM1ZmbUM2U1BIcjVtalhNYkItRS1BRWVKSkJkVnoyY1ZtN2w2S2JCZXhBa3d0QjhHMXpRMV9vMnNxakJfaFBxc3piWjVFVW1ldEJOdUl5NnZJaGZuVWdfUHpOcGVEaUJIY0JmVzI3MzJfLXV4a2UzaXY1NUZZZlRVUEM0dGo1ekEwYWVyMWxCRGEwcS11VXpMa0RFR0htd2dodFV1ZU56ZGs?oc=5",
         "https://news.google.com/rss/articles/CBMi6wFBVV95cUxNbWl0LTQtSGt2TjVDLS02US1IQ2Fka1d4aVhleFFqdzBabkwwM0JBeTJDZmhCbzBOWWdwOHgzaWxIX3ZNQ19RQVJUNXJSSVJQSmxVWkdOakdDY3lhMUdrNTE4cG5yRVBEZGlUbFBlbGlfanN4aU0tV0phYXVka3V2THFQMTdaRldTNEowcHIyM3I3TjRIT3JSRXZjTDFicGhsWTNNdWpGcUtHVkdjcHowekNqM29qZGh3TTVsdkNPNmJDaVllUGpSSTNwRU1vYUx0RlNnanpQLUNlOUtmNHRORi04NFJiVFg0bFhZ?oc=5"
       ],
-      "sourceCount": 29,
+      "sourceCount": 30,
       "auto": true,
       "createdByAutoScout": false,
-      "updatedAt": "2026-08-02T13:26:09.272Z",
+      "updatedAt": "2026-08-02T19:14:01.336Z",
       "lastTitle": "Mercado de fichajes: el Real Madrid se interesa por Julián Álvarez; Marcus Rashford, Enzo Fernández y más - Sports Illustrated",
       "note": "Detectado en radar de medios deportivos. Estado: Interés. Último titular: Mercado de fichajes: el Real Madrid se interesa por Julián Álvarez; Marcus Rashford, Enzo Fernández y más - Sports Illustrated"
     },
@@ -8422,10 +8422,10 @@
         "https://news.google.com/rss/articles/CBMi6wFBVV95cUxNbWl0LTQtSGt2TjVDLS02US1IQ2Fka1d4aVhleFFqdzBabkwwM0JBeTJDZmhCbzBOWWdwOHgzaWxIX3ZNQ19RQVJUNXJSSVJQSmxVWkdOakdDY3lhMUdrNTE4cG5yRVBEZGlUbFBlbGlfanN4aU0tV0phYXVka3V2THFQMTdaRldTNEowcHIyM3I3TjRIT3JSRXZjTDFicGhsWTNNdWpGcUtHVkdjcHowekNqM29qZGh3TTVsdkNPNmJDaVllUGpSSTNwRU1vYUx0RlNnanpQLUNlOUtmNHRORi04NFJiVFg0bFhZ?oc=5",
         "https://news.google.com/rss/articles/CBMijwFBVV95cUxOSXJkTERocHJGYnlVVEZLM1A5dVlOZWEzcjV6N3Zlc2w5cVRodC1hUWhwUk9lT1dFWU5rNWJwZGRFX3l2SzlaN2JRWFZ4WU40NXRBNGxDNDgzUGFiTU5Ud0JPckwxZS1LTXF3UlM1MVZLZVZQeVBlVEJLeUlIeENNUGt4VXZpZzlrZ3ZwdFNCaw?oc=5"
       ],
-      "sourceCount": 29,
+      "sourceCount": 30,
       "auto": true,
       "createdByAutoScout": false,
-      "updatedAt": "2026-08-02T13:26:09.272Z",
+      "updatedAt": "2026-08-02T19:14:01.336Z",
       "lastTitle": "Real Madrid 2026–27 Transfers: New Signings, Targets, Outgoings - Sports Illustrated",
       "note": "Detectado en radar de medios deportivos. Estado: Interés. Último titular: Real Madrid 2026–27 Transfers: New Signings, Targets, Outgoings - Sports Illustrated"
     },
@@ -8439,10 +8439,10 @@
       "sourceUrls": [
         "https://news.google.com/rss/articles/CBMihgFBVV95cUxNdWw0VXd4cU9KN2hmbVFHZXpsbTNDYzcxZ3JxUWw5ZXhFY1A1d3dYQkRWQ3ludmtvNFpTR0hxOVFDbUVyTUFYbmFBUmxCT2pRT3JyQXpzUzJDN0sxWEdZUktEenVQeW9xem5FY2YzYUk5dEVvUlVJT3ptOWJRT1NVa1B4WWE2QQ?oc=5"
       ],
-      "sourceCount": 29,
+      "sourceCount": 30,
       "auto": true,
       "createdByAutoScout": false,
-      "updatedAt": "2026-08-02T13:26:09.272Z",
+      "updatedAt": "2026-08-02T19:14:01.336Z",
       "lastTitle": "Real Madrid Targets Pedri, Evoking Figo Transfer - 조선일보",
       "note": "Detectado en radar de medios deportivos. Estado: Interés. Último titular: Real Madrid Targets Pedri, Evoking Figo Transfer - 조선일보"
     },
@@ -8456,10 +8456,10 @@
       "sourceUrls": [
         "https://news.google.com/rss/articles/CBMigAFBVV95cUxNX3V6VVFmU1VfTTdyVFE2ckRmUVdpVzBXT29mMEI2MzBncS1FNnRjeVlGMkQ0cEd5UXJpU0RqNWNXbzFmRUdNMmJzVnB3TGlTdk5KVWFIR1VoSkpkZFd1SVVpQk9ROGRiN1dzdDd1azcyU3hBSEx2RllmOWItZkRxMg?oc=5"
       ],
-      "sourceCount": 29,
+      "sourceCount": 30,
       "auto": true,
       "createdByAutoScout": true,
-      "updatedAt": "2026-08-02T13:26:09.272Z",
+      "updatedAt": "2026-08-02T19:14:01.336Z",
       "lastTitle": "11 Real Madrid Transfer Targets to Watch at the 2026 World Cup - Sports Illustrated",
       "note": "Detectado en radar de medios deportivos. Estado: Interés. Último titular: 11 Real Madrid Transfer Targets to Watch at the 2026 World Cup - Sports Illustrated"
     },
@@ -8473,12 +8473,12 @@
       "sourceUrls": [
         "https://news.google.com/rss/articles/CBMigwFBVV95cUxOakJWRnIwTkdGQzVnMVhfNDVLT1FLSjR6TTBhMUF6X0ZZczBlcXBFUG1mZThTb2NzNmo1cHp4bHNidlQxSzNsakZIQmJ6VG9hLXJMaHlfcy1SVG5weFBGbjFNOTNscVV2YmZOdFdhVU9DM0VYd1R6M3JsYnFuX1ppVlltYw?oc=5"
       ],
-      "sourceCount": 29,
+      "sourceCount": 30,
       "auto": true,
       "createdByAutoScout": true,
-      "updatedAt": "2026-08-02T13:26:09.272Z",
-      "lastTitle": "Real Madrid Identifies Top 2 Transfer Targets for 2026-27: Report - sports.yahoo.com",
-      "note": "Detectado en radar de medios deportivos. Estado: Interés. Último titular: Real Madrid Identifies Top 2 Transfer Targets for 2026-27: Report - sports.yahoo.com"
+      "updatedAt": "2026-08-02T19:14:01.336Z",
+      "lastTitle": "Real Madrid Identifies Top 2 Transfer Targets for 2026-27: Report - Yahoo Sports",
+      "note": "Detectado en radar de medios deportivos. Estado: Interés. Último titular: Real Madrid Identifies Top 2 Transfer Targets for 2026-27: Report - Yahoo Sports"
     },
     {
       "id": "auto-enzo-dab1ce13",
@@ -8490,10 +8490,10 @@
       "sourceUrls": [
         "https://news.google.com/rss/articles/CBMizwFBVV95cUxQRGhuRUVxQ2RENk9ucFVfYXFfc3NPVTE0NjRUTUtXaGR5cDM2WS0yM1ZmbUM2U1BIcjVtalhNYkItRS1BRWVKSkJkVnoyY1ZtN2w2S2JCZXhBa3d0QjhHMXpRMV9vMnNxakJfaFBxc3piWjVFVW1ldEJOdUl5NnZJaGZuVWdfUHpOcGVEaUJIY0JmVzI3MzJfLXV4a2UzaXY1NUZZZlRVUEM0dGo1ekEwYWVyMWxCRGEwcS11VXpMa0RFR0htd2dodFV1ZU56ZGs?oc=5"
       ],
-      "sourceCount": 28,
+      "sourceCount": 29,
       "auto": true,
       "createdByAutoScout": false,
-      "updatedAt": "2026-08-02T13:26:09.272Z",
+      "updatedAt": "2026-08-02T19:14:01.336Z",
       "lastTitle": "Mercado de fichajes: el Real Madrid se interesa por Julián Álvarez; Marcus Rashford, Enzo Fernández y más - Sports Illustrated",
       "note": "Detectado en radar de medios deportivos. Estado: Interés. Último titular: Mercado de fichajes: el Real Madrid se interesa por Julián Álvarez; Marcus Rashford, Enzo Fernández y más - Sports Illustrated"
     },
@@ -8507,12 +8507,12 @@
       "sourceUrls": [
         "https://news.google.com/rss/articles/CBMi5gFBVV95cUxQb3lyeUprNmpoVzBZdnVCcndwS292NnBERVhyWUlRcVdKWDdaRDN1VzR5Z2RsaW1sQmhpN1VQNV9IMjNZbnM0QmlBVWQ3Y0hadi11NFU2ay0xSHBlQzVGZmgzNmZnRk4wZDlLM0NmWDh1bFFCZWNDZktjT0ZuWHJ2LVdPVU02UVBvZ1pRa3JuU2Iwb3FEbG1TenNIV1lNVzJKUUVlU19xMmZoZjJzdE1GQ01oNTlFUzBHVjVFdXpERzk1WlRuMEduNGZvYTVqemFGbzR0Nl9namZ1NXQ0Y2Zfa0M4YUdtZw?oc=5"
       ],
-      "sourceCount": 17,
+      "sourceCount": 18,
       "auto": true,
       "createdByAutoScout": false,
-      "updatedAt": "2026-08-01T19:11:37.307Z",
-      "lastTitle": "Real Madrid transfer news: Spanish giants 'target' former Champions League finalist to bolster backline - Sports Mole",
-      "note": "Detectado en radar de medios deportivos. Estado: Interés. Último titular: Real Madrid transfer news: Spanish giants 'target' former Champions League finalist to bolster backline - Sports Mole"
+      "updatedAt": "2026-08-02T19:14:01.336Z",
+      "lastTitle": "Real Madrid transfer news: Spanish giants 'target' former Champions League finalist to bolster backline - sportsmole.co.uk",
+      "note": "Detectado en radar de medios deportivos. Estado: Interés. Último titular: Real Madrid transfer news: Spanish giants 'target' former Champions League finalist to bolster backline - sportsmole.co.uk"
     },
     {
       "id": "auto-rodri-9591c9f",
@@ -8527,10 +8527,10 @@
         "https://news.google.com/rss/articles/CBMiywFBVV95cUxNSkd6Z1EwWE4zbHZ5S2JQaUFiX3RnemNrWEhlX2ZkY3FIMWROTk4tMnRpaE1XX3ZYYms0UWRSaDJDcERUcXpMUHNyazR5UVUzVTBSemNXWm5zVHk2WVYwN1dJeVB1RHM0YzBWSmJkNTJZVldrU1h4b09URXZXQlJvNFhZY25LeEdDSVBUV2xYUE9fdm0yUlNOWkJweWhnbWdsMXdwbXRjMHVkWGxQXzd3TFZfcS1xZmxnb3BHVlZrUXZYY2NZS1JtVFRPUQ?oc=5",
         "https://news.google.com/rss/articles/CBMitwFBVV95cUxNUFRnZlFQb0l2eFNFTkNvdjhMRkoxd3ZSVmFnc01ZVTdIWDhiWk9SaEw2dlprZWlXM1dCdHU4MGdKOXc5aThXeGRXUC1Fa3RTQXNGcnBtZm96dnpGV1pvZ3BnUnBvSzN1aWk2cGt5N2VZR2t5T3ZoZ3lQS3dmQkNzSFNlVWRCemZBNXlGZUNSLW10UkxUV05ESmdBYUFIWUMxS1N0ZVpTenQ1R2tWdTNHcHA2aWdfX00?oc=5"
       ],
-      "sourceCount": 29,
+      "sourceCount": 30,
       "auto": true,
       "createdByAutoScout": false,
-      "updatedAt": "2026-08-02T13:26:09.272Z",
+      "updatedAt": "2026-08-02T19:14:01.336Z",
       "lastTitle": "Fabrizio Romano confirms what Real Madrid fans suspected about Rodri transfer - The Real Champs",
       "note": "Detectado en radar de medios deportivos. Estado: Rumor. Último titular: Fabrizio Romano confirms what Real Madrid fans suspected about Rodri transfer - The Real Champs"
     },
@@ -8545,10 +8545,10 @@
         "https://news.google.com/rss/articles/CBMi2gFBVV95cUxOYVRNQjUyTkY3cUhIc1N1dW9YSGt0TXdrUXd5amo3dzhQNzNELU9vWWVoRnEzQzFZSzdJcjkwUENSQlkzc0JJWjNUT0lQWVZXS1l4TFZKZm9tRTJfbHVpUGlHZV9NZjlKTTRBZzNMblJUS3Awbm8xeHV5Ykt6eUxGWE4zby1VTk9jSE4wNWxuZzRBbi1hb1J0T29oOWxqaEJ6V3hna2RuSTJOcFpIZEpUd2Y0R2o3UVlmR0VFZUoxNjZvcnBtYmZpZHdfMG1xMXM4dlBFdFVYamp2dw?oc=5",
         "https://news.google.com/rss/articles/CBMioAFBVV95cUxNWWw1b1h3M2dQTU9vbUtCcjhGUDN4WlBQNDhXUVdHRk8xNFB5Q0UxV29ySnBvRERaYWFWN1hzdFNqdER6VlZrdmpVVzcxN3VCMFBQaTJrclRsVTdUS1hoRzAxRWg3OE1waWQ4QUxlbU5sR1NOTE9TRlIxOTdOS0c5U245SEtFMVgxYWNzZVREdEdjdGlRVnhCSXZVS1ZJQzY1?oc=5"
       ],
-      "sourceCount": 29,
+      "sourceCount": 30,
       "auto": true,
       "createdByAutoScout": false,
-      "updatedAt": "2026-08-02T13:26:09.272Z",
+      "updatedAt": "2026-08-02T19:14:01.336Z",
       "lastTitle": "Mercado de fichajes: el plan de Haaland para fichar por el Real Madrid en 2027; Gabriel Martinelli, Endrick y más - Sports Illustrated",
       "note": "Detectado en radar de medios deportivos. Estado: Rumor. Último titular: Mercado de fichajes: el plan de Haaland para fichar por el Real Madrid en 2027; Gabriel Martinelli, Endrick y más - Sports Illustrated"
     },
@@ -8563,10 +8563,10 @@
         "https://news.google.com/rss/articles/CBMi2gFBVV95cUxQM1AxdVExT1M2ai00THdSWFRRaHZBbUNiN0hxM09jbVJON2l3R3Q5cm80NlRxdzA1c3c5ckVsR2V2WHFQcW9LZ1Flb0FYNjVHcWhsWTJsZGRSSW81QUdSMDBlY1NuS01iTXRiclVabDdZbGhsSHhYUzYyNlo2SG41LVFvZDVDd003ZWhRNG1tU1JyalA2MlRWREVmQWR5blJjOXk3NTN5ZTNBMXl0SVdyQncxYWl2QVEtNUZYSzk2NUJLZGNjTXFlc29uUDVDak9qWW9Ic1FYQjNYUQ?oc=5",
         "https://news.google.com/rss/articles/CBMioAFBVV95cUxNWWw1b1h3M2dQTU9vbUtCcjhGUDN4WlBQNDhXUVdHRk8xNFB5Q0UxV29ySnBvRERaYWFWN1hzdFNqdER6VlZrdmpVVzcxN3VCMFBQaTJrclRsVTdUS1hoRzAxRWg3OE1waWQ4QUxlbU5sR1NOTE9TRlIxOTdOS0c5U245SEtFMVgxYWNzZVREdEdjdGlRVnhCSXZVS1ZJQzY1?oc=5"
       ],
-      "sourceCount": 29,
+      "sourceCount": 30,
       "auto": true,
       "createdByAutoScout": false,
-      "updatedAt": "2026-08-02T13:26:09.272Z",
+      "updatedAt": "2026-08-02T19:14:01.336Z",
       "lastTitle": "Mercado de fichajes: Enzo Fernández sería el próximo bombazo del Real Madrid; Darwin Núñez, Marcus Rashford y más - Sports Illustrated",
       "note": "Detectado en radar de medios deportivos. Estado: Rumor. Último titular: Mercado de fichajes: Enzo Fernández sería el próximo bombazo del Real Madrid; Darwin Núñez, Marcus Rashford y más - Sports Illustrated"
     },
@@ -8582,10 +8582,10 @@
         "https://news.google.com/rss/articles/CBMi0gFBVV95cUxQeHFsOWZ6aWtXd1VqcE15ZEhLOHhBMmdSd0hING1JMUI4YUV4RGdfekxHcTRoMklITXhDbl9JMmE3WllUMFJFaXZLVHVabWlqRExuLUNGT2hMRVhOWDZ4X2NXNzVaMk54blRnelZCUnlLYnBWWGVoaUR0ZDNXNXVVeUZLQ3JkRTR4UC1UUlZ1cGcxeFZUMnhrbGdZYWN0RGtSejMwV3NUTURxaGlSVlJxWnQyeWF0R0I5N2lDRkctNkZlU19SYkRXMDNxcUcwQmdvZVE?oc=5",
         "https://news.google.com/rss/articles/CBMimgFBVV95cUxOWExESzFSWm9VU3BLMUNwVU1pVVNnX19zRUlSTUJBeWdrVVE5YlJzT0lJak11c05zM1BVUUM4VUVCWlZwWWtXdVZjTXV0Q3BSXzZZWW5RV0RUN1g2bl9fNF9TSEx1M0ZTaEZtdWZSem1VQkFKclVRVDZMWTR4Z3hpc21NOUtFQlRlRmZ3dnFYaHBCeDlKbjgtYVFn?oc=5"
       ],
-      "sourceCount": 29,
+      "sourceCount": 30,
       "auto": true,
       "createdByAutoScout": false,
-      "updatedAt": "2026-08-02T13:26:09.272Z",
+      "updatedAt": "2026-08-02T19:14:01.336Z",
       "lastTitle": "Mercado de fichajes: el curioso intercambio que harían el Real Madrid y el Liverpool; Vitinha, Camavinga y más - Sports Illustrated",
       "note": "Detectado en radar de medios deportivos. Estado: Rumor. Último titular: Mercado de fichajes: el curioso intercambio que harían el Real Madrid y el Liverpool; Vitinha, Camavinga y más - Sports Illustrated"
     },
@@ -8599,10 +8599,10 @@
       "sourceUrls": [
         "https://news.google.com/rss/articles/CBMimwFBVV95cUxOVkR1aDlpWGcyMmpQVTRWZ3hJMmpJdDRUckRIOWF1UTVMZkNxSlF5aXlEV3hKUG5UWm4tUHN6Q3hHWkdPU1VvRXdpUjEzNi10XzJNa2V5dVM5U0RLZGtocjRRa2tSdWlqb3p1SWpadXZLenJhVTNzVU15N3g4bEpBd1pPYmxTYVpvMHBVYWEzd1ZPMUZFVm4ta2pxaw?oc=5"
       ],
-      "sourceCount": 29,
+      "sourceCount": 30,
       "auto": true,
       "createdByAutoScout": false,
-      "updatedAt": "2026-08-02T13:26:09.272Z",
+      "updatedAt": "2026-08-02T19:14:01.336Z",
       "lastTitle": "Real Madrid Transfer DealSheet: Rodrygo for sale, centre-back and midfield targets - The Athletic - The New York Times",
       "note": "Detectado en radar de medios deportivos. Estado: Posible salida. Último titular: Real Madrid Transfer DealSheet: Rodrygo for sale, centre-back and midfield targets - The Athletic - The New York Times"
     },
@@ -8616,12 +8616,12 @@
       "sourceUrls": [
         "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPa1JlalJqWkhjdXhSTWVqelpweEh4VVhIeHpKamNSUjNiR2lKZXcxcVpISU9WZFBWcklhQ25KSzB3N2lOUWZrQjlUcUM4UmtJTm0ySFY3ODE4RGR5dFFxMDU0ZC01Q0swRm1LRHYxaC11dkxkT292REVmQzBvaUhMbFY3b0FXRE84aXcxYnBOTWdiTTNvR1Vxc2pIOUFpTWVkdFJ4TE9TZFR4UDU4OEdaeE1pc3lWWEJFcHRqYldETTM?oc=5"
       ],
-      "sourceCount": 29,
+      "sourceCount": 30,
       "auto": true,
       "createdByAutoScout": false,
-      "updatedAt": "2026-08-02T13:26:09.272Z",
-      "lastTitle": "Football transfer rumours: Chelsea to splash cash on Vinícius Júnior? Adam Wharton to Real Madrid? - The Guardian",
-      "note": "Detectado en radar de medios deportivos. Estado: Rumor. Último titular: Football transfer rumours: Chelsea to splash cash on Vinícius Júnior? Adam Wharton to Real Madrid? - The Guardian"
+      "updatedAt": "2026-08-02T19:14:01.336Z",
+      "lastTitle": "Football transfer rumours: Chelsea to splash cash on Vinícius Júnior? Adam Wharton to Real Madrid? - theguardian.com",
+      "note": "Detectado en radar de medios deportivos. Estado: Rumor. Último titular: Football transfer rumours: Chelsea to splash cash on Vinícius Júnior? Adam Wharton to Real Madrid? - theguardian.com"
     },
     {
       "id": "auto-autoscout-new-signings-bec0a53e",
@@ -8633,10 +8633,10 @@
       "sourceUrls": [
         "https://news.google.com/rss/articles/CBMioAFBVV95cUxOMGtEWWtaM3d1U2ZhWkJoaDlSQjJoLUg2dnJMVVI5XzZlWkZyM2NPR2dvd3pZNzQyWHJRbGpVamZWTHFhYS0tX2d3S282amZXOHBDMkNIa0liUWhEYjl0eC1HZzMzRi1tSUx5YmNaV0tRam5ndWxQREotNTZ1aFlfNmU0bXZPUWJBUTNEbWE4VkhHTVRVVVpwQ3hmcXBTNFl4?oc=5"
       ],
-      "sourceCount": 29,
+      "sourceCount": 30,
       "auto": true,
       "createdByAutoScout": false,
-      "updatedAt": "2026-08-02T13:26:09.272Z",
+      "updatedAt": "2026-08-02T19:14:01.336Z",
       "lastTitle": "Real Madrid's dream defence for 2026-27 after Mourinho gets THREE signings - Planet Football",
       "note": "Detectado en radar de medios deportivos. Estado: Rumor. Último titular: Real Madrid's dream defence for 2026-27 after Mourinho gets THREE signings - Planet Football"
     },
@@ -8650,10 +8650,10 @@
       "sourceUrls": [
         "https://news.google.com/rss/articles/CBMikgJBVV95cUxNWHdWclp5OGRpWlJ6ZWVDSndMTzlWaklxN1l6YzlTVFZ0VW5oSU1nNFY2NWVqeV9iOTdpWjd1RGM5V0pic0c3Zy1hQ0RQdHZ6VEsxelBZdmxDMk5RX3hFRzJneXlMbmlvU050ZVZ4RUNyYmNYWkt6U3RyTFFac3A2dGgwOUR1R1cwYmpnd2NhaUl0S2ptWmF3R0JTcTJTbHJ3dWM3MWRyZWJ4OW1YamRNNldSc2ZObzF6WXV6UmZqU2s2NjZ2M2g4X3dURk4zTnZ1V2VHbnlkajhtRWFMLVh0V3luVFYtZ1N4NnBpSGFfVC0tRDh5REpmMlJjWS1HdVREcV90UXFGWjdfcExWMWRVeUln?oc=5"
       ],
-      "sourceCount": 29,
+      "sourceCount": 30,
       "auto": true,
       "createdByAutoScout": false,
-      "updatedAt": "2026-08-02T13:26:09.272Z",
+      "updatedAt": "2026-08-02T19:14:01.336Z",
       "lastTitle": "Real Madrid Is Thinking About the Next Transfer Market and About Rodri and Nico Schlotterbeck for Around 115 Million - beIN SPORTS",
       "note": "Detectado en radar de medios deportivos. Estado: Rumor. Último titular: Real Madrid Is Thinking About the Next Transfer Market and About Rodri and Nico Schlotterbeck for Around 115 Million - beIN SPORTS"
     },
@@ -8667,10 +8667,10 @@
       "sourceUrls": [
         "https://news.google.com/rss/articles/CBMikgJBVV95cUxNWHdWclp5OGRpWlJ6ZWVDSndMTzlWaklxN1l6YzlTVFZ0VW5oSU1nNFY2NWVqeV9iOTdpWjd1RGM5V0pic0c3Zy1hQ0RQdHZ6VEsxelBZdmxDMk5RX3hFRzJneXlMbmlvU050ZVZ4RUNyYmNYWkt6U3RyTFFac3A2dGgwOUR1R1cwYmpnd2NhaUl0S2ptWmF3R0JTcTJTbHJ3dWM3MWRyZWJ4OW1YamRNNldSc2ZObzF6WXV6UmZqU2s2NjZ2M2g4X3dURk4zTnZ1V2VHbnlkajhtRWFMLVh0V3luVFYtZ1N4NnBpSGFfVC0tRDh5REpmMlJjWS1HdVREcV90UXFGWjdfcExWMWRVeUln?oc=5"
       ],
-      "sourceCount": 29,
+      "sourceCount": 30,
       "auto": true,
       "createdByAutoScout": false,
-      "updatedAt": "2026-08-02T13:26:09.272Z",
+      "updatedAt": "2026-08-02T19:14:01.336Z",
       "lastTitle": "Real Madrid Is Thinking About the Next Transfer Market and About Rodri and Nico Schlotterbeck for Around 115 Million - beIN SPORTS",
       "note": "Detectado en radar de medios deportivos. Estado: Rumor. Último titular: Real Madrid Is Thinking About the Next Transfer Market and About Rodri and Nico Schlotterbeck for Around 115 Million - beIN SPORTS"
     },
@@ -8685,10 +8685,10 @@
         "https://news.google.com/rss/articles/CBMi1wFBVV95cUxQVWNDdjNVaGthWDltb3FiYVJCTE40TXRSd2ltbFFEMEU1R3ZsakhsQ3pfd202bWUtck52UmZaSDZBUjdpNlBqUktNNVlWNk53dkFxdDJIRkpxdGN3VEdaTDdkMlZfemdQWktveGttVUFzZWpEQjBWYzhiOG5qc2I5UHFueFVUbVVxUjQ0ZTFFdFkyUGRiMF9paDB6bTVKNlVBazc3M1FwdW9FT0hjMGItSWtqeVJ0VkM1MUFBSUFxUjh0SlMybF9aWlktQlNkWWtNMGliNW1PZw?oc=5",
         "https://news.google.com/rss/articles/CBMi1AFBVV95cUxNamZ5Nk5OenVKUl9KUHFuNnNrdlY5OEVKUElGUm9vMkcxMVdJdC1HcVR4Tk1TZFVRcEU3eXpDTzRETnZsYlotV2tGd2cySWU4amNWSGNoMklESHBZQTNGalA2SEFCV0E1SG9NaHpLbGpwLXYzb3RtYlBKTWp2a2hzSHNEeWFDWDRJanlIQWN4MTVCeW9DakZqMklXZ29iOXM5dm9VUVBGbWhrZnZEeXAzQkc4Z2dqamRDaF9jUVRHdm96WTFhbnR2THZqcDE3UVQ1ZnBndA?oc=5"
       ],
-      "sourceCount": 29,
+      "sourceCount": 30,
       "auto": true,
       "createdByAutoScout": false,
-      "updatedAt": "2026-08-02T13:26:09.272Z",
+      "updatedAt": "2026-08-02T19:14:01.336Z",
       "lastTitle": "Fabrizio Romano Confirms Real Madrid Decision on Fran Garcia and Raul Asencio - roundtable.io",
       "note": "Detectado en radar de medios deportivos. Estado: Rumor. Último titular: Fabrizio Romano Confirms Real Madrid Decision on Fran Garcia and Raul Asencio - roundtable.io"
     },
@@ -8703,10 +8703,10 @@
         "https://news.google.com/rss/articles/CBMi1wFBVV95cUxQVWNDdjNVaGthWDltb3FiYVJCTE40TXRSd2ltbFFEMEU1R3ZsakhsQ3pfd202bWUtck52UmZaSDZBUjdpNlBqUktNNVlWNk53dkFxdDJIRkpxdGN3VEdaTDdkMlZfemdQWktveGttVUFzZWpEQjBWYzhiOG5qc2I5UHFueFVUbVVxUjQ0ZTFFdFkyUGRiMF9paDB6bTVKNlVBazc3M1FwdW9FT0hjMGItSWtqeVJ0VkM1MUFBSUFxUjh0SlMybF9aWlktQlNkWWtNMGliNW1PZw?oc=5",
         "https://news.google.com/rss/articles/CBMi1AFBVV95cUxNamZ5Nk5OenVKUl9KUHFuNnNrdlY5OEVKUElGUm9vMkcxMVdJdC1HcVR4Tk1TZFVRcEU3eXpDTzRETnZsYlotV2tGd2cySWU4amNWSGNoMklESHBZQTNGalA2SEFCV0E1SG9NaHpLbGpwLXYzb3RtYlBKTWp2a2hzSHNEeWFDWDRJanlIQWN4MTVCeW9DakZqMklXZ29iOXM5dm9VUVBGbWhrZnZEeXAzQkc4Z2dqamRDaF9jUVRHdm96WTFhbnR2THZqcDE3UVQ1ZnBndA?oc=5"
       ],
-      "sourceCount": 29,
+      "sourceCount": 30,
       "auto": true,
       "createdByAutoScout": false,
-      "updatedAt": "2026-08-02T13:26:09.272Z",
+      "updatedAt": "2026-08-02T19:14:01.336Z",
       "lastTitle": "Fabrizio Romano Confirms Real Madrid Decision on Fran Garcia and Raul Asencio - roundtable.io",
       "note": "Detectado en radar de medios deportivos. Estado: Rumor. Último titular: Fabrizio Romano Confirms Real Madrid Decision on Fran Garcia and Raul Asencio - roundtable.io"
     },
@@ -8720,10 +8720,10 @@
       "sourceUrls": [
         "https://news.google.com/rss/articles/CBMi1wFBVV95cUxQVWNDdjNVaGthWDltb3FiYVJCTE40TXRSd2ltbFFEMEU1R3ZsakhsQ3pfd202bWUtck52UmZaSDZBUjdpNlBqUktNNVlWNk53dkFxdDJIRkpxdGN3VEdaTDdkMlZfemdQWktveGttVUFzZWpEQjBWYzhiOG5qc2I5UHFueFVUbVVxUjQ0ZTFFdFkyUGRiMF9paDB6bTVKNlVBazc3M1FwdW9FT0hjMGItSWtqeVJ0VkM1MUFBSUFxUjh0SlMybF9aWlktQlNkWWtNMGliNW1PZw?oc=5"
       ],
-      "sourceCount": 29,
+      "sourceCount": 30,
       "auto": true,
       "createdByAutoScout": false,
-      "updatedAt": "2026-08-02T13:26:09.272Z",
+      "updatedAt": "2026-08-02T19:14:01.336Z",
       "lastTitle": "Real Madrid Transfer News: Vinicius Jr., Camavinga, Garcia, Rice & More - November 30, 2025 - Sports Illustrated",
       "note": "Detectado en radar de medios deportivos. Estado: Rumor. Último titular: Real Madrid Transfer News: Vinicius Jr., Camavinga, Garcia, Rice & More - November 30, 2025 - Sports Illustrated"
     },
@@ -8737,12 +8737,12 @@
       "sourceUrls": [
         "https://news.google.com/rss/articles/CBMi8gFBVV95cUxPQWlsSHJTSld1ZmN5akZIWkUtNGkwZGJ0N184UjQ1UmJUX0J2UHZEbG9IODZmbGhLNWpsd1Q1UUNnRDlsdE5oaDRwdTRPcDVXM01ubWx4V2k0U2I2MEpIWFo1ZlBRT2ctbWplYkpWdGpQb0RfUGFFQVFCWlJZU0l1alF1eXREZUQtMTlLQkR4TVBSd3JyM1NSU1pUTGgzYUZWVjkyRDJPV0EzSERiM2VITUZYcFA1MlQ5Nmd4Yjg5RzRwZjZVdXVEMTBwVzVidm1ha0tsSkJfUUJEWjJ0aGpUeXpYSENuZEZFYjFhOTgyYy1Jdw?oc=5"
       ],
-      "sourceCount": 29,
+      "sourceCount": 30,
       "auto": true,
       "createdByAutoScout": false,
-      "updatedAt": "2026-08-02T13:26:09.272Z",
-      "lastTitle": "How Real Madrid could line up with Rodri and three more summer signings next season as transfer rumours intensify - Sports Mole",
-      "note": "Detectado en radar de medios deportivos. Estado: Rumor. Último titular: How Real Madrid could line up with Rodri and three more summer signings next season as transfer rumours intensify - Sports Mole"
+      "updatedAt": "2026-08-02T19:14:01.336Z",
+      "lastTitle": "How Real Madrid could line up with Rodri and three more summer signings next season as transfer rumours intensify - sportsmole.co.uk",
+      "note": "Detectado en radar de medios deportivos. Estado: Rumor. Último titular: How Real Madrid could line up with Rodri and three more summer signings next season as transfer rumours intensify - sportsmole.co.uk"
     },
     {
       "id": "auto-enzo-2bb66269",
@@ -8754,10 +8754,10 @@
       "sourceUrls": [
         "https://news.google.com/rss/articles/CBMi5gFBVV95cUxPTWJxMW5JeWwyWF9OSS1ja2RaaTBWT2RTcGhIZE5YVXdKY3E5Slk0c2xvVTh6LU5od3oyN1pSWG1KS0I3Y0ZHT0w3UkV2ZVNMNzRzcEk0UTFKTjEzQVhuSkRVNnlsODlzeFB2N3VndHY4andWdEh2VFByTWo4X2tKQjhzZXNoNTZhMGx0NGN2WDRLMFRsV0FxRWg5aGJXQkVVLVJLanVWcDVMZThCM2M5dmVxeS1CUkx1cFUwVk1SV2hXMDlMLW52THlXcF9sM3ZTTmtzbVRlczFnTmxkdWNvQ3dNYWRsQQ?oc=5"
       ],
-      "sourceCount": 29,
+      "sourceCount": 30,
       "auto": true,
       "createdByAutoScout": false,
-      "updatedAt": "2026-08-02T13:26:09.272Z",
+      "updatedAt": "2026-08-02T19:14:01.336Z",
       "lastTitle": "Enzo Fernandez 'much closer' to Real Madrid transfer after Chelsea exit hint - footballtransfers.com",
       "note": "Detectado en radar de medios deportivos. Estado: Posible salida. Último titular: Enzo Fernandez 'much closer' to Real Madrid transfer after Chelsea exit hint - footballtransfers.com"
     },
@@ -8771,12 +8771,12 @@
       "sourceUrls": [
         "https://news.google.com/rss/articles/CBMi4gFBVV95cUxQQlhLVFNEMy1BR0xnOVFTc1B1YnotZUltdjlRWm5qTVVDbF9IVnV2ZGV0RFBxeEFkb1VWWUM5d3V4ZFVZTlJGeTcwTy1YemVneC1oZDZzZmlaZ1M1N0o2YWVBRVZCUmNzT25sUmVZN3NOS2VmbFFFX29QMW9sRFFzVHVfaXpBZ2RPYkVnS2J6am93S3BtYVlmeUROZ3Zhbl9ZMnM3TDNUU0ZnbnVoQ0RWNjVtaTJCVkRLbUd3UGRZR0lVbTZwc2xpaEd0cHBnUnUtQmlKRVlleHNxd0hlUzBMcC13?oc=5"
       ],
-      "sourceCount": 29,
+      "sourceCount": 30,
       "auto": true,
       "createdByAutoScout": true,
-      "updatedAt": "2026-08-02T13:26:09.272Z",
-      "lastTitle": "Real Madrid summer transfers and net spend: Every confirmed signing and sale for Jose Mourinho's side in 2026 summer window - Sports Mole",
-      "note": "Detectado en radar de medios deportivos. Estado: Posible salida. Último titular: Real Madrid summer transfers and net spend: Every confirmed signing and sale for Jose Mourinho's side in 2026 summer window - Sports Mole"
+      "updatedAt": "2026-08-02T19:14:01.336Z",
+      "lastTitle": "Real Madrid summer transfers and net spend: Every confirmed signing and sale for Jose Mourinho's side in 2026 summer window - sportsmole.co.uk",
+      "note": "Detectado en radar de medios deportivos. Estado: Posible salida. Último titular: Real Madrid summer transfers and net spend: Every confirmed signing and sale for Jose Mourinho's side in 2026 summer window - sportsmole.co.uk"
     },
     {
       "id": "auto-julian-510f0794",
@@ -8788,10 +8788,10 @@
       "sourceUrls": [
         "https://news.google.com/rss/articles/CBMixwFBVV95cUxNb3F3cWRRSlZBZGJGWFoxQVdIcV9ucDZwejBTQzV5UDQ3NVZlQ2s4Znk3RFR0OUVjT0U1TVk5SU9YeXdyOGMwdENWdlF4eGJGMTJZUGg3YUowdTEyT0VvajVtWEdfZGRiemRZZjh6aVhUb0ZJbF9kdHlvd3ZPSGd1Q25RMDVwbWV6SEdtYW10UDgzeEVsWmxiSUVvM0NmTGREZWgzWFlfd3RHUGk1ZVUxWHdVMWJlYmxYME0xVlZ4aFZJZ1lwWXZv?oc=5"
       ],
-      "sourceCount": 28,
+      "sourceCount": 29,
       "auto": true,
       "createdByAutoScout": false,
-      "updatedAt": "2026-08-02T13:26:09.272Z",
+      "updatedAt": "2026-08-02T19:14:01.336Z",
       "lastTitle": "Mercado de fichajes: el Real Madrid se fija en Kvaratskhelia; Julián Álvarez, Vinícius Junior y más - Sports Illustrated",
       "note": "Detectado en radar de medios deportivos. Estado: Rumor. Último titular: Mercado de fichajes: el Real Madrid se fija en Kvaratskhelia; Julián Álvarez, Vinícius Junior y más - Sports Illustrated"
     },
@@ -8805,10 +8805,10 @@
       "sourceUrls": [
         "https://news.google.com/rss/articles/CBMixwFBVV95cUxNb3F3cWRRSlZBZGJGWFoxQVdIcV9ucDZwejBTQzV5UDQ3NVZlQ2s4Znk3RFR0OUVjT0U1TVk5SU9YeXdyOGMwdENWdlF4eGJGMTJZUGg3YUowdTEyT0VvajVtWEdfZGRiemRZZjh6aVhUb0ZJbF9kdHlvd3ZPSGd1Q25RMDVwbWV6SEdtYW10UDgzeEVsWmxiSUVvM0NmTGREZWgzWFlfd3RHUGk1ZVUxWHdVMWJlYmxYME0xVlZ4aFZJZ1lwWXZv?oc=5"
       ],
-      "sourceCount": 28,
+      "sourceCount": 29,
       "auto": true,
       "createdByAutoScout": false,
-      "updatedAt": "2026-08-02T13:26:09.272Z",
+      "updatedAt": "2026-08-02T19:14:01.336Z",
       "lastTitle": "Mercado de fichajes: el Real Madrid se fija en Kvaratskhelia; Julián Álvarez, Vinícius Junior y más - Sports Illustrated",
       "note": "Detectado en radar de medios deportivos. Estado: Rumor. Último titular: Mercado de fichajes: el Real Madrid se fija en Kvaratskhelia; Julián Álvarez, Vinícius Junior y más - Sports Illustrated"
     },
@@ -8822,10 +8822,10 @@
       "sourceUrls": [
         "https://news.google.com/rss/articles/CBMi2gFBVV95cUxOYVRNQjUyTkY3cUhIc1N1dW9YSGt0TXdrUXd5amo3dzhQNzNELU9vWWVoRnEzQzFZSzdJcjkwUENSQlkzc0JJWjNUT0lQWVZXS1l4TFZKZm9tRTJfbHVpUGlHZV9NZjlKTTRBZzNMblJUS3Awbm8xeHV5Ykt6eUxGWE4zby1VTk9jSE4wNWxuZzRBbi1hb1J0T29oOWxqaEJ6V3hna2RuSTJOcFpIZEpUd2Y0R2o3UVlmR0VFZUoxNjZvcnBtYmZpZHdfMG1xMXM4dlBFdFVYamp2dw?oc=5"
       ],
-      "sourceCount": 28,
+      "sourceCount": 29,
       "auto": true,
       "createdByAutoScout": false,
-      "updatedAt": "2026-08-02T13:26:09.272Z",
+      "updatedAt": "2026-08-02T19:14:01.336Z",
       "lastTitle": "Mercado de fichajes: el plan de Haaland para fichar por el Real Madrid en 2027; Gabriel Martinelli, Endrick y más - Sports Illustrated",
       "note": "Detectado en radar de medios deportivos. Estado: Rumor. Último titular: Mercado de fichajes: el plan de Haaland para fichar por el Real Madrid en 2027; Gabriel Martinelli, Endrick y más - Sports Illustrated"
     },
@@ -8839,10 +8839,10 @@
       "sourceUrls": [
         "https://news.google.com/rss/articles/CBMi2gFBVV95cUxOYVRNQjUyTkY3cUhIc1N1dW9YSGt0TXdrUXd5amo3dzhQNzNELU9vWWVoRnEzQzFZSzdJcjkwUENSQlkzc0JJWjNUT0lQWVZXS1l4TFZKZm9tRTJfbHVpUGlHZV9NZjlKTTRBZzNMblJUS3Awbm8xeHV5Ykt6eUxGWE4zby1VTk9jSE4wNWxuZzRBbi1hb1J0T29oOWxqaEJ6V3hna2RuSTJOcFpIZEpUd2Y0R2o3UVlmR0VFZUoxNjZvcnBtYmZpZHdfMG1xMXM4dlBFdFVYamp2dw?oc=5"
       ],
-      "sourceCount": 28,
+      "sourceCount": 29,
       "auto": true,
       "createdByAutoScout": false,
-      "updatedAt": "2026-08-02T13:26:09.272Z",
+      "updatedAt": "2026-08-02T19:14:01.336Z",
       "lastTitle": "Mercado de fichajes: el plan de Haaland para fichar por el Real Madrid en 2027; Gabriel Martinelli, Endrick y más - Sports Illustrated",
       "note": "Detectado en radar de medios deportivos. Estado: Rumor. Último titular: Mercado de fichajes: el plan de Haaland para fichar por el Real Madrid en 2027; Gabriel Martinelli, Endrick y más - Sports Illustrated"
     },
@@ -8856,10 +8856,10 @@
       "sourceUrls": [
         "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQOUIxQTVVQV9hQ1ZWeW44UkpkenBHSDk2Wmpia0dzeE5OdkQyd1I5Q0VMYVpIWU5TQ3dQU3pISUNuSDhxaDEwNUZZZXF4ZThVTGRlNDBCNllXWDl1SnRSRlBmR2picVZ3UFpLcXR0bnkyRmtsVkVaWjJFSlI2ck5IcWRPSTNmak9rcTlpVXU3MFQ0b1FXYVhqLVBRcmVOXzJWbVpZMVZLN3VHYzZtZWhfNy1tWEpnb3ZvYlNITVRUZGw?oc=5"
       ],
-      "sourceCount": 28,
+      "sourceCount": 29,
       "auto": true,
       "createdByAutoScout": false,
-      "updatedAt": "2026-08-02T13:26:09.272Z",
+      "updatedAt": "2026-08-02T19:14:01.336Z",
       "lastTitle": "Mercado de fichajes: el Real Madrid prepara una oferta por Pedri; Raphinha, Jules Koundé y más - Sports Illustrated",
       "note": "Detectado en radar de medios deportivos. Estado: Rumor. Último titular: Mercado de fichajes: el Real Madrid prepara una oferta por Pedri; Raphinha, Jules Koundé y más - Sports Illustrated"
     },
@@ -8873,10 +8873,10 @@
       "sourceUrls": [
         "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQOUIxQTVVQV9hQ1ZWeW44UkpkenBHSDk2Wmpia0dzeE5OdkQyd1I5Q0VMYVpIWU5TQ3dQU3pISUNuSDhxaDEwNUZZZXF4ZThVTGRlNDBCNllXWDl1SnRSRlBmR2picVZ3UFpLcXR0bnkyRmtsVkVaWjJFSlI2ck5IcWRPSTNmak9rcTlpVXU3MFQ0b1FXYVhqLVBRcmVOXzJWbVpZMVZLN3VHYzZtZWhfNy1tWEpnb3ZvYlNITVRUZGw?oc=5"
       ],
-      "sourceCount": 28,
+      "sourceCount": 29,
       "auto": true,
       "createdByAutoScout": false,
-      "updatedAt": "2026-08-02T13:26:09.272Z",
+      "updatedAt": "2026-08-02T19:14:01.336Z",
       "lastTitle": "Mercado de fichajes: el Real Madrid prepara una oferta por Pedri; Raphinha, Jules Koundé y más - Sports Illustrated",
       "note": "Detectado en radar de medios deportivos. Estado: Rumor. Último titular: Mercado de fichajes: el Real Madrid prepara una oferta por Pedri; Raphinha, Jules Koundé y más - Sports Illustrated"
     },
@@ -8890,10 +8890,10 @@
       "sourceUrls": [
         "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQOUIxQTVVQV9hQ1ZWeW44UkpkenBHSDk2Wmpia0dzeE5OdkQyd1I5Q0VMYVpIWU5TQ3dQU3pISUNuSDhxaDEwNUZZZXF4ZThVTGRlNDBCNllXWDl1SnRSRlBmR2picVZ3UFpLcXR0bnkyRmtsVkVaWjJFSlI2ck5IcWRPSTNmak9rcTlpVXU3MFQ0b1FXYVhqLVBRcmVOXzJWbVpZMVZLN3VHYzZtZWhfNy1tWEpnb3ZvYlNITVRUZGw?oc=5"
       ],
-      "sourceCount": 28,
+      "sourceCount": 29,
       "auto": true,
       "createdByAutoScout": false,
-      "updatedAt": "2026-08-02T13:26:09.272Z",
+      "updatedAt": "2026-08-02T19:14:01.336Z",
       "lastTitle": "Mercado de fichajes: el Real Madrid prepara una oferta por Pedri; Raphinha, Jules Koundé y más - Sports Illustrated",
       "note": "Detectado en radar de medios deportivos. Estado: Rumor. Último titular: Mercado de fichajes: el Real Madrid prepara una oferta por Pedri; Raphinha, Jules Koundé y más - Sports Illustrated"
     },
@@ -8907,10 +8907,10 @@
       "sourceUrls": [
         "https://news.google.com/rss/articles/CBMi2gFBVV95cUxQM1AxdVExT1M2ai00THdSWFRRaHZBbUNiN0hxM09jbVJON2l3R3Q5cm80NlRxdzA1c3c5ckVsR2V2WHFQcW9LZ1Flb0FYNjVHcWhsWTJsZGRSSW81QUdSMDBlY1NuS01iTXRiclVabDdZbGhsSHhYUzYyNlo2SG41LVFvZDVDd003ZWhRNG1tU1JyalA2MlRWREVmQWR5blJjOXk3NTN5ZTNBMXl0SVdyQncxYWl2QVEtNUZYSzk2NUJLZGNjTXFlc29uUDVDak9qWW9Ic1FYQjNYUQ?oc=5"
       ],
-      "sourceCount": 28,
+      "sourceCount": 29,
       "auto": true,
       "createdByAutoScout": false,
-      "updatedAt": "2026-08-02T13:26:09.272Z",
+      "updatedAt": "2026-08-02T19:14:01.336Z",
       "lastTitle": "Mercado de fichajes: Enzo Fernández sería el próximo bombazo del Real Madrid; Darwin Núñez, Marcus Rashford y más - Sports Illustrated",
       "note": "Detectado en radar de medios deportivos. Estado: Rumor. Último titular: Mercado de fichajes: Enzo Fernández sería el próximo bombazo del Real Madrid; Darwin Núñez, Marcus Rashford y más - Sports Illustrated"
     },
@@ -8924,10 +8924,10 @@
       "sourceUrls": [
         "https://news.google.com/rss/articles/CBMi2AFBVV95cUxONmhvSkJ4WlBHeXE3dWp1bE5wSjVHdEJERG5CV18xTGp0Z2FfTGZrM3VDWEZZM2plUHlDcWN4eXFnbm95U0tzWDcySElhWWE2cmF3N09HRUZjanVTZmlYZ21yeVMtRENSenk1d2pZb293RnpaenkwWXhrb2lmNGtZTzVlbVJWbDN1WXFGRFh6cFFnMkFCTU90R2lIMlgxOTk4OGJJcG1pR29ZQmZnQjBCV1ZrV2NFQUlJRlJWZ29rc2Y2RWt5WGctdUUwNlM1TDNIcGNXRURzRFE?oc=5"
       ],
-      "sourceCount": 28,
+      "sourceCount": 29,
       "auto": true,
       "createdByAutoScout": false,
-      "updatedAt": "2026-08-02T13:26:09.272Z",
+      "updatedAt": "2026-08-02T19:14:01.336Z",
       "lastTitle": "Mercado de fichajes: el plan del Real Madrid para fichar a Erling Haaland; Aurélien Tchouaméni, Harry Kane y más - Sports Illustrated",
       "note": "Detectado en radar de medios deportivos. Estado: Rumor. Último titular: Mercado de fichajes: el plan del Real Madrid para fichar a Erling Haaland; Aurélien Tchouaméni, Harry Kane y más - Sports Illustrated"
     },
@@ -8941,10 +8941,10 @@
       "sourceUrls": [
         "https://news.google.com/rss/articles/CBMi0AFBVV95cUxOUndicXRpNnpoR21hcW52czczN1I0SFpMZjNQMmxBXzhwOUdzN1kwSkFVS2FLWFdGejFHSjRsMlJRSUlwbzNqaUdadDZxal9BNnVzakZ1b2lyQ1ZBeDBkUHF0NHBlUzl2NkY0RzhvMEFmclVoNU1USkFBOHI2amdRMk9OdG83aVVXVUNRRW1VWHlmR05jbC1CSk03bGNDUXZnWTJrY2tseEVQVFhpaU9PaHBReFQyWWszS3h1Y2JEa2ZBa1RhUmdNR195aEZaUG9q?oc=5"
       ],
-      "sourceCount": 28,
+      "sourceCount": 29,
       "auto": true,
       "createdByAutoScout": false,
-      "updatedAt": "2026-08-02T13:26:09.272Z",
+      "updatedAt": "2026-08-02T19:14:01.336Z",
       "lastTitle": "Mercado de fichajes: el Real Madrid rechaza millonaria oferta por una de sus figuras; Osimhen, Salah y más - Sports Illustrated",
       "note": "Detectado en radar de medios deportivos. Estado: Rumor. Último titular: Mercado de fichajes: el Real Madrid rechaza millonaria oferta por una de sus figuras; Osimhen, Salah y más - Sports Illustrated"
     },
@@ -8958,10 +8958,10 @@
       "sourceUrls": [
         "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNX21reGx0dlhtdk13XzkwOWJVRVNLanNPcnB5ZjE0VXlicW05N1lwSTZBc1F6QVJqeUY4ZVVTR2VTdFBnckhKTDVGQjBQTkh6ZG5lY192UG41UWFtZXFUc2tWbER4dDFfaG1FVlRHcDhld0lzSWYwQW8wMGdSOWRnS0FZdktTcWpnbC1uQzVTeU9EMkxCWTdrNFh3cExDaTdOZzhTTmtaUHNXekQ3ZjVQQUdMRXM5WkphYXZr?oc=5"
       ],
-      "sourceCount": 28,
+      "sourceCount": 29,
       "auto": true,
       "createdByAutoScout": false,
-      "updatedAt": "2026-08-02T13:26:09.272Z",
+      "updatedAt": "2026-08-02T19:14:01.336Z",
       "lastTitle": "Mercado de fichajes: el Real Madrid se suma a la carrera por Salah; Harry Kane, Gavi y más - Sports Illustrated",
       "note": "Detectado en radar de medios deportivos. Estado: Rumor. Último titular: Mercado de fichajes: el Real Madrid se suma a la carrera por Salah; Harry Kane, Gavi y más - Sports Illustrated"
     },
@@ -8975,10 +8975,10 @@
       "sourceUrls": [
         "https://news.google.com/rss/articles/CBMi0gFBVV95cUxQczhDeHJGQ1lBSTI1VC1tUGVCWG1RdGpsQm5wYVdXb2UyQm1SSzlic1NNcnhxWHpRQWhuN3hpSlBpNE8yUWMtODc0QklaS3RnTFIzcFFEZ01rOEFHVmNROWRxVTlHcERsMkhHYXZiVWthamhuSTByMHZiQm9xOGNpRUp5M1E1SEtBdHBsblJNb3ZOUEhGcTRwVzdxREVMRXprcXNCU2NVV25FMHVTTzRGNFpuYnRvZDJ5bjNKQnF0TlpucjNMM2h0RUtnTmFsX1JPSmc?oc=5"
       ],
-      "sourceCount": 28,
+      "sourceCount": 29,
       "auto": true,
       "createdByAutoScout": false,
-      "updatedAt": "2026-08-02T13:26:09.272Z",
+      "updatedAt": "2026-08-02T19:14:01.336Z",
       "lastTitle": "Mercado de fichajes: el Real Madrid tiene a Rodri en su agenda; Christian Pulisic, Alessandro Bastoni y más - Sports Illustrated",
       "note": "Detectado en radar de medios deportivos. Estado: Rumor. Último titular: Mercado de fichajes: el Real Madrid tiene a Rodri en su agenda; Christian Pulisic, Alessandro Bastoni y más - Sports Illustrated"
     },
@@ -8992,10 +8992,10 @@
       "sourceUrls": [
         "https://news.google.com/rss/articles/CBMi1wFBVV95cUxNQzRRRElwcXFSTEJPNFdiRHU2djAwb3lVZkVFSjg4ckVHZldTTV9YNGp1eTl3ajl4N3BtR2h4Yk5IaUpGVmZoUVNTT0tOMnEyM3dEYk5sS0tGNmhyb0lBUWtvdkxWcUdQT3N2LXFoZjJlbG0zWWNfWGd0aklKX0xXVFl6MDdIZTVxYktYa0JEcGZickJjZXVUZVI2U21YdzNhNC1OZ3FYQ01QcUNvdHRUWlhlUDJNN3oxbFYxMGN3X0xBeGt3V2lCZ0xjOUQ0ZEE3MzIwOFpHaw?oc=5"
       ],
-      "sourceCount": 28,
+      "sourceCount": 29,
       "auto": true,
       "createdByAutoScout": false,
-      "updatedAt": "2026-08-02T13:26:09.272Z",
+      "updatedAt": "2026-08-02T19:14:01.336Z",
       "lastTitle": "Mercado de fichajes: el curioso intercambio que harían el Real Madrid y el Liverpool; Vitinha, Camavinga y más - Sports Illustrated",
       "note": "Detectado en radar de medios deportivos. Estado: Rumor. Último titular: Mercado de fichajes: el curioso intercambio que harían el Real Madrid y el Liverpool; Vitinha, Camavinga y más - Sports Illustrated"
     },
@@ -9009,10 +9009,10 @@
       "sourceUrls": [
         "https://news.google.com/rss/articles/CBMizwFBVV95cUxPSWxwZkJrUF9ZZGFveXMzdm1jNGsyRnM3Q2c5UF9Eb1l1aHV1LTE2Z0h3azdDdFpXUWJKNWRCOWhrMFlIb0VaXzJYU1A0QUloQ08tNFMxZDRLcTBJVTVrbE5GLUMyN3N4SkIzTjdMSzRsRy04ZnVKdTMtMG1jcERIRXFkVm9UREZKU3NnR1BLcy05LUFFRUYtanpVd002cFpWczBfUlpmRVRHTEZJZ3JONzlNUWszYl9INFM1TU9xN205OHpJTm5kSTV0cEVSWXc?oc=5"
       ],
-      "sourceCount": 28,
+      "sourceCount": 29,
       "auto": true,
       "createdByAutoScout": false,
-      "updatedAt": "2026-08-02T13:26:09.272Z",
+      "updatedAt": "2026-08-02T19:14:01.336Z",
       "lastTitle": "Mercado de fichajes: el Manchester United apunta a una figura del Real Madrid; Pulisic, Cole Palmer y más - Sports Illustrated",
       "note": "Detectado en radar de medios deportivos. Estado: Rumor. Último titular: Mercado de fichajes: el Manchester United apunta a una figura del Real Madrid; Pulisic, Cole Palmer y más - Sports Illustrated"
     },
@@ -9027,10 +9027,10 @@
         "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNamlKajNPV252RnQ0X0NSOGgtM2VyU2hNVDhTdXQ2dGtaSmFXNzR0cU9ZaVNvOVBSZ1lTLU9PVlNQMVNEa1VRTUxOZFhXa1hWc0hhdEtqVm1jUHgyY1FlUE9rYlZUdVB4Rzd3VlFFRlpMNG5vZVdqbEluSy1jYm5rMkxpVlI1eVVWZzNuRnFhb1FZWkxvYjZOT3Y4WTQyeWdYY1ltX2thLTNEdw?oc=5",
         "https://news.google.com/rss/articles/CBMiowFBVV95cUxQWXhXSWZGY0VTeTk0NmV2TFhjVS1IOHBobnhRdVJEdEcxV195aDNqdk9OMGt4M1ZPdG4wajdKZjhDcXo5ZDdyeHhYOXRUd0FocFNFaTgwQXhFOFMya3dxZ0xVQXFKZElPMVR5N2d1TWhieUVaLWhyQ2RPa25ZeVI0T1V6dDdPOXZCYTdNVmxnVGRLOE93dFVHb2kxMFluY1ViZllR?oc=5"
       ],
-      "sourceCount": 28,
+      "sourceCount": 29,
       "auto": true,
       "createdByAutoScout": false,
-      "updatedAt": "2026-08-02T13:26:09.272Z",
+      "updatedAt": "2026-08-02T19:14:01.336Z",
       "lastTitle": "Mercado de fichajes | Endrick pudo irse, pero el Real Madrid cerro la puerta - Bernabéu Digital",
       "note": "Detectado en radar de medios deportivos. Estado: Rumor. Último titular: Mercado de fichajes | Endrick pudo irse, pero el Real Madrid cerro la puerta - Bernabéu Digital"
     },
@@ -9044,10 +9044,10 @@
       "sourceUrls": [
         "https://news.google.com/rss/articles/CBMiswFBVV95cUxPRzhhaHk0eUNBM2NHVjBBVzItWjBrS1d3RmVMdmhVY1pKcnQzQUZ6aHM4VnpIY0J6WUxkSUFRMEs1TW1uVmtkYlVCakFuTHpuLUhUN3Q0ay1DRmNVWVRoUjFKUFl5Z2pqTFZzNlNrWGRsWDV1WGQ4cTRLUTlXLUE1OWJBUXlFOWt5WnJHMWRNLTFfUzZLUDhKY3Z0MDVfRGVxdHB6ODg0MG1fM2Z5WE5hZGZ0UQ?oc=5"
       ],
-      "sourceCount": 28,
+      "sourceCount": 29,
       "auto": true,
       "createdByAutoScout": false,
-      "updatedAt": "2026-08-02T13:26:09.272Z",
+      "updatedAt": "2026-08-02T19:14:01.336Z",
       "lastTitle": "Mercado de fichajes | Comienza la operación salida en el Real Madrid - Bernabéu Digital",
       "note": "Detectado en radar de medios deportivos. Estado: Posible salida. Último titular: Mercado de fichajes | Comienza la operación salida en el Real Madrid - Bernabéu Digital"
     },
@@ -9061,10 +9061,10 @@
       "sourceUrls": [
         "https://news.google.com/rss/articles/CBMizAFBVV95cUxQMWl4WTExUnV5R3hiZWZYdzFJSkQwc0huaUxBc2MzejB2dzBybWMydldFUkpJR1UzWExkSkd6d1I5cElQT2djbl9CMi0tdDhqZ3pTNlh4ZTBkSlpOTjlQSWs3U3RJZFhid2R3ekhDWkFKX1NvVVdwdHpVaXdRNzZMYXZQRTcxY0E5UjJoQ2tyeFYzOXVwNmZYZ3QteHZjbklfVERiM1F3ckRFdVVHWHAtTjhVcDBPa2ozcUZDVGVqb2VJM21COE9tczdGM0s?oc=5"
       ],
-      "sourceCount": 28,
+      "sourceCount": 29,
       "auto": true,
       "createdByAutoScout": false,
-      "updatedAt": "2026-08-02T13:26:09.272Z",
+      "updatedAt": "2026-08-02T19:14:01.336Z",
       "lastTitle": "El dilema del Real Madrid con Rafael Leão: oportunidad de mercado o fichaje fuera de prioridad - Defensa Central",
       "note": "Detectado en radar de medios deportivos. Estado: Rumor. Último titular: El dilema del Real Madrid con Rafael Leão: oportunidad de mercado o fichaje fuera de prioridad - Defensa Central"
     },
@@ -9078,10 +9078,10 @@
       "sourceUrls": [
         "https://news.google.com/rss/articles/CBMilAFBVV95cUxOMFIxZnc2UnprNk1Pc3lrWkdGeEJBaXpSdE9GUTBKYjFCdk9PNjlaSjVtOVpuUUh2bEFNRkNzZnFvWDRfSjBsd25YWHVWdDZsTW4wQTc1aVhGRl9GT0RINXl0d2xJdkJXWUhla2lwMHVpdzdOcDVPUVJJY2lNQVRHekpnbWR0emxFd2JWUDAxRmE4clFT?oc=5"
       ],
-      "sourceCount": 28,
+      "sourceCount": 29,
       "auto": true,
       "createdByAutoScout": true,
-      "updatedAt": "2026-08-02T13:26:09.272Z",
+      "updatedAt": "2026-08-02T19:14:01.336Z",
       "lastTitle": "Altas, bajas y rumores de posibles fichajes del Real Madrid Femenino - Las Futbolistas",
       "note": "Detectado en radar de medios deportivos. Estado: Rumor. Último titular: Altas, bajas y rumores de posibles fichajes del Real Madrid Femenino - Las Futbolistas"
     },
@@ -9095,10 +9095,10 @@
       "sourceUrls": [
         "https://news.google.com/rss/articles/CBMizAFBVV95cUxQekhTYklUcUdTaHhQZnVHM0p6Mm1vLW0tczRBc0dsUUlxODZwanVlRGJKeUVuaTdVS2E0RGNHdWp1RzYwellkT01MNDY2bnE3aUVwYlFWaXQ2QlJ0dzM0YmxwSDk2UW42anFNbE5vV1VTSWVneHcwTE5Wa3A0U2FNSldUWjdwYkU1aGNtVlMwSkNwRVNvUXF0eWRSWTlIRjlWa0xnYXgtM0I1UThZWWFZM0o0NUJ1RkdHczVoc3pXQnA4Qkw0T0NLZS1JaG4?oc=5"
       ],
-      "sourceCount": 28,
+      "sourceCount": 29,
       "auto": true,
       "createdByAutoScout": true,
-      "updatedAt": "2026-08-02T13:26:09.272Z",
+      "updatedAt": "2026-08-02T19:14:01.336Z",
       "lastTitle": "Mercado de fichajes: la figura del PSG que llegaría al Real Madrid; Ousmane Dembélé, Manuel Neuer y más - Sports Illustrated",
       "note": "Detectado en radar de medios deportivos. Estado: Rumor. Último titular: Mercado de fichajes: la figura del PSG que llegaría al Real Madrid; Ousmane Dembélé, Manuel Neuer y más - Sports Illustrated"
     },
@@ -9112,10 +9112,10 @@
       "sourceUrls": [
         "https://news.google.com/rss/articles/CBMirAFBVV95cUxPWi1jVlY1ZFFTUVVkRmI3MXJuX2FPc2xWMm1pTEdCb1d3TWtpQUQtbEZXbDBsQVNQMUliamNyVVg0bG52TzEteG9tYkxfMV9UUVhpQVVTSFNheXNNbWVWRDBTcmlscnJkeHVFSEZQbzlhNUI4TEdhdWtIeXMwSzNaNUZSSDlZOFFKTE01RThpZ0o1M2ZrNmlDOGJFUWpxaGVkejluR2dTeUJGODFZ?oc=5"
       ],
-      "sourceCount": 16,
+      "sourceCount": 17,
       "auto": true,
       "createdByAutoScout": false,
-      "updatedAt": "2026-08-02T13:26:09.272Z",
+      "updatedAt": "2026-08-02T19:14:01.336Z",
       "lastTitle": "BREAKING: Yan Diomande to Real Madrid, Here we Go - roundtable.io",
       "note": "Detectado en radar de medios deportivos. Estado: Muy avanzado. Último titular: BREAKING: Yan Diomande to Real Madrid, Here we Go - roundtable.io"
     },
@@ -9129,10 +9129,10 @@
       "sourceUrls": [
         "https://news.google.com/rss/articles/CBMirAFBVV95cUxPWi1jVlY1ZFFTUVVkRmI3MXJuX2FPc2xWMm1pTEdCb1d3TWtpQUQtbEZXbDBsQVNQMUliamNyVVg0bG52TzEteG9tYkxfMV9UUVhpQVVTSFNheXNNbWVWRDBTcmlscnJkeHVFSEZQbzlhNUI4TEdhdWtIeXMwSzNaNUZSSDlZOFFKTE01RThpZ0o1M2ZrNmlDOGJFUWpxaGVkejluR2dTeUJGODFZ?oc=5"
       ],
-      "sourceCount": 16,
+      "sourceCount": 17,
       "auto": true,
       "createdByAutoScout": false,
-      "updatedAt": "2026-08-02T13:26:09.272Z",
+      "updatedAt": "2026-08-02T19:14:01.336Z",
       "lastTitle": "BREAKING: Yan Diomande to Real Madrid, Here we Go - roundtable.io",
       "note": "Detectado en radar de medios deportivos. Estado: Muy avanzado. Último titular: BREAKING: Yan Diomande to Real Madrid, Here we Go - roundtable.io"
     },
@@ -9146,12 +9146,12 @@
       "sourceUrls": [
         "https://news.google.com/rss/articles/CBMi5wFBVV95cUxQbDJ4VkstbmpGQmxBMHhJUDFhdkpwbm14cV93UG80UWNpblIyV3g1emg5anpqQVVjWTFDTnk2LVpkdEl0YW5HelZGWmpLNEVleXk0NVM3d0Zla21mM1gtUFdDVExsb2NEUW1zdjk0Zm5ubmtfd0JNMEVGVmtSOW8zOFFhN20xSjRzV1hfck9nSkJiaEx1cG5MZ0VQSkNQOEVGMTJhNmVCSjZ2bnJMdG4wVDJoQ2Q4VTRKZEF3UXp5d2U1a180Q1dIN0phVHVXakVWWVJ4ZnVOQW1VM0lPU25mWVJsT1dWWUk?oc=5"
       ],
-      "sourceCount": 13,
+      "sourceCount": 14,
       "auto": true,
       "createdByAutoScout": false,
-      "updatedAt": "2026-08-02T13:26:09.272Z",
-      "lastTitle": "Yan Diomande Latest: Real Madrid agree 'personal terms' with PSG-linked attacker - Sports Mole",
-      "note": "Detectado en radar de medios deportivos. Estado: Negociación. Último titular: Yan Diomande Latest: Real Madrid agree 'personal terms' with PSG-linked attacker - Sports Mole"
+      "updatedAt": "2026-08-02T19:14:01.336Z",
+      "lastTitle": "Yan Diomande Latest: Real Madrid agree 'personal terms' with PSG-linked attacker - sportsmole.co.uk",
+      "note": "Detectado en radar de medios deportivos. Estado: Negociación. Último titular: Yan Diomande Latest: Real Madrid agree 'personal terms' with PSG-linked attacker - sportsmole.co.uk"
     },
     {
       "id": "auto-asencio-bbc913f0",
@@ -9163,10 +9163,10 @@
       "sourceUrls": [
         "https://news.google.com/rss/articles/CBMi1AFBVV95cUxNamZ5Nk5OenVKUl9KUHFuNnNrdlY5OEVKUElGUm9vMkcxMVdJdC1HcVR4Tk1TZFVRcEU3eXpDTzRETnZsYlotV2tGd2cySWU4amNWSGNoMklESHBZQTNGalA2SEFCV0E1SG9NaHpLbGpwLXYzb3RtYlBKTWp2a2hzSHNEeWFDWDRJanlIQWN4MTVCeW9DakZqMklXZ29iOXM5dm9VUVBGbWhrZnZEeXAzQkc4Z2dqamRDaF9jUVRHdm96WTFhbnR2THZqcDE3UVQ1ZnBndA?oc=5"
       ],
-      "sourceCount": 16,
+      "sourceCount": 17,
       "auto": true,
       "createdByAutoScout": false,
-      "updatedAt": "2026-08-02T13:26:09.272Z",
+      "updatedAt": "2026-08-02T19:14:01.336Z",
       "lastTitle": "Fabrizio Romano Confirms Real Madrid Decision on Fran Garcia and Raul Asencio - roundtable.io",
       "note": "Detectado en radar de medios deportivos. Estado: Rumor. Último titular: Fabrizio Romano Confirms Real Madrid Decision on Fran Garcia and Raul Asencio - roundtable.io"
     },
@@ -9181,10 +9181,10 @@
         "https://news.google.com/rss/articles/CBMingFBVV95cUxOS19CVmVSVC0wVkRRc1VGZWdTQi1QN1hSTmRRUmpMYXdyZkJaeWdkakxYdVlBc3plckJvSktmNHNGa2FZNkRfLVFhSFpabEtnbThZZzAtQzJVaEdicTllVVBPdjBGa2Ezbk9rTkozeVAxNjBnaGVaUlBweEZnelFWMFF1bjVDdUJaWWpVeGJxaXBzRTlHdVU2NkRqd1ZuZw?oc=5",
         "https://news.google.com/rss/articles/CBMijAFBVV95cUxPUnYzRkhUZXNGNmJidWl6cUUtbVJqVGFjLWVmYmxBWW05M0sxQXdESnFXMUV4QkRUZzY4bENUTjlDWFRjR05GWDJDTHk3eTJ6dmpWNFFzUkx3SzZUY0JLMl9rS3U2alFPN0tnT3ZhYXhsY0FUdFo3ZWdLU2VYZGdQa21kWFF3dXNGU2h1Ug?oc=5"
       ],
-      "sourceCount": 13,
+      "sourceCount": 14,
       "auto": true,
       "createdByAutoScout": true,
-      "updatedAt": "2026-08-02T13:26:09.272Z",
+      "updatedAt": "2026-08-02T19:14:01.336Z",
       "lastTitle": "Transfer Rumors: Man Utd Target Real Madrid Star; Premier League Trio Eyes Pulisic - Sports Illustrated",
       "note": "Detectado en radar de medios deportivos. Estado: Interés. Último titular: Transfer Rumors: Man Utd Target Real Madrid Star; Premier League Trio Eyes Pulisic - Sports Illustrated"
     },
@@ -9198,10 +9198,10 @@
       "sourceUrls": [
         "https://news.google.com/rss/articles/CBMi5AFBVV95cUxPUlJpQ3VILUZmcGJkc1F2ZklUeXdNRkpPeTRySXpNS3pPWHd2bHZEb1hKS0k3U0xFVHNPQzRTZzF3Mm1Dd3hRRlhVbzZKZThzN1VxVzJFQ2c5V3pPdnhGX3k2VjItY0pQLXE1NnlhakZKblM4dVg3RHBreTFONDc5QWtZQTJwcG5YQlNta2t1V056LUFPTkRrRUNJd0U4dGtYSHE0U3FpTnZFWTFzc0k4WGRlZHRubG53ekZURkxHazR6dUJwbnhWd1RmVUwwZXZobnJoV3BWSnZyN1oxUG5FZEppVlM?oc=5"
       ],
-      "sourceCount": 13,
+      "sourceCount": 14,
       "auto": true,
       "createdByAutoScout": false,
-      "updatedAt": "2026-08-02T13:26:09.272Z",
+      "updatedAt": "2026-08-02T19:14:01.336Z",
       "lastTitle": "Why Yan Diomande has Jude Bellingham to thank for record-breaking Real Madrid transfer - footballtransfers.com",
       "note": "Detectado en radar de medios deportivos. Estado: Rumor. Último titular: Why Yan Diomande has Jude Bellingham to thank for record-breaking Real Madrid transfer - footballtransfers.com"
     },
@@ -9215,10 +9215,10 @@
       "sourceUrls": [
         "https://news.google.com/rss/articles/CBMi5AFBVV95cUxPUlJpQ3VILUZmcGJkc1F2ZklUeXdNRkpPeTRySXpNS3pPWHd2bHZEb1hKS0k3U0xFVHNPQzRTZzF3Mm1Dd3hRRlhVbzZKZThzN1VxVzJFQ2c5V3pPdnhGX3k2VjItY0pQLXE1NnlhakZKblM4dVg3RHBreTFONDc5QWtZQTJwcG5YQlNta2t1V056LUFPTkRrRUNJd0U4dGtYSHE0U3FpTnZFWTFzc0k4WGRlZHRubG53ekZURkxHazR6dUJwbnhWd1RmVUwwZXZobnJoV3BWSnZyN1oxUG5FZEppVlM?oc=5"
       ],
-      "sourceCount": 13,
+      "sourceCount": 14,
       "auto": true,
       "createdByAutoScout": false,
-      "updatedAt": "2026-08-02T13:26:09.272Z",
+      "updatedAt": "2026-08-02T19:14:01.336Z",
       "lastTitle": "Why Yan Diomande has Jude Bellingham to thank for record-breaking Real Madrid transfer - footballtransfers.com",
       "note": "Detectado en radar de medios deportivos. Estado: Rumor. Último titular: Why Yan Diomande has Jude Bellingham to thank for record-breaking Real Madrid transfer - footballtransfers.com"
     },
@@ -9233,10 +9233,10 @@
         "https://news.google.com/rss/articles/CBMizwFBVV95cUxQMUFIV2pqS3VGTU5tMWU3cHJ4emZBRmVjRllOTklySkNzUVk1Nm9nT0xtMHJJc0xsQkR0MFRzdWVybXlaNDFJM21vWnE3cW5kMVZWZTRQaGdMeVlhSW1pT2RfNGdCa3YwZWR0dUtQYmZtcVg2WU5MYlIwcXB5dTYwOWdXQUp1Z0hXWmpqeDFEaEdydmRRX1pTd0c4SFZrcmZyWUlISm52X0psU1dlTTZqc1JQM0dLTWZkOEVfbUhlODNVMmlFeWNUb29Od084U3c?oc=5",
         "https://news.google.com/rss/articles/CBMimAFBVV95cUxQRDdiWjFJdkp4TUtQY0hBZEVsT3RoWDNiREJSU1hwSEZ0X1dDVGRqVkZXWnN1Rkd5NG95bHJPa1gxZEpMd25EaGNZdnI3NHZEOFlOaXRrV1d1RUU4YUdIckNQb29sUmtIRHRQOV9WSldodDJNQW5SQTVQc0hQQU52WU9Hd3NFN1F2MDhLSk84LTk5VjVFR0lRUQ?oc=5"
       ],
-      "sourceCount": 13,
+      "sourceCount": 14,
       "auto": true,
       "createdByAutoScout": false,
-      "updatedAt": "2026-08-02T13:26:09.272Z",
+      "updatedAt": "2026-08-02T19:14:01.336Z",
       "lastTitle": "Fabrizio Romano drops bombshell update on Man Utd signing Aurelien Tchouameni from Real Madrid - TEAMtalk",
       "note": "Detectado en radar de medios deportivos. Estado: Rumor. Último titular: Fabrizio Romano drops bombshell update on Man Utd signing Aurelien Tchouameni from Real Madrid - TEAMtalk"
     },
@@ -9244,50 +9244,50 @@
       "id": "auto-tchouameni-be5b22b5",
       "playerId": "tchouameni",
       "status": "Muy avanzado",
-      "confidence": 95,
+      "confidence": 96,
       "source": "Google News · Fabrizio Romano Real Madrid",
       "sourceUrl": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQUENVMm8xQUEwUF91MVI5a1VpbGhWTktmSTN6Q3pjUkc1dV9fWkpDQ0tmSzAyTjBqZ0tjd09XRUEyQmdDNWNsMlpqQ1dySXloMzd1ekxqOTQ2al9hUml3OFBiQTZZY1pfZEJGTXFlZ0xiMFBfLUR3QWNaU3NfcVczajJUcHRvUm90QWhRaVN0dHF1d2oxelZNUFdlUTJCRUFxZllzbg?oc=5",
       "sourceUrls": [
         "https://news.google.com/rss/articles/CBMipAFBVV95cUxQUENVMm8xQUEwUF91MVI5a1VpbGhWTktmSTN6Q3pjUkc1dV9fWkpDQ0tmSzAyTjBqZ0tjd09XRUEyQmdDNWNsMlpqQ1dySXloMzd1ekxqOTQ2al9hUml3OFBiQTZZY1pfZEJGTXFlZ0xiMFBfLUR3QWNaU3NfcVczajJUcHRvUm90QWhRaVN0dHF1d2oxelZNUFdlUTJCRUFxZllzbg?oc=5"
       ],
-      "sourceCount": 5,
+      "sourceCount": 6,
       "auto": true,
       "createdByAutoScout": false,
-      "updatedAt": "2026-08-02T13:26:09.272Z",
-      "lastTitle": "Aurelien Tchouameni ‘reaches agreement’ and picks between Man Utd and Real Madrid - Football365",
-      "note": "Detectado en radar de medios deportivos. Estado: Muy avanzado. Último titular: Aurelien Tchouameni ‘reaches agreement’ and picks between Man Utd and Real Madrid - Football365"
+      "updatedAt": "2026-08-02T19:14:01.336Z",
+      "lastTitle": "Aurelien Tchouameni ‘reaches agreement’ and picks between Man Utd and Real Madrid - football365.com",
+      "note": "Detectado en radar de medios deportivos. Estado: Muy avanzado. Último titular: Aurelien Tchouameni ‘reaches agreement’ and picks between Man Utd and Real Madrid - football365.com"
     },
     {
       "id": "auto-autoscout-man-utd-be5b22b5",
       "playerId": "autoscout-man-utd",
       "status": "Muy avanzado",
-      "confidence": 95,
+      "confidence": 96,
       "source": "Google News · Fabrizio Romano Real Madrid",
       "sourceUrl": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQUENVMm8xQUEwUF91MVI5a1VpbGhWTktmSTN6Q3pjUkc1dV9fWkpDQ0tmSzAyTjBqZ0tjd09XRUEyQmdDNWNsMlpqQ1dySXloMzd1ekxqOTQ2al9hUml3OFBiQTZZY1pfZEJGTXFlZ0xiMFBfLUR3QWNaU3NfcVczajJUcHRvUm90QWhRaVN0dHF1d2oxelZNUFdlUTJCRUFxZllzbg?oc=5",
       "sourceUrls": [
         "https://news.google.com/rss/articles/CBMipAFBVV95cUxQUENVMm8xQUEwUF91MVI5a1VpbGhWTktmSTN6Q3pjUkc1dV9fWkpDQ0tmSzAyTjBqZ0tjd09XRUEyQmdDNWNsMlpqQ1dySXloMzd1ekxqOTQ2al9hUml3OFBiQTZZY1pfZEJGTXFlZ0xiMFBfLUR3QWNaU3NfcVczajJUcHRvUm90QWhRaVN0dHF1d2oxelZNUFdlUTJCRUFxZllzbg?oc=5"
       ],
-      "sourceCount": 5,
+      "sourceCount": 6,
       "auto": true,
       "createdByAutoScout": false,
-      "updatedAt": "2026-08-02T13:26:09.272Z",
-      "lastTitle": "Aurelien Tchouameni ‘reaches agreement’ and picks between Man Utd and Real Madrid - Football365",
-      "note": "Detectado en radar de medios deportivos. Estado: Muy avanzado. Último titular: Aurelien Tchouameni ‘reaches agreement’ and picks between Man Utd and Real Madrid - Football365"
+      "updatedAt": "2026-08-02T19:14:01.336Z",
+      "lastTitle": "Aurelien Tchouameni ‘reaches agreement’ and picks between Man Utd and Real Madrid - football365.com",
+      "note": "Detectado en radar de medios deportivos. Estado: Muy avanzado. Último titular: Aurelien Tchouameni ‘reaches agreement’ and picks between Man Utd and Real Madrid - football365.com"
     },
     {
       "id": "auto-rudiger-567b75f5",
       "playerId": "rudiger",
       "status": "Rumor",
-      "confidence": 93,
+      "confidence": 96,
       "source": "Google News · Real Madrid transfer targets",
       "sourceUrl": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxQbDZHMDBDQnF0TDhzaU9qVzZpZVBYTV9ja1lZZUpCbVM3SC0zMXdSd0MzcURYYTVidUo4aXdyd3VyOV9aOE1fYUtqdjlOV3N1N1JIT0RMQWJPQldHU0xyaEx0aWFIYldiRFQ4eEtYRjJ6alV5U3pFT1hmRllvbWt0UWZxVGgzdUtoTUVWNjRfWFY0UlQyc3h5M2JnRE82RFl6MlVhYVpIclFMX21xX2RhcENfdFJGaWFMVEc2LXVuWFBYdmswZ0ZteDhVcHBsT1ZuUVE?oc=5",
       "sourceUrls": [
         "https://news.google.com/rss/articles/CBMi0gFBVV95cUxQbDZHMDBDQnF0TDhzaU9qVzZpZVBYTV9ja1lZZUpCbVM3SC0zMXdSd0MzcURYYTVidUo4aXdyd3VyOV9aOE1fYUtqdjlOV3N1N1JIT0RMQWJPQldHU0xyaEx0aWFIYldiRFQ4eEtYRjJ6alV5U3pFT1hmRllvbWt0UWZxVGgzdUtoTUVWNjRfWFY0UlQyc3h5M2JnRE82RFl6MlVhYVpIclFMX21xX2RhcENfdFJGaWFMVEc2LXVuWFBYdmswZ0ZteDhVcHBsT1ZuUVE?oc=5"
       ],
-      "sourceCount": 15,
+      "sourceCount": 16,
       "auto": true,
       "createdByAutoScout": false,
-      "updatedAt": "2026-08-02T13:26:09.272Z",
+      "updatedAt": "2026-08-02T19:14:01.336Z",
       "lastTitle": "Real Madrid Transfer News: Rodrygo, Ceballos, Rudiger, Carvajal & More - July 19, 2025 - Sports Illustrated",
       "note": "Detectado en radar de medios deportivos. Estado: Rumor. Último titular: Real Madrid Transfer News: Rodrygo, Ceballos, Rudiger, Carvajal & More - July 19, 2025 - Sports Illustrated"
     },
@@ -9295,16 +9295,16 @@
       "id": "auto-rodrygo-567b75f5",
       "playerId": "rodrygo",
       "status": "Rumor",
-      "confidence": 93,
+      "confidence": 96,
       "source": "Google News · Real Madrid transfer targets",
       "sourceUrl": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxQbDZHMDBDQnF0TDhzaU9qVzZpZVBYTV9ja1lZZUpCbVM3SC0zMXdSd0MzcURYYTVidUo4aXdyd3VyOV9aOE1fYUtqdjlOV3N1N1JIT0RMQWJPQldHU0xyaEx0aWFIYldiRFQ4eEtYRjJ6alV5U3pFT1hmRllvbWt0UWZxVGgzdUtoTUVWNjRfWFY0UlQyc3h5M2JnRE82RFl6MlVhYVpIclFMX21xX2RhcENfdFJGaWFMVEc2LXVuWFBYdmswZ0ZteDhVcHBsT1ZuUVE?oc=5",
       "sourceUrls": [
         "https://news.google.com/rss/articles/CBMi0gFBVV95cUxQbDZHMDBDQnF0TDhzaU9qVzZpZVBYTV9ja1lZZUpCbVM3SC0zMXdSd0MzcURYYTVidUo4aXdyd3VyOV9aOE1fYUtqdjlOV3N1N1JIT0RMQWJPQldHU0xyaEx0aWFIYldiRFQ4eEtYRjJ6alV5U3pFT1hmRllvbWt0UWZxVGgzdUtoTUVWNjRfWFY0UlQyc3h5M2JnRE82RFl6MlVhYVpIclFMX21xX2RhcENfdFJGaWFMVEc2LXVuWFBYdmswZ0ZteDhVcHBsT1ZuUVE?oc=5"
       ],
-      "sourceCount": 15,
+      "sourceCount": 16,
       "auto": true,
       "createdByAutoScout": false,
-      "updatedAt": "2026-08-02T13:26:09.272Z",
+      "updatedAt": "2026-08-02T19:14:01.336Z",
       "lastTitle": "Real Madrid Transfer News: Rodrygo, Ceballos, Rudiger, Carvajal & More - July 19, 2025 - Sports Illustrated",
       "note": "Detectado en radar de medios deportivos. Estado: Rumor. Último titular: Real Madrid Transfer News: Rodrygo, Ceballos, Rudiger, Carvajal & More - July 19, 2025 - Sports Illustrated"
     },
@@ -9312,18 +9312,75 @@
       "id": "auto-autoscout-man-utd-d88d53f8",
       "playerId": "autoscout-man-utd",
       "status": "Posible salida",
-      "confidence": 93,
+      "confidence": 96,
       "source": "Google News · Fabrizio Romano Real Madrid",
       "sourceUrl": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPV3pIekhHZ0dERkI5ejE3Vm1NelVObzhJX3hhVmw1UXZXbFRWTlhtbDBLd1A1emRiT1FUZlB0WEU4Vlp3ejVTR1ZjOGZXbGM1LXJnMEdVSDRFVkxvclhFb3NhNm9Xd3QyUUh1OGdsSU04UGthR1AzVHJJVnFhSW9ULWpLbzkzZDFjWmRoWElKc3BpcFU1R0E?oc=5",
       "sourceUrls": [
         "https://news.google.com/rss/articles/CBMilgFBVV95cUxPV3pIekhHZ0dERkI5ejE3Vm1NelVObzhJX3hhVmw1UXZXbFRWTlhtbDBLd1A1emRiT1FUZlB0WEU4Vlp3ejVTR1ZjOGZXbGM1LXJnMEdVSDRFVkxvclhFb3NhNm9Xd3QyUUh1OGdsSU04UGthR1AzVHJJVnFhSW9ULWpLbzkzZDFjWmRoWElKc3BpcFU1R0E?oc=5"
       ],
-      "sourceCount": 12,
+      "sourceCount": 13,
       "auto": true,
       "createdByAutoScout": false,
-      "updatedAt": "2026-08-02T13:26:09.272Z",
+      "updatedAt": "2026-08-02T19:14:01.336Z",
       "lastTitle": "Transfer Rumors: Man Utd Target Valued at $140 Million; Real Madrid Plot Tchouameni Sale - Sports Illustrated",
       "note": "Detectado en radar de medios deportivos. Estado: Posible salida. Último titular: Transfer Rumors: Man Utd Target Valued at $140 Million; Real Madrid Plot Tchouameni Sale - Sports Illustrated"
+    },
+    {
+      "id": "auto-curtis-jones-c16ef62f",
+      "playerId": "curtis-jones",
+      "status": "Posible salida",
+      "confidence": 91,
+      "source": "Google News · Real Madrid fichajes 26/27",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNNU1vZXhJemtmUndXbkdYNDQwUF9iX3d0STkyMnEyVFFOWjJ3eUtxaW8tQU5VUEwydVFXNl9RQnRnbGxBcWROOVJBclJFUW9XT01fX056LVFqb3UxekxfNGtEZ19yNExfUEFkT3JhQmt5d3hId2FNdnJuS0Y5MlpaTERZOXVDVTRLSU9wOUpXRWJiS0JiODlhZl9BZGxNeUt5ZEhzYmx5VFFhMzVHdWVJdjJqVGJhQkVFTnpj?oc=5",
+      "sourceUrls": [
+        "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNNU1vZXhJemtmUndXbkdYNDQwUF9iX3d0STkyMnEyVFFOWjJ3eUtxaW8tQU5VUEwydVFXNl9RQnRnbGxBcWROOVJBclJFUW9XT01fX056LVFqb3UxekxfNGtEZ19yNExfUEFkT3JhQmt5d3hId2FNdnJuS0Y5MlpaTERZOXVDVTRLSU9wOUpXRWJiS0JiODlhZl9BZGxNeUt5ZEhzYmx5VFFhMzVHdWVJdjJqVGJhQkVFTnpj?oc=5"
+      ],
+      "sourceCount": 14,
+      "auto": true,
+      "createdByAutoScout": false,
+      "updatedAt": "2026-08-02T19:14:01.336Z",
+      "lastTitle": "Damian Jones, segundo fichaje de un Real Madrid envuelto en rumores de salidas de jugadores clave - Encestando.es",
+      "note": "Detectado en radar de medios deportivos. Estado: Posible salida. Último titular: Damian Jones, segundo fichaje de un Real Madrid envuelto en rumores de salidas de jugadores clave - Encestando.es"
+    },
+    {
+      "id": "auto-diomande-b2381d3d",
+      "playerId": "diomande",
+      "status": "Interés",
+      "confidence": 89,
+      "source": "Google News · Fabrizio Romano Real Madrid",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQdzVoa1hOTUUyWm9ZT0RsOHU4V2h0cGhXTnByTFp2cjFvQU5CMFYySFV3am03NTg1Wmc5NlMtQnp3YURIM3p6N1pDRjhNdTBGQXplXy1BaEJfLTBHMGNyN3Q2ZUFqQmZCVEJwQVV1Z0ZRZjZtNTVoMDItRVdLYWNtbWtsc1BTLWNSUzVzX3JfOUEtbG1GRnh5SndUNzM0S0xSSHFZeHl6NFF4S2ZGc0FNM2tyNDhiMlRpeGlZUEFwRVBpa09NeXlqQ9IBzgFBVV95cUxORURjem5MTU41MlJWZzdsemtMaml1SmtxdTJsRzhERnFCeGh1NjVqeExXYTVEUFFFRXdpdzY1R1B6eFNRcTlQbVVGX18zcWJSTm1JUnJfUEp3dUpMQzZzVjEzUGJ6UEZPTV96c09CYmJuMnh6amhIUUt0SUFna0cwaHFEUGhQbVExUlZlNTNKVTNsc2ZQa2tnZ0t4UkRiYVNGbU5FamExSEg3NGtEb3FueHFTRFlvN3JrQ3gybWtiT3V2TWxLQW9UQ1hXTmxfUQ?oc=5",
+      "sourceUrls": [
+        "https://news.google.com/rss/articles/CBMiyAFBVV95cUxPejcybGdZY3NXX3VHSHQ4M3dtcXdlay1GenhZU2gzU1RFTEhBY0xpWHY2QnptdnFWR21BUHZVcURxblRaN2Rya2hWUVRwNkhDMVV3SHpBZVFRdEFMV0p6ek4xTDFxaXpSSmE5enR6aWJOekVtdVd1NTd6RjV4bHJxQURjVFBuNU03YlE3aDFXaDVyWlFDMkx0cUVwa0pmQS1HVF9BOE5VbUdsdURQNElOYVdYLUpQR2lJMy1SMzdZZXlqMURKTml2NdIBzgFBVV95cUxPMDkyaEx5V3pJZHFjQi1PWU9lOV93Q19BNm5rbHJPWlhKbExpUEZJcWxKNlp5dUFIRjdPNHpnSFZTVkdQVUxWdDRCdjE2OXdnenN4OEN6amJUdkszemV2RHRXdm1XNzh2NGxUbV8xNG9oTDE2MEdVb295MHJzdjhpRm5RYWtuUnJQMnhGODBYQkJ6alhjc3ZicHFyNFE3OGNlTGxtTU5rLXBUdGZFVW8tSG84QVlRaUVzZS1fWWdpQnBBY2NPWkZxaHdQeXFqQQ?oc=5",
+        "https://news.google.com/rss/articles/CBMiggFBVV95cUxQWWs5NGhRV2FsaV8tU3g1MEU5bUNyRDhHZW1wbHM5aHAxQm5OamJ0enQ3eDFBRy03Nl9ZdWdZdndJdjJXQW9YU1YzeUx3NFVVVnBfcEptS0pCaWdnSFl1QXkwTmZRN0QxQmdCeks2ZnU5Y21zU1p6QlhQRVZIejZBVnNB?oc=5",
+        "https://news.google.com/rss/articles/CBMimgFBVV95cUxQSGF2UmlNcVgzRXN4VFdaT1BaV0hHUTVlVG5ILW5LM2tnc3NKQmVGN213bVBEcTJ4ODNpcks1OXlPcU9oTDU1RkdNRWJTZHp2ZFRyMWZCNWttd3ctNlB6bDZNYjY1OGMwdG1lVzZORVg3ZHZyQkVkLTJzR0ZCRzJnR004MEFsQmhWZWkybnI5U3RWc3RtVV95TnZ3?oc=5",
+        "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQdzVoa1hOTUUyWm9ZT0RsOHU4V2h0cGhXTnByTFp2cjFvQU5CMFYySFV3am03NTg1Wmc5NlMtQnp3YURIM3p6N1pDRjhNdTBGQXplXy1BaEJfLTBHMGNyN3Q2ZUFqQmZCVEJwQVV1Z0ZRZjZtNTVoMDItRVdLYWNtbWtsc1BTLWNSUzVzX3JfOUEtbG1GRnh5SndUNzM0S0xSSHFZeHl6NFF4S2ZGc0FNM2tyNDhiMlRpeGlZUEFwRVBpa09NeXlqQ9IBzgFBVV95cUxORURjem5MTU41MlJWZzdsemtMaml1SmtxdTJsRzhERnFCeGh1NjVqeExXYTVEUFFFRXdpdzY1R1B6eFNRcTlQbVVGX18zcWJSTm1JUnJfUEp3dUpMQzZzVjEzUGJ6UEZPTV96c09CYmJuMnh6amhIUUt0SUFna0cwaHFEUGhQbVExUlZlNTNKVTNsc2ZQa2tnZ0t4UkRiYVNGbU5FamExSEg3NGtEb3FueHFTRFlvN3JrQ3gybWtiT3V2TWxLQW9UQ1hXTmxfUQ?oc=5"
+      ],
+      "sourceCount": 9,
+      "auto": true,
+      "createdByAutoScout": false,
+      "updatedAt": "2026-08-02T19:14:01.336Z",
+      "lastTitle": "Jose Mourinho approves Yan Diomande as Real Madrid's primary transfer target to add attacking speed - Tribuna.com",
+      "note": "Detectado en radar de medios deportivos. Estado: Interés. Último titular: Jose Mourinho approves Yan Diomande as Real Madrid's primary transfer target to add attacking speed - Tribuna.com"
+    },
+    {
+      "id": "auto-yan-diomande-b2381d3d",
+      "playerId": "yan-diomande",
+      "status": "Interés",
+      "confidence": 89,
+      "source": "Google News · Fabrizio Romano Real Madrid",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQdzVoa1hOTUUyWm9ZT0RsOHU4V2h0cGhXTnByTFp2cjFvQU5CMFYySFV3am03NTg1Wmc5NlMtQnp3YURIM3p6N1pDRjhNdTBGQXplXy1BaEJfLTBHMGNyN3Q2ZUFqQmZCVEJwQVV1Z0ZRZjZtNTVoMDItRVdLYWNtbWtsc1BTLWNSUzVzX3JfOUEtbG1GRnh5SndUNzM0S0xSSHFZeHl6NFF4S2ZGc0FNM2tyNDhiMlRpeGlZUEFwRVBpa09NeXlqQ9IBzgFBVV95cUxORURjem5MTU41MlJWZzdsemtMaml1SmtxdTJsRzhERnFCeGh1NjVqeExXYTVEUFFFRXdpdzY1R1B6eFNRcTlQbVVGX18zcWJSTm1JUnJfUEp3dUpMQzZzVjEzUGJ6UEZPTV96c09CYmJuMnh6amhIUUt0SUFna0cwaHFEUGhQbVExUlZlNTNKVTNsc2ZQa2tnZ0t4UkRiYVNGbU5FamExSEg3NGtEb3FueHFTRFlvN3JrQ3gybWtiT3V2TWxLQW9UQ1hXTmxfUQ?oc=5",
+      "sourceUrls": [
+        "https://news.google.com/rss/articles/CBMiyAFBVV95cUxPejcybGdZY3NXX3VHSHQ4M3dtcXdlay1GenhZU2gzU1RFTEhBY0xpWHY2QnptdnFWR21BUHZVcURxblRaN2Rya2hWUVRwNkhDMVV3SHpBZVFRdEFMV0p6ek4xTDFxaXpSSmE5enR6aWJOekVtdVd1NTd6RjV4bHJxQURjVFBuNU03YlE3aDFXaDVyWlFDMkx0cUVwa0pmQS1HVF9BOE5VbUdsdURQNElOYVdYLUpQR2lJMy1SMzdZZXlqMURKTml2NdIBzgFBVV95cUxPMDkyaEx5V3pJZHFjQi1PWU9lOV93Q19BNm5rbHJPWlhKbExpUEZJcWxKNlp5dUFIRjdPNHpnSFZTVkdQVUxWdDRCdjE2OXdnenN4OEN6amJUdkszemV2RHRXdm1XNzh2NGxUbV8xNG9oTDE2MEdVb295MHJzdjhpRm5RYWtuUnJQMnhGODBYQkJ6alhjc3ZicHFyNFE3OGNlTGxtTU5rLXBUdGZFVW8tSG84QVlRaUVzZS1fWWdpQnBBY2NPWkZxaHdQeXFqQQ?oc=5",
+        "https://news.google.com/rss/articles/CBMiggFBVV95cUxQWWs5NGhRV2FsaV8tU3g1MEU5bUNyRDhHZW1wbHM5aHAxQm5OamJ0enQ3eDFBRy03Nl9ZdWdZdndJdjJXQW9YU1YzeUx3NFVVVnBfcEptS0pCaWdnSFl1QXkwTmZRN0QxQmdCeks2ZnU5Y21zU1p6QlhQRVZIejZBVnNB?oc=5",
+        "https://news.google.com/rss/articles/CBMimgFBVV95cUxQSGF2UmlNcVgzRXN4VFdaT1BaV0hHUTVlVG5ILW5LM2tnc3NKQmVGN213bVBEcTJ4ODNpcks1OXlPcU9oTDU1RkdNRWJTZHp2ZFRyMWZCNWttd3ctNlB6bDZNYjY1OGMwdG1lVzZORVg3ZHZyQkVkLTJzR0ZCRzJnR004MEFsQmhWZWkybnI5U3RWc3RtVV95TnZ3?oc=5",
+        "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQdzVoa1hOTUUyWm9ZT0RsOHU4V2h0cGhXTnByTFp2cjFvQU5CMFYySFV3am03NTg1Wmc5NlMtQnp3YURIM3p6N1pDRjhNdTBGQXplXy1BaEJfLTBHMGNyN3Q2ZUFqQmZCVEJwQVV1Z0ZRZjZtNTVoMDItRVdLYWNtbWtsc1BTLWNSUzVzX3JfOUEtbG1GRnh5SndUNzM0S0xSSHFZeHl6NFF4S2ZGc0FNM2tyNDhiMlRpeGlZUEFwRVBpa09NeXlqQ9IBzgFBVV95cUxORURjem5MTU41MlJWZzdsemtMaml1SmtxdTJsRzhERnFCeGh1NjVqeExXYTVEUFFFRXdpdzY1R1B6eFNRcTlQbVVGX18zcWJSTm1JUnJfUEp3dUpMQzZzVjEzUGJ6UEZPTV96c09CYmJuMnh6amhIUUt0SUFna0cwaHFEUGhQbVExUlZlNTNKVTNsc2ZQa2tnZ0t4UkRiYVNGbU5FamExSEg3NGtEb3FueHFTRFlvN3JrQ3gybWtiT3V2TWxLQW9UQ1hXTmxfUQ?oc=5"
+      ],
+      "sourceCount": 9,
+      "auto": true,
+      "createdByAutoScout": false,
+      "updatedAt": "2026-08-02T19:14:01.336Z",
+      "lastTitle": "Jose Mourinho approves Yan Diomande as Real Madrid's primary transfer target to add attacking speed - Tribuna.com",
+      "note": "Detectado en radar de medios deportivos. Estado: Interés. Último titular: Jose Mourinho approves Yan Diomande as Real Madrid's primary transfer target to add attacking speed - Tribuna.com"
     },
     {
       "id": "auto-autoscout-perez-u-turn-fdccc681",
@@ -9343,76 +9400,19 @@
       "note": "Detectado en radar de medios deportivos. Estado: Muy avanzado. Último titular: Romano reveals shock Real Madrid 'agreement' to sign Liverpool star after Perez U-turn - Football365"
     },
     {
-      "id": "auto-curtis-jones-c16ef62f",
-      "playerId": "curtis-jones",
-      "status": "Posible salida",
-      "confidence": 87,
-      "source": "Google News · Real Madrid fichajes 26/27",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNNU1vZXhJemtmUndXbkdYNDQwUF9iX3d0STkyMnEyVFFOWjJ3eUtxaW8tQU5VUEwydVFXNl9RQnRnbGxBcWROOVJBclJFUW9XT01fX056LVFqb3UxekxfNGtEZ19yNExfUEFkT3JhQmt5d3hId2FNdnJuS0Y5MlpaTERZOXVDVTRLSU9wOUpXRWJiS0JiODlhZl9BZGxNeUt5ZEhzYmx5VFFhMzVHdWVJdjJqVGJhQkVFTnpj?oc=5",
-      "sourceUrls": [
-        "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNNU1vZXhJemtmUndXbkdYNDQwUF9iX3d0STkyMnEyVFFOWjJ3eUtxaW8tQU5VUEwydVFXNl9RQnRnbGxBcWROOVJBclJFUW9XT01fX056LVFqb3UxekxfNGtEZ19yNExfUEFkT3JhQmt5d3hId2FNdnJuS0Y5MlpaTERZOXVDVTRLSU9wOUpXRWJiS0JiODlhZl9BZGxNeUt5ZEhzYmx5VFFhMzVHdWVJdjJqVGJhQkVFTnpj?oc=5"
-      ],
-      "sourceCount": 13,
-      "auto": true,
-      "createdByAutoScout": false,
-      "updatedAt": "2026-08-02T13:26:09.272Z",
-      "lastTitle": "Damian Jones, segundo fichaje de un Real Madrid envuelto en rumores de salidas de jugadores clave - Encestando.es",
-      "note": "Detectado en radar de medios deportivos. Estado: Posible salida. Último titular: Damian Jones, segundo fichaje de un Real Madrid envuelto en rumores de salidas de jugadores clave - Encestando.es"
-    },
-    {
-      "id": "auto-diomande-b2381d3d",
-      "playerId": "diomande",
-      "status": "Interés",
-      "confidence": 85,
-      "source": "Google News · Fabrizio Romano Real Madrid",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQdzVoa1hOTUUyWm9ZT0RsOHU4V2h0cGhXTnByTFp2cjFvQU5CMFYySFV3am03NTg1Wmc5NlMtQnp3YURIM3p6N1pDRjhNdTBGQXplXy1BaEJfLTBHMGNyN3Q2ZUFqQmZCVEJwQVV1Z0ZRZjZtNTVoMDItRVdLYWNtbWtsc1BTLWNSUzVzX3JfOUEtbG1GRnh5SndUNzM0S0xSSHFZeHl6NFF4S2ZGc0FNM2tyNDhiMlRpeGlZUEFwRVBpa09NeXlqQ9IBzgFBVV95cUxORURjem5MTU41MlJWZzdsemtMaml1SmtxdTJsRzhERnFCeGh1NjVqeExXYTVEUFFFRXdpdzY1R1B6eFNRcTlQbVVGX18zcWJSTm1JUnJfUEp3dUpMQzZzVjEzUGJ6UEZPTV96c09CYmJuMnh6amhIUUt0SUFna0cwaHFEUGhQbVExUlZlNTNKVTNsc2ZQa2tnZ0t4UkRiYVNGbU5FamExSEg3NGtEb3FueHFTRFlvN3JrQ3gybWtiT3V2TWxLQW9UQ1hXTmxfUQ?oc=5",
-      "sourceUrls": [
-        "https://news.google.com/rss/articles/CBMiyAFBVV95cUxPejcybGdZY3NXX3VHSHQ4M3dtcXdlay1GenhZU2gzU1RFTEhBY0xpWHY2QnptdnFWR21BUHZVcURxblRaN2Rya2hWUVRwNkhDMVV3SHpBZVFRdEFMV0p6ek4xTDFxaXpSSmE5enR6aWJOekVtdVd1NTd6RjV4bHJxQURjVFBuNU03YlE3aDFXaDVyWlFDMkx0cUVwa0pmQS1HVF9BOE5VbUdsdURQNElOYVdYLUpQR2lJMy1SMzdZZXlqMURKTml2NdIBzgFBVV95cUxPMDkyaEx5V3pJZHFjQi1PWU9lOV93Q19BNm5rbHJPWlhKbExpUEZJcWxKNlp5dUFIRjdPNHpnSFZTVkdQVUxWdDRCdjE2OXdnenN4OEN6amJUdkszemV2RHRXdm1XNzh2NGxUbV8xNG9oTDE2MEdVb295MHJzdjhpRm5RYWtuUnJQMnhGODBYQkJ6alhjc3ZicHFyNFE3OGNlTGxtTU5rLXBUdGZFVW8tSG84QVlRaUVzZS1fWWdpQnBBY2NPWkZxaHdQeXFqQQ?oc=5",
-        "https://news.google.com/rss/articles/CBMiggFBVV95cUxQWWs5NGhRV2FsaV8tU3g1MEU5bUNyRDhHZW1wbHM5aHAxQm5OamJ0enQ3eDFBRy03Nl9ZdWdZdndJdjJXQW9YU1YzeUx3NFVVVnBfcEptS0pCaWdnSFl1QXkwTmZRN0QxQmdCeks2ZnU5Y21zU1p6QlhQRVZIejZBVnNB?oc=5",
-        "https://news.google.com/rss/articles/CBMimgFBVV95cUxQSGF2UmlNcVgzRXN4VFdaT1BaV0hHUTVlVG5ILW5LM2tnc3NKQmVGN213bVBEcTJ4ODNpcks1OXlPcU9oTDU1RkdNRWJTZHp2ZFRyMWZCNWttd3ctNlB6bDZNYjY1OGMwdG1lVzZORVg3ZHZyQkVkLTJzR0ZCRzJnR004MEFsQmhWZWkybnI5U3RWc3RtVV95TnZ3?oc=5",
-        "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQdzVoa1hOTUUyWm9ZT0RsOHU4V2h0cGhXTnByTFp2cjFvQU5CMFYySFV3am03NTg1Wmc5NlMtQnp3YURIM3p6N1pDRjhNdTBGQXplXy1BaEJfLTBHMGNyN3Q2ZUFqQmZCVEJwQVV1Z0ZRZjZtNTVoMDItRVdLYWNtbWtsc1BTLWNSUzVzX3JfOUEtbG1GRnh5SndUNzM0S0xSSHFZeHl6NFF4S2ZGc0FNM2tyNDhiMlRpeGlZUEFwRVBpa09NeXlqQ9IBzgFBVV95cUxORURjem5MTU41MlJWZzdsemtMaml1SmtxdTJsRzhERnFCeGh1NjVqeExXYTVEUFFFRXdpdzY1R1B6eFNRcTlQbVVGX18zcWJSTm1JUnJfUEp3dUpMQzZzVjEzUGJ6UEZPTV96c09CYmJuMnh6amhIUUt0SUFna0cwaHFEUGhQbVExUlZlNTNKVTNsc2ZQa2tnZ0t4UkRiYVNGbU5FamExSEg3NGtEb3FueHFTRFlvN3JrQ3gybWtiT3V2TWxLQW9UQ1hXTmxfUQ?oc=5"
-      ],
-      "sourceCount": 8,
-      "auto": true,
-      "createdByAutoScout": false,
-      "updatedAt": "2026-08-02T13:26:09.272Z",
-      "lastTitle": "Jose Mourinho approves Yan Diomande as Real Madrid's primary transfer target to add attacking speed - Tribuna.com",
-      "note": "Detectado en radar de medios deportivos. Estado: Interés. Último titular: Jose Mourinho approves Yan Diomande as Real Madrid's primary transfer target to add attacking speed - Tribuna.com"
-    },
-    {
-      "id": "auto-yan-diomande-b2381d3d",
-      "playerId": "yan-diomande",
-      "status": "Interés",
-      "confidence": 85,
-      "source": "Google News · Fabrizio Romano Real Madrid",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQdzVoa1hOTUUyWm9ZT0RsOHU4V2h0cGhXTnByTFp2cjFvQU5CMFYySFV3am03NTg1Wmc5NlMtQnp3YURIM3p6N1pDRjhNdTBGQXplXy1BaEJfLTBHMGNyN3Q2ZUFqQmZCVEJwQVV1Z0ZRZjZtNTVoMDItRVdLYWNtbWtsc1BTLWNSUzVzX3JfOUEtbG1GRnh5SndUNzM0S0xSSHFZeHl6NFF4S2ZGc0FNM2tyNDhiMlRpeGlZUEFwRVBpa09NeXlqQ9IBzgFBVV95cUxORURjem5MTU41MlJWZzdsemtMaml1SmtxdTJsRzhERnFCeGh1NjVqeExXYTVEUFFFRXdpdzY1R1B6eFNRcTlQbVVGX18zcWJSTm1JUnJfUEp3dUpMQzZzVjEzUGJ6UEZPTV96c09CYmJuMnh6amhIUUt0SUFna0cwaHFEUGhQbVExUlZlNTNKVTNsc2ZQa2tnZ0t4UkRiYVNGbU5FamExSEg3NGtEb3FueHFTRFlvN3JrQ3gybWtiT3V2TWxLQW9UQ1hXTmxfUQ?oc=5",
-      "sourceUrls": [
-        "https://news.google.com/rss/articles/CBMiyAFBVV95cUxPejcybGdZY3NXX3VHSHQ4M3dtcXdlay1GenhZU2gzU1RFTEhBY0xpWHY2QnptdnFWR21BUHZVcURxblRaN2Rya2hWUVRwNkhDMVV3SHpBZVFRdEFMV0p6ek4xTDFxaXpSSmE5enR6aWJOekVtdVd1NTd6RjV4bHJxQURjVFBuNU03YlE3aDFXaDVyWlFDMkx0cUVwa0pmQS1HVF9BOE5VbUdsdURQNElOYVdYLUpQR2lJMy1SMzdZZXlqMURKTml2NdIBzgFBVV95cUxPMDkyaEx5V3pJZHFjQi1PWU9lOV93Q19BNm5rbHJPWlhKbExpUEZJcWxKNlp5dUFIRjdPNHpnSFZTVkdQVUxWdDRCdjE2OXdnenN4OEN6amJUdkszemV2RHRXdm1XNzh2NGxUbV8xNG9oTDE2MEdVb295MHJzdjhpRm5RYWtuUnJQMnhGODBYQkJ6alhjc3ZicHFyNFE3OGNlTGxtTU5rLXBUdGZFVW8tSG84QVlRaUVzZS1fWWdpQnBBY2NPWkZxaHdQeXFqQQ?oc=5",
-        "https://news.google.com/rss/articles/CBMiggFBVV95cUxQWWs5NGhRV2FsaV8tU3g1MEU5bUNyRDhHZW1wbHM5aHAxQm5OamJ0enQ3eDFBRy03Nl9ZdWdZdndJdjJXQW9YU1YzeUx3NFVVVnBfcEptS0pCaWdnSFl1QXkwTmZRN0QxQmdCeks2ZnU5Y21zU1p6QlhQRVZIejZBVnNB?oc=5",
-        "https://news.google.com/rss/articles/CBMimgFBVV95cUxQSGF2UmlNcVgzRXN4VFdaT1BaV0hHUTVlVG5ILW5LM2tnc3NKQmVGN213bVBEcTJ4ODNpcks1OXlPcU9oTDU1RkdNRWJTZHp2ZFRyMWZCNWttd3ctNlB6bDZNYjY1OGMwdG1lVzZORVg3ZHZyQkVkLTJzR0ZCRzJnR004MEFsQmhWZWkybnI5U3RWc3RtVV95TnZ3?oc=5",
-        "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQdzVoa1hOTUUyWm9ZT0RsOHU4V2h0cGhXTnByTFp2cjFvQU5CMFYySFV3am03NTg1Wmc5NlMtQnp3YURIM3p6N1pDRjhNdTBGQXplXy1BaEJfLTBHMGNyN3Q2ZUFqQmZCVEJwQVV1Z0ZRZjZtNTVoMDItRVdLYWNtbWtsc1BTLWNSUzVzX3JfOUEtbG1GRnh5SndUNzM0S0xSSHFZeHl6NFF4S2ZGc0FNM2tyNDhiMlRpeGlZUEFwRVBpa09NeXlqQ9IBzgFBVV95cUxORURjem5MTU41MlJWZzdsemtMaml1SmtxdTJsRzhERnFCeGh1NjVqeExXYTVEUFFFRXdpdzY1R1B6eFNRcTlQbVVGX18zcWJSTm1JUnJfUEp3dUpMQzZzVjEzUGJ6UEZPTV96c09CYmJuMnh6amhIUUt0SUFna0cwaHFEUGhQbVExUlZlNTNKVTNsc2ZQa2tnZ0t4UkRiYVNGbU5FamExSEg3NGtEb3FueHFTRFlvN3JrQ3gybWtiT3V2TWxLQW9UQ1hXTmxfUQ?oc=5"
-      ],
-      "sourceCount": 8,
-      "auto": true,
-      "createdByAutoScout": false,
-      "updatedAt": "2026-08-02T13:26:09.272Z",
-      "lastTitle": "Jose Mourinho approves Yan Diomande as Real Madrid's primary transfer target to add attacking speed - Tribuna.com",
-      "note": "Detectado en radar de medios deportivos. Estado: Interés. Último titular: Jose Mourinho approves Yan Diomande as Real Madrid's primary transfer target to add attacking speed - Tribuna.com"
-    },
-    {
       "id": "auto-konate-4bec7b23",
       "playerId": "konate",
       "status": "Interés",
-      "confidence": 81,
+      "confidence": 85,
       "source": "Google News · Real Madrid transfer targets",
       "sourceUrl": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQUk8zNHkxVmk3UjEyRnFreHBYSFg0UUduUGVTQWxmMWwyOGVEdFB1Zk9ZQnFydkxWTVIzWjNDZjdXOFBSQkRjcWFacUVmZGRzUGZqXzJiUkJ5bFpBS3FUMEJ2eVJQcmd1aWR2MV9BZTk2Snh6Z3RpaFZXNU11T1FheGszSlo4a3lPTnBZQnRNVFk?oc=5",
       "sourceUrls": [
         "https://news.google.com/rss/articles/CBMikAFBVV95cUxQUk8zNHkxVmk3UjEyRnFreHBYSFg0UUduUGVTQWxmMWwyOGVEdFB1Zk9ZQnFydkxWTVIzWjNDZjdXOFBSQkRjcWFacUVmZGRzUGZqXzJiUkJ5bFpBS3FUMEJ2eVJQcmd1aWR2MV9BZTk2Snh6Z3RpaFZXNU11T1FheGszSlo4a3lPTnBZQnRNVFk?oc=5"
       ],
-      "sourceCount": 10,
+      "sourceCount": 11,
       "auto": true,
       "createdByAutoScout": false,
-      "updatedAt": "2026-08-02T08:27:08.642Z",
+      "updatedAt": "2026-08-02T19:14:01.336Z",
       "lastTitle": "Five Center Back Targets for Real Madrid After Ibrahima Konate Decision - Sports Illustrated",
       "note": "Detectado en radar de medios deportivos. Estado: Interés. Último titular: Five Center Back Targets for Real Madrid After Ibrahima Konate Decision - Sports Illustrated"
     },
@@ -9420,18 +9420,103 @@
       "id": "auto-brahim-4bec7b23",
       "playerId": "brahim",
       "status": "Interés",
-      "confidence": 81,
+      "confidence": 85,
       "source": "Google News · Real Madrid transfer targets",
       "sourceUrl": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQUk8zNHkxVmk3UjEyRnFreHBYSFg0UUduUGVTQWxmMWwyOGVEdFB1Zk9ZQnFydkxWTVIzWjNDZjdXOFBSQkRjcWFacUVmZGRzUGZqXzJiUkJ5bFpBS3FUMEJ2eVJQcmd1aWR2MV9BZTk2Snh6Z3RpaFZXNU11T1FheGszSlo4a3lPTnBZQnRNVFk?oc=5",
       "sourceUrls": [
         "https://news.google.com/rss/articles/CBMikAFBVV95cUxQUk8zNHkxVmk3UjEyRnFreHBYSFg0UUduUGVTQWxmMWwyOGVEdFB1Zk9ZQnFydkxWTVIzWjNDZjdXOFBSQkRjcWFacUVmZGRzUGZqXzJiUkJ5bFpBS3FUMEJ2eVJQcmd1aWR2MV9BZTk2Snh6Z3RpaFZXNU11T1FheGszSlo4a3lPTnBZQnRNVFk?oc=5"
       ],
-      "sourceCount": 10,
+      "sourceCount": 11,
       "auto": true,
       "createdByAutoScout": false,
-      "updatedAt": "2026-08-02T08:27:08.642Z",
+      "updatedAt": "2026-08-02T19:14:01.336Z",
       "lastTitle": "Five Center Back Targets for Real Madrid After Ibrahima Konate Decision - Sports Illustrated",
       "note": "Detectado en radar de medios deportivos. Estado: Interés. Último titular: Five Center Back Targets for Real Madrid After Ibrahima Konate Decision - Sports Illustrated"
+    },
+    {
+      "id": "auto-jonathan-david-c154636",
+      "playerId": "jonathan-david",
+      "status": "Muy avanzado",
+      "confidence": 81,
+      "source": "Google News · Real Madrid fichajes 26/27",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE5BTGkzNkduTGZZOVQwMlV3ZFUyaFY2QTQ3ckIwcUt5WUQ3dTdiTEk1dUpGRmtQWHY2SWZZZVhqUUYwR1A5YlRBdUFPSU9SRlVyYjE1UG5SSUR3NjQ?oc=5",
+      "sourceUrls": [
+        "https://news.google.com/rss/articles/CBMiW0FVX3lxTE5BTGkzNkduTGZZOVQwMlV3ZFUyaFY2QTQ3ckIwcUt5WUQ3dTdiTEk1dUpGRmtQWHY2SWZZZVhqUUYwR1A5YlRBdUFPSU9SRlVyYjE1UG5SSUR3NjQ?oc=5"
+      ],
+      "sourceCount": 4,
+      "auto": true,
+      "createdByAutoScout": false,
+      "updatedAt": "2026-08-02T19:14:01.336Z",
+      "lastTitle": "ASÍ SERÁ La PLANIFICACIÓN Y FICHAJES En El REAL MADRID 26/27! (TierList) David Raya Mikel Arteta Disagreement (dFVfmpRMDq) - mshale.com",
+      "note": "Detectado en radar de medios deportivos. Estado: Muy avanzado. Último titular: ASÍ SERÁ La PLANIFICACIÓN Y FICHAJES En El REAL MADRID 26/27! (TierList) David Raya Mikel Arteta Disagreement (dFVfmpRMDq) - mshale.com"
+    },
+    {
+      "id": "auto-david-raya-c154636",
+      "playerId": "david-raya",
+      "status": "Muy avanzado",
+      "confidence": 81,
+      "source": "Google News · Real Madrid fichajes 26/27",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE5BTGkzNkduTGZZOVQwMlV3ZFUyaFY2QTQ3ckIwcUt5WUQ3dTdiTEk1dUpGRmtQWHY2SWZZZVhqUUYwR1A5YlRBdUFPSU9SRlVyYjE1UG5SSUR3NjQ?oc=5",
+      "sourceUrls": [
+        "https://news.google.com/rss/articles/CBMiW0FVX3lxTE5BTGkzNkduTGZZOVQwMlV3ZFUyaFY2QTQ3ckIwcUt5WUQ3dTdiTEk1dUpGRmtQWHY2SWZZZVhqUUYwR1A5YlRBdUFPSU9SRlVyYjE1UG5SSUR3NjQ?oc=5"
+      ],
+      "sourceCount": 4,
+      "auto": true,
+      "createdByAutoScout": false,
+      "updatedAt": "2026-08-02T19:14:01.336Z",
+      "lastTitle": "ASÍ SERÁ La PLANIFICACIÓN Y FICHAJES En El REAL MADRID 26/27! (TierList) David Raya Mikel Arteta Disagreement (dFVfmpRMDq) - mshale.com",
+      "note": "Detectado en radar de medios deportivos. Estado: Muy avanzado. Último titular: ASÍ SERÁ La PLANIFICACIÓN Y FICHAJES En El REAL MADRID 26/27! (TierList) David Raya Mikel Arteta Disagreement (dFVfmpRMDq) - mshale.com"
+    },
+    {
+      "id": "auto-carreras-6dff6d94",
+      "playerId": "carreras",
+      "status": "Rumor",
+      "confidence": 79,
+      "source": "Google News · Real Madrid fichajes 26/27",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQSXA3T3dYNkJWaFBfTk9ta0RSek9ER1hJb2F2WllrOUtuTkFHQWZPQXVpNnY5SEc0YlBxUzVZcU90aEttd0V6bXVyaXFzTzZ1Y2E4aUdWOTlnVFVscmh0N2kwSEx5cUhWajBwa2FXa0hEME1mVWw0eXBiQTVIekwwVjBxcXpRc3RiWHlXUjZaT3JuUEFWRUxPN2xicHBKa2hXV2RtVGxjRjA0Q3FWaUNmU1Z3YkZ1MkRYaEFQLThUQlZfRGgt?oc=5",
+      "sourceUrls": [
+        "https://news.google.com/rss/articles/CBMixAFBVV95cUxQSXA3T3dYNkJWaFBfTk9ta0RSek9ER1hJb2F2WllrOUtuTkFHQWZPQXVpNnY5SEc0YlBxUzVZcU90aEttd0V6bXVyaXFzTzZ1Y2E4aUdWOTlnVFVscmh0N2kwSEx5cUhWajBwa2FXa0hEME1mVWw0eXBiQTVIekwwVjBxcXpRc3RiWHlXUjZaT3JuUEFWRUxPN2xicHBKa2hXV2RtVGxjRjA0Q3FWaUNmU1Z3YkZ1MkRYaEFQLThUQlZfRGgt?oc=5"
+      ],
+      "sourceCount": 11,
+      "auto": true,
+      "createdByAutoScout": false,
+      "updatedAt": "2026-08-02T19:14:01.336Z",
+      "lastTitle": "Últimas noticias de fichajes del Real Madrid: Michael Olise, Álvaro Carreras, António Silva y más - Sports Illustrated",
+      "note": "Detectado en radar de medios deportivos. Estado: Rumor. Último titular: Últimas noticias de fichajes del Real Madrid: Michael Olise, Álvaro Carreras, António Silva y más - Sports Illustrated"
+    },
+    {
+      "id": "auto-bernardo-6dff6d94",
+      "playerId": "bernardo",
+      "status": "Rumor",
+      "confidence": 79,
+      "source": "Google News · Real Madrid fichajes 26/27",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQSXA3T3dYNkJWaFBfTk9ta0RSek9ER1hJb2F2WllrOUtuTkFHQWZPQXVpNnY5SEc0YlBxUzVZcU90aEttd0V6bXVyaXFzTzZ1Y2E4aUdWOTlnVFVscmh0N2kwSEx5cUhWajBwa2FXa0hEME1mVWw0eXBiQTVIekwwVjBxcXpRc3RiWHlXUjZaT3JuUEFWRUxPN2xicHBKa2hXV2RtVGxjRjA0Q3FWaUNmU1Z3YkZ1MkRYaEFQLThUQlZfRGgt?oc=5",
+      "sourceUrls": [
+        "https://news.google.com/rss/articles/CBMixAFBVV95cUxQSXA3T3dYNkJWaFBfTk9ta0RSek9ER1hJb2F2WllrOUtuTkFHQWZPQXVpNnY5SEc0YlBxUzVZcU90aEttd0V6bXVyaXFzTzZ1Y2E4aUdWOTlnVFVscmh0N2kwSEx5cUhWajBwa2FXa0hEME1mVWw0eXBiQTVIekwwVjBxcXpRc3RiWHlXUjZaT3JuUEFWRUxPN2xicHBKa2hXV2RtVGxjRjA0Q3FWaUNmU1Z3YkZ1MkRYaEFQLThUQlZfRGgt?oc=5"
+      ],
+      "sourceCount": 11,
+      "auto": true,
+      "createdByAutoScout": false,
+      "updatedAt": "2026-08-02T19:14:01.336Z",
+      "lastTitle": "Últimas noticias de fichajes del Real Madrid: Michael Olise, Álvaro Carreras, António Silva y más - Sports Illustrated",
+      "note": "Detectado en radar de medios deportivos. Estado: Rumor. Último titular: Últimas noticias de fichajes del Real Madrid: Michael Olise, Álvaro Carreras, António Silva y más - Sports Illustrated"
+    },
+    {
+      "id": "auto-antonio-silva-6dff6d94",
+      "playerId": "antonio-silva",
+      "status": "Rumor",
+      "confidence": 79,
+      "source": "Google News · Real Madrid fichajes 26/27",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQSXA3T3dYNkJWaFBfTk9ta0RSek9ER1hJb2F2WllrOUtuTkFHQWZPQXVpNnY5SEc0YlBxUzVZcU90aEttd0V6bXVyaXFzTzZ1Y2E4aUdWOTlnVFVscmh0N2kwSEx5cUhWajBwa2FXa0hEME1mVWw0eXBiQTVIekwwVjBxcXpRc3RiWHlXUjZaT3JuUEFWRUxPN2xicHBKa2hXV2RtVGxjRjA0Q3FWaUNmU1Z3YkZ1MkRYaEFQLThUQlZfRGgt?oc=5",
+      "sourceUrls": [
+        "https://news.google.com/rss/articles/CBMixAFBVV95cUxQSXA3T3dYNkJWaFBfTk9ta0RSek9ER1hJb2F2WllrOUtuTkFHQWZPQXVpNnY5SEc0YlBxUzVZcU90aEttd0V6bXVyaXFzTzZ1Y2E4aUdWOTlnVFVscmh0N2kwSEx5cUhWajBwa2FXa0hEME1mVWw0eXBiQTVIekwwVjBxcXpRc3RiWHlXUjZaT3JuUEFWRUxPN2xicHBKa2hXV2RtVGxjRjA0Q3FWaUNmU1Z3YkZ1MkRYaEFQLThUQlZfRGgt?oc=5"
+      ],
+      "sourceCount": 11,
+      "auto": true,
+      "createdByAutoScout": false,
+      "updatedAt": "2026-08-02T19:14:01.336Z",
+      "lastTitle": "Últimas noticias de fichajes del Real Madrid: Michael Olise, Álvaro Carreras, António Silva y más - Sports Illustrated",
+      "note": "Detectado en radar de medios deportivos. Estado: Rumor. Último titular: Últimas noticias de fichajes del Real Madrid: Michael Olise, Álvaro Carreras, António Silva y más - Sports Illustrated"
     },
     {
       "id": "auto-brahim-fe224a8c",
@@ -9470,89 +9555,22 @@
       "note": "Detectado en radar de medios deportivos. Estado: Negociación. Último titular: Transfer News LIVE: Real Madrid in talks over Diomande, Bayern not selling Olise or Diaz - Flashscore.co.za"
     },
     {
-      "id": "auto-jonathan-david-c154636",
-      "playerId": "jonathan-david",
-      "status": "Muy avanzado",
+      "id": "auto-autoscout-dream-57783013",
+      "playerId": "autoscout-dream",
+      "status": "Rumor",
       "confidence": 77,
-      "source": "Google News · Real Madrid fichajes 26/27",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE5BTGkzNkduTGZZOVQwMlV3ZFUyaFY2QTQ3ckIwcUt5WUQ3dTdiTEk1dUpGRmtQWHY2SWZZZVhqUUYwR1A5YlRBdUFPSU9SRlVyYjE1UG5SSUR3NjQ?oc=5",
+      "source": "Google News · Real Madrid transfer targets",
+      "sourceUrl": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOMGtEWWtaM3d1U2ZhWkJoaDlSQjJoLUg2dnJMVVI5XzZlWkZyM2NPR2dvd3pZNzQyWHJRbGpVamZWTHFhYS0tX2d3S282amZXOHBDMkNIa0liUWhEYjl0eC1HZzMzRi1tSUx5YmNaV0tRam5ndWxQREotNTZ1aFlfNmU0bXZPUWJBUTNEbWE4VkhHTVRVVVpwQ3hmcXBTNFl4?oc=5",
       "sourceUrls": [
-        "https://news.google.com/rss/articles/CBMiW0FVX3lxTE5BTGkzNkduTGZZOVQwMlV3ZFUyaFY2QTQ3ckIwcUt5WUQ3dTdiTEk1dUpGRmtQWHY2SWZZZVhqUUYwR1A5YlRBdUFPSU9SRlVyYjE1UG5SSUR3NjQ?oc=5"
+        "https://news.google.com/rss/articles/CBMingFBVV95cUxPbGhjN3lJUHRGOEtuNFpWblBuRmVUSTFSNHNFTzJnSnROR1RPTDgzNzVGRzdySzQtOVd3ZU1MUXRaUS01N1FHWjZGeVpTdTB1M2tjblp3aVdiQWdlNzA3YnFqY2h1TXZ1LVU5UkY1V2FhNmZOS093WnMtLTU3YkVsY0RzRy1JNWxzN09uQmM2ZkZxT0p2bjBvUGVkMFhQQQ?oc=5",
+        "https://news.google.com/rss/articles/CBMioAFBVV95cUxOMGtEWWtaM3d1U2ZhWkJoaDlSQjJoLUg2dnJMVVI5XzZlWkZyM2NPR2dvd3pZNzQyWHJRbGpVamZWTHFhYS0tX2d3S282amZXOHBDMkNIa0liUWhEYjl0eC1HZzMzRi1tSUx5YmNaV0tRam5ndWxQREotNTZ1aFlfNmU0bXZPUWJBUTNEbWE4VkhHTVRVVVpwQ3hmcXBTNFl4?oc=5"
       ],
-      "sourceCount": 3,
+      "sourceCount": 8,
       "auto": true,
       "createdByAutoScout": false,
-      "updatedAt": "2026-08-02T13:26:09.272Z",
-      "lastTitle": "ASÍ SERÁ La PLANIFICACIÓN Y FICHAJES En El REAL MADRID 26/27! (TierList) David Raya Mikel Arteta Disagreement (dFVfmpRMDq) - Mshale",
-      "note": "Detectado en radar de medios deportivos. Estado: Muy avanzado. Último titular: ASÍ SERÁ La PLANIFICACIÓN Y FICHAJES En El REAL MADRID 26/27! (TierList) David Raya Mikel Arteta Disagreement (dFVfmpRMDq) - Mshale"
-    },
-    {
-      "id": "auto-david-raya-c154636",
-      "playerId": "david-raya",
-      "status": "Muy avanzado",
-      "confidence": 77,
-      "source": "Google News · Real Madrid fichajes 26/27",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE5BTGkzNkduTGZZOVQwMlV3ZFUyaFY2QTQ3ckIwcUt5WUQ3dTdiTEk1dUpGRmtQWHY2SWZZZVhqUUYwR1A5YlRBdUFPSU9SRlVyYjE1UG5SSUR3NjQ?oc=5",
-      "sourceUrls": [
-        "https://news.google.com/rss/articles/CBMiW0FVX3lxTE5BTGkzNkduTGZZOVQwMlV3ZFUyaFY2QTQ3ckIwcUt5WUQ3dTdiTEk1dUpGRmtQWHY2SWZZZVhqUUYwR1A5YlRBdUFPSU9SRlVyYjE1UG5SSUR3NjQ?oc=5"
-      ],
-      "sourceCount": 3,
-      "auto": true,
-      "createdByAutoScout": false,
-      "updatedAt": "2026-08-02T13:26:09.272Z",
-      "lastTitle": "ASÍ SERÁ La PLANIFICACIÓN Y FICHAJES En El REAL MADRID 26/27! (TierList) David Raya Mikel Arteta Disagreement (dFVfmpRMDq) - Mshale",
-      "note": "Detectado en radar de medios deportivos. Estado: Muy avanzado. Último titular: ASÍ SERÁ La PLANIFICACIÓN Y FICHAJES En El REAL MADRID 26/27! (TierList) David Raya Mikel Arteta Disagreement (dFVfmpRMDq) - Mshale"
-    },
-    {
-      "id": "auto-carreras-6dff6d94",
-      "playerId": "carreras",
-      "status": "Rumor",
-      "confidence": 75,
-      "source": "Google News · Real Madrid fichajes 26/27",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQSXA3T3dYNkJWaFBfTk9ta0RSek9ER1hJb2F2WllrOUtuTkFHQWZPQXVpNnY5SEc0YlBxUzVZcU90aEttd0V6bXVyaXFzTzZ1Y2E4aUdWOTlnVFVscmh0N2kwSEx5cUhWajBwa2FXa0hEME1mVWw0eXBiQTVIekwwVjBxcXpRc3RiWHlXUjZaT3JuUEFWRUxPN2xicHBKa2hXV2RtVGxjRjA0Q3FWaUNmU1Z3YkZ1MkRYaEFQLThUQlZfRGgt?oc=5",
-      "sourceUrls": [
-        "https://news.google.com/rss/articles/CBMixAFBVV95cUxQSXA3T3dYNkJWaFBfTk9ta0RSek9ER1hJb2F2WllrOUtuTkFHQWZPQXVpNnY5SEc0YlBxUzVZcU90aEttd0V6bXVyaXFzTzZ1Y2E4aUdWOTlnVFVscmh0N2kwSEx5cUhWajBwa2FXa0hEME1mVWw0eXBiQTVIekwwVjBxcXpRc3RiWHlXUjZaT3JuUEFWRUxPN2xicHBKa2hXV2RtVGxjRjA0Q3FWaUNmU1Z3YkZ1MkRYaEFQLThUQlZfRGgt?oc=5"
-      ],
-      "sourceCount": 10,
-      "auto": true,
-      "createdByAutoScout": false,
-      "updatedAt": "2026-08-02T13:26:09.272Z",
-      "lastTitle": "Últimas noticias de fichajes del Real Madrid: Michael Olise, Álvaro Carreras, António Silva y más - Sports Illustrated",
-      "note": "Detectado en radar de medios deportivos. Estado: Rumor. Último titular: Últimas noticias de fichajes del Real Madrid: Michael Olise, Álvaro Carreras, António Silva y más - Sports Illustrated"
-    },
-    {
-      "id": "auto-bernardo-6dff6d94",
-      "playerId": "bernardo",
-      "status": "Rumor",
-      "confidence": 75,
-      "source": "Google News · Real Madrid fichajes 26/27",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQSXA3T3dYNkJWaFBfTk9ta0RSek9ER1hJb2F2WllrOUtuTkFHQWZPQXVpNnY5SEc0YlBxUzVZcU90aEttd0V6bXVyaXFzTzZ1Y2E4aUdWOTlnVFVscmh0N2kwSEx5cUhWajBwa2FXa0hEME1mVWw0eXBiQTVIekwwVjBxcXpRc3RiWHlXUjZaT3JuUEFWRUxPN2xicHBKa2hXV2RtVGxjRjA0Q3FWaUNmU1Z3YkZ1MkRYaEFQLThUQlZfRGgt?oc=5",
-      "sourceUrls": [
-        "https://news.google.com/rss/articles/CBMixAFBVV95cUxQSXA3T3dYNkJWaFBfTk9ta0RSek9ER1hJb2F2WllrOUtuTkFHQWZPQXVpNnY5SEc0YlBxUzVZcU90aEttd0V6bXVyaXFzTzZ1Y2E4aUdWOTlnVFVscmh0N2kwSEx5cUhWajBwa2FXa0hEME1mVWw0eXBiQTVIekwwVjBxcXpRc3RiWHlXUjZaT3JuUEFWRUxPN2xicHBKa2hXV2RtVGxjRjA0Q3FWaUNmU1Z3YkZ1MkRYaEFQLThUQlZfRGgt?oc=5"
-      ],
-      "sourceCount": 10,
-      "auto": true,
-      "createdByAutoScout": false,
-      "updatedAt": "2026-08-02T13:26:09.272Z",
-      "lastTitle": "Últimas noticias de fichajes del Real Madrid: Michael Olise, Álvaro Carreras, António Silva y más - Sports Illustrated",
-      "note": "Detectado en radar de medios deportivos. Estado: Rumor. Último titular: Últimas noticias de fichajes del Real Madrid: Michael Olise, Álvaro Carreras, António Silva y más - Sports Illustrated"
-    },
-    {
-      "id": "auto-antonio-silva-6dff6d94",
-      "playerId": "antonio-silva",
-      "status": "Rumor",
-      "confidence": 75,
-      "source": "Google News · Real Madrid fichajes 26/27",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQSXA3T3dYNkJWaFBfTk9ta0RSek9ER1hJb2F2WllrOUtuTkFHQWZPQXVpNnY5SEc0YlBxUzVZcU90aEttd0V6bXVyaXFzTzZ1Y2E4aUdWOTlnVFVscmh0N2kwSEx5cUhWajBwa2FXa0hEME1mVWw0eXBiQTVIekwwVjBxcXpRc3RiWHlXUjZaT3JuUEFWRUxPN2xicHBKa2hXV2RtVGxjRjA0Q3FWaUNmU1Z3YkZ1MkRYaEFQLThUQlZfRGgt?oc=5",
-      "sourceUrls": [
-        "https://news.google.com/rss/articles/CBMixAFBVV95cUxQSXA3T3dYNkJWaFBfTk9ta0RSek9ER1hJb2F2WllrOUtuTkFHQWZPQXVpNnY5SEc0YlBxUzVZcU90aEttd0V6bXVyaXFzTzZ1Y2E4aUdWOTlnVFVscmh0N2kwSEx5cUhWajBwa2FXa0hEME1mVWw0eXBiQTVIekwwVjBxcXpRc3RiWHlXUjZaT3JuUEFWRUxPN2xicHBKa2hXV2RtVGxjRjA0Q3FWaUNmU1Z3YkZ1MkRYaEFQLThUQlZfRGgt?oc=5"
-      ],
-      "sourceCount": 10,
-      "auto": true,
-      "createdByAutoScout": false,
-      "updatedAt": "2026-08-02T13:26:09.272Z",
-      "lastTitle": "Últimas noticias de fichajes del Real Madrid: Michael Olise, Álvaro Carreras, António Silva y más - Sports Illustrated",
-      "note": "Detectado en radar de medios deportivos. Estado: Rumor. Último titular: Últimas noticias de fichajes del Real Madrid: Michael Olise, Álvaro Carreras, António Silva y más - Sports Illustrated"
+      "updatedAt": "2026-08-02T19:14:01.336Z",
+      "lastTitle": "Real Madrid's dream defence for 2026-27 after Mourinho gets THREE signings - Planet Football",
+      "note": "Detectado en radar de medios deportivos. Estado: Rumor. Último titular: Real Madrid's dream defence for 2026-27 after Mourinho gets THREE signings - Planet Football"
     },
     {
       "id": "seed-nico-paz-recompra",
@@ -9602,24 +9620,6 @@
       "updatedAt": "2026-08-02T13:26:09.272Z",
       "lastTitle": "Fulham set to open talks with Real Madrid for Gonzalo Garcia’s signing - Romano - Tribuna.com",
       "note": "Detectado en radar de medios deportivos. Estado: Negociación. Último titular: Fulham set to open talks with Real Madrid for Gonzalo Garcia’s signing - Romano - Tribuna.com"
-    },
-    {
-      "id": "auto-autoscout-dream-57783013",
-      "playerId": "autoscout-dream",
-      "status": "Rumor",
-      "confidence": 73,
-      "source": "Google News · Real Madrid transfer targets",
-      "sourceUrl": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOMGtEWWtaM3d1U2ZhWkJoaDlSQjJoLUg2dnJMVVI5XzZlWkZyM2NPR2dvd3pZNzQyWHJRbGpVamZWTHFhYS0tX2d3S282amZXOHBDMkNIa0liUWhEYjl0eC1HZzMzRi1tSUx5YmNaV0tRam5ndWxQREotNTZ1aFlfNmU0bXZPUWJBUTNEbWE4VkhHTVRVVVpwQ3hmcXBTNFl4?oc=5",
-      "sourceUrls": [
-        "https://news.google.com/rss/articles/CBMingFBVV95cUxPbGhjN3lJUHRGOEtuNFpWblBuRmVUSTFSNHNFTzJnSnROR1RPTDgzNzVGRzdySzQtOVd3ZU1MUXRaUS01N1FHWjZGeVpTdTB1M2tjblp3aVdiQWdlNzA3YnFqY2h1TXZ1LVU5UkY1V2FhNmZOS093WnMtLTU3YkVsY0RzRy1JNWxzN09uQmM2ZkZxT0p2bjBvUGVkMFhQQQ?oc=5",
-        "https://news.google.com/rss/articles/CBMioAFBVV95cUxOMGtEWWtaM3d1U2ZhWkJoaDlSQjJoLUg2dnJMVVI5XzZlWkZyM2NPR2dvd3pZNzQyWHJRbGpVamZWTHFhYS0tX2d3S282amZXOHBDMkNIa0liUWhEYjl0eC1HZzMzRi1tSUx5YmNaV0tRam5ndWxQREotNTZ1aFlfNmU0bXZPUWJBUTNEbWE4VkhHTVRVVVpwQ3hmcXBTNFl4?oc=5"
-      ],
-      "sourceCount": 7,
-      "auto": true,
-      "createdByAutoScout": false,
-      "updatedAt": "2026-08-02T13:26:09.272Z",
-      "lastTitle": "Real Madrid's dream defence for 2026-27 after Mourinho gets THREE signings - Planet Football",
-      "note": "Detectado en radar de medios deportivos. Estado: Rumor. Último titular: Real Madrid's dream defence for 2026-27 after Mourinho gets THREE signings - Planet Football"
     },
     {
       "id": "seed-calafiori-romano",
