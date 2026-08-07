@@ -1,0 +1,33 @@
+name: AutoMarket update
+
+on:
+  workflow_dispatch:
+  schedule:
+    # 4 veces al día. GitHub usa UTC.
+    - cron: '17 7,12,18,22 * * *'
+
+permissions:
+  contents: write
+
+jobs:
+  update-data:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Run AutoMarket updater
+        env:
+          # Opcional: añade X_BEARER_TOKEN en Settings → Secrets and variables → Actions
+          # para activar lectura oficial de posts de Fabrizio/X. Sin token usa RSS/noticias.
+          X_BEARER_TOKEN: ${{ secrets.X_BEARER_TOKEN }}
+          X_USERNAME: FabrizioRomano
+        run: node scripts/update-data.mjs
+      - name: Commit data.json if changed
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: 'chore: automarket refresh rumors'
+          file_pattern: data.json

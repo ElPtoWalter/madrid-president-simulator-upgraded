@@ -1,9 +1,9 @@
 import fs from 'node:fs/promises';
 
 const DATA_PATH = new URL('../data.json', import.meta.url);
-const MAX_AUTO_RUMORS = 100;
+const MAX_AUTO_RUMORS = 140;
 const AUTO_RUMOR_MAX_AGE_DAYS = 30;
-const PHOTO_RESOLVE_LIMIT = Number(process.env.PHOTO_RESOLVE_LIMIT || 70);
+const PHOTO_RESOLVE_LIMIT = Number(process.env.PHOTO_RESOLVE_LIMIT || 120);
 
 const OFFICIAL_SQUAD_2627 = new Set([
   'courtois','lunin','dumfries','konate','cucurella','militao','trent','asencio','carreras','rudiger','mendy','huijsen',
@@ -20,7 +20,11 @@ const DEFAULT_FEEDS = [
   ['Cadena SER · Real Madrid mercado', 'https://news.google.com/rss/search?q=site%3Acadenaser.com%20Real%20Madrid%20fichajes%20mercado&hl=es&gl=ES&ceid=ES:es', 12],
   ['Relevo · Real Madrid mercado', 'https://news.google.com/rss/search?q=site%3Arelevo.com%20Real%20Madrid%20fichajes%20rumor&hl=es&gl=ES&ceid=ES:es', 11],
   ['Managing Madrid · transfer radar', 'https://news.google.com/rss/search?q=site%3Amanagingmadrid.com%20Real%20Madrid%20transfer%20rumor&hl=en-US&gl=US&ceid=US:en', 8],
-  ['Bing News · Real Madrid transfer', 'https://www.bing.com/news/search?q=Real+Madrid+transfer+rumours+Fabrizio+Romano&format=rss', 8]
+  ['Bing News · Real Madrid transfer', 'https://www.bing.com/news/search?q=Real+Madrid+transfer+rumours+Fabrizio+Romano&format=rss', 8],
+  ['The Athletic · Real Madrid market', 'https://news.google.com/rss/search?q=site%3Atheathletic.com%20Real%20Madrid%20transfer%20rumor%20Mourinho&hl=en-US&gl=US&ceid=US:en', 10],
+  ['BBC Sport · Real Madrid transfer', 'https://news.google.com/rss/search?q=site%3Abbc.com%2Fsport%20Real%20Madrid%20transfer%20rumours&hl=en-US&gl=US&ceid=US:en', 9],
+  ['Sky Sports · Real Madrid transfer', 'https://news.google.com/rss/search?q=site%3Askysports.com%20Real%20Madrid%20transfer%20rumour&hl=en-US&gl=US&ceid=US:en', 9],
+  ['Football España · Real Madrid', 'https://news.google.com/rss/search?q=site%3Afootball-espana.net%20Real%20Madrid%20transfer%20rumour&hl=en-US&gl=US&ceid=US:en', 9],
 ].map(([name,url,weight])=>({name,url,weight,type:'rss'}));
 
 const SEED_PLAYERS = [
@@ -46,10 +50,10 @@ async function main(){
   const photoStats = await hydrateRemotePhotos(data);
 
   data.meta = data.meta || {};
-  data.meta.version = '4.1.0-live-squad-autoscout-photos';
+  data.meta.version = '5.0.0-autoscout-intelligence';
   data.meta.lastAutoUpdate = nowIso;
   data.meta.lastAutomationCheck = nowIso;
-  data.meta.automationNote = 'AutoScout Pro actualiza rumores, crea candidatos fichables, sincroniza plantilla provisional 26/27 y resuelve fotos reales desde Wikimedia cuando están disponibles.';
+  data.meta.automationNote = 'AutoScout Intelligence 5.0 actualiza rumores, crea candidatos fichables, sincroniza plantilla provisional 26/27, amplía mercado y resuelve fotos reales desde Wikimedia cuando están disponibles.';
   data.meta.autoMarket = {
     lastRun: nowIso,
     articlesFetched: articles.length,
@@ -63,7 +67,7 @@ async function main(){
   };
   data.autoMarket = data.autoMarket || {};
   data.autoMarket.enabled = true;
-  data.autoMarket.name = 'AutoScout Pro 4.1';
+  data.autoMarket.name = 'AutoScout Intelligence 5.0';
   data.autoMarket.createsPlayers = true;
   data.autoMarket.updatesSquad = true;
   data.autoMarket.updatesPhotos = true;
@@ -72,7 +76,7 @@ async function main(){
 
   sortPlayers(data);
   await fs.writeFile(DATA_PATH, JSON.stringify(data, null, 2), 'utf8');
-  console.log(`AutoScout 4.1 complete: ${articles.length} articles, ${detections.length} detections, ${photoStats.resolved} photos resolved.`);
+  console.log(`AutoScout Intelligence 5.0 complete: ${articles.length} articles, ${detections.length} detections, ${photoStats.resolved} photos resolved.`);
 }
 
 function ensureSeedPlayers(data){
@@ -174,7 +178,7 @@ async function wikiSearchImage(q,lang='en'){
 }
 function buildDetection(p,item,nowIso,created=false){const status=inferStatus(item.title+' '+(item.description||'')); const confidence=scoreConfidence(item,status,created); return {id:`auto-${p.id}-${hash(item.title).slice(0,8)}`,playerId:p.id,status,confidence,source:item.feedName||item.source||'AutoScout',sourceUrl:item.link||'',sourceUrls:item.link?[item.link]:[],sourceCount:1,auto:true,createdByAutoScout:created,updatedAt:nowIso,lastTitle:item.title,note:buildNote(p,item,status,created)};}
 function mergeDetections(data,detections,now){data.rumors=data.rumors||[]; const cutoff=now.getTime()-AUTO_RUMOR_MAX_AGE_DAYS*86400000; data.rumors=data.rumors.filter(r=>!r.auto || !r.updatedAt || new Date(r.updatedAt).getTime()>=cutoff); for(const d of detections){const ex=data.rumors.find(r=>r.auto&&r.playerId===d.playerId&&norm(r.status)===norm(d.status)); if(ex){ex.confidence=Math.min(96,Math.max(ex.confidence||0,d.confidence)+4); ex.updatedAt=d.updatedAt; ex.lastTitle=d.lastTitle; ex.note=d.note; ex.source=d.source; ex.sourceUrl=d.sourceUrl; ex.sourceUrls=[...new Set([...(ex.sourceUrls||[]),...(d.sourceUrls||[])])].slice(0,5); ex.sourceCount=(ex.sourceCount||1)+1;} else data.rumors.push(d);} data.rumors=data.rumors.sort((a,b)=>(b.auto?1:0)-(a.auto?1:0)||(b.confidence||0)-(a.confidence||0)).slice(0,MAX_AUTO_RUMORS);}
-function isMadridMarketText(t){return /real madrid|los blancos|madrid/.test(t)&&/transfer|fichaje|fichajes|mercado|rumor|rumour|target|interes|interested|linked|signing|deal|negoci|traspas|salida|exit|move|offer|bid|here we go|acuerdo|agreement|precio|clausula|mou|mourinho|diomande|fabrizio/.test(t);}
+function isMadridMarketText(t){return /real madrid|los blancos|madrid/.test(t)&&/transfer|fichaje|fichajes|mercado|rumor|rumour|target|interes|interested|linked|signing|deal|negoci|traspas|salida|exit|move|offer|bid|here we go|acuerdo|agreement|precio|clausula|mou|mourinho|diomande|fabrizio|renovacion|renewal|clause|release|contract|loan|cesion/.test(t);}
 function buildAliases(p){const names=[p.name,...(p.aliases||[])]; const chunks=String(p.name||'').split(/\s+/); if(chunks.length>=2){names.push(`${chunks[0]} ${chunks[chunks.length-1]}`); names.push(chunks[chunks.length-1]);} if(p.id) names.push(p.id.replace(/-/g,' ')); return [...new Set(names.map(norm).filter(x=>x.length>=4))];}
 function inferStatus(text){const t=norm(text); if(/here we go|acuerdo|agreement|done deal|cerrado|oficial|verbal agreement/.test(t)) return 'Muy avanzado'; if(/negoci|talks|offer|bid|contact|proposal|terms/.test(t)) return 'Negociación'; if(/salida|exit|leave|sale|sell|replacement/.test(t)) return 'Posible salida'; if(/interes|interested|target|linked|radar|monitor|shortlist/.test(t)) return 'Interés'; if(/descart|reject|no ira|unlikely/.test(t)) return 'Descartado'; return 'Rumor';}
 function scoreConfidence(item,status,created){let s=25+(item.feedWeight||0); if(item.fromX) s+=18; if(status==='Muy avanzado')s+=30; if(status==='Negociación')s+=16; if(status==='Interés')s+=8; if(status==='Descartado')s-=8; if(created)s-=5; return Math.max(12,Math.min(94,s));}

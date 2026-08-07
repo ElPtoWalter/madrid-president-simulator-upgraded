@@ -1,6 +1,0 @@
-# Redirecciones seguras.
-# No redirigir rutas limpias hacia archivos .html:
-# Cloudflare Workers Static Assets ya realiza esa resolución.
-
-/inicio / 301
-/demo /demo/ 301
