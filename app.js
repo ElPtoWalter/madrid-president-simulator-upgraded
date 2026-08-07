@@ -1,6 +1,6 @@
 const STORE_KEY = 'madrid-president-state-v50-intelligence-2627';
 const SIMS_KEY = 'madrid-president-sims-v50-intelligence-2627';
-const FACE_CACHE_KEY = 'madrid-president-face-cache-v7-intelligence-real-first';
+const FACE_CACHE_KEY = 'madrid-president-face-cache-v5-1-realphotos';
 
 const els = {};
 let data = null;
@@ -119,6 +119,7 @@ function bindStaticEvents(){
   els.btnExportPng?.addEventListener('click', exportLineupPng);
   els.btnExportSocial?.addEventListener('click', exportSocialPng);
   els.btnSupport?.addEventListener('click', () => toast('Aquí puedes poner tu enlace de Ko-fi, PayPal o Buy Me a Coffee cuando lo tengas.'));
+  els.btnPhotoSync?.addEventListener('click', forcePhotoRefresh);
   els.btnSuggestedXI?.addEventListener('click', applySuggestedXI);
   els.btnMourinhoXI?.addEventListener('click', applyMourinhoXI);
   els.btnClearXI?.addEventListener('click', () => { state.lineup={}; pushHistory('once','Campo vaciado',0); saveAndRender(); });
@@ -179,6 +180,26 @@ function fillStaticControls(){
   renderSavedSelect();
 }
 
+
+async function forcePhotoRefresh(){
+  toast('Intentando resolver fotos reales...');
+  const players = getAllPlayers().filter(p => p.wiki || p.name);
+  let resolved = 0;
+  for(const p of players){
+    if(p.remotePhoto) continue;
+    const url = await resolveFaceUrl(getWikiTitle(p));
+    if(url){
+      p.remotePhoto = url;
+      state.customPlayers = state.customPlayers || {};
+      state.customPlayers[p.id] = {...(state.customPlayers[p.id]||{}), remotePhoto:url};
+      setFaceCache(getWikiTitle(p), url);
+      resolved++;
+    }
+  }
+  saveAndRender();
+  toast(`Fotos reales resueltas: ${resolved}`);
+}
+
 function renderAll(){
   if(!data || !state) return;
   syncControls();
@@ -212,7 +233,7 @@ function syncControls(){
   els.initialBudget && (els.initialBudget.value = state.initialBudget);
   els.simName && (els.simName.value = state.simName || '');
   els.realismMode && (els.realismMode.checked = state.realityMode !== false);
-  els.lastUpdate.textContent = `Datos: ${data.meta?.lastManualReview || '—'} · AutoMarket: ${formatAutoDate(data.meta?.lastAutoUpdate || data.meta?.autoMarket?.lastRun)} · Coach: José Mourinho`;
+  els.lastUpdate.textContent = `Datos: ${data.meta?.lastManualReview || '—'} · AutoScout: ${formatAutoDate(data.meta?.lastAutoUpdate || data.meta?.autoMarket?.lastRun)} · Coach: José Mourinho · Fotos reales fijas`; 
   els.formationBadge.textContent = state.formation;
   els.seasonBadge.textContent = `${state.season.year} · ${state.season.window}`;
 }

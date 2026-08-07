@@ -3,13 +3,28 @@ import fs from 'node:fs/promises';
 const DATA_PATH = new URL('../data.json', import.meta.url);
 const MAX_AUTO_RUMORS = 140;
 const AUTO_RUMOR_MAX_AGE_DAYS = 30;
-const PHOTO_RESOLVE_LIMIT = Number(process.env.PHOTO_RESOLVE_LIMIT || 120);
+const PHOTO_RESOLVE_LIMIT = Number(process.env.PHOTO_RESOLVE_LIMIT || 420);
 
 const OFFICIAL_SQUAD_2627 = new Set([
   'courtois','lunin','dumfries','konate','cucurella','militao','trent','asencio','carreras','rudiger','mendy','huijsen',
   'bernardo','bellingham','camavinga','valverde','tchouameni','arda','brahim',
   'vinicius','mbappe','rodrygo','gonzalo','mastantuono','endrick'
 ]);
+
+const WIKI_TITLE_OVERRIDES = {
+  courtois:'Thibaut Courtois', lunin:'Andriy Lunin', dumfries:'Denzel Dumfries', konate:'Ibrahima Konaté',
+  cucurella:'Marc Cucurella', militao:'Éder Militão', trent:'Trent Alexander-Arnold', asencio:'Raúl Asencio',
+  carreras:'Álvaro Carreras (footballer)', rudiger:'Antonio Rüdiger', huijsen:'Dean Huijsen',
+  bernardo:'Bernardo Silva', bellingham:'Jude Bellingham', camavinga:'Eduardo Camavinga', valverde:'Federico Valverde',
+  tchouameni:'Aurélien Tchouaméni', arda:'Arda Güler', brahim:'Brahim Díaz', vinicius:'Vinícius Júnior',
+  mbappe:'Kylian Mbappé', rodrygo:'Rodrygo', gonzalo:'Gonzalo García (footballer, born 2004)', mastantuono:'Franco Mastantuono',
+  endrick:'Endrick (footballer)', yan_diomande:'Yan Diomandé', 'yan-diomande':'Yan Diomandé',
+  nico_paz:'Nico Paz', 'nico-paz':'Nico Paz', calafiori:'Riccardo Calafiori', rodri:'Rodri (footballer, born 1996)',
+  wirtz:'Florian Wirtz', musiala:'Jamal Musiala', saliba:'William Saliba', gvardiol:'Joško Gvardiol',
+  haaland:'Erling Haaland', saka:'Bukayo Saka', theo:'Theo Hernández', miguel:'Miguel Gutiérrez',
+  xavi_simons:'Xavi Simons', 'xavi-simons':'Xavi Simons', zubimendi:'Martín Zubimendi',
+  alex_baena:'Álex Baena', 'alex-baena':'Álex Baena'
+};
 
 const DEFAULT_FEEDS = [
   ['Google News · Real Madrid fichajes 26/27', 'https://news.google.com/rss/search?q=Real%20Madrid%20fichajes%20rumores%20mercado%202026%202027&hl=es&gl=ES&ceid=ES:es', 14],
@@ -22,6 +37,8 @@ const DEFAULT_FEEDS = [
   ['Managing Madrid · transfer radar', 'https://news.google.com/rss/search?q=site%3Amanagingmadrid.com%20Real%20Madrid%20transfer%20rumor&hl=en-US&gl=US&ceid=US:en', 8],
   ['Bing News · Real Madrid transfer', 'https://www.bing.com/news/search?q=Real+Madrid+transfer+rumours+Fabrizio+Romano&format=rss', 8],
   ['The Athletic · Real Madrid market', 'https://news.google.com/rss/search?q=site%3Atheathletic.com%20Real%20Madrid%20transfer%20rumor%20Mourinho&hl=en-US&gl=US&ceid=US:en', 10],
+  ['Defensa Central · Real Madrid mercado', 'https://news.google.com/rss/search?q=Real%20Madrid%20central%20fichaje%20rumor&hl=es&gl=ES&ceid=ES:es', 10],
+  ['Lateral Izquierdo · Real Madrid mercado', 'https://news.google.com/rss/search?q=Real%20Madrid%20lateral%20izquierdo%20fichaje%20rumor&hl=es&gl=ES&ceid=ES:es', 9],
   ['BBC Sport · Real Madrid transfer', 'https://news.google.com/rss/search?q=site%3Abbc.com%2Fsport%20Real%20Madrid%20transfer%20rumours&hl=en-US&gl=US&ceid=US:en', 9],
   ['Sky Sports · Real Madrid transfer', 'https://news.google.com/rss/search?q=site%3Askysports.com%20Real%20Madrid%20transfer%20rumour&hl=en-US&gl=US&ceid=US:en', 9],
   ['Football España · Real Madrid', 'https://news.google.com/rss/search?q=site%3Afootball-espana.net%20Real%20Madrid%20transfer%20rumour&hl=en-US&gl=US&ceid=US:en', 9],
@@ -50,10 +67,10 @@ async function main(){
   const photoStats = await hydrateRemotePhotos(data);
 
   data.meta = data.meta || {};
-  data.meta.version = '5.0.0-autoscout-intelligence';
+  data.meta.version = '5.1.0-real-photos-fixed';
   data.meta.lastAutoUpdate = nowIso;
   data.meta.lastAutomationCheck = nowIso;
-  data.meta.automationNote = 'AutoScout Intelligence 5.0 actualiza rumores, crea candidatos fichables, sincroniza plantilla provisional 26/27, amplía mercado y resuelve fotos reales desde Wikimedia cuando están disponibles.';
+  data.meta.automationNote = 'AutoScout Intelligence 5.1 actualiza rumores, crea candidatos fichables, sincroniza plantilla provisional 26/27, amplía mercado y resuelve fotos reales desde Wikimedia cuando están disponibles.';
   data.meta.autoMarket = {
     lastRun: nowIso,
     articlesFetched: articles.length,
@@ -67,7 +84,7 @@ async function main(){
   };
   data.autoMarket = data.autoMarket || {};
   data.autoMarket.enabled = true;
-  data.autoMarket.name = 'AutoScout Intelligence 5.0';
+  data.autoMarket.name = 'AutoScout Intelligence 5.1';
   data.autoMarket.createsPlayers = true;
   data.autoMarket.updatesSquad = true;
   data.autoMarket.updatesPhotos = true;
@@ -76,17 +93,18 @@ async function main(){
 
   sortPlayers(data);
   await fs.writeFile(DATA_PATH, JSON.stringify(data, null, 2), 'utf8');
-  console.log(`AutoScout Intelligence 5.0 complete: ${articles.length} articles, ${detections.length} detections, ${photoStats.resolved} photos resolved.`);
+  console.log(`AutoScout Intelligence 5.1 complete: ${articles.length} articles, ${detections.length} detections, ${photoStats.resolved} photos resolved.`);
 }
 
 function ensureSeedPlayers(data){
   data.players=data.players||[];
   for(const seed of SEED_PLAYERS){
     const existing=data.players.find(p=>p.id===seed.id || norm(p.name)===norm(seed.name));
-    if(existing){ Object.assign(existing,{...seed, photo: existing.photo || makeSvgData(seed.name, seed.position, seed.club, seed.value, seed.rating)}); }
-    else data.players.push({...seed, photo: makeSvgData(seed.name, seed.position, seed.club, seed.value, seed.rating)});
+    if(existing){ Object.assign(existing,{...seed, wiki: existing.wiki || seed.wiki || WIKI_TITLE_OVERRIDES[seed.id] || seed.name, photo: existing.photo || makeSvgData(seed.name, seed.position, seed.club, seed.value, seed.rating)}); }
+    else data.players.push({...seed, wiki: seed.wiki || WIKI_TITLE_OVERRIDES[seed.id] || seed.name, photo: makeSvgData(seed.name, seed.position, seed.club, seed.value, seed.rating)});
   }
   for(const p of data.players){
+    p.wiki = p.wiki || WIKI_TITLE_OVERRIDES[p.id] || WIKI_TITLE_OVERRIDES[(p.id||'').replace(/-/g,'_')] || p.name;
     p.photo = p.photo || makeSvgData(p.name, p.position, p.club, p.value, p.rating);
     p.remotePhoto = p.remotePhoto || '';
     p.photoProvider = p.remotePhoto ? 'wikimedia' : (p.photoProvider || 'local-fallback');
@@ -165,7 +183,7 @@ async function hydrateRemotePhotos(data){
   return {resolved};
 }
 async function resolveWikiThumb(name){
-  const candidates=[...new Set([name, stripDiacritics(name), name.replace(/_/g,' '), stripDiacritics(name).replace(/_/g,' ')].filter(Boolean))];
+  const candidates=[...new Set([name, stripDiacritics(name), name.replace(/_/g,' '), stripDiacritics(name).replace(/_/g,' '), `${name} footballer`, `${stripDiacritics(name)} footballer`].filter(Boolean))];
   for(const c of candidates){const u=await wikiPageImage(c,'en') || await wikiPageImage(c,'es'); if(u) return u;}
   for(const c of candidates){const u=await wikiSearchImage(c,'en') || await wikiSearchImage(c,'es'); if(u) return u;}
   return '';

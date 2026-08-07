@@ -38,3 +38,10 @@ No subas `.github/` si ya tienes creado el workflow.
 ## Aviso
 
 No es una web oficial. No está afiliada al Real Madrid, Transfermarkt, X ni medios deportivos. Los valores son orientativos y editables por el usuario.
+
+
+## 5.1 Real Photos Fixed
+
+- La app prioriza `remotePhoto` (foto real fijada) y usa `photo` como fallback visual.
+- El workflow `scripts/update-data.mjs` intenta resolver fotos reales para plantilla, rumores y candidatos AutoScout.
+- Si subes esta versión desde cero, después ejecuta `Actions → AutoMarket update → Run workflow` y, cuando acabe en verde, pulsa **Actualizar fotos reales** dentro de la web.

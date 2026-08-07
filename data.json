@@ -1,12 +1,12 @@
 {
   "meta": {
     "appName": "Madrid President Simulator 5.0 · AutoScout Intelligence",
-    "version": "5.0.0-autoscout-intelligence",
+    "version": "5.1.0-real-photos-fixed",
     "lastManualReview": "2026-08-07",
     "currency": "M€",
     "notice": "Proyecto fan no oficial centrado solo en la temporada 2026/27. Valores base orientativos; el usuario decide manualmente el precio real de cada compra o venta.",
     "lastAutoUpdate": "pendiente de primera ejecución en GitHub Actions",
-    "automationNote": "AutoMarket preparado: GitHub Actions puede actualizar rumores automáticamente desde RSS/noticias públicas y, opcionalmente, desde X/Fabrizio con X_BEARER_TOKEN.",
+    "automationNote": "AutoScout 5.1 actualiza rumores, amplía mercado, crea candidatos nuevos y resuelve fotos reales hacia remotePhoto.",
     "autoMarket": {
       "enabled": true,
       "lastRun": null,
@@ -21,7 +21,7 @@
       "description": "No hay progresión a otras temporadas. La app sirve para diseñar una plantilla realista del Real Madrid 26/27 con operaciones manuales."
     },
     "photoSystem": "Foto real primero + tarjeta local inmediata",
-    "photoNote": "Cada jugador muestra imagen local embebida de forma inmediata. Si Wikimedia ofrece foto real, se sustituye automáticamente.",
+    "photoNote": "Esta versión prioriza fotos reales fijas vía Wikimedia/Wikipedia. Si todavía no aparecen, ejecuta el workflow AutoMarket update y luego usa el botón Actualizar fotos reales en la web.",
     "coach": "José Mourinho",
     "focus": "Planificación Real Madrid 26/27 con José Mourinho, AutoScout Intelligence, mercado masivo, rumores automáticos y centro de decisiones.",
     "autoScoutPro": {
